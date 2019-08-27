@@ -1,0 +1,9 @@
+body{width: 1200px; margin:30px 30px 30px 30px;font-family:sans-serif;background-color:#FFFFFF;line-height: 150%;}
+
+a{text-decoration:none}
+
+a:link{color:#4444aa;}
+
+a:visited{color:#4444aa;}
+
+a:hover{background-color:#aaaaFF;}

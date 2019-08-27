@@ -1,0 +1,4169 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+  <link rel="stylesheet" href="../luca.css" type="text/css">
+  <title>Luca Trevisan | Papers</title>
+  <style>
+li{margin: 0px 0 16px 0}
+li.special{margin: 0px 0 3px 0}
+
+</style>
+
+
+</head>
+<body>
+
+<h1>Papers by Luca Trevisan</h1>
+
+
+
+The papers are ordered by topic, and, for each topic, they are
+roughly
+in order of conception, most recent first.
+<p>
+
+Read acknowledgements of <a href="#grants">grants</a> and 
+disclaimers on <a href="#cr">copyright</a>.
+
+
+
+
+
+
+
+<p>
+<b>Also available: <a href="by-year.html">[List sorted BY YEAR]</a></b>
+
+
+</p>
+
+
+
+
+
+
+
+<p><b>Jump to: <br>
+[<a href=#spectral>Spectral Graph Theory</a>]
+
+[<a href="#random">Randomness</a>]
+
+[<a href="#crypto">Cryptography</a>]
+
+[<a href="#pcp">PCP</a>]
+
+[<a href="#approximation">Approximation</a>]<br>
+
+
+
+[<a href="#pt">Property Testing</a>]
+
+[<a href="#distrib">Distributed Computing</a>]
+
+[<a href="#misc">Other</a>]
+
+
+[<a  href="#surveys">Surveys</a>]</b>
+
+
+
+
+
+
+
+</p>
+
+
+
+
+
+
+<h2><a name="news"></a>Some Recent Papers</h2>
+
+<ul>
+    <li class="special"><a href=#BT19><b>Vector Colorings of Random, Ramanujan, and Large-Girth Graphs</b></a> (Preprint, 2019)
+    <li class="special"><a href=#BCNPT18><b>Finding a Bounded-Degree Expander Inside a Dense One</b></a> (Preprint, 2018)</li>
+    <li class="special"><a href=#CKT18><b>A Ramsey-type Theorem on the Max-Cut Value of d-Regular Graphs</b></a> (Preprint, 2018)</li>
+    <li class="special"><a href=#MMT18><b>A New Algorithm for the Robust Semi-random Independent Set Problem</b></a> (Preprint, 2018)</li>
+    <li class="special"><a href=#CGNPST18><b>Consensus Needs Broadcast in Noiseless Models but can be Exponentially Easier in the Presence of Noise</b></a> (Preprint, 2018)</li>
+    <li class="special"><a href=#BST19><b>New Notions and Constructions of Sparsification for Graphs and Hypergraphs</b></a> (FOCS'19)
+        <li class="special"> <a href=#CKST18>
+        <b>Optimal Lower Bounds for Sketching Graph Cuts</b></a> (SODA'19)</li>
+ 
+
+
+</ul>
+
+
+<h2><a name="select"></a>Some Older Papers</h2>
+
+<ul>
+
+<li class="special"><b><a href=#KLLOT13>Improved Cheeger inequality...</a></b> (STOC'13)
+
+
+<li class="special"><a href=#evolving><b>Approximating the Expansion Profile and Almost Optimal Local Graph Clustering</b></a> (FOCS'12/ JACM '16')
+
+
+<li class="special"><a href=#LOT12><b>Multi-way spectral partitioning and higher-order Cheeger inequalities</b></a> (STOC'12/ JACM '14)
+
+
+<li class="special"><a href=#ams11>
+<b>On Khot's Unique Games Conjecture</b></a> (AMS Bulletin'11)
+
+
+<li class="special"><a href=#maxcut><b>Max Cut and the Smallest Eigenvalue</b></a> (STOC'09/ SICOMP'11)
+
+
+<li class="special"><a href="#acc"><b>Average-Case Complexity</b></a>
+(<a href="http://www.nowpublishers.com/product.aspx?product=TCS&doi=0400000004">Foundations and Trends in TCS</a> 2006) </li>
+
+<li class="special"><a href="#pacc"><b>Pseudorandomness and Combinatorial
+Constructions</b></a> (<a href="http://www.icm2006.org/">ICM'06</a>) </li>
+
+
+<li class="special"><a href="#gowers"><b>Gowers Uniformity, Influence of Variables, and PCPs</b></a>  (STOC'06/SICOMP'09) </li>
+
+
+
+
+ <li class="special"> <a href="#redux"><b>On Worst-Case to Average-Case Reductions
+for NP
+Problems</b></a> (<a href="http://theory.lcs.mit.edu/FOCS03/">FOCS'03</a>/ SICOMP '06)</li>
+
+<li class="special"><b><a href="#BJKST">Counting Distinct Elements in a Data Stream</a></b> (<a href="http://link.springer.com/chapter/10.1007%2F3-540-45726-7_1">Random '02</a>)
+
+
+ <li class="special"> <b><a href="#icalp01">Approximating the Minimum Spanning Tree Weight in Sublinear Time</a></b> 
+ (<a href="http://www.cti.gr/engl_v/news/sc_conf/icalp.html">ICALP'01</a>/ SICOMP '05)</li>
+
+<li class="special"> <b><a href="#tv00">Extracting Randomness from Samplable Distributions</a></b>(<a href="http://www.cs.cmu.edu/%7EFOCS2000">FOCS'00</a>)</li>
+
+ <li class="special"><b><a href="#st2">A PCP Characterization of NP with Optimal
+Amortized Query
+Complexity</a></b> (<a href="http://sigact.acm.org/stoc00/">STOC'00</a>)</li>
+
+ <li class="special"> <b><a href="#stv">
+  Pseudorandom Generators Without the XOR Lemma</a> </b> (<a
+ href="http://sigact.acm.org/stoc99/">STOC'99</a>/JCSS 2001)</li>
+
+ <li class="special"> <b><a href="#extract">Extractors and Pseudorandom Generators</a> </b>(<a
+ href="http://sigact.acm.org/stoc99/">STOC'99</a>/JACM
+2001)</li>
+
+<li class="special"> <b><a href="#hamming">When</a></b><a href="#hamming"> <b>Hamming Meets Euclid: the Approximability of Geometric TSP
+and MST</b></a> (STOC'97/SICOMP 2001)</li>
+
+<li class="special"> <a href="#kst"><b>The Approximability of Constraint Satisfaction Problems</b></a> (CCC'97/SICOMP 2000)</li>
+
+<li class="special"> <b><a href="#tssw">Gadgets, Approximation, and Linear Programming</a></b> (FOCS'96/SICOMP 2000)</li>
+
+</ul>
+
+<h2><a name="spectral"></a>Spectral Graph Theory</h2>
+
+<ol>
+    
+    <li><a name="BT19"></a> Jess Banks and Luca Trevisan<br>
+        <b>Vector Colorings of Random, Ramanujan, and Large-Girth Graphs</b><br>
+        <a href=https://arxiv.org/abs/1907.02539>arXiv:1907.02539</a>
+        </li>
+    
+    <li><a name="BST19"></a>Nikhil Bansal, Ola Svensson and Luca Trevisan<br>
+        <b>New Notions and Constructions of Sparsification for Graphs and Hypergraphs</b><br>
+        To appear in <a href=http://focs2019.cs.jhu.edu/>FOCS 2019</a>, <a href=https://arxiv.org/abs/1905.01495>arXiv:1905.01495</a>
+    
+    <li><a name="CKST18"></a>Charles Carlson, Alexandra Kolla, Nikhil Srivastava, Luca Trevisan<br>
+        <b>Optimal Lower Bounds for Sketching Graph Cuts</b><br>
+        In <i>Proc. of SODA 2019</i>, pp. 2565-2569<br>
+        <a href=https://arxiv.org/abs/1712.10261>arXiv:1712.10261</a></li>
+
+<li><a name="ST17"></a>Nikhil Srivastava, Luca Trevisan<br>
+    <b>An Alon-Boppana Type Bound for Weighted Graphs and Lowerbounds for Spectral Sparsification</b><br>
+    In <i>Proc. of SODA 2018</i>, pp. 1306-1315<br>
+    <a href=https://arxiv.org/abs/1707.06364>arXiv:1707.06364</a></li>
+
+
+<li><a name="OT14"></a>Shayan Oveis Gharan, Luca Trevisan<br>
+<b>Partitioning into Expanders</b><br>
+In <i>Proc. of SODA 2014</i>, pp. 1256-1266<br>
+<a href=http://arxiv.org/abs/1309.3223>arXiv:1309.3223</a>
+
+<li><a name="KLLOT13"></a>Tsz Chiu Kwok, Lap Chi Lau, Yin Tat Lee, Shayan Oveis Gharan, Luca Trevisan<BR>
+<b>Improved Cheeger's Inequality: Analysis of Spectral Partitioning Algorithms through Higher Order Spectral Gap</b><br>
+In <i>Proc. of 45th ACM STOC</i>, 2013<br>
+<a href=http://arxiv.org/abs/1301.5584>arXiv:1301.5584</a>
+
+
+<li><a name="diameter"></a>
+Shayan Oveis Gharan, Luca Trevisan<br>
+<b>A Universal upper bound on Graph Diameter based on Laplacian Eigenvalues</b><br>
+Preprint, 2012<br>
+<a href=http://arxiv.org/abs/1212.2701>arXiv:1212.2701</a>
+
+
+<li><a name="regular">
+Shayan Oveis Gharan, Luca Trevisan<br>
+<b>A New Regularity Lemma and Faster Approximation Algorithms for Low Threshold Rank Graphs</b><br>
+In <i>Proc. APPROX-RANDOM 2013</i>, pp.  303-316<br>
+<a href=http://arxiv.org/abs/1212.1831>arXiv:1212.1831</a>
+
+<li><a name="evolving">
+Shayan Oveis Gharan, Luca Trevisan<br>
+<b>Approximating the Expansion Profile and Almost Optimal Local Graph Clustering</b><br>
+In <i>Proc. of 53rd IEEE FOCS</i>, pp. 187-196, 2012<br>
+<a href=http://arxiv.org/abs/1204.2021>arXiv:1204.2021</a>
+
+<li><a name="LOT12"></a>
+James R. Lee, Shayan Oveis Gharan, Luca Trevisan<br>
+<b>Multi-way spectral partitioning and higher-order Cheeger inequalities</b><br>
+<i>J. ACM</i> <b>61</b>(6): 37:1-37:30 (2014)<br>
+Also in <i>Proc. of 44th ACM STOC</i>, pp. 1117-1130, 2012<br>
+<a href=http://arxiv.org/abs/1111.1055>arXiv:1111.1055</a>
+
+<li><a name="T13"></a>Luca Trevisan<br>
+<b>Is Cheeger-type Approximation Possible for Nonuniform Sparsest Cut?</b><br>
+Preprint, 2011 (posted online in 2013)<br>
+<a href=http://arxiv.org/abs/1303.2730>arXiv:1303.2730</a>
+
+
+<li><a name="maxcut"></a>Luca Trevisan<br>
+<b>Max Cut and the Smallest Eigenvalue</b><br>
+SIAM J. Comput. 41(6): 1769-1786 (2012)<br>
+Earlier version in Proc. of <i>41st ACM STOC</i>, 2009<br>
+<a href=http://arxiv.org/abs/0806.1978>arXiv:0806.1978</a>
+
+
+
+</ol>
+
+<p>
+
+
+<h2><a name="random"></a>Randomness</h2>
+
+
+<ol>
+
+
+<li><a name="TX13"></a>Luca Trevisan and TngKe Xue<br>
+<b>A Derandomized Switching Lemma and an Improved Derandomization of AC0</b><br>
+In <i>Proc. of CCC 2013</I><br>
+<a href=http://eccc.hpi-web.de/report/2012/116/>ECCC TR12-116</a>
+
+<li><a name="GMRTV12"></a>
+Parikshit Gopalan, Raghu Meka, Omer Reingold, Luca Trevisan, Salil P. Vadhan<br>
+<b>Better Pseudorandom Generators from Milder Pseudorandom Restrictions</b><br>
+In <i>Proc. of 53th IEEE FOCS</i>, pp. 120-129, 2012<br>
+<a href=http://arxiv.org/abs/1210.0049>arXiv:1210.0049</a>
+
+
+<li><a name="dett10"></a>
+Anindya De, Omid Etesami, Luca Trevisan and Madhur Tulsiani<br>
+<b>Improved Pseudorandom Generators for Depth 2 Circuits</b><br>
+In Proc. of APPROX-RANDOM 2010, pp. 504-517
+<a href=DETT10.pdf>[pdf]</a>
+
+<li>
+Luca Trevisan<br>
+<b>The Program-Enumeration Bottleneck in Average-Case Complexity Theory</b><br>
+IEEE Conference on Computational Complexity 2010, pp. 88-95<br>
+<a href=http://eccc.hpi-web.de/report/2010/034/>ECCC TR10-034</a>
+
+
+<li><a name="dt09"></a>
+Anindya De and Luca Trevisan<br>
+<b>Extractors using hardness amplification</b><br>
+In <i>Proc. of Random-Approx</i>, pp. 462-475, 2009<br>
+<a href=DT09.pdf>[Conference proceedings]</a>
+
+<li><a name="lrtv09"></a>
+Shachar Lovett, Omer Reingold, Luca Trevisan and Salil Vadhan<br>
+<b>Pseudorandom Bit Generators That Fool Modular Sums</b><br>
+In <i>Proc. of Random-Approx</i>, pp. 615-630, 2009<br>
+<a href=LRTV09.pdf>[Conference proceedings]</a>
+
+
+
+
+<li><a name="regularity"></a>
+Luca Trevisan, Madhur Tulsiani and Salil Vadhan<br>
+<b>Regularity, Boosting, and Efficiently Simulating Every High-Entropy Distribution</b><br>
+In Proc. of <i>24th IEEE Conference on Computational Complexity</i>, 2009<br>
+<a href=http://eccc.hpi-web.de/eccc-reports/2008/TR08-103/index.html>ECCC TR08-103<br>
+
+<li><a name="rttv"></a>
+Omer Reingold, Luca Trevisan, Madhur Tulsiani and Salil Vadhan<br>
+<b>Dense Subsets of Pseudorandom Sets </b><br>
+In Proc. of <i>49th IEEE FOCS</i>, 2008<br>
+<a href=http://eccc.hpi-web.de/eccc-reports/2008/TR08-045/index.html>ECCC TR08-45<br>
+  </a>
+(expository note:&nbsp; <a href="http://arxiv.org/abs/0806.0381v1">arXiv:0806.0381</a>)
+  
+
+
+
+  <li><a name="rl"></a>Omer Reingold, Luca Trevisan and Salil Vadhan<br>
+
+
+
+    <b>Pseudorandom Walks in Directed Regular Graphs and the RL vs L Problem<br>
+
+
+
+    </b>In <i>Proc. of 38th STOC,</i> ACM, 2006
+
+
+
+    <b><br>
+
+
+
+    </b><a href="http://eccc.uni-trier.de/eccc-reports/2005/TR05-022/index.html">ECCC
+
+
+
+    TR 05-22</a>
+
+
+
+
+
+
+
+  </li>
+
+
+
+
+
+
+
+  <li><a name="uniformamp"></a>Luca Trevisan<br>
+
+
+
+
+
+
+
+    <b>On Uniform Amplification of
+
+
+
+
+
+
+
+Hardness in NP</b><br>
+
+
+
+
+
+
+
+    In <i>Proc. of <a href="http://www.cs.jhu.edu/~stoc05/">37th STOC</a>,</i>
+
+
+
+
+
+
+
+    ACM, 2005
+
+
+
+
+
+
+
+    <span style="font-weight: bold;"><br>
+
+
+
+
+
+
+
+    </span>Manuscript: <a href="uniformamp.pdf">[pdf]</a>
+
+
+
+
+
+
+
+  </li>
+
+
+
+
+
+
+
+  <li><a name="hierarchy"></a>Lance Fortnow, Rahul Santhanam and Luca Trevisan<br>
+
+
+
+
+
+
+
+    <b>Promise Hierarchies</b><br>
+
+
+
+
+
+
+
+    In <i>Proc. of <a href="http://www.cs.jhu.edu/~stoc05/">37th STOC</a>,</i>
+
+
+
+
+
+
+
+    ACM, 2005<br>
+
+    [<a href="promise.pdf">Conference Proceedings</a>]
+
+
+
+
+
+
+
+  </li>
+
+
+
+
+
+
+
+  <li><a name="redux"></a>Andrej Bogdanov and Luca Trevisan<br>
+    <b>On Worst-Case to Average-Case Reductions for NP Problems</b><br>
+<i>SIAM J. Comput.</i> 36(4): 1119-1159 (2006)<br>
+</b>Earlier version in <i>Proc. of <a href="http://theory.lcs.mit.edu/FOCS03/">44th
+FOCS</a></i>,
+IEEE, pp. 308-317, 2003<br>
+    [Draft full version:  <a href="redux-sicomp.pdf">[pdf]</a>] <a href="BT03.pdf">[Conference
+Proceedings]&nbsp;</a></li>
+
+
+
+
+
+
+
+  <li> <a name="xordecoding"></a>Luca Trevisan<br>
+
+
+
+
+
+
+
+    <b>List Decoding Using the XOR Lemma<br>
+
+
+
+
+
+
+
+    </b>In <i>Proc. of <a href="http://theory.lcs.mit.edu/FOCS03/">44th
+
+
+
+
+
+
+
+FOCS</a></i>,
+
+
+
+
+
+
+
+IEEE, pp. 126-135, 2003 <br>
+
+
+
+
+
+
+
+[<a href="xordecoding.pdf">Conference Proceedings</a>]</li>
+
+
+
+
+
+
+
+  <li> <a name="nczero"></a>Elchanan Mossel, Amir Shpilka and Luca
+      Trevisan<br>
+      <b>On epsilon-Biased Generators in NC0<br>
+      </b>In <i>Proc. of <a href="http://theory.lcs.mit.edu/FOCS03/">44th
+          FOCS</a></i>,
+      IEEE, pp. 136-145, 2003 <br>
+      [<a href="https://eccc.weizmann.ac.il/report/2003/043/">ECCC TR 03-043</a>]</li>
+  
+
+
+
+
+
+
+  <li> <a name="tv02"></a>Luca Trevisan and Salil Vadhan<br>
+<b>Pseudorandomness and Average-case Complexity via Uniform
+Reductions</b> <br>
+In <i>Proc. of <a href="http://www.crm.umontreal.ca/CCC/">17th&nbsp;
+Computational Complexity Conference</a>, </i>pages<i> </i>129-138,<i>
+</i>IEEE,
+2002<br>
+<a href="tv02.pdf">[Conference Proceedings]</a></li>
+
+
+
+
+
+
+
+  <li> <a name="stream"></a>Z. Bar-Yossef, O. Reingold, R. Shaltiel
+
+
+
+
+
+
+
+and L.
+
+
+
+
+
+
+
+Trevisan <br>
+
+
+
+
+
+
+
+    <b>Streaming Computation of Combinatorial Objects</b> <br>
+
+
+
+
+
+
+
+In <i>Proc. of <a href="http://www.crm.umontreal.ca/CCC/">17th&nbsp;
+
+
+
+
+
+
+
+Computational Complexity Conference</a>,</i> pages165-174, IEEE, 2002<br>
+
+
+
+
+
+
+
+    <a href="brst02.pdf">[Conference Proceedings]</a></li>
+
+
+
+
+
+
+
+  <li> <a name="tv00"></a>Luca Trevisan and Salil Vadhan. <br>
+    <b>Extracting Randomness from Samplable Distributions</b> <br>
+In <i>Proc. of <a href="http://www.cs.cmu.edu/%7EFOCS2000">41st FOCS</a></i>,
+pages 32-42, IEEE, 2000<br>
+<a href="tv00.pdf">[Conference Proceedings]</a></li>
+
+
+
+
+
+
+
+  <li> <a name="stv"></a>Madhu Sudan, Luca Trevisan and Salil Vadhan.&nbsp;
+<b><br>
+
+Pseudorandom Generators Without the XOR Lemma</b> <br>
+<i>J. of Computer and System Sciences,</i><b> 62</b>(2):236-266, 2001
+  <br>
+Preliminary version: <i>Proc. of <a
+href="http://sigact.acm.org/stoc99/">31st
+ACM STOC</a></i>,&nbsp; 1999. <br>
+<a href="stv-full.pdf">[Draft
+full version]</a><a
+href="stv99stoc.pdf">[Conference
+Proceedings]</a> </li>
+
+
+
+
+
+
+
+  <li><a name="extract"></a>Luca Trevisan. <br>
+      
+      <b>Extractors and Pseudorandom Generators</b> <br>
+      
+      <i>J. of the ACM, </i><b>48</b>(4):860-879, 2001 <br>
+      
+      Preliminary version In <i>Proc. of <a
+          
+          href="http://sigact.acm.org/stoc99/">31st
+          
+          ACM STOC</a></i>, pp. 141-148, 1999. <br>
+      
+       <a
+          
+          href="extractor-full.pdf">[Full Version]</a>&nbsp; <a
+              
+              href="t99stoc.pdf">[Conference
+              
+              Proceedings]</a></li>
+
+
+
+
+
+  <li> <a name="weakran"></a>Alexander E. Andreev, Andrea E.F.
+      
+      Clementi,
+      
+      Jose
+      
+      D.P. Rolim, and Luca Trevisan.&nbsp;<br>
+      
+      <b>Weak Random Sources, Hitting Sets, and BPP Simulations</b> <br>
+      
+      <i>SIAM Journal on Computing</i>, <b>28</b>(6):2103-2116, 1999. <br>
+      
+      Preliminary version: <i>Proc. of&nbsp; <a
+          
+          href="http://www.cs.miami.edu/events/FOCS97/">38th
+          
+          IEEE FOCS,</a> </i>1997. <br>
+      
+      <a href="acrtfull.pdf">[Final
+          
+          version]</a><a href="acrt.pdf">[Conference
+              
+              Proceedings]</a>
+  </li>
+
+
+
+
+
+
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2><a name="crypto"></a>Cryptography</h2>
+
+<ol>
+
+
+<li><a name = "dtt10"></a>
+Anindya De, Luca Trevisan and Madhur Tulsiani<br>
+<b>Time Space Tradeoffs for Attacks against One-Way Functions and PRGs.</b><br>
+In Proc. of CRYPTO 2010, pp. 649-665<br>
+<a href=http://eccc.uni-trier.de/report/2009/113/>[ECCC TR09-113]</a>
+
+
+
+<li><a name="cemt09"></a>
+James Cook, Omid Etesami, Rachel Miller, and Luca Trevisan<br>
+<b>Goldreich's One-Way Function Candidate and Myopic 
+Backtracking Algorithms</b><br>
+In <i>Proc. of the <a href=http://crypto.stanford.edu/tcc09/>6th Theory of Cryptography Conference</a></i>, Springer-Verlag, pp. 521-538, 2009<br>
+[<a href="cemt09.pdf">Conference Proceedings</a>]
+
+<li><a  name="crstvw"></a>
+Ran Canetti, Ronald L. Rivest, Madhu Sudan, Luca Trevisan, Salil P. Vadhan, and Hoeteck Wee<br>
+<b>Amplifying Collision Resistance: A Complexity-Theoretic Treatment</b><br>
+In <i>Proc. of CRYPTO 2007</i>, pp. 264-283<br>
+[<a href=crstvw.pdf>Conference Proceedings</a>]
+
+
+
+  <li> <a name="ltw05"></a>Henry Lin, Luca Trevisan and Hoeteck Wee<br>
+    <b>On Hardness Amplification of One-Way Functions</b><br>
+In <i>Proc. of <a href="http://www.cs.ucsd.edu/users/mihir/tcc/tcc05/">2nd Theory of Cryptography Conference</a></i>, Springer-Verlag,&nbsp;
+
+
+
+
+
+
+
+    2005<br>
+
+
+
+
+
+
+
+    <a href="LTW05.pdf">[Conference Proceedings]</a></li>
+
+
+
+
+
+
+
+  <li> <a name="rtv04"></a>Omer Reingold, Luca Trevisan and Salil
+
+
+
+
+
+
+
+Vadhan<br>
+
+
+
+
+
+
+
+    <b>Notions of Reducibility between Cryptographic Primitives</b><br>
+
+
+
+
+
+
+
+In <i>Proc. of <a href="http://www.cs.ucsd.edu/users/mihir/tcc/tcc04/">
+
+
+
+
+
+
+
+1st Theory of Cryptography Conference</a></i>, Springer-Verlag, pp.
+
+
+
+
+
+
+
+1-20, 2004<br>
+
+
+
+
+
+
+
+    <a href="rtv04.pdf">[Conference Proceedings]</a></li>
+
+
+
+
+
+
+
+  <li> <a name="dsst"></a>Cynthia Dwork, Ronen Shaltiel, Adam Smith
+
+
+
+
+
+
+
+and
+
+
+
+
+
+
+
+Luca Trevisan<br>
+
+
+
+
+
+
+
+    <b>List Decoding of Linear Functions and Analysis of a Two-Round
+
+
+
+
+
+
+
+Zero-Knowledge Argument</b><br>
+
+
+
+
+
+
+
+In <i>Proc. of <a href="http://www.cs.ucsd.edu/users/mihir/tcc/tcc04/">
+
+
+
+
+
+
+
+1st Theory of Cryptography Conference</a></i>, Springer-Verlag, pp.
+
+
+
+
+
+
+
+101-120, 2004<br>
+
+
+
+
+
+
+
+    <a href="dsst04.pdf">[Conference Proceedings]</a></li>
+
+
+
+
+
+
+
+  <li> <a name="gt00"></a>    Rosario Gennaro, Yael Gertner, Jonathan Katz, and Luca Trevisan. <br>
+
+
+
+
+
+
+
+    <b>Bounds on the Efficiency of Generic Cryptographic Constructions</b> <br>
+
+
+
+
+
+
+
+    <i>SIAM J. on Computing, </i><b>35</b>(1):217-246, 2005<br>
+
+    (Earlier version in <i>Proc. of <a href="http://www.cs.cmu.edu/%7EFOCS2000">41st FOCS</a></i>,
+
+
+
+
+
+
+
+pages 305-313, IEEE, 2000)<br>
+
+
+
+
+
+
+
+    <a href="gt00.pdf">[Conference Proceedings]</a> <a
+
+
+
+
+
+
+
+ href="ggkt.pdf">[Full
+
+
+
+
+
+
+
+version]</a></li>
+
+
+
+
+
+
+
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2><a name="pcp"></a>Probabilistically Checkable Proofs</h2>
+
+
+
+
+
+
+
+<ol>
+
+
+
+
+
+
+
+  <li> <a name="gowers"></a>Alex Samorodnitsky and Luca Trevisan.&nbsp;<br>
+
+    <b>Gowers Uniformity, Influence of Variables, and PCPs<br>
+
+    </b>In <i>Proc. of 38th STOC,</i> ACM, 2006.
+
+    <b><br>
+
+    </b>[<a href="gowers.pdf">Manuscript</a>] </li>
+
+
+
+
+
+
+
+  <li> <a name="st2"></a>Alex&nbsp; Samorodnitsky and Luca Trevisan.&nbsp;
+
+
+
+
+
+
+
+  <b><br>
+
+
+
+
+
+
+
+  A PCP Characterization of NP with Optimal Amortized Query
+
+
+
+
+
+
+
+Complexity.</b><br>
+
+
+
+
+
+
+
+In <i><a href="http://sigact.acm.org/stoc00/">Proc. of 32nd STOC</a></i>,&nbsp;
+
+
+
+
+
+
+
+ACM, pp. 191-199, 2000. <br>
+
+
+
+
+
+
+
+  <a href="st-full.pdf">[Preliminary
+
+
+
+
+
+
+
+Version]</a> </li>
+
+
+
+
+
+
+
+<li><a name="amortized"></a>M. Sudan and L. Trevisan.  <br>
+
+
+
+
+
+
+
+  <b>Probabilistically Checkable Proofs with Low Amortized Query
+
+
+
+
+
+
+
+Complexity.</b> <br>
+
+
+
+
+
+
+
+In <i>Proc. of the <a href="http://theory.stanford.edu/%7Efocs98/">39th
+
+
+
+
+
+
+
+Symposium on Foundations of Computer Science</a></i>. IEEE, pp. 18-27,
+
+
+
+
+
+
+
+1998 . <br>
+
+
+
+
+
+
+
+  <a href="st98.pdf.Z">[Preliminary
+
+
+
+
+
+
+
+Version]</a></li>
+
+
+
+
+
+
+
+<li><a name="adaptive"></a>V. Guruswami, D. Lewin, M.
+
+
+
+
+
+
+
+Sudan and L.
+
+
+
+
+
+
+
+Trevisan.  <br>
+
+
+
+
+
+
+
+  <b>A Tight Characterization of NP with 3-Query PCPs.</b> <br>
+
+
+
+
+
+
+
+In <i>Proc. of the <a href="http://theory.stanford.edu/%7Efocs98/">39th
+
+
+
+
+
+
+
+Symposium on Foundations of Computer Science</a></i>. IEEE, pp. 8-17,
+
+
+
+
+
+
+
+1998
+
+
+
+
+
+
+
+. <br>
+
+
+
+
+
+
+
+  <a href="glst98.pdf">[Preliminary
+
+
+
+
+
+
+
+Version]</a></li>
+
+
+
+
+
+
+
+ <li><a name="amqueries"></a>L. Trevisan.
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <b>Recycling Queries in PCPs and in Linearity Tests.</b> <br>
+
+
+
+
+
+
+
+In <i>Proceedings of the <a href="http://sigact.acm.org/stoc98">30th
+
+
+
+
+
+
+
+Symposium on Theory of Computing</a></i>. ACM, pp. 299-308, 1998 . <br>
+
+
+
+
+
+
+
+  <a href="stoc98.pdf">[Conference
+
+
+
+
+
+
+
+Proceedings]</a><a
+
+
+
+
+
+
+
+ href="http://theory.stanford.edu/~trevisan/amqueries.html"></a></li>
+
+
+
+
+
+
+
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2><a name="approximation"></a>Approximation</h2>
+
+
+
+
+
+
+
+<a name="hardness"></a><b><i>Non-approximability Results</i></b>
+
+
+
+
+
+
+
+<ol>
+
+<li><a name="CCKLMNT18"></a>
+    Parinya Chalermsook, Marek Cygan, Guy Kortsarz, Bundit Laekhanukit, Pasin Manurangsi, Danupon Nanongkai, Luca Trevisan<br>
+    <b>From Gap-ETH to FPT-Inapproximability: Clique, Dominating Set, and More</b><br>
+    In <i>Proc. of FOCS 2017</i>, pp. 743-754<br>
+    <a href=https://arxiv.org/abs/1708.04218>arXiv:1708.04218</a></li>
+
+
+
+<li><a name="MNT16"></a>
+    Pasin Manurangsi, Preetum Nakkiran, Luca Trevisan<br>
+    <b>Near-Optimal UGC-hardness of Approximating Max k-CSP_R</b><br>
+    In <i>Proc. of Random-Approx</i> pp. 15:1-15:28, 2016<br>
+    <a href=http://arxiv.org/abs/1511.06558>arXiv:1511.06558</a></li>
+
+
+
+
+
+  <li> Venkatesan&nbsp; Guruswami and Luca Trevisan<br>
+
+    <b>The Complexity of Making Unique Choices: Approximating 1-in-kSAT</b>&nbsp;<br>
+
+    In <i>Proc. of APPROX-RANDOM</i>, Springer-Verlag, 2005<br>
+
+    [<a href="gt05.pdf">Conference Proceedings</a>]</li>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <li> <a name="stoc01"></a>L. Trevisan
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <b>Non-approximability Results for Optimization Problems on Bounded
+
+
+
+
+
+
+
+Degree Instances.</b> <br>
+
+
+
+
+
+
+
+In <i>Proc. of the 33rd ACM STOC</i>, 2001 <br>
+
+
+
+
+
+
+
+  <a href="stoc01.pdf">[Conference Proceedings]</a></li>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<li><a  name="hamming"></a>
+
+
+
+
+
+
+
+L. Trevisan  <br>
+
+
+
+
+
+
+
+  <b>When Hamming Meets Euclid: the Approximability of Geometric TSP
+
+
+
+
+
+
+
+and MST.</b> <br>
+
+
+
+
+
+
+
+  <i>SIAM J. on Computing, </i><b>30</b>(2):475-485, 2001. <br>
+
+
+
+
+
+
+
+Preliminary version in <i>Proc. of the <a
+
+
+
+
+
+
+
+ href="http://sigact.acm.org/stoc97/">29th
+
+
+
+
+
+
+
+ACM STOC</a></i>, 1997 <br>
+
+
+
+
+
+
+
+  <a href="stoc97-full.pdf">[Draft
+
+
+
+
+
+
+
+full version]</a><a
+
+
+
+
+
+
+
+ href="tsp.pdf">[Conference
+
+
+
+
+
+
+
+Proceedings]</a> <a href="http://theory.stanford.edu/~trevisan/tsp.html"></a></li>
+
+
+
+
+
+
+
+  <li><a name="tssw"></a>L. Trevisan, G.B. Sorkin, M. Sudan, D.P.
+
+
+
+
+
+
+
+Williamson.  <br>
+
+
+
+
+
+
+
+  <b>Gadgets, Approximation, and Linear Programming.</b> <br>
+
+
+
+
+
+
+
+  <i>SIAM J. on Computing</i>, <b>29</b>(6):2074-2097, 2000 <br>
+
+
+
+
+
+
+
+Preliminary version in <i>Proc. of the <a
+
+
+
+
+
+
+
+ href="http://www.umiacs.umd.edu/events/FOCS96/">37th
+
+
+
+
+
+
+
+IEEE FOCS</a></i>, 1996. <br>
+
+
+
+
+
+
+
+  <a href="gadgetfull.pdf">[Full
+
+
+
+
+
+
+
+version (revised 10/98)]</a> <a
+
+
+
+
+
+
+
+ href="gadgets.pdf">[Conference
+
+
+
+
+
+
+
+Proceedings]</a> <a
+
+
+
+
+
+
+
+ href="http://theory.stanford.edu/~trevisan/gadgets.html"></a></li>
+
+
+
+
+
+
+
+ <li><a
+
+
+
+
+
+
+
+ name="cst96"></a>P. Crescenzi, R. Silvestri, and L. Trevisan.
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <b>On Weighted vs Unweighted Versions of Combinatorial Optimization
+
+
+
+
+
+
+
+Problems</b> <br>
+
+
+
+
+
+
+
+  <i>Information and Computation</i>, <b>167</b>(1):10-26, 2001. <br>
+
+
+
+
+
+
+
+Preliminary version in <i>Proc. of the <a
+
+
+
+
+
+
+
+ href="http://www.cs.rice.edu/%7Evardi/istcs/">4th
+
+
+
+
+
+
+
+IEEE ISTCS</a></i>, 1996. <br>
+
+
+
+
+
+
+
+  <a href="cst-full.pdf">[Full
+
+
+
+
+
+
+
+version
+
+
+
+
+
+
+
+(revised 2/99)]</a> <a
+
+
+
+
+
+
+
+ href="Toweight.pdf.Z">[Conference
+
+
+
+
+
+
+
+Proceedings]</a> <a
+
+
+
+
+
+
+
+ href="http://theory.stanford.edu/~trevisan/Toweight.html"></a></li>
+
+
+
+
+
+
+
+  <li>A. Clementi and L. Trevisan.
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <b>Improved Non-approximability Results for Vertex Cover Problems
+
+
+
+
+
+
+
+with
+
+
+
+
+
+
+
+Density Constraints.</b> <br>
+
+
+
+
+
+
+
+  <i>Theoretical Computer Science</i>, <b>225</b>(1-2):113-128, 1999. <br>
+
+
+
+
+
+
+
+Preliminary version in <i>Proc. of the <a
+
+
+
+
+
+
+
+ href="http://www.csd.hku.hk/cocoon96.html">2nd
+
+
+
+
+
+
+
+COCOON</a></i>, 1996. <br>
+
+
+
+
+
+
+
+  <a href="sparsevcfull.pdf.Z">[Journal
+
+
+
+
+
+
+
+Submission]</a> <a
+
+
+
+
+
+
+
+ href="sparsevc.pdf">[Conference
+
+
+
+
+
+
+
+Proceedings]</a> <a
+
+
+
+
+
+
+
+ href="http://theory.stanford.edu/~trevisan/sparseVC.html"></a></li>
+
+
+
+
+
+
+
+</ol>
+
+
+
+
+<a name="gaps"></a><b><i>Integrality Gap Instances</i></b>
+
+<ol>
+
+<li><a name="AKKT14"></a>
+Naman Agarwal, Guy Kindler, Alexandra Kolla, Luca Trevisan<br>
+<b>Unique Games on the Hypercube</b><br>
+ <i>Chicago J. Theor. Comput. Sci.</i>  (2015)<br>
+<a href=http://arxiv.org/abs/1405.1374>arXiv:1405.1374</a>
+
+
+<li><a name="sttlp"></a>Grant Schoenebeck, Luca Trevisan and Madhur Tulsiani<br>
+<b>Tight Integrality Gaps for Lovasz-Schrijver LP Relaxations of Vertex Cover and Max Cut</b><br>
+In <i>Proc. of 39th ACM STOC,</i> 2007, pp. 302-310<br>
+[<a href=http://eccc.hpi-web.de/eccc-reports/2006/TR06-132/index.html>Full version</a>]</li>
+
+  <li><a name="sttsdp"></a>Grant Schoenebeck, Luca Trevisan and Madhur Tulsiani<br>
+
+    <b>A Linear Round Lower Bound for Lovasz-Schrijver SDP Relaxations of Vertex Cover</b><br>
+In <i>Proc. of IEEE Conference on Computational Complexity</i>, 2007, pp.205-216<br>
+   
+    [<a href="http://eccc.hpi-web.de/eccc-reports/2006/TR06-098/index.html">Full version</a>]</li>
+
+
+
+</ol>
+
+
+
+
+<a name="algorithms"></a><b><i>Algorithmic Results</i></b>
+
+
+
+
+
+
+
+<ol>
+    <li><a name="MMT18"></a>    Theo McKenzie, Hermish Mehta, Luca Trevisan<br>
+        <b>A New Algorithm for the Robust Semi-random Independent Set Problem</b><br>
+        <a href=https://arxiv.org/abs/1808.03633>arXiv:1808.03633</a></li>
+    
+
+    <li><a name="MT18"></a>Pasin Manurangsi, Luca Trevisan<br>
+        <b>Mildly Exponential Time Approximation Algorithms for Vertex Cover, Balanced Separator and Uniform Sparsest Cut</b><br>
+        In <i>Proc. of APPROX-RANDOM 2018</i>, pp. 20:1-20:17<br>
+        <a href=https://arxiv.org/abs/1807.09898>arXiv:1807.09898</a>
+        
+
+    
+    <li><a name="KKT16"></a>
+        Guy Kindler, Alexandra Kolla, Luca Trevisan<br>
+        <b>Approximation of non-boolean 2CSP</b><br>
+        In <i>Proc. of SODA 2016</i>, pp. 1705-1714<br>
+        <a href=http://arxiv.org/abs/1504.00681>arXiv:1504.00681</a>
+
+
+<li><a name="beating"></a>
+    Boaz Barak, Ankur Moitra, Ryan O'Donnell, Prasad Raghavendra, Oded Regev, David Steurer, Luca Trevisan, Aravindan Vijayaraghavan, David Witmer, John Wright<br>
+    <b>Beating the Random Assignment on Constraint Satisfaction Problems of Bounded Degree</b><br>
+    In <i>Proc. of APPROX-RANDOM 2015</i>, pp.  110-123<br>
+    <a href=http://arxiv.org/abs/1505.03424>arXiv:1505.03424</a>
+
+
+
+  <li><a name="unique"></a>Luca Trevisan<br>
+
+
+
+    <b>Approximation Algorithms for Unique Games<br>
+
+
+
+    </b>Proc. of the <i><a href="http://www.cs.cmu.edu/~FOCS05/">46th IEEE FOCS</a></i>, 2005<br>
+
+<a href="focs05.pdf">[Conference Proceedings]</a>  <a href="unique.pdf">[Draft Full Version]</a></li>
+
+
+
+
+
+
+
+  <li>Maria Serna, Luca Trevisan, and Fatos Xhafa.
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <b>The Parallel Approximability of Non-Boolean Constraint
+
+
+
+
+
+
+
+Satisfaction
+
+
+
+
+
+
+
+and Restricted Integer Programming.</b> <br>
+
+
+
+
+
+
+
+    <i>  Theoretical Computer Science</i> <b>332</b>(1-3):123-139, 2005<br>
+
+
+
+    Preliminary version In <i>Proceedings of the 15th STACS,</i> LNCS 1373, Springer-Verlag, pages 488-498, 1998. <br>
+
+
+
+
+
+
+
+  <a href="stx98.pdf">[Conference
+
+
+
+
+
+
+
+Proceedings]</a> </li>
+
+
+
+
+
+
+
+<li><a name="satsat"></a>Luca Trevisan.
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <b>Approximating Satisfiable Satisfiability Problems.</b> <br>
+
+
+
+
+
+
+
+  <i>Algorithmica</i> <b>28</b>(1):145-172, 2000. <br>
+
+
+
+
+
+
+
+Preliminary version in <i>Proc. of the <a
+
+
+
+
+
+
+
+ href="http://www.iicm.edu/esa_97/">5th
+
+
+
+
+
+
+
+ESA</a></i>, 1997. <br>
+
+
+
+
+
+
+
+  <a href="satsatfull.pdf">[Full
+
+
+
+
+
+
+
+version (revised 2/1999)]</a> <a
+
+
+
+
+
+
+
+ href="satsat.pdf">[Conference
+
+
+
+
+
+
+
+Proceedings]</a> <a
+
+
+
+
+
+
+
+ href="http://theory.stanford.edu/~trevisan/satsat.html"></a></li> <li><a
+
+
+
+
+
+
+
+ name="t96esa"></a>L. Trevisan.
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <b>Parallel Approximation Algorithms by Positive Linear Programming</b>
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <i>Algorithmica</i>, <b>21</b>:72-88, 1998. <br>
+
+
+
+
+
+
+
+Preliminary version in <i>Proc. of the <a
+
+
+
+
+
+
+
+ href="http://www-lsi.upc.es/%7Eesa96/">4th
+
+
+
+
+
+
+
+ESA</a></i>, 1996. <br>
+
+
+
+
+
+
+
+  <a href="parapxfull.pdf">[Journal
+
+
+
+
+
+
+
+Submission]</a> <a
+
+
+
+
+
+
+
+ href="parapx.pdf">[Conference
+
+
+
+
+
+
+
+Proceedings]</a> <a
+
+
+
+
+
+
+
+ href="http://theory.stanford.edu/~trevisan/parapx.html"></a></li>
+
+
+
+
+
+
+
+</ol>
+
+
+
+
+
+
+
+<a name="structures"></a><b><i>Structural Results</i></b>
+
+
+
+
+
+
+
+<ol>
+
+
+
+
+
+
+
+  <li> <a name="eptas"></a>M. Cesati and L. Trevisan.
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <b>On the Efficiency of Polynomial Time Approximation Schemes.</b> <br>
+
+
+
+
+
+
+
+  <i>Information Processing Letters</i>, <b>64</b>(4):165-171, 1997. <br>
+
+
+
+
+
+
+
+  <a href="eptas.pdf">[Journal
+
+
+
+
+
+
+
+Submission]</a></li>
+
+
+
+
+
+
+
+  <li><a name="maxnp"></a>P. Crescenzi and L. Trevisan.
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <b>MAXNP-completeness Made Easy.</b> <br>
+
+
+
+
+
+
+
+  <i>Theoretical Computer Science</i>, <b>225</b>(1-2):65-79, 1999. <br>
+
+
+
+
+
+
+
+  <a href="maxnp.pdf">[Journal
+
+
+
+
+
+
+
+Submission]</a></li>
+
+
+
+
+
+
+
+  <li><a name="kst"></a>Sanjeev Khanna, Madhu Sudan,&nbsp; Luca Trevisan and David
+
+
+
+
+
+
+
+Williamson.
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <b>The Approximability of Constraint Satisfaction Problems.</b> <br>
+
+
+
+
+
+
+
+  <i>SIAM J. of Computing, </i><b>30</b>(6):1863-1920, 2001. <br>
+
+
+
+
+
+
+
+  <a href="kstw.pdf">[Journal
+
+
+
+
+
+
+
+Submission]</a></li>
+
+
+
+
+
+
+
+  <li><a name="ckst95"></a>P. Crescenzi, V. Kann, R. Silvestri, and L.
+
+
+
+
+
+
+
+Trevisan.
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <b>Structure in Approximation Classes</b>. <br>
+
+
+
+
+
+
+
+  <i>SIAM J. on Computing</i>, <b>28</b>(5):1759-1782, 1999. <br>
+
+
+
+
+
+
+
+Preliminary version in <i>Proc. of the <a
+
+
+
+
+
+
+
+ href="http://math.uwaterloo.ca/%7Emli/cocoon.html">1st
+
+
+
+
+
+
+
+COCOON</a></i>, 1995. <br>
+
+
+
+
+
+
+
+  <a href="structAPXfull.pdf">[Journal
+
+
+
+
+
+
+
+Submission] </a><a
+
+
+
+
+
+
+
+ href="structAPXclasses.pdf">[Conference
+
+
+
+
+
+
+
+Proceedings]</a> <a
+
+
+
+
+
+
+
+ href="http://theory.stanford.edu/~trevisan/structAPX.html"></a>
+
+
+
+
+
+
+
+  <li>P. Crescenzi and L. Trevisan.
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <b>On Approximation Scheme Preserving Reducibility and its
+
+
+
+
+
+
+
+Applications</b>. <br>
+
+
+
+
+
+
+
+  <i><a href="http://link.springer-ny.com/link/service/journals/00224/">Theory
+
+
+
+
+
+
+
+of Computing Systems</a></i>, <b>33</b>(1):1-16, 2000. <br>
+
+
+
+
+
+
+
+Preliminary version in <i>Proc. of the 14th FSTTCS</i>, 1994. <br>
+
+
+
+
+
+
+
+  <a href="PTAS_Red_Full.pdf">[Journal
+
+
+
+
+
+
+
+Submission]</a> <a
+
+
+
+
+
+
+
+ href="PTAS_RED.pdf">[Conference
+
+
+
+
+
+
+
+Proceedings]</a> <a
+
+
+
+
+
+
+
+ href="http://theory.stanford.edu/~trevisan/ptasred.html"></a></li>
+
+
+
+
+
+
+
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2><a name="pt"></a>Property Testing and Sub-linear Algorithms&nbsp;</h2>
+
+
+
+
+
+
+
+<ol>
+
+
+
+
+
+
+
+  <li> <a name="bt04"></a>A. Bogdanov and L. Trevisan <br>
+
+
+
+
+
+
+
+    <b>Lower Bounds for Testing Bipartiteness in Dense Graphs<br>
+
+
+
+
+
+
+
+    </b>In <i>Proc. of <a
+
+
+
+
+
+
+
+ href="http://www.cs.umass.edu/%7Ebarring/ccc2004/">19th
+
+
+
+
+
+
+
+Computational Complexity Conference</a></i>, IEEE, 2004 <br>
+
+
+
+
+
+
+
+    <a href="bipart.pdf">[Manuscript]</a></li>
+
+
+
+
+
+
+
+  <li> <a name="bot"></a>A. Bogdanov, K. Obata and L. Trevisan <br>
+
+
+
+
+
+
+
+    <b>A Lower Bound for Testing 3-Colorability in Bounded-degree Graphs</b>
+
+
+
+
+
+
+
+    <br>
+
+
+
+
+
+
+
+In <i>Proc. of <a href="http://www.mitacs.math.ca/focs02/">43rd FOCS</a>,</i>
+
+
+
+
+
+
+
+pages 93-102, IEEE, 2002 <br>
+
+
+
+
+
+
+
+    <a href="bot.pdf">[Conference Proceedings]</a></li>
+
+
+
+
+
+
+
+  <li> <a name="ldcpir"></a>O. Goldreich, H. Karloff, L. Schulman, and
+
+
+
+
+
+
+
+L.
+
+
+
+
+
+
+
+Trevisan
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <b>Lower Bounds for Linear Locally Decodable Codes and Private
+
+
+
+
+
+
+
+Information
+
+
+
+
+
+
+
+Retrieval</b> <br>
+
+
+
+
+
+
+
+In <i>Proc. of <a href="http://www.crm.umontreal.ca/CCC/">17th&nbsp;
+
+
+
+
+
+
+
+Computational Complexity Conference</a>, </i>pages 175-183, IEEE, 2002
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <a href="ldc-pir.pdf">[Manuscript]</a> </li>
+
+
+
+
+
+
+
+ <li><a name="oded"></a>Oded
+
+
+
+
+
+
+
+Goldreich and Luca Trevisan
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <b>Three Theorems Regarding Testing Graph Properties<br>
+
+
+
+
+
+
+
+  </b> <i>Random Structures and Algorithms</i>, <b>23</b>(1):23-57,
+
+
+
+
+
+
+
+2003. <br>
+
+
+
+
+
+
+
+Also in <i>Proc. of <a href="http://theory.stanford.edu/focs2001/">42nd
+
+
+
+
+
+
+
+FOCS</a></i>, pages 460-469, IEEE, 2001.<br>
+
+
+
+
+
+
+
+[<a href="gt03.pdf">Full version</a>]</li>
+
+
+
+
+
+
+
+<li><a name="icalp01"></a>Bernard
+
+
+
+
+
+
+
+Chazelle, Ronitt Rubinfeld and Luca
+
+
+
+
+
+
+
+Trevisan  <br>
+
+
+
+
+
+
+
+  <b>Approximating the Minimum Spanning Tree Weight in Sublinear Time</b>
+
+
+
+
+
+
+
+  <br>
+
+<i>SIAM J. on Computing</i> <b>34</b>(6):1370-1379, 2005.<br>
+
+
+
+
+
+Preliminary version in  <i>Proc. of <a
+
+
+
+
+
+
+
+ href="http://www.cti.gr/engl_v/news/sc_conf/icalp.html">28th
+
+
+
+
+
+
+
+ICALP</a>,</i> pages 190-200, Springer-Verlag, 2001. <br>
+
+
+
+
+
+
+
+  <a href="icalp01.pdf">[Conference Proceedings]</a></li>
+
+
+
+
+
+
+
+<li><a name="kt00"></a>J.
+
+
+
+
+
+
+
+Katz and L. Trevisan.
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <b>On the efficiency of local decoding procedures for
+
+
+
+
+
+
+
+error-correcting
+
+
+
+
+
+
+
+codes.</b> <br>
+
+
+
+
+
+
+
+In <i>Proc. of <a href="http://sigact.acm.org/stoc00/">32nd STOC</a></i>,
+
+
+
+
+
+
+
+pages 80-86, ACM, 2000. <br>
+
+
+
+
+
+
+
+  <a href="stoc00kt.pdf">[Conference
+
+
+
+
+
+
+
+proceedings]</a></li>
+
+
+
+
+
+
+
+</ol>
+
+
+
+
+
+
+
+<h2><a name="distrib"></a>Distributed Computing</h2>
+
+<ol>
+
+<li><a name="BCNPT18"></a>   
+    Luca Becchetti, Andrea Clementi, Emanuele Natale, Francesco Pasquale, and Luca Trevisan<br>
+    <b>Finding a Bounded-Degree Expander Inside a Dense One</b><br>
+    <a href=https://arxiv.org/abs/1811.10316>arXiv:1811.10316</a>
+    </li>
+
+    
+    <li><a name="CGNPST18"></a>    Andrea E. F. Clementi, Luciano Guala', Emanuele Natale, Francesco Pasquale, Giacomo Scornavacca, Luca Trevisan<br>
+        <b>Consensus Needs Broadcast in Noiseless Models but can be Exponentially Easier in the Presence of Noise</b><br>
+        <a href=https://arxiv.org/abs/1807.05626>arXiv:1807.05626</a></li>
+
+    
+    
+    <li><a name="BCNPRT17"></a>Luca Becchetti, Andrea E. F. Clementi, Emanuele Natale, Francesco Pasquale, Prasad Raghavendra, Luca Trevisan<br>
+        <b>Average whenever you meet: Opportunistic protocols for community detection</b><br>
+        In <i>Proc. of ESA 2018</i>, pp. 7:1-7:13<br>
+        <a href=https://arxiv.org/abs/1703.05045>arXiv:1703.05045</a>
+
+
+    <li><a name="BCNPT17"></a>
+        Luca Becchetti, Andrea E. F. Clementi, Emanuele Natale, Francesco Pasquale, Luca Trevisan<br>
+        <b>Find Your Place: Simple Distributed Algorithms for Community Detection</b><br>
+        In <i>Proc. of SODA 2017</i><br>
+        <a href=https://arxiv.org/abs/1511.03927>arXiv:1511.03927</a>
+        
+    
+    
+    <li><a name="BCNPT16"></a>
+        Luca Becchetti, Andrea E. F. Clementi, Emanuele Natale, Francesco Pasquale, Luca Trevisan<br>
+        <b>Stabilizing Consensus with Many Opinions</b><br>
+        In <i>Proc. of SODA 2016</i>, pp. 620-635<br>
+        <a href=http://arxiv.org/abs/1508.06782>arXiv:1508.06782</a>
+    
+    
+    
+    <li><a name="BCNPST14"></a>
+        Luca Becchetti, Andrea E. F. Clementi, Emanuele Natale, Francesco Pasquale, Riccardo Silvestri, Luca Trevisan<br>
+        <b>Simple dynamics for plurality consensus</b><br>
+        In <i>Proc. of SPAA 2014</i>, pp. 247-256<br>
+        <a href=http://arxiv.org/abs/1310.2858>arXiv:1310.2858</a>
+
+    
+    
+    <li><a name="CST12"></a>
+        Andrea E. F. Clementi, Riccardo Silvestri, Luca Trevisan<br>
+        <b>Information spreading in dynamic graphs</b><br>
+        <i>Distributed Computing</i> <b>28</b>(1): 55-73 (2015)<br>
+        Also, in <i>Proc. of PODC 2012</i>, pp. 37-46<br>
+        <a href=http://arxiv.org/abs/1111.0583>arXiv:1111.0583</a>
+
+</ol>
+
+
+
+
+
+
+
+
+<h2><a name="misc"></a>Miscellaneous</h2>
+
+
+
+
+
+
+
+<ol>
+
+  <li><a name="CKT18"></a>
+    Charles Carlson, Alexandra Kolla, and Luca Trevisan<br>
+    <b>A Ramsey-type Theorem on the Max-Cut Value of d-Regular Graphs</b><br>
+    <a href=https://arxiv.org/abs/1810.10044>arXiv:1810.10044</a>
+    </li>
+
+<li><a name="BCT"></a>
+    Michele Borassi, Pierluigi Crescenzi, Luca Trevisan<br>
+    <b>An Axiomatic and an Average-Case Analysis of Algorithms and Heuristics for Metric Properties of Graphs</b><br>
+    In <i>Proc. of SODA'17</i><br>
+    <a href=https://arxiv.org/abs/1604.01445>arXiv:1604.01445</a>`
+
+
+<li><a name="NABT"></a>
+    Aran Nayebi, Scott Aaronson, Aleksandrs Belovs, Luca Trevisan<br>
+    <b>Quantum lower bound for inverting a permutation with advice</b><br>
+    <i>Quantum Information and Computation</i> <b>15</b>(11-12): 901-913 (2015)
+
+
+
+
+  <li><a name="tvz04"></a>Luca Trevisan, Salil Vadhan and David
+
+
+
+
+
+
+
+Zuckerman<br>
+
+
+
+
+
+
+
+    <b>Compression of Samplable Sources</b><br>
+
+
+
+
+
+
+
+In <i>Proc. of <a href="http://www.cs.umass.edu/%7Ebarring/ccc2004/">19th
+
+
+
+
+
+
+
+Computational Complexity Conference</a></i>, IEEE, 2004 <br>
+
+
+
+
+
+
+
+    <a href="tvz04.pdf">[Conference Proceedings]</a></li>
+
+
+
+
+
+
+
+  <li>L. Trevisan <br>
+
+
+
+
+
+
+
+    <b>A Note on Deterministic Approximate Counting for k-DNF</b> <br>
+
+
+
+
+
+
+
+    In <i>Proc. of APPROX-RANDOM</i>, pages 417-426,&nbsp; 2004 <br>
+
+
+
+
+
+
+
+    <a href="kcnfcount.pdf">[Preliminary version]</a></li>
+
+
+
+
+
+
+
+  <li>Christian Schallhart, Luca Trevisan<br>
+
+    <b>Approximating Succinct MaxSat</b><br>
+
+    <i>J. Log. Comput</i>. <b>15</b>(4): 551-557, 2005</li> 
+
+
+
+<li><a name="BJKST"></a>
+    
+    Ziv Bar-Yossef, T. S. Jayram, Ravi Kumar, D. Sivakumar, and Luca Trevisan<br>
+    
+    <b> Counting Distinct Elements in a Data Stream</b><br>
+    
+    In <i>Proc. of  RANDOM'02</i>, Springer-Verlag,
+    
+    pages  1-10, 2002<br>
+    [<a href=http://link.springer.com/chapter/10.1007%2F3-540-45726-7_1>Springer Digital Library</a>]
+    
+</li>
+
+
+
+
+  <li>J. Diaz, J. Petit, M. Serna and L. Trevisan
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <b>Approximating Layout Problems on Random Graphs</b> <br>
+
+
+
+
+
+
+
+  <i>Discrete Mathematics, </i><b>235</b>(1-3):245-253, 2001.</li> <li><a
+
+
+
+
+
+
+
+ name="local"></a>L. Trevisan. <br>
+
+
+
+
+
+
+
+    <b>On Local versus Global Satisfiability.</b> <br>
+
+
+
+
+
+
+
+    <i>SIAM
+
+
+
+
+
+
+
+Journal on Discrete Mathematics</i>. <b>17</b>(4):541-547, 2004 <br>
+
+
+
+
+
+
+
+    <a href="local.pdf">[Preliminary
+
+
+
+
+
+
+
+Version]</a></li>
+
+
+
+
+
+
+
+  <li> <a name="plp"></a>L. Trevisan and F. Xhafa.
+
+  <br>
+
+
+
+
+
+
+
+  <b>The Parallel Complexity of Positive Linear Programming.</b> <br>
+
+
+
+
+
+
+
+  <i>Parallel Processing Letters</i>, <b>8</b>(4):527-533, 1998. <br>
+
+
+
+
+
+
+
+  <a href="plp.pdf">[Journal
+
+
+
+
+
+
+
+Submission]</a></li>
+
+
+
+
+
+
+
+  <li>M. Boreale and L. Trevisan.
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <b>A Complexity Analysis of Bisimilarity for Value-Passing Processes</b>.
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <i>Theoretical Computer Science </i><b>238</b>(1-2):313-345, 2000 <br>
+
+
+
+
+
+
+
+Preliminary versions in&nbsp; <i>Proc. of the <a
+
+
+
+
+
+
+
+ href="http://www.ipipan.waw.pl/conferences/mfcs96">21st
+
+
+
+
+
+
+
+MFCS</a></i>, 1996, and in <i>Proc. of the 15th FSTTCS</i>, 1995. <br>
+
+
+
+
+
+
+
+  <a href="BisimFull.pdf">[Journal
+
+
+
+
+
+
+
+Submission]</a></li>
+
+
+
+ <li>L. Trevisan.
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+  <b>A Note on Minimum-Area Upward Drawing of Complete and Fibonacci
+
+
+
+
+
+
+
+Trees.</b> <br>
+
+
+
+
+
+
+
+  <i>Information Processing Letters</i>, <b>57</b>(5):231-236, 1996. <br>
+
+
+
+
+
+
+
+  <a href="alberi.pdf">[Journal
+
+
+
+
+
+
+
+Submission]</a>
+ </li>
+
+ 
+
+ <li>P. Crescenzi and L. Trevisan <br>
+    <b>On the Distributed Decision-Making Complexity of the Minimum
+Vertex Cover Problem.</b> <br>
+
+    <i>RAIRO, Theoretical Informatics and Applications</i>, <b>30</b>:431-441,
+
+1996. <br>
+
+Preliminary version in <i>Proceedings of the 20th WG</i>,1995. <br>
+
+    <a
+
+ href="VertexCoverJournal.pdf">[Journal
+
+
+Submission]</a> <a
+
+ href="VertexCover.pdf">[Conference
+
+Proceedings ]</a> <a
+
+ href="http://theory.stanford.edu/~trevisan/decisionmaking.html"></a></li>
+
+
+
+
+
+
+
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2><a name="surveys"></a>Survey Papers</h2>
+
+
+
+
+
+
+
+<ol>
+
+<li><a name="xroads"></a>
+Luca Trevisan<br>
+<b>Pseudorandomness and derandomization</b><br>
+<i>ACM Crossroads</i> 18(3): 27-31 (2012)<br>
+<a href=http://dl.acm.org/citation.cfm?doid=2090276.2090287>[ACM Digital Library]</a>
+
+<li><a name="ams11"></a>Luca Trevisan<br>
+<b>On Khot's Unique Games Conjecture</b><br>
+<i>Bulletin of the AMS</i> <b>49</b>(1): 91-111,  2012<br>
+<a href=http://www.ams.org/journals/bull/2012-49-01/S0273-0979-2011-01361-1/S0273-0979-2011-01361-1.pdf>[pdf]</a>
+
+
+<li><a name="sigact09"></a>Luca Trevisan<br>
+<b>Additive Combinatorics and Theoretical Computer Science</b><br>
+<i>SIGACT News</i> Complexity Column Number 63, 2009<br>
+<a href="addcomb-sigact.pdf">[pdf]</a>
+
+
+
+  <li><a name="acc"></a>Andrej Bogdanov and Luca Trevisan<br>
+
+    <b>Average-Case Complexity</b><br>
+<i>Foundations and Trends in Theoretical Computer Science</i> <b>1</b>(2), 2006<br>
+    <a href="http://arxiv.org/abs/cs.CC/0606037">arXiv:cs/0606037</a>
+
+
+
+
+
+
+
+  </li>
+
+
+
+
+
+
+
+  <li><a name="pacc"></a>Luca Trevisan<br>
+
+    <b>Pseudorandomness and Combinatorial Constructions<br>
+
+    </b>In <i>Proceedings of ICM 2006</i><br>
+
+    <a href="http://arxiv.org/abs/cs.CC/0601100">arXiv:cs/0601100</a>
+
+
+
+
+
+
+
+  </li>
+
+
+
+
+
+
+
+  <li><a name="approxsurvey"></a>Luca Trevisan<br>
+
+
+
+
+
+
+
+    <b>Inapproximability of Combinatorial Optimization Problems</b><br>
+
+
+
+
+
+
+
+    French version (translation by Bruno Escoffier) appeared in <i>Optimisation
+
+    Combinatiore 2</i>, (Vangelis Paschos, Editor), Hermes, 2005<br>
+
+
+
+
+
+
+
+    English version:  <a href="inapprox.pdf">[pdf]</a>
+
+
+
+
+
+
+
+  </li>
+
+
+
+
+
+
+
+  <li><a name="codingsurvey"></a>Luca Trevisan<br>
+
+
+
+
+
+
+
+    <b>Some Applications of Coding Theory
+
+
+
+
+
+
+
+in Computational Complexity<br>
+
+
+
+
+
+
+
+    </b><i>Survey Paper</i><br>
+
+
+
+
+
+
+
+ <i>Quaderni di Matematica </i><b>13</b>:347-424, 2004<br>
+
+
+
+
+
+
+
+Final version:
+
+
+
+
+
+
+
+ href="codingsurvey.pdf">[pdf]</a> </li>
+
+
+
+
+
+
+
+  <li>Luca&nbsp; Trevisan<br>
+
+
+
+
+
+
+
+    <b>Error-Correcting Codes and Pseudorandom Projections</b> <br>
+
+
+
+
+
+
+
+    <i>Invited Talk</i> <br>
+
+
+
+
+
+
+
+Abstract in <i>Proc. of RANDOM-APPROX, </i>pp. 7-9, 2001</li>
+
+
+
+
+
+
+
+  <li>Luca Trevisan <br>
+
+
+
+
+
+
+
+    <b>A Survey of Optimal PCP Characterizations of NP</b> <br>
+
+
+
+
+
+
+
+    <i>Tutorial</i> <br>
+
+
+
+
+
+
+
+Abstract in <i>Proc. of 15th IEEE Conference on Computational
+
+
+
+
+
+
+
+Complexity
+
+
+
+
+
+
+
+(CCC'00)</i>, pp. 146-148, 2000</li>
+
+
+
+
+
+
+
+  <li>Luca&nbsp; Trevisan. <br>
+
+
+
+
+
+
+
+    <b>Interactive and probabilistic proof-checking</b> <br>
+
+
+
+
+
+
+
+    <i>Survey paper</i> <br>
+
+
+
+
+
+
+
+In <i>Annals of Pure and Applied Logic</i>, <b>104</b>:325-342, 2000 <br>
+
+
+
+
+
+
+
+    <a href="apal.pdf">[Final
+
+
+
+
+
+
+
+version]</a></li>
+
+
+
+
+
+
+
+  <li>Andrea E.F. Clementi, Jose D.P. Rolim and Luca Trevisan. <br>
+
+
+
+
+
+
+
+    <b>Recent Advances Towards Proving P=BPP</b> <br>
+
+
+
+
+
+
+
+    <i>Survey paper</i> <br>
+
+
+
+
+
+
+
+    <i>Bulletin of the EATCS</i>, <b>64</b>:96-103, 1998. <br>
+
+
+
+
+
+
+
+    <a href="eatcs.pdf">[Final
+
+
+
+
+
+
+
+version]</a></li>
+
+
+
+
+
+
+
+  <li>Jose D.P. Rolim and Luca Trevisan. <br>
+
+
+
+
+
+
+
+    <b>A Case Study of De-randomization Methods for Combinatorial
+
+
+
+
+
+
+
+Approximation
+
+
+
+
+
+
+
+Problems</b> <br>
+
+
+
+
+
+
+
+    <i>Survey paper</i> <br>
+
+
+
+
+
+
+
+    <i>Journal of Combinatorial Optimization</i>, <b>2</b>(3):219-236,
+
+
+
+
+
+
+
+1998. <br>
+
+
+
+
+
+
+
+    <a href="dimacs97.pdf">[Final
+
+
+
+
+
+
+
+version]</a></li>
+
+
+
+
+
+
+
+</ol>
+
+
+
+
+
+
+
+<hr width="100%">
+
+
+
+
+
+
+
+<h2>Grants and Copyright</h2>
+
+
+
+
+
+
+
+<a name="grants"></a>
+
+
+
+Some of these papers were based upon work supported by the National
+Science Foundation under Grants No. CCF-0729137, CCF-9984703, CCF-1161812, CCF-1216642, by the Sloan Foundation, by the Okawa Foundation, and by the US-Israel Binational Science Foundation.
+
+
+
+
+
+
+
+Any opinions, findings and conclusions or recomendations expressed in
+
+
+
+
+
+
+
+this
+
+
+
+
+
+
+
+material are those of the author(s) and do not necessarily reflect the
+
+
+
+
+
+
+
+views of the National Science Foundation (NSF) or of the Sloan
+
+
+
+
+
+
+
+Foundation, of the Okawa Foundation, or of the US-Israel BSF.
+
+
+
+
+
+
+
+<p>
+
+
+
+<a name="cr"></a>
+
+
+
+This material is presented to ensure timely dissemination of
+
+
+
+
+
+
+
+scholarly
+
+
+
+
+
+
+
+and technical work. Copyright and all rights therein are retained by
+
+
+
+
+
+
+
+authors
+
+
+
+
+
+
+
+or by other copyright holders. All persons copying this information are
+
+
+
+
+
+
+
+expected to adhere to the terms and constraints invoked by each
+
+
+
+
+
+
+
+author's
+
+
+
+
+
+
+
+copyright.&nbsp; These works may not be reposted without the explicit
+
+
+
+
+
+
+
+permission
+
+
+
+
+
+
+
+of the copyright holder.&nbsp; Also, some of these works have been
+
+
+
+
+
+
+
+submitted
+
+
+
+
+
+
+
+for publication. Copyright may be transferred without further notice
+
+
+
+
+
+
+
+and
+
+
+
+
+
+
+
+this version may no longer be accessible.
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr width="100%">
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>
+
+
+
+
+
+
+
