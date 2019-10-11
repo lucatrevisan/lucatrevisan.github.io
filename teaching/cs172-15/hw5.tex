@@ -1,0 +1,77 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+\input{macros}
+\begin{document}
+
+
+
+
+
+
+\ptitle{Problem Set 5}{February 26, 2015}
+
+
+This problem set is due on Friday, March 6, by 5pm. Please submit your solution online using bcourses,
+as a pdf file. 
+
+You can type your solution, or handwrite it. If you handwrite it, then either
+scan it or take a good resolution picture of each page and then collate the pictures
+and export them to a {\em single} pdf file.
+
+\bigskip
+
+\hrule
+
+
+
+\subsection*{Instructions}
+
+\noindent Please follow the provided format.
+The grading rubric is written based on the provided format.\\
+
+\noindent You may use without proof that neither $\overline{A_{TM}}$ nor $\overline{H_{TM}}$ is recognizable where
+  $A_{TM} = \{ \langle M, x \rangle \mid M(x) \text{ accepts} \}$ and
+  $H_{TM} = \{ \langle M, x \rangle \mid M(x) \text{ halts} \}$.
+
+
+
+
+
+
+\subsection*{Problem 1: Regex Decidability (30)}
+Let $A =  \{ \langle R, S\rangle \mid R \text{ and } S \text{ are regular expressions and } L(R) \subseteq L(S) \}$.
+Construct an algorithm that decides $A$. You need to prove that your algorithm (a) is correct and (b) always terminates.\\
+
+\noindent \emph{Hint: describe and analyze an algorithm that, given $R$ and $S$,
+    constructs a DFA $M_{R,S}$ such that $L(R) \subseteq L(S)$ if and only if
+    $M_{R,S}$ rejects every input. You can then use (withouth proof) the
+    fact there is a polynomial time algorithm that, given a DFA $M$, decides
+    whether M rejects every input.
+}
+
+
+\subsection*{Problem 2: TM Recognizability (30)}
+Let $A = \{ \langle R, S\rangle \mid R \text{ and } S \text { are TMs and } L(R) \subseteq L(S) \}$.
+In this multipart problem, we will prove that neither $A$ nor $\overline{A}$ is Turing-recognizable.
+\begin{enumerate}[(a)]
+  \item (15 points) Show that given a recognizer for $A$, you can devise a recognizer for $\overline{A_{TM}}$.
+  \item (15 points) Show that given a recognizer for $\overline{A}$, you can devise a recognizer for $\overline{A_{TM}}$.
+\end{enumerate}
+
+
+\subsection*{Problem 3: Bounded Recognizability (40)}
+Let $L = \{ \langle M \rangle \mid \text{ for all strings } x, M(x) \text{ halts within } |x|^2 \text { steps } \}$, where $|x|$ 
+denotes the length of a string $x$.
+In this multipart problem, we will prove that $L$ is not recognizable, but $\overline{L}$ is recognizable.
+\begin{enumerate}[(a)]
+  \item (10 points) Design a recognizer for $\overline{L}$.
+  \item (30 points) Show that given a recognizer for $L$, you can devise a recognizer for $\overline{H_{TM}}$.
+\end{enumerate}
+
+\end{document}
+
+

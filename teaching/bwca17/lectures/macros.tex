@@ -1,0 +1,136 @@
+%%%%%%%%% For WordPress conversion
+
+\newif\ifblog
+\newif\iftex
+\blogfalse
+\textrue
+
+\def\more{}
+
+
+\usepackage{ulem}
+\def\em{\it}
+\def\emph#1{\textit{#1}}
+
+\def\image#1#2#3{\begin{center}\includegraphics[#1pt]{#3}\end{center}}
+
+\let\hrefnosnap=\href
+
+\newenvironment{btabular}[1]{\begin{tabular} {#1}}{\end{tabular}}
+
+\newenvironment{red}{\color{red}}{}
+\newenvironment{green}{\color{green}}{}
+\newenvironment{blue}{\color{blue}}{}
+
+
+
+%%%%%%%%% Complexity classes
+
+\def\np{{\bf NP}}
+\def\p{{\bf P}}
+\def\bpp{{\bf BPP}}
+\def\pp{{\bf PP}}
+\def\bqp{{\bf BQP}}
+\def\rp{{\bf RP}}
+\def\zpp{{\bf ZPP}}
+\def\sharpp{{\bf \#P}}
+\def\tsat{3SAT}
+\newcommand{\et}{{\bf E}}
+\newcommand{\expt}{{\bf EXP}}
+\def\dtime{{\bf DTIME}}
+\def\ntime{{\bf NTIME}}
+\def\size{{\bf SIZE}}
+
+
+%%%%%%%%% Typesetting shortcuts
+
+\def\B{\{0,1\}}
+\def\xor{\oplus}
+
+\def\P{\mathop{\mathbb P}}
+\def\E{\mathop{\mathbb E}}
+\def\var{{\bf Var}}
+
+\def\N{{\mathbb N}}
+\def\Z{{\mathbb Z}}
+\def\R{{\mathbb R}}
+\def\G{{\mathbb G}}
+\def\C{{\mathbb C}}
+\def\F{{\mathbb F}}
+\newcommand{\zigzag}{{\mbox{\textcircled{z}}}}
+\newcommand{\replace}{{\mbox{\textcircled{r}}}}
+
+
+\def\bu{{\bf u}}
+\def\bp{{\bf p}}
+\def\bq{{\bf q}}
+\def\bx{{\bf x}}
+\def\by{{\bf y}}
+\def\bz{{\bf z}}
+\def\bw{{\bf w}}
+\def\bv{{\bf v}}
+\def\bone{{\bf 1}}
+\def\bzero{{\bf 0}}
+
+\def\true{{\tt true}}
+\def\false{{\tt false}}
+
+%%%%%%%%% Theorems and proofs
+
+\newtheorem{exercise}{Exercise}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{question}{Question}
+\newenvironment{proof}{\noindent {\sc Proof:}}{$\Box$ \medskip} 
+
+
+%%%%%%%%% To typeset the header
+
+\def\courseprof{Luca Trevisan}
+\def\coursenum{CS294}
+\def\coursename{Beyond Worst-Case Analysis}
+
+\newlength{\tpush}
+\setlength{\tpush}{2\headheight}
+\addtolength{\tpush}{\headsep}
+
+
+\newcommand{\handout}[3]{\noindent\vspace*{-\tpush}\newline\parbox{\textwidth}
+{U.C. Berkeley  --- \coursenum : \coursename \hfill Handout #1 \newline
+\courseprof \hfill #2 \newline
+\mbox{}\hrulefill\mbox{}}\vspace*{1ex}\mbox{}\newline
+\bigskip
+\begin{center}{\Large\bf  #3}\end{center}
+\bigskip}
+
+\newcommand{\classnotes}[2]{\handout{N#1}{#2}{Notes for Lecture #1}}
+
+\newcommand{\problemset}[2]{\noindent\vspace*{-\tpush}\newline\parbox{\textwidth}
+{U.C. Berkeley --- \coursenum : \coursename \hfill Handout #1 \newline
+\courseprof \hfill #2 \newline
+\mbox{}\hrulefill\mbox{}}\vspace*{1ex}\mbox{}\newline
+\bigskip
+\bigskip}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

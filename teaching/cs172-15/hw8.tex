@@ -1,0 +1,54 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mdwlist}
+
+\input{macros}
+\begin{document}
+
+
+
+
+
+
+\ptitle{Problem Set 8}{March 19, 2015}
+
+This problem set is due on Friday, April 3rd, by 5pm. Please submit your solution online using bcourses,
+as a pdf file. You can type your solution, or handwrite it. If you handwrite it, then either
+scan it or take a good resolution picture of each page and then collate the pictures
+and export them to a {\em single} pdf file.
+
+\bigskip
+
+\hrule
+
+\subsection*{Problem 1: NFA Minimization (30)}
+In the NFA minimization problem, we are given a NFA $N_1$ and want to output a NFA $N_2$
+that accepts the same language using as few states as possible.\\
+
+\noindent Prove that if there is a polynomial time for NFA minimization,
+then P = NP.
+
+\subsection*{Problem 2: ExactClique is both NP-hard and coNP-hard (30)}
+
+Let $ExactClique = \{ \langle G, k \rangle \mid \text{ the largest clique in } G \text{ is of size exactly } k \}$.\\
+
+\noindent Prove that $ExactClique$ is both NP-hard and coNP-hard.
+
+
+\subsection*{Problem 3: Circuit Minimization (40)}
+\noindent In the Circuit Minimization problem (CircuitMin),
+we are given a boolean circuit $C_1$, and want to output a boolean circuit $C_2$
+that accepts the same language using as few gates as possible.
+In situations where multiple circuits of minimal size exists,
+outputting any circuit of minimal size is acceptable.
+Assume the only available gates are: {\bf and :: $ \{0,1\} \times \{0,1\} \rightarrow \{0,1\}$, 
+or :: $ \{0,1\} \times \{0,1\} \rightarrow \{0,1\}$, not :: $ \{0,1\} \rightarrow \{0,1\}$}.\\
+
+\noindent Prove that P = NP if and only if CircuitMin can be solved in polynomial time.\\
+
+
+
+\end{document}

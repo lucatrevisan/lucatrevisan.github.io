@@ -1,0 +1,92 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mdwlist}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+
+\input{macros}
+
+
+
+
+\begin{document}
+
+
+\ptitle{Pactice Final}{April  30, 2015}
+
+\subsection*{Problem 1}
+
+Prove there exists an infinite sequence of languages $L_1, L_2, ...$ such that:
+
+\begin{itemize}
+  \item For every  $i$, $L_i$ is neither recognizable nor co-recognizable
+  \item $L = \cap_i L_i$ is regular
+  \item $|L| = \infty$
+\end{itemize}
+
+\newpage
+\subsection*{Problem 2}
+
+Prove: $NEXP \neq EXP \Rightarrow NP \neq P$
+
+\newpage
+\subsection*{Problem 3}
+
+Prove: $P = NP$ iff there exists $k,l > 2$ such that $NTime(O(n^k)) \subseteq DTime(O(n^l))$
+
+\newpage
+\subsection*{Problem 4}
+
+For $f: \{0,1\}^n \rightarrow \{0,1\}$, let $size(f)$
+be the size of the smallest circuit which implements function $f$.\\
+
+\noindent Prove: forall $T(n) \leq 2^n/1000n$, there exists $f:\{0,1\}^n \rightarrow \{0,1\}$ such that $T(n) \leq size(f) \leq T(n) + 10n$.\\
+
+
+\noindent You can use the fact that for every $n$, there are functions $f:\{0,1\}^n \rightarrow \{0,1\}$ that
+can not be computed by circuits of size $< 2^n / 1000n$.
+
+
+\newpage
+\subsection*{Problem 5}
+
+Let $K(x)$ be the Kolmogorov complexity of $x$.\\
+Let $X_n$ be the set of all TMs $M$ where (1) $|Q| + |\Gamma| \leq n$ and
+(2) $M$ halts on the empty input.\\
+Let $BB(n)$ be the longest time any TM in $X_n$ runs on the empty input.\\
+
+\noindent Design an algorithm $A$ such that $A^{BB}(x) = K(x)$. ($A$ is granted a blackbox routine
+that computes $BB$, and is allowed to query it.)
+
+\newpage
+\subsection*{Problem 6}
+
+An Eulerian cycle of an undirected graph is a cycle that visits every edge exactly once.\\
+
+\noindent For every integer $n$, consider the streaming complexity of the problem of deciding whether a graph
+on $n$ vertices, given by a stream of edges, has an Eulerian cycle.\\
+
+\noindent That is, for a set $n$ vertices $V$, our alphabet $\Sigma = \{\{v1, v2\} \mid v1, v2 \in V, v1 \neq v2\}$ is all possible
+(undirected) edges between these vertices and our stream is a sequence of these edges. If we call
+the set of each edge in this stream $E$, then $G = (V, E)$ is the undirected graph defined by it. We
+want a streaming algorithm that takes the stream and computes whether or not $G$ has an Eulerian cycle.
+Show that the bits of memory required for a streaming algorithm for this problem is $\Omega(n)$.
+
+\newpage
+\subsection*{Problem 7}
+
+Undirected graphs $G$ and $H$ are isomorphic iff there exist a bijection $f : G_V \rightarrow H_V$
+such that $(u,v) \in G_E$ iff $(f(u), f(v)) \in H_E$.\\
+
+\noindent Let $L = \{\langle G, H \rangle | (G, H) \mbox{ are isomorphic } \}$.\\
+
+\noindent Define a zero-knowledge protocol for $L$.\\
+
+\noindent Prove that it is complete, sound, and perfect zero-knowledge.\\
+
+\noindent \emph{Hint: Prover sends a permuted graph. Verifier sends a bit. Prover sends a permutation.}
+
+\end{document}

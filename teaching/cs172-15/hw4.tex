@@ -1,0 +1,47 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mdwlist}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{enumerate}
+
+
+\input{macros}
+
+
+\begin{document}
+\ptitle{Problem Set 4}{February 12, 2015}
+This problem set is due on Friday, February 20, by 5pm. Please submit your solution online using bcourses,
+as a pdf file.
+You can type your solution, or handwrite it. If you handwrite it, then either
+scan it or take a good resolution picture of each page and then collate the pictures
+and export them to a {\em single} pdf file.
+\bigskip
+\hrule
+
+
+
+\section*{Problem 1 (35/100)}
+For every integer $n$, consider the streaming complexity of the problem of deciding whether a graph on $n$ vertices, given by a stream of edges, is connected. 
+
+That is, for a set $n$ vertices $V$, our alphabet $\Sigma=\{\{v_1,v_2\}| v_1,v_2\in V,$ $v_1\neq v_2\}$ is all possible (undirected) edges between these vertices  and our stream is a sequence of these edges.  If we call the set of each edge in this stream $E$, then $G=(V,E)$ is the undirected graph defined by it.  We want a streaming algorithm that takes the stream and computes whether or not $G$ is connected.
+
+Show that the bits of memory required for a streaming algorithm for this problem is $\Omega(n)$.
+
+\section*{Problem 2 (30/100)}
+Create a Turing Machine that can decide the language of palindromes 
+
+$L=\{x\in\Sigma^*=\{a,b\}^*|x= $reverse$(x)\}$ 
+
+\noindent(Note that this was impossible with DFAs)
+
+\section*{Problem 3:  (35/100)}
+Consider a read-only Turing Machine; that is, a Turing Machine that cannot write to the tape.  Formally, this means that the transition function's output is no longer a triple since it can no longer write a symbol from $\Gamma$ to the tape and instead only transitions to a different state and moves left or right on the tape.  So, $\delta: Q \times \Gamma \rightarrow Q \times \{L,R\}$ and, moreover, $\Gamma=\Sigma\cup\{\square\}$ since there are no ``special" symbols for the Turing Machine to write.
+
+Equivalently, a read-only Turing Machine may be thought of as a regular Turing Machine whose transition function is defined so that the only thing it can write is what it just read: $\forall\gamma\in\Gamma$ $\delta(q,\gamma)=(q',\gamma,direction)$.  In this way writing is superfluous and all of its power is from reading the tape and being able to move both left and right.
+
+Show that, despite the ability to move backwards on the tape, a read-only Turing Machine (according to either definition) can only decide regular languages.
+
+\end{document}

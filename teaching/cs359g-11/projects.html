@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+  <title>CS359G: Graph Partitioning and Expanders | Projects</title>
+  <style>
+
+
+
+body{margin:10px 10px 10px 10px;width: 1000px; font-family:sans-serif;background-color:#FFFFFb;}
+
+
+
+a{text-decoration:none}
+
+
+
+a:link{color:#4444aa;}
+
+
+
+a:visited{color:#4444aa;}
+
+
+
+a:hover{background-color:#aaaaFF;}
+
+
+
+li{line-height : 130%;}
+
+
+
+  </style>
+</head>
+<body>
+<h1>
+Suggested Topics for Projects</h1>
+
+(Note: when multiple papers are listed under a subject, usually each one of the papers has enough content for a final project by itself.)
+
+<h3>On Spectral Graph Theory and Sparsest Cut</h3>
+
+<ul>
+
+<li>Spielman and Teng have a beautiful result giving bounds on the second eigenvalue of bounded-degree planar graphs. Their result implies that the spectral partitioning algorithm finds cuts comparable in quality to those promised by the planar separator theorem.
+
+<ul>
+<li>Daniel A. Spielman, Shang-Hua Teng: Spectral Partitioning Works: Planar Graphs and Finite Element Meshes. FOCS 1996: 96-105
+</ul>
+
+<li>There are at least three approaches to proving the following result: if a graph has a sparsest cut of sparsity eps, then we can find a set S which defines a cut of sparsity O(sqrt(eps) * log n), in time quasi-linear in |S| and polynomial in 1/eps. It is a long-standing open question to remove the logn error term in the sparsity of the solution. (A paper of Fan Chung claims to remove the logn error using a random-walk-like process that she calls (discrete) "heat kernel", but the claim has been retracted.) 
+
+<ul>
+
+<li>Daniel A. Spielman, Shang-Hua Teng: A Local Clustering Algorithm for Massive Graphs and its Application to Nearly-Linear Time Graph Partitioning CoRR abs/0809.3232: (2008)
+
+<li>Reid Andersen, Fan R. K. Chung, Kevin J. Lang: Local Graph Partitioning using PageRank Vectors. FOCS 2006: 475-486
+
+
+<li>Reid Andersen, Yuval Peres: Finding sparse cuts locally using evolving sets. STOC 2009: 235-244
+</ul>
+
+<li>Arora, Barak and Steurer develop subexponential algorithms for unique games via the following variant of Cheeger's inequality: if (the normalized adjacency matrix of) a graph has k eigenvalues bigger than 1-eps, then there is a set of sparsity at most sqrt(eps/a) and size at most n^(1+a)/k. The algorithm uses a random-walk approach which is not unlike the local partitioning algorithm of Spielman and Teng, but the locality is used to argue that the set is small, rather than arguing that the set is large. This is useful because of an idea of Kolla about solving unique games in (instances in which the constraints define) graphs in which few eigenvalues are large. This approach is further developed in a later paper of Steurer.
+
+<ul>
+
+<li>Alexandra Kolla: Spectral Algorithms for Unique Games. IEEE Conference on Computational Complexity 2010: 122-130
+
+<li>Sanjeev Arora, Boaz Barak, David Steurer: Subexponential Algorithms for Unique Games and Related Problems. FOCS 2010: 563-572
+
+<li>David Steurer. Subexponential algorithms for d-to-1 two-prover games and to certify almost-perfect expansion. Available from Steurer's home page.
+
+</ul>
+
+<li>There has been a lot of beautiful work on using spectral techniques to find "sparsifiers" of graphs, that is sparse graphs that "approximate" a given graph in a certain useful sense.
+
+<ul>
+
+<li>Daniel A. Spielman, Shang-Hua Teng: Spectral Sparsification of Graphs CoRR abs/0808.4134: (2008)
+
+<li>Daniel A. Spielman, Nikhil Srivastava: Graph Sparsification by Effective Resistances CoRR abs/0803.0929: (2008)
+
+<li>Joshua D. Batson, Daniel A. Spielman, Nikhil Srivastava: Twice-ramanujan sparsifiers. STOC 2009: 255-262
+
+</ul>
+
+</ul>
+
+<h3>On Expander Graphs</h3>
+
+<ul>
+
+<li>The zig-zag graph product, when applied to Cayley graphs, constructs Cayley graphs, and it corresponds to a known type of "product" for groups. This connection has provided a counterexample to the conjecture that if a family of groups yields constant-degree expanders for a set of generators, it does so for every finite sets of generators.
+
+<ul>
+
+<li>Noga Alon, Alexander Lubotzky, Avi Wigderson: Semi-Direct Product in Groups and Zig-Zag Product in Graphs: Connections and Applications. FOCS 2001: 630-637
+
+</ul>
+
+<li>Bilu and Linial prove a very nice "converse" to the expander mixing lemma.
+
+<ul>
+<li>Yonatan Bilu, Nathan Linial: Constructing Expander Graphs by 2-Lifts and Discrepancy vs. Spectral Gap. FOCS 2004: 404-412
+</ul>
+
+</ul>
+
+<h3>On Random Walks and Approximate Counting</h3>
+
+coming soon
+
+</body>
+</html>

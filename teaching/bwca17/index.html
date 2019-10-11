@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+      <title>CS294: Beyond Worst-Case Analysis</title>
+  <style>
+
+
+
+body{margin:10px 10px 10px 10px;width: 1000px; font-family:sans-serif;background-color:#FFFFFF;}
+
+
+
+a{text-decoration:none}
+
+
+
+a:link{color:#4444aa;}
+
+
+
+a:visited{color:#4444aa;}
+
+
+
+a:hover{background-color:#aaaaFF;}
+
+
+
+li{line-height : 130%;}
+
+
+
+  </style>
+</head>
+<body>
+<h1>
+    CS294-134 &mdash; Beyond Worst-Case Analysis &mdash; Fall 2017</h1>
+
+<p><b><a href="#info">[general info]</a>&nbsp;</b>
+<b><a href="#notes">[lecture notes]</a> <a href="#ex">[exams and projects]</a></b>
+<br>
+</p>
+<hr width="100%">
+
+<H2>What's new</h2>
+
+<ul>
+    <li>10/31. <a href=lectures/lecture14.pdf>Notes for Lecture 14</a>, <a href=lectures/lecture18.pdf>Notes for Lecture 18</a>
+    <li>10/23.<a href=lectures/lecture12.pdf>Notes for Lecture 12</a>, updated plan for future lectures</li>
+    <li>10/18.<a href=lectures/lecture16.pdf>Notes for Lecture 16</a></li>
+<li>10/12.<a href=lectures/lecture10.pdf>Notes for Lecture 10</a></li>
+<li>10/7. <a href=lectures/lecture07v2.pdf>Notes for Lecture 7</a></li>
+    <li>10/3. <a href=lectures/lecture05v3.pdf>updated notes for Lecture 5</a>, <a href=lectures/lecture11.pdf>Notes for Lecture 11</a>
+    <li>9/28. <a href=lectures/lecture05.pdf>Notes for Lecture 5</a>
+    <li>9/27. <a href=lectures/lecture09.pdf>Notes for Lecture 9</a>, update to <a href=lectures/lecture08.pdf>Notes for Lecture 8</a></li>
+    <li>9/22.<a href=lectures/lecture08.pdf>Notes for Lecture 8</a></li>
+    <li>9/21.<a href=lectures/lecture06.pdf>Notes for Lecture 6</a></li>
+        <li>9/16.<a href=lectures/lecture04.pdf>Notes for Lecture 4</a></li>
+    <li>9/13. <a href=lectures/lecture06s.pdf>Summary of Lecture 6</a>
+    <li>9/11.<a href=lectures/lecture05s.pdf>Summary of Lecture 5</a>
+    <li>9/8. <a href=lectures/lecture02.pdf>Notes for Lecture 2</a> and <a href=lectures/lecture03.pdf>Notes for Lecture 3</a>
+    <li>9/7. <a href=lectures/lecture04s.pdf>Summary of Lecture 4</a>
+    <li>8/31. <a href=lectures/lecture03s.pdf>Summary of Lecture 3</a>
+    <li>8/30. <a href=lectures/lecture02s.pdf>Summary of Lecture 2</a>
+<li> 8/28. <a href=lectures/lecture01.pdf>Notes for Lecture 1</a>
+<li>4/24. Page created
+</ul>
+
+
+
+<hr width="100%">
+
+
+<h2><a name="info"></a>general information</h2>
+<p><br>
+<b>Instructor</b>: <a href="http://www.eecs.berkeley.edu/~luca/">Luca
+Trevisan</a>,  625 Soda Hall, email <i>luca at berkeley dot edu</i>
+<p>
+<p><b>Classes</b> are TuTh, 3:30-5pm, in 310 Soda
+</p>
+<p><b>Office hours</b>: Wednesdays 2-3pm, 625 Soda Hall (Starting August 30)
+<p>
+<b>Piazza</b>: <a href=https://piazza.com/berkeley/fall2017/cs294134>piazza.com/berkeley/fall2017/cs294134</a>
+</p>
+
+
+<p>
+
+<h3>About the course</h3>
+
+Worst-case analysis sometimes overestimates the difficulty of certain problems in practice.
+
+In this course we will review more refined methods for the analysis of algorithms, including average-case analysis for random instances, analysis of distributions with a "planted" solution, semi-random models which combine random and adversarial choices, and machine learning problems in which the input is a collection of iid samples from an arbitrary unknown distribution.
+
+We will conclude with a brief overview of the theory of average-case complexity, and the evidence that we have that certain problems remain hard even when analyzed with respect to natural classes of distributions.
+
+Here is a tentative list of topics that we will cover:
+
+<ul>
+    <li>Properties of random graphs</li>
+    <li>Cliques in random graphs</li>
+    <li>Independent sets in random graphs</li>
+    <li>Planted bisection and the stochastic block model</li>
+    <li>Recovering a planted sparse vector in a random subspace</li>
+    <li>Matrix completion</i>
+    <li>Finding cuts in semi-random graph models</li>
+    <li>Stable cuts and stable clustering</li>
+    <li>Compressed sensing, LP decoding, and sparse FFT</li>
+    <li>Smoothed analysis of the simplex</li>
+    <li>Randomized hashing of worst-case data vs deterministic hashing of random data</li>
+    <li>An introduction to average-case complexity</li>
+</ul>
+
+
+<p>
+
+<b>Prerequisites:</b> CS170 or equivalent, a good understanding of discrete probability.
+<p>
+
+<b>Assignments:</b> scribing one lecture, a take-home midterm exam, a final project.
+
+<hr>
+
+<h3>References</h3>
+
+The main reference will be a set of lecture notes. Our course will have a large overlap with <a href=http://theory.stanford.edu/~tim/f14/f14.html>this course</a>, for which videos and lecture notes are available.
+
+<hr>
+
+<h3>Lectures</h3>
+
+<ol>
+
+<li>8/24. Introduction, clique in random graphs. <br>
+    [<a href="lectures/lecture01.pdf">notes</a>]</li>
+
+<p>
+
+<li>8/29. Max Cut in random graphs, Independent set in sparse random graphs.
+    <br>[<a href="lectures/lecture02s.pdf">summary</a>] [<a href=lectures/lecture02.pdf>notes</a>]</li>
+
+<p>
+
+<li>8/31. Independent set and Max Cut in sparse random graphs.<br>
+    [<a href="lectures/lecture03s.pdf">summary</a>] [<a href=lectures/lecture03.pdf>notes</a>]</li>
+
+<p>
+
+<li>9/5. Semidefinite programming and the SDP relaxation of Max Cut.<br>
+    [<a href="lectures/lecture04s.pdf">summary</a>] [<a href="lectures/lecture04.pdf">notes</a>]</li>
+
+<p>
+
+<li>9/7. Optimal bounds for Max Cut in random graphs using the SDP relaxation.<br>
+    [<a href="lectures/lecture05s.pdf">summary</a>] [<a href="lectures/lecture05v3.pdf">notes</a>]</li>
+
+<p>
+
+<li>9/12. Understanding the spectrum of the adjacency matrix of a random graph.<br>
+    [see section 5 and 6 in <a href=https://terrytao.wordpress.com/2010/01/09/254a-notes-3-the-operator-norm-of-a-random-matrix/>these notes</a>]
+    [<a href=<a href=lectures/lecture06s.pdf>summary</a>]
+    [<a href="lectures/lecture06.pdf">notes</a>]</li>
+
+<p>
+
+<li>9/14. Finding planted cliques in random graphs. Introduction to random k-SAT.<br>
+    [See <a href=http://www.math.tau.ac.il/~nogaa/PDFS/clique3.pdf>this paper</a> for the planted clique algorithms]<br>
+[<a href=lectures/lecture07v2.pdf>notes</a>]</li>
+
+<p>
+
+<li>9/19. More about certifying the unsatisfiability of random k-SAT.<br>
+   [<a href=http://dl.acm.org/citation.cfm?id=696009>this</a> is the paper introducing the reduction from certifying unsatisfiability of random k-SAT to certifying upper bounds
+   to independent set in random graphs]<br>
+   [<a href=http://onlinelibrary.wiley.com/doi/10.1002/rsa.20089/abstract>this</a> is the Feige-Ofek paper on spectral properties of random graphs with constant average degree]<br>
+    [<a href="lectures/lecture08.pdf">notes (updated 9/27)</a>]</li>
+
+
+
+<p>
+
+<li>9/21. Introducing the stochastic block model.<br>
+    [<a href="lectures/lecture09pdf">notes</a>]</li>
+
+<p>
+
+<li>9/26. Matrix norms other than the spectral norm, and Grothendieck's inequality.<br>
+    [<a href="lectures/lecture10.pdf">notes</a>]</li>
+
+<p>
+
+<li>9/28. Approximate reconstruction in the stochastic block model<br>
+    See also <a href=https://arxiv.org/abs/1411.4686>this paper</a><br>
+    [<a href="lectures/lecture11.pdf">notes</a>]</li>
+
+<p>
+
+<li>10/3. Exact reconstruction in the stochastic block model<br>
+    See <a href=https://arxiv.org/pdf/1405.3267.pdf> this paper</a> and <a href=http://math.mit.edu/~bandeira/2015_18.S096_9_Stochastic_Block_Model.pdf>these notes</a><br>
+    [<a href="lectures/lecture12.pdf">notes</a>]</li>
+
+<p>
+
+<li>10/5. Exact reconstruction in the stochastic block model, continued<br>
+    [notes in preparation]</li>
+
+<p>
+
+<li>10/10. Exact reconstruction in the stochastic block model, conclusion. Semi-random models for cut problems<br>
+    [<a href="lectures/lecture14.pdf">notes</a>]</li>
+
+
+        <p>
+
+<li>10/12. Notions of "stability" for cut and clustering problem. Certifying that a random linear subspace has no sparse vector.<br>
+    The first part of the lecture referenced:
+    <ul>
+        <li>Balcan, Blum, Gupta on <a href=http://www.cs.cmu.edu/~ninamf/papers/clustering-bbg-jacm.pdf>approximation stability</a></li>
+        <li>Bilu and Linial on a <a href=https://arxiv.org/abs/0906.3162>different notion of stability</a></li>
+        <li>Makarychev, Makarychev and Vijayaraghavan on <a href=https://arxiv.org/abs/1305.1681>solving max cut in Bilu-Linial-stable instances</a></li>
+        </ul>
+    The second part of the lecture was about Section 2.1 of <a href=http://math.mit.edu/icg/papers/demanet_hand_sparsest_element_subspace.pdf>this paper</a> by Demanet and Hand
+
+<p>
+
+<li>10/17. Finding a planted sparse vector in a random subspace using linear programming.<br>
+    [<a href=lectures/lecture16.pdf>notes</a>]
+
+
+<p>
+
+<li>10/19. Guest lecture on tensor decomposition by Tengyu Ma (Facebook).<br>
+See also <a href=https://arxiv.org/pdf/1503.02101.pdf>this paper</a><br>
+[notes in preparation]</li>
+
+<p>
+
+<li>10/24. Certifying that a random subspace has no sparse vector<br>
+    This lecture and the  next cover a weaker version of a result in Section 7 of <a href=https://arxiv.org/abs/1205.4484>this paper</a><br>
+    [<a href=lectures/lecture18.pdf>notes</a>]</li>
+
+<p>
+
+<li>10/26. Certifying that a random subspace has no sparse vector, continued<br>
+    [notes in preparation]</li>
+
+<p>
+
+<li>10/31. An overview of tensor decomposition using semidefinite programming<br>
+    See <a href=https://arxiv.org/pdf/1610.01980.pdf>this paper</a>
+    [notes in preparation]</li>
+
+
+<p>
+
+<li>11/2. Matrix completion using nuclear norm<br>
+    See <a href=https://arxiv.org/abs/0805.4471>this paper</a><br>
+    [notes in preparation]</li>
+
+<p>
+
+<li>11/7. Guest lecture by Tengyu Ma on matrix completion using non-convex optimization<br>
+    See <a href=https://arxiv.org/abs/1605.07272>this paper</a><br>
+    [notes in preparation]</li>
+
+<p>
+
+<li>11/9. An introduction to average-case complexity<br>
+    [notes in preparation]</li>
+
+<p>
+
+<li>11/14. Daniel Dadush on smoothed analysis of the simplex<br>
+    See <a href=https://arxiv.org/abs/1711.05667>this paper</a></li>
+
+<p>
+
+
+</ol>
+
+    
+Plan for remaining lectures (subject to change)
+
+<ul>
+
+    <li>10/31. Tensor decomposition using semidefinite programming</li>
+    <li>11/2. Matrix completion using nuclear norm</li>
+    <li>11/7. Matrix completion using gradient descent, guest lecture by Tengyu Ma</li>
+    <li>11/9. An introduction to average-case complexity</li>
+    <li>11/14, 11/16 Guest lectures on smoothed analysis by Daniel Dadush (CWI)</li>
+    <li>11/21. More on average-case complexity</li>
+    <li>11/28, 11/30, dead week. Presentations</li>
+    </ul>
+
+
+<hr>
+
+<a name="ex"></a><h3>Exams and Projects</h3>
+
+
+
+</body>
+</html>

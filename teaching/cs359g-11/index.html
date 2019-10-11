@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+  <title>CS359G: Graph Partitioning and Expanders</title>
+  <style>
+
+
+
+body{margin:10px 10px 10px 10px;width: 1000px; font-family:sans-serif;background-color:#FFFFFb;}
+
+
+
+a{text-decoration:none}
+
+
+
+a:link{color:#4444aa;}
+
+
+
+a:visited{color:#4444aa;}
+
+
+
+a:hover{background-color:#aaaaFF;}
+
+
+
+li{line-height : 130%;}
+
+
+
+  </style>
+</head>
+<body>
+<h1>
+CS359G: Graph Partitioning and Expanders</h1>
+
+<p><b><a href="#info">[general info]</a>&nbsp;</b>
+<b><a href="#notes">[lecture notes]</a> <a href="#ex">[exams and projects]</a></b>
+<br>
+</p>
+<hr width="100%">
+
+<h2><a name="info"></a>general information</h2>
+<p><br>
+<b>Instructor</b>: <a href="http://www.cs.stanford.edu/~trevisan">Luca
+Trevisan</a>,  Gates 474, Tel. 650 723-8879, email <i>trevisan at stanford dot edu</i>
+<p>
+<p><b>Classes</b> are Tuesday-Thursday, 11am-12:15pm, location Herrin T185
+</p>
+<p><b>Office hours</b>: Wednesdays 10:30-11:30
+
+
+<p>
+
+<h3>About the course</h3>
+
+The mathematics of expander graphs is studied by three distinct
+communities:
+
+<ol>
+
+<li> The algorithmic problem of finding a small balanced cut
+in a graph (that is, of finding a certificate that a graph is *not* an
+expander) is a fundamental problem in the area of approximation
+algorithms, and good algorithms for it have many applications, from
+doing image segmentation to driving divide-and-conquer procedures.
+
+<li>
+Explicit constructions of highly expanding graphs have many applications
+in algorithms, data structures, derandomization and cryptography; many
+constructions are algebraic, and lead to deep questions in group theory,
+but certain new constructions are purely combinatorial.
+
+<li> The speed of
+convergence of MCMC (Markov-Chain Monte-Carlo) algorithms is related to
+the expansion of certain exponentially big graphs, and so the analysis
+of such algorithms hinges on the ability to bound the expansion of such
+graphs.
+
+</ol>
+
+In this course we aim to present key results from these three areas, and
+to explore the common mathematical background.
+
+<p>
+
+<b>Prerequisites:</b> a basic course in linear algebra and a course on
+algorithms; preferably, also a basic understanding of linear programming
+and of duality.
+
+<p>
+
+<b>Assignments:</b> two midterm take-home exams and a take-home final exam.
+Working on a  research project related to the topics of the class can
+substitute for the final exam. 
+
+<hr>
+
+<h3>References</h3>
+
+The main reference will be a set of lecture notes. Notes will be
+posted after each lecture. In addition, the following texts
+will be helpful references.
+
+On sparsest cut approximation algorithms:
+
+<ul><li>Sanjeev Arora, Satish Rao, and Umesh Vazirani<br>
+<a href=http://www.cs.princeton.edu/~arora/pubs/arvcacm.pdf>Geometry, Flows, and  
+Graph-Partitioning Algorithms</a><br>
+CACM <b>51</b>(10):96-105, 2008.
+</ul>
+
+On spectral graph theory and on explicit constructions
+of expander graphs:
+
+<ul><li>Shlomo Hoory, Nathan Linial, and Avi Wigderson<br>
+<a href=http://www.ams.org/journals/bull/2006-43-04/S0273-0979-06-01126-8/home.html>Expander graphs and their applications</a><br>
+Bull. Amer. Math. Soc. <b>43</b>:439-561,  2006.
+</ul>
+
+On Markov-Chain Monte-Carlo algorithms for uniform generation
+and approximate counting.
+
+<ul><li>
+Mark Jerrum<br>
+Counting, sampling and integrating: algorithms and complexity<br>
+Drafts of <a href=http://www.dcs.ed.ac.uk/home/mrj/ETHbook/>Chapter 3, Chapter 4, and Chapter 5</a>.
+</ul>
+
+
+<hr>
+
+<h3>Lectures</h3>
+
+
+<ol>
+
+<li> 01/04 Description of the course, definitions of edge expansion and sparsest cut<br>
+Notes: <a href=lecture01.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/01/16/cs359g-lecture-1-overview/>[HTML]</a>
+
+<p>
+
+<li> 01/06 Review of linear algebra<br>
+Notes: <a href=lecture02.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/01/17/cs359g-lecture-2-linear-algebra-review/>[HTML]</a>
+
+<p>
+
+<li> 01/11 Cheeger's inequality, proof of the easy direction<br>
+Notes: <a href=lecture03.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/01/19/cs359g-lecture-3-cheegers-inequality/>[HTML]</a>
+
+<p>
+
+<li> 01/13 Cheeger's inequality, proof of the difficult direction<br>
+Notes: <a href=lecture04.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/01/26/cs359g-lecture-4-spectral-partitioning/>[HTML]</a>
+
+<p>
+
+
+<li> 01/18 Characters of finite abelian groups<br>
+Notes: <a href=lecture05.pdf>[PDF] <a href=http://lucatrevisan.wordpress.com/2011/01/28/cs359g-lecture-5-characters-of-abelian-groups/>[HTML]</a>
+<p>
+
+<li> 01/20 The eigenvalues and eigenvectors of Cayley graphs<br>
+Notes: <a href=lecture06.pdf>[PDF] <a href=http://lucatrevisan.wordpress.com/2011/01/29/cs359g-lecture-6-the-spectrum-of-the-cycle-and-of-the-hypercube/>[HTML]</a>
+
+<p>
+
+<li> 01/25 A nearly-linear-time algorithm for finding eigenvectors<br>
+Notes: <a href=lecture07.pdf>[PDF] <a href=http://lucatrevisan.wordpress.com/2011/01/29/cs359g-lecture-7-computing-eigenvectors/>[HTML]</a>
+
+<p>
+
+<li> 01/27 The Leighton-Rao relaxation of sparsest cut and metric embeddings<br>
+Notes: <a href=lecture08.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/02/02/cs359g-lecture-8-the-leighton-rao-relaxation/>[HTML]</a>
+
+<p>
+
+
+<li>02/01 Bourgain's embedding of any metric into L1<br>
+Notes: <a href=lecture09.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/02/07/cs359g-lecture-9-bourgains-embedding/>[HTML]</a>
+
+<p>
+
+<li>02/03 Other applications of Bourgain's embedding  to approximation<br>
+Notes: <a href=lecture10.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/02/07/cs359g-lecture-10-non-uniform-sparsest-cut/>[HTML]</a>
+
+<p>
+
+<li>02/08 The Arora-Rao-Vazirani of sparsest cut and semidefinite programming<br>
+Notes: <a href=lecture11.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/02/12/cs359g-lecture-11-arv/>[HTML]</a>
+
+<p>
+
+<li>02/10 The spectral bound as a semidefinite relaxation, its dual, and the dual of Leighton-Rao<br>
+Notes: coming soon
+
+<p>
+
+<li>02/15. The dual of ARV.<br>
+Notes: coming soon
+
+<p>
+
+<li>02/17. Rounding ARV (beginning of the analysis)<br>
+Notes: <a href=lecture14.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/02/21/cs359g-lecture-14-arv-rounding/>[HTML]</a>
+
+<p>
+
+<li>02/22. Rounding ARV, proof the main Lemma<br>
+Notes: coming soon
+
+<p>
+
+<li>02/24. Construction of expanders<br>
+Notes: <a href=lecture16.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/02/28/cs359g-lecture-16-constructions-of-expanders/>[HTML]</a>
+
+<p>
+
+<li>03/01. Analysis of the zig-zag graph product<br>
+Notes: <a href=lecture17.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/03/07/cs359g-lecture-17-the-zig-zag-product/>[HTML]</a>
+
+<p>
+
+<li>03/03. Properties of expanders and applications<br>
+Notes: <a href=lecture18.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/03/16/cs359g-lecture-18-properties-of-expanders/>[HTML]</a>
+
+<p>
+
+<li>03/08. Approximate sampling and counting, and counting matchings in  a graphs<br>
+Notes: coming soon
+
+<p>
+
+<li>03/10. Counting matchings in a graph<br>
+Notes: coming soon
+
+</ol>
+
+The following is a tentative schedule:
+
+<ol>
+
+<li> Definitions: edge and vertex expansion, uniform and general sparsest
+cut problems, review of linear algebra
+
+<li> Eigenvalues and expansion, Cheeger's inequality and the spectral
+partitioning algorithm
+
+<li> Cheeger's inequality, continued
+
+<li> Classes of graphs for which spectral partitioning is provably good
+
+
+<li> Algorithms for finding sparse cuts: Leighton-Rao, and metric embeddings
+
+<li> Equivalence of rounding the Leighton-Rao relaxation and
+ embedding general metrics into L1
+
+<li> Algorithms for finding sparse cuts: Arora-Rao-Vazirani
+
+<li> Arora-Rao-Vazirani, continued
+
+<li> Integrality gaps for the Arora-Rao-Vazirani relaxation
+
+<li> Applications of expanders: derandomization
+
+<li> Applications of expanders: security amplification of one-way permutations
+
+<li> The Margulis-Gabor-Galil construction of expanders
+
+<li> The Zig-Zag graph product construction 
+
+<li> Eigenvalues, expansion, conductance, and random walks
+
+<li> Approximate counting, approximate sampling, and the MCMC method
+
+<li> Random Spanning trees
+
+<li> Counting colorings in bounded-degree graphs
+
+<li>  Counting perfect matchings in dense bipartite graphs
+
+<li> The Metropolis algorithm
+
+
+
+</ol>
+
+<hr>
+
+<a name="ex"></a><h3>Exams and Projects</h3>
+
+The <a href=midterm.pdf>Midterm</a> is due on Thursday February 17.
+
+<p>
+
+You can elect to do a final project instead of the final exam. A final project involves reading on a topic that we did not cover in class, and writing a report.
+
+<p>
+
+Here is a <a href=projects.html>list</a> of possible projects. You are welcome to propose a different one.
+
+
+
+</body>
+</html>

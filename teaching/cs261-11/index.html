@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+  <title>CS261: Optimization and Algorithmic Paradigms</title>
+  <style>
+
+
+
+body{margin:10px 10px 10px 10px;width: 1000px; font-family:sans-serif;background-color:#FFFFFb;}
+
+
+
+a{text-decoration:none}
+
+
+
+a:link{color:#4444aa;}
+
+
+
+a:visited{color:#4444aa;}
+
+
+
+a:hover{background-color:#aaaaFF;}
+
+
+
+li{line-height : 130%;}
+
+
+
+  </style>
+</head>
+<body>
+<h1>
+CS261: Optimization and Algorithmic Paradigms</h1>
+
+<p><b><a href="#info">[general info]</a>&nbsp;</b>
+<b><a href="#notes">[lecture notes]</a> <a href="#hw">[coursework]</a></b>
+<br>
+</p>
+<hr width="100%">
+
+<h2><a name="info"></a>general information</h2>
+<p><br>
+<b>Instructor</b>: <a href="http://www.cs.stanford.edu/~trevisan">Luca
+Trevisan</a>,  Gates 474, Tel. 650 723-8879, email <i>trevisan at stanford dot edu</i>
+
+<p>
+
+<b>Teaching Assistant</b>: Qiqi Yan, Gates 460, email <i>contact at qiqiyan dot com</i> 
+
+<p>
+<p><b>Classes</b> are Tuesday-Thursday, 2:15-2:30pm, location Green Earth Sciences 131
+</p>
+<p><b>Office hours</b>: 
+<ul>
+<li>Qiqi: Mondays 3-5pm and Tuesdays 4-6pm, Gates 460. Qiqi's office hours of Jan 24-25 are moved to Wed Jan 26 2-4pm 
+<li>Luca: Wednesdays 11:30-12:30, Gates 474. Luca's office hours of Wed Jan 26 are moved to Thurs Jan 27, 10-11am
+</ul>
+
+<p>
+
+<h3>About the course</h3>
+
+
+<p>
+
+<b>Assignments:</b> weekly homeworks, a midterm and a final exam. 
+
+<hr>
+
+<h3>References</h3>
+
+The main reference will be a set of lecture notes. Notes will be
+posted after each lecture. 
+
+<p>
+
+Almost all the material of the course is covered in the following notes by <a href=http://www.stanford.edu/~plotkin/>Serge Plotkin</a>
+
+<ul><li>Serge Plotkin</li>
+<a href=all-notes-2010.pdf><i>CS261 Lecture Notes</i></a><br>
+January 2010
+</ul>
+
+In addition, the following textbook
+will be a very helpful reference:
+
+
+<ul><li>Vijay Vazirani<br>
+<i>Approximation Algorithms</a</i><br>
+Springer, 2004 (Hardcover) and 2010 (Paperback).
+</ul>
+
+<hr>
+
+<h3><a name="notes">Lectures</a></h3>
+
+<ol>
+
+<li>01/04 Lecture 1. Summary of the course. Approximation algorithms for Vertex Cover and Metric Steiner Tree.<br>
+Notes: <a href=lecture01.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/01/05/cs261-lecture-1-overview/>[HTML]</a>
+
+<p>
+
+<li>01/06 Lecture 2. Approximation of General Steiner Tree.<br>
+Notes: <a href=lecture02.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/01/13/cs261-lecture-2-steiner-tree-approximation/>[HTML]</a>
+
+<p>
+
+<li>01/11 Lecture 3. Versions of the Traveling Salesman Problem. Eulerians loops.<br>
+Notes: <a href=lecture03.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/01/19/cs261-lecture-3-tsp-and-eulerian-cycles/>[HTML]</a>
+
+<p>
+
+<li>01/13 Lecture 4. 1.5-approximate algorithm for metric TSP. The Set Cover problem.<br>
+Notes: <a href=lecture04.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/01/21/cs261-lecture-4-tsp-and-set-cover/>[HTML]</a>
+
+<p>
+
+<li>01/18 Lecture 5. Introduction to Linear Programming.<br>
+Notes: <a href=lecture05.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/01/24/cs261-lecture-5-linear-programming/>[HTML]</a>
+
+<p>
+
+<li>01/20 Lecture 6. Linear programming duality.<br>
+Notes: <a href=lecture06.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/01/24/cs261-lecture-6-duality-in-linear-programming/>[HTML]</a>
+
+<p>
+
+<li>01/25 Lecture 7. Linear programming relaxation of vertex cover.<br>
+Notes: <a href=lecture07.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/01/26/cs261-lecture-7-rounding-linear-programs/>[HTML]</a>
+
+<p>
+
+<li>01/27 Lecture 8. Linear programming relaxation of set cover.<br>
+Notes: <a href=lecture08.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/02/01/cs261-lecture-8-randomized-rounding/>[HTML]</a>
+
+
+<p>
+
+<li>02/01 Lecture 9. The Maximum Flow - Minimum Cut Theorem.<br>
+Notes: <a href=lecture09.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/02/04/cs261-lecture-9-maximum-flow/>[HTML]</a>
+
+<p>
+
+<li>02/03 Lecture 10. Maximum Flow algorithms: choosing the fattest augmenting path<br>
+Notes: <a href=lecture10.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/02/04/cs-261-lecture-10-the-fattest-path/>[HTML]</a>
+
+<p>
+
+<li>02/08 Lecture 11. Edmonds-Karp and Push-Relabel algorithms<br>
+Notes: <a href=lecture11.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/02/13/cs261-lecture-11-strongly-polynomial-time-algorithms/>[HTML]</a>
+
+<p>
+
+<li>02/15 Lecture 12. Analysis of the push-relabel algorithm.<br>
+Notes: <a href=lecture12.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/02/15/cs261-lecture-12-the-push-relabel-algorithm/>[HTML]</a>
+
+<p>
+
+<li>02/17 Lecture 13. Algorithms for the global min-cut problem<br>
+Notes: <a href=lecture13.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/02/21/cs261-lecture-13-edge-connectivity/>[HTML]</a>
+
+<p>
+
+<li>02/22 Lecture 14. Algorithms for maximum matching and vertex cover in bipartite graphs<br>
+Notes: <a href=lecture14.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/02/23/cs261-lecture14-algorithms-in-bipartite-graphs/>[HTML]</a>
+
+<p>
+
+<li>02/24 Lecture 15. The linear programming formulation of maximum cut and its dual<br>
+Notes: <a href=lecture15.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/02/24/cs261-lecture-15-the-lp-of-max-flow/>[HTML]</a>
+
+<p>
+
+<li>03/01 Lecture 16. Multicommodity flows and the sparsest cut problem.<br>
+Notes: <a href=lecture16.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/03/02/cs261-multicommodity-flow/>[HTML]</a>
+
+<p>
+
+<li>03/03 Lecture 17. Introduction to online algorithms<br>
+Notes: <a href=lecture17.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/03/09/cs261-lecture-17-online-algorithms/>[HTML]</a>
+
+<p>
+
+<li>03/08 Lecture 18. Using expert advice<br>
+Notes: <a href=lecture18.pdf>[PDF]</a> <a href=http://lucatrevisan.wordpress.com/2011/03/18/cs261-lecture-18-using-expert-advice/>[HTML]</a>
+
+<p>
+
+<li>03/10 Lecture 19. Review
+
+<p>
+
+</ol>
+
+The following is a tentative schedule:
+
+<ul>
+
+<li>Summary of the course. How to design approximation algorithms: the Vertex Cover and Set Cover examples (2 lectures).
+
+<li>Approximating the Steiner Tree and the Metric TSP problems
+
+<li>Linear Programming, Duality (2 lectures)
+
+<li>Rounding linear programs: Vertex Cover and Set Cover (2 lectures)
+
+<li>Network Flows: algorithms and combinatorics (3 lectures)
+
+<li>Multi-commodity flow and sparsest cut (2 lectures)
+
+<li>Maximum Matching in Bipartite Graphs (2 lectures)
+
+<li>More on Linear Programming Duality (2 lectures)
+
+<li>Online algorithms: Ski problem, secretary problem, paging, bin packing, using expert advice (4 lectures)
+
+</ul>
+
+<hr>
+
+<h3><a name="hw">Homeworks</a></h3>
+
+<ol>
+
+<li> <a href=hw1.pdf>Homework 1</a>: out Jan 11, due Jan 20
+<li> <a href=hw2.pdf>Homework 2 (revised Jan 20, 2011)</a>: out Jan 18, due Jan 27
+<li> <a href=hw3.pdf>Homework 3</a>: out Jan 25, due Feb 3
+
+<li><a href=hw4.pdf>Homework 4</a>: out Feb 15, due Feb 24
+
+<li><a href=hw5.pdf>Homework 5</a>: out Feb 22, due Mar 3
+
+<li><a href=hw6.pdf>Homework 6</a>: out Mar 1, due Mar 10
+
+</ol>
+
+<hr>
+
+<h3>Exams</h3>
+
+The midterm will be in class, on February 10
+
+<ol>
+<li> <a href=pmidterm.pdf>Practice problems</a> for the midterm
+</ol>
+
+</body>
+</html>

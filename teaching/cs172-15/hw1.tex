@@ -1,0 +1,80 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mdwlist}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+
+\input{macros}
+
+
+
+
+\begin{document}
+
+\ptitle{Problem Set 1}{January 22, 2015}
+
+
+This problem set is due on Friday, January 30, by 5pm. Please submit your solution online using bcourses,
+as a pdf file. 
+
+You can type your solution, or handwrite it. If you handwrite it, then either
+scan it or take a good resolution picture of each page and then collate the pictures
+and export them to a {\em single} pdf file.
+
+\bigskip
+
+\hrule
+
+\section*{Problem 1: Repeat (15/100)}
+
+
+\noindent Let $\Sigma=\{a,b\}$. Let $L$ be a language over $\Sigma$,
+consisting of strings of length at least 2,
+where the first letter is the same as the last letter,
+and the second letter is the same as the second to last letter.
+For example, $ a \not\in L$, $b \not\in L$, $aa \in L$, $aaa \in L$, $aba \in L$, $bbaabba \not\in L$.\\
+
+\noindent Design a DFA that accepts $L$.
+
+
+\section*{Problem 2: Multiples of 3 (25/100)}
+
+\noindent Let $\Sigma = \{0, 1\}$, and $L$ be the language of 
+all binary strings that are the binary representations of an integer multiple of 3 (leading zeroes are
+allowed).  For example, $0 \in L$, $101 \not \in L$, $1100 \in L$.\\
+ 
+\noindent Design a DFA that accepts $L$
+
+
+\section*{Problem 3: Prefix, Suffix, Mid (60/100)}
+Let $\Sigma$ be an alphabet. {\color{Gray}Ex: $\Sigma=\{a, b, ..., z\}$}.\\
+Let $\circ$ be the concatenation operator. {\color{Gray}Ex: ``hello'' $\circ$ ``world'' = ``helloworld''}\\
+\noindent Let $L$ be a language over alphabet $\Sigma$, where
+prefix(L) = $\left\{x \mid \exists z:\, x \circ z \in L\right\}$,
+suffix(L) = $\left\{z \mid \exists x:\, x \circ z \in L\right\}$, and
+mid(L) = $\left\{y \mid \exists x, z:\, x \circ y \circ z \in L\right\}$.
+
+\begin{itemize}
+\item Given a DFA that accepts $L$, design a DFA or NFA that accepts prefix$(L)$. (20 points)
+\item Given a DFA that accepts $L$, design a DFA or NFA that accepts suffix$(L)$. (20 points)
+\item Given a DFA that accepts $L$, design a DFA or NFA that accepts mid$(L)$. (20 points)
+\end{itemize}
+
+
+\end{document}
+
+
+%\section*{Problem 2: Union, Intersection, Complement, Difference}
+%Let $L$ and $R$ be regualr languages over alphabet $\Sigma$.
+%\begin{enumerate}
+%\item Prove that $L \cup R = \{ x | x \in L \lor x \in R\}$ is regular. (1 point)
+%\item Prove that $L \cap R = \{ x | x \in L \land x \in R\}$ is regular. (1 point)
+%\item Prove that $\overline{L} = \{ x | x \in \Sigma^*, x \not\in L\}$ is regular. (1 point)
+%\item Prove that $L \setminus R = \{ x | x \in L, x \not\in R\}$ is regular. (1 point)
+%\end{enumerate}
+%
+%For proving statement $i$, you are allowed to use statements
+%$1, ..., i-1$, even if you did not prove them.

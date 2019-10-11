@@ -1,0 +1,45 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+
+\input{macros}
+\begin{document}
+
+
+
+
+
+
+\ptitle{Problem Set 7}{March 12, 2015}
+
+
+This problem set is due on Friday, March 20, by 5pm. Please submit your solution online using bcourses,
+as a pdf file. 
+
+You can type your solution, or handwrite it. If you handwrite it, then either
+scan it or take a good resolution picture of each page and then collate the pictures
+and export them to a {\em single} pdf file.
+
+\bigskip
+
+\hrule
+
+
+\subsection*{Problem 1: Kolmogrov Complexity}
+Let $L = \{(x,y) : K(x) > K(y)\}$. Prove that $L$ is not decidable.
+
+    \subsection*{Problem 2: More Kolmogrov Complexity}
+Let $L = \{(x,y,n) : \max(K(x), K(y)) > n\}$. Prove that $L$ is not recognizable.
+    
+    \subsection*{Problem 3: Yet More Kolmogrov Complexity}
+Let $f:\Sigma^* \rightarrow \mathbb{Z}$ be a computable function.
+    Show that if $\forall x: f(x) \leq K(x)$, then $f$ must be bounded.
+    That is, there must be some $c$ such that $\forall x: f(x) \leq c$.
+
+
+\end{document}
+
+

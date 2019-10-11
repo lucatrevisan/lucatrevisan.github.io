@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mdwlist}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{enumerate}
+
+
+\input{macros}
+
+
+\begin{document}
+\ptitle{Problem Set 9}{April 10, 2015}
+This problem set is due on Friday, April 17, by 5pm. Please submit your solution online using bcourses,
+as a pdf file.
+You can type your solution, or handwrite it. If you handwrite it, then either
+scan it or take a good resolution picture of each page and then collate the pictures
+and export them to a {\em single} pdf file.
+\\
+
+\noindent When asked to prove that a problem is $NL$-complete,
+make sure to include a proof that the problem is in $NL$. When
+specifying  an $NL$ algorithm, preferably give pseudo-code
+for it, and use terminology like ``guess $x\in S$" to specify a
+non-deterministic step in which variable $x$ can take any of the
+values in the set $S$. 
+\bigskip
+\hrule
+
+
+
+\section*{Problem 1 (35/100)}
+Consider the {\em acceptance problem for
+NFA}, that is the language 
+
+\[ A_{NFA} := \{ (M,w) : M \mbox{ is an NFA } \wedge M \mbox{ accepts } w \} \]
+
+\noindent Show that $A_{NFA}$ is $NL$-complete under $\leq_m^{\log}$ reductions.
+
+\noindent [You can use the fact that the reachability problem for directed
+graphs is $NL$-complete]
+
+\section*{Problem 2 (35/100)}
+Consider the DAG-Reach problem defined as follows
+
+\[ DAG-Reach := \{ (G,s,t) : G \mbox{ G is a DAG} \wedge t \mbox{ is
+reachable from } s \} \]
+
+\noindent (where DAG stands for directed acyclic graph). Show that
+DAG-Reach is $NL$-complete. (This shows that the reachability
+problem in directed graphs remains $NL$-complete even when
+restricted to acyclic graphs.)
+
+\noindent [Hint: create multiple copies of each vertex/configuration, and 
+arrange them in layers.]
+
+\section*{Problem 3 (30/100)}
+Consider the language
+
+\[ StrongConn := \{ G : G \mbox { is a strongly connected directed graph} \} \]
+
+\noindent Recall that a graph $G=(V,E)$ is strongly connected if for every two
+vertices $u,v$ there is a part from $u$ to $v$ and also a path
+from $v$ to $u$. Prove that StrongConn is $NL$-complete.
+
+\noindent [Hint: reduce from DAG-Reach]
+\end{document}

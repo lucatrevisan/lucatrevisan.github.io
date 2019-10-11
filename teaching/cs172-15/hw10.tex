@@ -1,0 +1,44 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mdwlist}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{enumerate}
+
+
+\input{macros}
+
+
+\begin{document}
+\ptitle{Problem Set 10}{April 16, 2015}
+This problem set is due on Friday, April 24, by 5pm. Please submit your solution online using bcourses,
+as a pdf file.
+You can type your solution, or handwrite it. If you handwrite it, then either
+scan it or take a good resolution picture of each page and then collate the pictures
+and export them to a {\em single} pdf file.
+\\
+
+\noindent You can use the fact that NL=coNL in your solutions.
+\bigskip
+\hrule
+
+
+\section*{Problem 1 (35/100)}
+Consider the problem ShortestPath$= \{ (G,s,t,k) : \mbox { the shortest path  from }
+s \mbox { to } t \mbox{ in } G \mbox{ has length exactly } k \}$ where $G=(V,E)$ is a directed graph, $s,t$ are vertices,and the length of a path is the number of edges in the path.
+\\
+
+\noindent Show that ShortestPath is NL-complete.
+
+\section*{Problem 2 (35/100)}
+Show that SPACE($n$) is not closed under polynomial-time reductions.  That is, when $A\leq^p_m B$ for languages $B\in$SPACE($n$) and some other language $A$, it may not be the case that $A\in$SPACE($n$) as well.
+\\
+
+\noindent [Note for contrast that P was closed under polynomial-time reductions since $A\leq^p_m B$ and $B\in$P, implies $A\in$P.]
+
+\section*{Problem 3 (30/100)}
+Show that NP $\neq$ SPACE($n^2$).
+
+\end{document}

@@ -1,0 +1,72 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mdwlist}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{enumerate}
+\usepackage{amsmath}
+
+
+\input{macros}
+
+
+\begin{document}
+\ptitle{Problem Set 11}{April 23, 2015}
+This problem set is due on Friday, April 30, by 5pm. Please submit your solution online using bcourses,
+as a pdf file.
+You can type your solution, or handwrite it. If you handwrite it, then either
+scan it or take a good resolution picture of each page and then collate the pictures
+and export them to a {\em single} pdf file.
+\bigskip
+\hrule
+
+
+\section*{Problem 1 (33/100)}
+In $\mathbb{Z}_{77}$ find all of the elements that are quadratic residues with only two roots (as opposed to four).  Showing work/reasoning could be helpful in grading.
+
+\noindent Why do these end up not being a problem in the quadratic residuosity scheme we've seen in class?
+
+\noindent [Hint: there are eight such elements]
+
+\section*{Problem 2 (33/100)}
+Recall that we defined IP as the class of languages such that for each language L there exists a pair of algorithms (or better, interacting machines) $(\mathcal{P},\mathcal{V})$, where the verifier $\mathcal{V}$ is polynomial in $|x|$ such that:
+		\begin{itemize}
+			\item Completeness: $\forall x\in L$ 
+		$$\Pr\left[Output_{\mathcal{V}}(\mathcal{P}(x) \leftrightarrow \mathcal{V}(x))=1\right]=1$$
+			\item Soundness: $\forall x\notin L$, $\forall \mathcal{P}^*$ 
+		$$\Pr\left[Output_{\mathcal{V}}(\mathcal{P}^*(x) \leftrightarrow \mathcal{V}(x))=1\right]\leq 1/2$$
+		\end{itemize}
+		
+\begin{enumerate}[a)]
+\item Let IP$'$ be the class of languages where we allow the prover to be probabilistic i.e. the prover can use randomness. Show that IP$'$ = IP.
+
+\item Let IP$'$ be the class of languages where we replace the 1/2 in the definition above by 0 i.e. the verifier must surely reject in case $x\notin L$. Show that IP$'$ = NP.
+\end{enumerate}
+
+\section*{Problem 3 (34/100)}
+Consider the following protocol for showing that $x\in \mathbb{Z}_N$, for $N=pq$, is a quadratic nonresidue i.e. $\nexists y$ such that $x=y^2$ (mod $N$).
+
+\begin{center}
+			\includegraphics[scale=.55]{QNR_ZK.png}
+\end{center}
+
+That is, 
+
+Verifier: pick random $s\in\mathbb{Z}_N$, then with prob 1/2 send $s^2$ and with prob 1/2 send $s^2 x$. 
+
+Prover: tell whether received number is quadratic residue or not. Note that $QNR(N)$ is the 
+
+\quad\quad\quad\ \ set of quadratic nonresidues mod $N$. 
+
+Verifier: accept if sent $s^2$ and prover says residue or sent $s^2x$ and prover says non-residue.
+
+\noindent Note: for a prover with the factorization of $N$ as its witness, $w=(p,q)$, it is easy for them to determine if $x\in \mathbb{Z}_N$ is a quadratic residue or not.
+\\
+
+\noindent Show that the scheme is complete, sound, and honest verifier perfect zero-knowledge, but, unless the quadratic residuosity problem is in polynomial time, the scheme is not perfect zero knowledge.
+
+
+
+\end{document}

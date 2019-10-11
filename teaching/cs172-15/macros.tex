@@ -1,0 +1,23 @@
+\newcommand{\coursenum}{CS172}
+\newcommand{\coursename}{Automata, Computability and Complexity}
+\newcommand{\courseprof}{Professor Luca Trevisan}
+
+%       Usage: \ptitle{title}{dateout}
+\newcommand{\ptitle}[2]{\noindent\parbox{\textwidth}
+{U.C. Berkeley --- \coursenum : \coursename \hfill #1 \newline
+\courseprof \hfill #2 \newline
+\mbox{}\hrulefill\mbox{}}\vspace*{1ex}\mbox{}\newline
+\bigskip
+\begin{center}{\Large\bf #1}\end{center}
+\bigskip}
+
+
+%       Usage: \handout{title}{datelec}{dateout}{scribe}
+\newcommand{\handout}[2]{\thispagestyle{empty}
+ \markboth{Notes for Lecture #1}{Notes for Lecture #1}
+ \pagestyle{myheadings}\htitle{#1}{#2}}
+
+%       Usage: \pset{title}{dateout}
+\newcommand{\pset}[2]{\thispagestyle{empty}
+ \markboth{#1 --- #2}{#1 --- #2}
+ \pagestyle{myheadings}\ptitle{#1}{#2}}

@@ -1,0 +1,56 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+\input{macros}
+\begin{document}
+
+
+
+
+
+
+\ptitle{Problem Set 6}{March 5, 2015}
+
+
+This problem set is due on Friday, March 13, by 5pm. Please submit your solution online using bcourses,
+as a pdf file. 
+
+You can type your solution, or handwrite it. If you handwrite it, then either
+scan it or take a good resolution picture of each page and then collate the pictures
+and export them to a {\em single} pdf file.
+
+\bigskip
+
+\hrule
+
+
+
+
+\subsection*{Problem 1: Unary Decidability (30)}
+
+Let $\Sigma = \{1 \}$. Prove that there is an undecidable subset of $\Sigma^*$.
+
+\subsection*{Problem 2: Recognizable-Decidable (30)}
+
+Prove that a language $L$ is recognizable iff there exists a decidable language $D$ such that
+$x \in L \Leftrightarrow \exists y: (x,y) \in D$.
+
+\subsection*{Problem 3: Reductions Revisited (40)}
+
+Let $A$ be a language that is neither empty nor $\Sigma^*$.
+Consider the two sets of languages:
+
+\begin{itemize}
+  \item $L = \{ B \mid B \leq_m A \}$
+  \item $U = \{ B \mid A \leq_m B \}$
+\end{itemize}
+
+\noindent Prove that $L$ is countable and $U$ is uncountable.
+
+
+\end{document}
+
+

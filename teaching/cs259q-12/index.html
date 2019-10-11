@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>Luca Trevisan | Quantum Computing</title>
+  <style>
+
+
+
+body{margin:10px 10px 10px 10px;width: 1000px; font-family:sans-serif;background-color:#FFFFFb;}
+
+
+
+a{text-decoration:none}
+
+
+
+a:link{color:#4444aa;}
+
+
+
+a:visited{color:#4444aa;}
+
+
+
+a:hover{background-color:#aaaaFF;}
+
+
+
+li{line-height : 130%;}
+
+
+
+  </style>
+</head>
+<body>
+<h1>
+CS 259Q &mdash; Quantum Computing &mdash; Fall 2012</h1>
+<p><b><a href="#info">[general info]</a>&nbsp;</b>
+<b><a href="#notes">[lecture notes]</a> <a href="#hw">[homeworks]</a> <a href="#exam">[exams]</a></b>
+<br>
+</p>
+<hr width="100%">
+
+<b><i>what's new</i></b>
+
+<ul>
+
+<li> 12/02 <a href=ps05.pdf>Correction to problem set 5</a>
+<li> 11/30 <a href=ps05.pdf>Problem set 5</a>
+<li> <b>There will be no class on November 13 and 15</b>
+<li> 11/11 A draft of the notes for <a href=lecture13.pdf>lecture 13</a>
+<li> 11/10 <a href=ps04.pdf>Problem set 4</a>
+<li> 11/08 Solutions to problem sets 
+<a href=solutions/ps01_sol.pdf>1</a>, 
+<a href=solutions/ps02_sol.pdf>2</a>, 
+and <a href=solutions/ps03_sol.pdf>3</a>
+<li> 11/06 In the midterm, work with m greater than or equal to 3 in Problem 3
+<li> 11/06 Correction in notes for <a href=lecture07b.pdf>lecture 7</a>
+<li> 10/30 The <a href=midterm.pdf>midterm</a> is due on November 8
+<li> 10/29 Notes for <a href=lecture09.pdf>lecture 9</a> and <a href=lecture10.pdf>lecture 10</a>
+<li> 10/23 Another revision of <a href=ps03.pdf>Problem set 3</a>
+<li> 10/22 Notes for <a href=lecture08.pdf>lecture 8</a>
+<li> 10/22 Corrections to <a href=ps03.pdf>Problem set 3</a>
+<li> 10/19 We have a <a href=https://piazza.com/stanford/fall2012/cs259q>Piazza discussion forum</a>
+<li> 10/19 <a href=ps03.pdf>Problem set 3</a> is due October 25
+<li> 10/17 Notes for <a href=lecture07.pdf>lecture 7</a>
+<li> 10/17 Notes for <a href=lecture06.pdf>lecture 6</a>
+<li> 10/11 <a href=ps02.pdf>Problem Set 2</a> is due October 18
+<li> 10/04  <a href=ps01.pdf>Problem Set 1</a> is due October 11.
+
+<li>10/01 Notes for <a href=lecture02.pdf>lecture 2</a>
+<li>09/24 page created
+</ul>
+
+<hr>
+
+<h2><a name="info"></a>general information</h2>
+<p><br>
+<b>Instructor</b>: <a href="http://www.cs.stanford.edu/~trevisan">Luca
+Trevisan</a>,  Gates 474, Tel. 650 723-8879, email <i>trevisan at stanford dot edu</i>
+<p>
+<b>TA</b>: Joongyeub Yeo, email <I>yeo at stanford dot edu</I>
+</p>
+<p><b>Classes</b> are Tue-Th, 2;15-3:30pm in 200-002
+</p>
+<p><b>Office hours</b>: 
+<ul>
+<li> <i>Luca</i>: Tuesdays, 4-5pm, or by appointment, Gates  474 
+<li> <i>Joongyeub</i>: Mondays3-4pm, Wednesdays 10-11am, Gates B26A (except on 9/26 in Gates B26B)
+</ul>
+</p>
+<p><b>References: </b>the main reference for the course will be
+lecture notes. New
+lecture notes will be distributed after each lecture. A recommended
+textbook is
+
+<ul>
+  <li>Michael Nielsen and Isaac Chuang. <i>Quantum Computation and Quantum Information</i>, Cambridge.
+</ul>
+
+
+<b>About this course</b>: if they can be built, quantum computers can factor large integers and solve the discrete log problem efficiently, thus breaking all currently deployed public-key cryptosystems, and they can solve unstructured search problems faster than classical computers, although there is some evidence that they cannot solve NP-complete problems in polynomial time. The main engineering problem in building quantum computers is scaling up the current prototype that are able to handle only a constant number of qbits up to architectures with several thousands, possibly billions, qbits. An important theoretical result is that once we have basic components that have a certain level of fault-tolerance, then they can be scaled up to a self-correcting architecture than can be arbitrarily large and still be fault-tolerant. Quantum information transmission enables applications that are classically impossible, including certain unconditional cryptographic security guarantees, and the theory of quantum information transmission differs in subtle ways from classical information theory.
+
+<p>
+
+<b>Syllabus</b>: In this course we will study the mathematical model of quantum computers, review the two main algorithms (factoring/ discrete log and search), the evidence against polynomial time algorithms for NP-complete problems, and the construction of fault-tolerant large-scale quantum computers from faulty components. In the last part of the course we will see the basics of quantum information theory.
+
+<p>
+
+<b>Prerequisites:</b> the basics of linear algebra (vectors, matrices, eigenvalues, eigenvectors, determinant) and discrete probability (Bayes rule, the notion of independence, random variables) and the ability to reason about the correctness and the running time of an algorithm (say, having seen that mergesort runs in time O(n log n) and that binary search runs in time O(log n)). 
+
+
+</p>
+<hr>
+
+<h2><a name="notes">classes and lecture notes</a></h2>
+
+Some notes on <a href=http://theory.stanford.edu/~trevisan/notes/notesprob.pdf>probability</a> and on <a href=http://theory.stanford.edu/~trevisan/notes/notesalgebra.pdf>algebra</a> that I have written for a cryptography class might be useful as a refresher.
+
+<ol>
+<li> 09/25 Introductions, basics of the quantum model. <br>
+Nielsen-Chuang sections 1.1, 1.2<br>
+[Notes]
+<p>
+
+<li>09/27 Measurements, entanglement, quantum teleportation.<br>
+Nielsen-Chuang sections 1.3, 2.1, 2.2<br>
+<a href=lecture02.pdf>[Notes]</a>
+<p>
+
+<li> 10/02 More on quantum teleportation. Review of Turing machines
+and boolean circuits<br>
+Nielsen-Chuang chapter 3
+<p>
+
+<li> 10/04 Quantum circuits<br>
+Nielsen-Chuang chapter 4
+
+<p>
+
+<li> 10/09 More on quantum circuits<br>
+Nielsen-Chuang chapter 4
+
+<p>
+
+<li> 10/11 The quantum Fourier transform<br>
+Nielsen-Chuang sections 5.1, 5.2<br>
+<a href=lecture06.pdf>[notes]</a>
+
+<p>
+
+<li> 10/16 The quantum Hadamard transform and Simon's algorithm<br>
+<a href=lecture07b.pdf>[notes]</a>
+
+<p>
+
+<li> 10/18 The period-finding algorithm<br>
+<a href=lecture08.pdf>[notes]</a>
+
+<p>
+
+<li>10/23 Factoring reduces to period-finding<br>
+<a href=lecture09.pdf>[notes]</a>
+
+<p>
+
+<li> 10/25 The discrete-log algorithm<br>
+<a href=lecture10.pdf>[notes]</a>
+
+<p>
+
+<li> 10/30 Grover's algorithm
+
+<p>
+
+<li> 11/01 Search lower bound
+
+<p>
+
+<li> 11/06 Search lower bound ctd<br>
+<a href=lecture13.pdf>[notes]</a>
+
+<p>
+
+<li> 11/08 Introduction to quantum information: Bell inequalities, superdense coding
+
+<P>
+
+<b>No class on 11/13 and on 11/15</b>
+
+<p>
+
+<li> 11/27 Quantum error-correcting code correcting one bit flip, 
+density matrices
+
+<p>
+
+<li> 11/29 operator sum representation, quantum error-correcting
+code correcting arbitrary one-qubit errors.
+
+
+</ol>
+
+
+Plan for future lectures:
+
+<ul>
+
+<li> 12/04 more on quantum error-correcting codes
+
+<li> 12/06 Fault tolerance
+
+<li> Make up lectures (will be posted as videos): quantum coin flipping and quantum key agreement
+
+
+</ul>
+
+<p>
+<hr>
+
+<a name="hw"><h2>homeworks</h2>
+
+Late policy: homeworks emailed by end of day on Friday will 
+receive 10 points off their score; homeworks emailed or handed in
+by 2:15pm of the Tuesday after they are due will receive 20 points
+off their score. No homework is accepted after beginning of class
+of the Tuesday after they are due.
+
+<p>
+
+<a href=collaboration.html>Collaboration policy</a>
+
+<ol>
+
+<li> <a href=ps01.pdf>Problem Set 1</a> is due October 11. 
+(<a href=solutions/ps01_sol.pdf>Solutions</a>)
+
+<li> <a href=ps02.pdf>Problem Set 2</a> is due October 18.
+(<a href=solutions/ps02_sol.pdf>Solutions</a>)
+<li> <a href=ps03.pdf>Problem Set 3</a> is due October 25.
+(<a href=solutions/ps03_sol.pdf>Solutions</a>)
+
+<li> <a href=ps04.pdf>Problem Set 4</a> is due November 16
+<li> <a href=ps05.pdf>Problem Set 5</a> is due December 6</ol>
+
+<hr>
+
+<a name="exam"><h2>exams</h2></a>
+
+The <a href=midterm.pdf>midterm</a> is due November 8.
+
+<p>
+
+The <b>final</b> will be a study project. Here is a <a href=projects.html>list of possible projects</a>
+<hr>
+&nbsp;
+</body>
+</html>

@@ -1,0 +1,1064 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>CS 172: Computability and Complexity</title>
+  <link rel="stylesheet" href="../../luca.css" type="text/css">
+</head>
+
+
+<body>
+
+<font size=+3>CS 172</font>
+
+
+<font size="+3" color="#900000">Computability and Complexity</font>
+
+
+
+<p>
+
+Prof. <a href="http://www.cs.berkeley.edu/~luca">Luca Trevisan</a>
+
+
+
+<p>Spring 2015
+
+
+
+<br>Tuesdays and&nbsp; Thursdays 2:00-3:30pm
+<br>306 Soda</td>
+
+
+<hr>
+
+
+
+<h3>News</h3>
+
+
+
+<p>&nbsp;</p>
+
+
+
+<ul>
+    <li>There will be a bonus lecture on inapproximability on May 5; there will be no class on May 7</li>
+    <li>5/04 <a href=solutions/sol10.pdf>Homework 10 Solutions</a> and <a href=solutions/sol11.pdf>Homework 11 Solutions</a>
+    <li>4/30 <a href=pfinal.pdf>Practice final</a>
+<li>04/30 <a href=notepcp.pdf>Notes on PCP and Inapproximability</a>
+<li>04/23 <a href=homework11.pdf>Homework 11</a> and <a href=solutions/sol9.pdf>Homework 9 Solutions</a></li>
+
+<li>04/21 <a href=noteh.pdf>Notes on Hierarchy Theorems</a>, <a href=notezk.pdf>Notes on Zero Knowledge</a>,
+    and <a href=notealgebra.pdf>Review of Algebra</a>
+<li>04/19 <a href=homework10.pdf>Homework 10</a>
+
+<li>04/14 <a href=notenl.pdf>Notes on Space-bounded complexity</a>
+<li>04/10 <a href=homework9.pdf>Homework 9</a>
+
+<li>04/07 <a href=solutions/sol5.pdf>Homework 5 solutions</a>,  <a href=solutions/sol6.pdf>Homework 6 solutions</a>,  <a href=solutions/sol7.pdf>Homework 7 solutions</a>,  <a href=solutions/sol8.pdf>Homework 8 solutions</a>
+<li>04/03 <a href=pmidterm2.pdf>Practice midterm 2</a>
+<li>03/31 <a href=notenp.pdf>Notes on NP-completeness</a>
+<li>03/19 <a href=homework8.pdf>Homework 8</a>
+<li>03/12 <a href=homework7.pdf>Homework 7</a>
+<li> 03/10 <a href=notek.pdf>Notes on Kolmogorov complexity</a>
+<li> 03/05 <a href=homework6.pdf>Homework 6</a>
+<li>03/05 <a href=notelogic.pdf>Notes on Godel's incompleteness theorems</a>
+<li>03/03 <a href=noterice.pdf>Notes on Rice's theorem</a>
+<li>02/27 <a href=homework5.pdf>Homework 5</a>
+<li>02/25 <a href=solutions/sol4.pdf>Homework 4 Solutions</a>
+<li>02/23 <a href=solutions/sol3.pdf>Homework 3 Solutions</a>
+<li>02/19 <a href=prac-midterm1.pdf>Practice problems for Midterm 1</a>
+<li>02/13  <a href=homework4.pdf>Homework 4</a> and <a href=solutions/sol2.pdf>Homework 2 Solutions</a>
+<li>02/09 Note new section (wednesday morning) and office hours (Friday lunchtime)
+<li>02/06 <a href=homework3.pdf>Homework 3</a>
+
+<li>02/04 <a href=solutions/sol1.pdf>Homework 1 Solutions</a>
+<li>02/04 <a href=notestream.pdf>Handout 2</a>
+<li>02/03 <a href=notemindfa.pdf>Handout 1</a>
+<li>01/29 <a href=homework2.pdf>Homework 2</a>
+
+<li>01/22 <a href=homework1.pdf>Homework 1</a>
+<li>01/20 Welcome to the class
+
+
+</ul>
+
+
+
+<hr>
+
+
+
+
+
+
+
+<h3>Textbook</h3>
+
+
+
+<ul>
+
+
+
+  <li>Michael Sipser<br>
+
+
+
+    <i>Introduction to the Theory of Computation (3rd Edition)</i><br>
+
+
+
+    Cengage Learning, 2012</li>
+
+
+
+</ul>
+
+Note: this book is very good but also very expensive. If you can find a cheap used 1st or 2nd edition, <a href=http://www.smbc-comics.com/?id=3621>go for it</a>. 
+
+<hr>
+
+
+
+<p>&nbsp;</p>
+
+
+
+<h3>Information</h3>
+
+
+
+<ul>
+
+
+
+  <li><a href="http://www.cs.berkeley.edu/~luca/cs172/overview.html">Course
+
+
+
+    overview</a>: prerequisites, grading, etc
+
+
+
+  <li>Discussion sections:<br>
+
+<ul>
+<li> Wed 10-11am, 310 Soda
+<li> Wed 3-4pm, 320 Soda
+<li> Wed 3-4pm, 3113 Etcheverry 
+<li> Wed 4-5pm, 320 Soda
+</ul>
+
+
+    <li>Office hours:<br>
+
+<ul>
+
+   <li> <a href="http://www.cs.berkeley.edu/~luca">Luca Trevisan</a>:
+    Tuesday, 4-5:30pm, 302 <a href=https://goo.gl/maps/4nXCA>Calvin Lab</a><br>
+    
+
+
+    <li> Manuel Sabin: Fridays, 11-noon, 411 Soda (4th floor alcove) and noon-1pm, 651 Soda (6th floor alcove)
+    <li> TongKe Xue: Thursdays, 5-7pm , 283H Soda
+
+</ul>
+
+
+</ul>
+
+
+
+<p>&nbsp;</p>
+
+<iframe src="https://www.google.com/calendar/embed?src=dk36f8utjop1bjg6kt5jmtscsc%40group.calendar.google.com&ctz=America/Los_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+<hr>
+
+
+
+<h3>Work</h3>
+
+
+
+<p>&nbsp;</p>
+
+
+
+<ul>
+
+
+
+  <li>Homeworks are out (online only) on Thursdays after class and are due online by 5pm on Friday the following week<br>
+    Solutions are only accessible from within the berkeley.edu domain. LaTeX sources are provided; they use the file <a href=macros.tex>macros.tex</a>.
+    
+    <ol>
+<li> Homework 1 <a href=homework1.pdf>PDF</a> <a href=hw1.tex>TeX</a>
+<ul> <li> <a href=solutions/sol1.pdf>Homework 1 Solutions</a></li></ul>
+<li> Homework 2 <a href=homework2.pdf>PDF</a> <a href=hw2.tex>TeX</a>
+<ul> <li> <a href=solutions/sol2.pdf>Homework 2 Solutions</a></li></ul>
+<li> Homework 3 <a href=homework3.pdf>PDF</a> <a href=hw3.tex>TeX</a>
+<ul> <li> <a href=solutions/sol3.pdf>Homework 3 Solutions</a></li></ul>
+<li> Homework 4 <a href=homework4.pdf>PDF</a> <a href=hw4.tex>TeX</a>
+<ul> <li> <a href=solutions/sol4.pdf>Homework 4 Solutions</a></li></ul>
+<li> Homework 5 <a href=homework5.pdf>PDF</a> <a href=hw5.tex>TeX</a>
+<ul> <li> <a href=solutions/sol5.pdf>Homework 5 Solutions</a></li></ul>
+<li> Homework 6 <a href=homework6.pdf>PDF</a> <a href=hw6.tex>TeX</a>
+<ul> <li> <a href=solutions/sol6.pdf>Homework 6 Solutions</a></li></ul>
+<li> Homework 7 <a href=homework7.pdf>PDF</a> <a href=hw7.tex>TeX</a>
+<ul> <li> <a href=solutions/sol7.pdf>Homework 7 Solutions</a></li></ul>
+<li> Homework 8 <a href=homework8.pdf>PDF</a> <a href=hw8.tex>TeX</a>
+<ul> <li> <a href=solutions/sol8.pdf>Homework 8 Solutions</a></li></ul>
+<li> Homework 9 <a href=homework9.pdf>PDF</a> <a href=hw9.tex>TeX</a>
+    <ul> <li> <a href=solutions/sol9.pdf>Homework 9 Solutions</a></li></ul>
+<li> Homework 10 <a href=homework10.pdf>PDF</a> <a href=hw10.tex>TeX</a>
+<li> Homework 11 <a href=homework11.pdf>PDF</a> <a href=hw11.tex>TeX</a> | <a href=QNR_ZK.png>picture used in TeX file</a>
+
+    </ol>
+
+
+
+    <p>
+
+
+
+  <li>Discussion Sections
+  
+<ul>
+<li> <a href tongke3.pdf>Slides</a> from TongKe's section, week 3
+<li> <a href tongke4.pdf>Slides</a> from TongKe's section, week 4
+</ul>  
+
+<p>
+
+<li>Lecture Notes
+
+
+<ol>
+<li> <a href=notemindfa.pdf>Handout 1</a>
+<li><a href=notestream.pdf>Handout 2</a>
+<li><a href=noterice.pdf>Handout 3</a>
+<li><a href=notelogic.pdf>Handout 4</a>
+<li> <a href=notek.pdf>Handout 5</a></li>
+<li> <a href=notenp.pdf>Handout 6</a></li>
+<li> <a href=notenl.pdf>Handout 7</a></li>
+<li> <a href=noteh.pdf>Handout 8</a>
+<li> <a href=notezk.pdf>Handout 9</a>
+<li> <a href=notealgebra.pdf>Handout 10</a>
+<li> <a href=notepcp.pdf>Handout 11</a> (this material will not be in the final)
+
+</ol>
+
+
+
+  </li>
+
+
+
+<p>
+
+
+
+  <li>Exams
+    <ul>
+    <li><a href=prac-midterm1.pdf>Practice problems for Midterm 1</a>
+    <li><a href=pmidterm2.pdf>Practice problems for Midterm 2</a></li>
+     <li><a href=pfinal.pdf>Practice Final</a></li>
+    </ul>
+
+
+
+
+
+</ul>
+
+
+
+<hr>
+
+
+
+<h3>Lectures</h3>
+
+
+
+<p><b>So far:</b></p>
+
+
+<center>
+
+
+
+<table cellPadding="2" border="2">
+  <tbody>
+
+    <tr>
+
+      <td>&nbsp;</td>
+      <td><b>Topic</b></td>
+      <td><b>Readings</b></td>
+      <td><b>Problem sets</b></td>
+
+    </tr>
+
+
+
+    <tr>
+
+      <td><b>1</b>: January 20</td>
+      <td>Summary of the course</td>
+      <td>Chapter 0</td>
+      <td><font color="#ffffff">.</font></td>
+
+    </tr>
+    
+    <tr>
+      <td><b>2</b>: January 22</td>
+      <td>Deterministic Finite Automata</td>
+      <td>Section 1.1</td>
+      <td>Homework 1 out</td>
+   </tr>
+   
+   <tr>
+      <td><b>3</b>: January 27</td>
+      <td>Nondeterministic finite automata</td>
+      <td>Section 1.2</td>
+      <td><font color="#ffffff">.</font></td>
+  </tr>
+
+
+      <tr>
+           <td><b>4</b>: January 29</td>
+      <td>Equivalence of regular expression and finite automata</td>
+      <td>Section 1.3</td>
+      <td> Homework 2 out</td>
+   </tr>
+   
+    <tr>
+
+
+
+      <td><b>5</b>: February 3</td>
+      <td>Myhill-Nerode theorem</td>
+      <td>Handout 1 </td>
+      <td>&nbsp;</td>
+
+    </tr>
+
+    <tr>
+
+
+
+      <td><b>6</b>: February 5</td>
+      <td>State minimization&nbsp;</td>
+      <td>Handout 1 </td>
+      <td>        Homework        3 out</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+      <td><b>7</b>: February 10</td>
+      <td>Streaming algorithms</td>
+      <td>Handout 2 </td>
+       <td>&nbsp;</td>
+
+    </tr>
+
+
+
+    <tr>
+
+      <td><b>8</b>: February 12</td>
+      <td>Turing machines</td>
+      <td>Chapter 3<br>
+ <a href="turing36.pdf">Turing's paper</a></td>
+       <td>       Homework 4 out</td>
+
+    </tr>
+    
+        <tr>
+      <td><b>9</b>: February 17</td>
+      <td>Variants of Turing machines, non-determinism, enumerators</td>
+      <td>Chapter 3</td>
+      <td></td>
+    </tr>
+
+   <tr>
+      <td><b>10</b>: February 19</td>
+      <td>Halting problem</td>
+      <td>Chapter 4</td>
+      <td>Practice Midterm</td>
+    </tr>
+
+
+
+    <tr>
+	   <td><b>11</b>: February 24</td>
+      <td>More decidability and undecidability results</td>
+      <td>Chapter 4</td>
+      <td> </td>
+    </tr>
+
+
+    <tr>
+      <td><font color="#ff0000">February 26</font></td>
+      <td><b><font color="#ff0000">M<font size="-1">IDTERM</font>  I</font></b></td>
+      <td>&nbsp;</td>
+      <td>Homework 5 out</td>
+    </tr>
+    
+     <tr>
+      <td><b>12</b>: March 3</td>
+      <td>Reducibility, Rice's theorem, and more undecidability results</td>
+      <td>Sections 5.1, 5.3, Handout 3</td>
+      <td></td>
+    </tr>
+
+
+   <tr>
+
+   <td><b>13</b>: March 5</td>
+      <td>Godel's incompleteness theorem</td>
+      <td>Handout 4</td>
+      <td>Homework 6 out</td>
+
+
+
+    </tr>
+
+    <tr>
+     <td><b>14: </b>March 10</td>
+      <td>Kolmogorov complexity</td>
+      <td>Section 6.4, Handout 5</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><b>15</b>: March 12</td>
+      <td>The classes P and NP</td>
+      <td>Sections 7.1, 7.2, 7.3</td>
+      <td>Homework 7 out</td>
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td><b>16</b>: March 17</td>
+     <td>Boolean circuits</td>
+      <td>        Section 9.3</td>
+      <td></td>
+</tr>
+
+<tr>
+      <td><b>17</b>: March 19</td>
+      <td>NP-completeness of SAT</td>
+      <td>  Sections 7.4, 9.3</td>
+      <td>Homework 8 out</td>
+
+
+
+    </tr>
+
+
+
+
+    <tr>
+
+
+
+      <td><b>18</b>: March 31</td>
+     <td>More NP-complete problems</td>
+      <td>Handout 6</td>
+
+
+
+      <td></td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td><b>19</b>: April 2</td>
+
+
+
+      <td>More NP-complete problems</td>
+
+
+
+      <td>Handout 6</td>
+
+
+
+      <td>Practice midterm</td>
+
+
+
+    </tr>
+
+<tr>
+ <td><b>20</b>: April 7</td>
+ <td>NL-completeness</td>
+ <td>Sections 8.2, 8.5</td>
+ <td></td>
+</tr>
+
+<tr>
+    <td><font color="#ff0000">April 9</font></td>
+    <td><b><font color="#ff0000">M<font size="-1">IDTERM</font> II</font></b></td>
+    <td>&nbsp;</td>
+    <td>Homework 9 out</td>
+</tr>
+
+
+
+<tr>
+    <td><b>21</b>: April 14</td>
+    <td>Savitch's theorem, NL=coNL</td>
+    <td>Sections 8.4, Handout 7 </td>
+    <td></td>
+    
+</tr>
+
+<tr>
+    <td><b>22</b>: April 16</td>
+    <td>PSPACE-completeness, hierarchy theorem</td>
+    <td>Sections 8.3, 9.1, Handout 8</td>
+    <td>Homework 10 out</td>
+</tr>
+
+<tr>
+    <td><b>23</b>: April 21</td>
+    <td>Zero knowledge proofs</td>
+    <td>Handout 9, Handout 10</td>
+</tr>
+
+<tr>
+    <td><b>24</b>: April 23</td>
+    <td>More on Zero knowledge proofs</td>
+    <td>Handout 9, Handout 10</td>
+    <td>Homework 11 out</td>
+</tr>
+
+<tr>
+    <td><b>25</b>: April 28</td>
+    <td>The PCP Theorem</td>
+    <td>Handout 11</td>
+    <td></td>
+</tr>
+
+<tr>
+    <td><b>26</b>: April 30</td>
+    <td>Complexity of Approximation</td>
+    <td>Handout 11</td>
+    <td>Practice Final</td>
+</tr>
+
+</tbody>
+</table>
+</center>
+
+<p><br>
+
+
+
+<b>The plan:</b>
+
+
+
+</p>
+
+
+
+&nbsp;<br>
+
+
+
+&nbsp;<br>
+
+
+
+&nbsp;<center>
+
+
+
+<table cellPadding="2" border="2">
+
+
+
+  <tbody>
+
+
+
+    <tr>
+
+
+
+      <td>&nbsp;</td>
+
+
+
+      <td><b>Topic</b></td>
+
+
+
+      <td><b>Readings</b></td>
+
+
+
+      <td><b>Problem sets</b></td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td><b>1</b>: January 20</td>
+
+
+
+      <td>Summary of the course, Finite Automata</td>
+      <td>Chapter 0, Section 1.1</td>
+      <td><font color="#ffffff">.</font></td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td><b>2</b>: January 22</td>
+      <td>Non-deterministic automata, Regular expression</td>
+      <td>Section 1.2</td>
+      <td>Homework 1 out</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td><b>3</b>: January 27</td>
+      <td>Equivalence of regular expression and finite automata</td>
+      <td>Section 1.3</td>
+      <td><font color="#ffffff">.</font></td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td><b>4</b>: January 29</td>
+      <td>Equivalence of regular expression and finite automata</td>
+      <td>Section 1.3</td>
+      <td> Homework 2 out</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td><b>5</b>: February 3</td>
+      <td>Myhill-Nerode theorem</td>
+      <td>Handout 1 </td>
+      <td>&nbsp;</td>
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td><b>6</b>: February 5</td>
+      <td>State minimization&nbsp;</td>
+      <td>Handout 1 </td>
+      <td>        Homework        3 out</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+      <td><b>7</b>: February 10</td>
+      <td>Streaming algorithms</td>
+      <td>Handout 2 </td>
+       <td>&nbsp;</td>
+
+    </tr>
+
+
+
+    <tr>
+
+      <td><b>8</b>: February 12</td>
+      <td>Turing machines</td>
+      <td>Chapter 3<br>
+ <a href="turing36.pdf">Turing's paper</a></td>
+       <td>       Homework 4 out</td>
+
+    </tr>
+
+    <tr>
+      <td><b>9</b>: February 17</td>
+      <td>Examples of Turing machines</td>
+      <td>Chapter 3</td>
+      <td>&nbsp;</td>
+    </tr>
+
+
+    <tr>
+      <td><b>10</b>: February 19</td>
+      <td>Variants of Turing machines, non-determinism, enumerators</td>
+      <td>Chapter 3</td>
+      <td>Practice Midterm</td>
+    </tr>
+
+
+
+    <tr>
+	   <td><b>11</b>: February 24</td>
+      <td>Decidability, Halting problem</td>
+      <td>Chapter 4</td>
+      <td> </td>
+    </tr>
+
+
+    <tr>
+      <td><font color="#ff0000">February 26</font></td>
+      <td><b><font color="#ff0000">M<font size="-1">IDTERM</font>  I</font></b></td>
+      <td>&nbsp;</td>
+      <td>Homework 5 out</td>
+    </tr>
+
+    <tr>
+      <td><b>12</b>: March 3</td>
+      <td>Reducibility and more undecidability</td>
+      <td>Sections 5.1, 5.3</td>
+      <td></td>
+    </tr>
+
+
+
+
+
+
+    <tr>
+
+   <td><b>13</b>: March 5</td>
+      <td>Rice's theorem and more undecidability</td>
+      <td>Handout 3</td>
+      <td>Homework 6 out</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+     <td><b>14: </b>March 10</td>
+      <td>Godel's incompleteness theorem</td>
+      <td>Handout 4</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td><b>15</b>: March 12</td>
+      <td>Kolmogorov complexity</td>
+      <td>Section 6.4, Handout 5</td>
+      <td>Homework 7 out</td>
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td><b>16</b>: March 17</td>
+     <td>The classes P and NP</td>
+      <td>Sections 7.1, 7.2, 7.3</td>
+      <td></td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+      <td><b>17</b>: March 19</td>
+      <td>Boolean circuits</td>
+      <td>        Section 9.3</td>
+      <td>Homework 8 out</td>
+
+    </tr>
+
+    <tr>
+
+      <td><b>18</b>: March 31</td>
+     <td>NP-completeness of SAT</td>
+      <td>Sections 7.4, 9.3</td>
+      <td></td>
+
+    </tr>
+
+
+
+    <tr>
+
+      <td><b>19</b>: April 2</td>
+      <td>More NP-complete problems</td>
+      <td>Handout 6</td>
+      <td>Practice midterm</td>
+
+    </tr>
+
+
+
+    <tr>
+
+      <td><b>20</b>: April 7</td>
+      <td>More NP-complete problems</td>
+      <td>Handout 6</td>
+      <td></td>
+
+    </tr>
+
+
+
+    <tr>
+      <td><font color="#ff0000">April 9</font></td>
+      <td><b><font color="#ff0000">M<font size="-1">IDTERM</font> II</font></b></td>
+      <td>&nbsp;</td>
+      <td>Homework 9 out</td>
+    </tr>
+
+
+    <tr>
+      <td><b>21</b>: April 14</td>
+  <td>NL, Savitch's theorem</td>
+  <td>Sections 8.2, 8.4</td>
+      <td></td>
+
+    </tr>
+
+    <tr>
+
+      <td><b>22</b>: April 16</td>
+     <td>NL-completeness</td>
+     <td> Section 8.5</td>
+     <td>Homework 10 out</td>
+</tr>
+
+
+<tr>
+      <td><b>23</b>: April 21</td>
+      <td>NL=coNL</td>
+      <td>Handout 7</td>
+      <td></td>
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td><b>24</b>: April 23</td>
+
+
+
+      <td>Hierarchy theorems</td>
+
+
+
+      <td>Section 9.1<br>
+
+
+
+        Handout 8</td>
+
+
+
+      <td> Homework 11  out</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td><b>25</b>: April  28</td>
+
+
+
+      <td> Zero knowledge and cryptography</td>
+
+
+
+      <td>Handout 9</td>
+
+
+
+      <td><font color="#ffffff">.</font></td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td><b>26</b>:April 30</td>
+
+
+
+      <td>Zero knowledge and cryptography</td>
+
+
+
+      <td>Handout 9</td>
+
+
+
+      <td>Practice final</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td><b>27</b>: May 5</td>
+
+
+
+      <td>Zero knowledge and cryptography</td>
+
+
+
+      <td>Handout 9</td>
+
+
+
+      <td>&nbsp;</td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td><b>27</b>: May 7</td>
+
+
+
+      <td>Review</td>
+
+
+
+      <td>&nbsp;</td>
+
+
+
+      <td>&nbsp;</td>
+
+
+
+    </tr>
+
+
+
+  </tbody>
+
+
+
+</table>
+
+
+
+</center>
+
+
+
+<p>&nbsp;</p>
+
+
+
+<p>&nbsp;</p>
+
+
+
+<hr>
+
+
+
+
+</body>
+
+</html>
+
+
+
