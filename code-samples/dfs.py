@@ -1,6 +1,3 @@
-import networkx as nx
-
-                    
 def undirected_cc(G):
 
 # returns a dictionary "component" such that component[v] is
