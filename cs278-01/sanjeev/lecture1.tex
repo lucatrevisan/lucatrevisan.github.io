@@ -1,0 +1,187 @@
+\input{template}
+\input{macros}
+
+\begin{document}
+
+\handout{Lecture 1}{January 17, 2001}{January 21, 2001}{}
+
+This course assumes CS170, or equivalent, as a prerequisite.
+We will assume that the reader is familiar with the notions
+of algorithm and running time, as well as with basic notions
+of discrete math and probability.
+
+A main objective of theoretical computer science is
+to understand the amount of resources (time, memory,
+communication, randomness , \ldots) needed to solve
+computational problems that we care about. While the
+design and analysis of algorithms puts upper bounds
+on such amounts, computational complexity theory is
+mostly concerned with lower bounds; that is we look
+for {\em negative results} showing that certain problems
+require a lot of time, memory, etc., to be solved.
+In particular, we are interested in {\em infeasible}
+problems, that is computational problems that require
+impossibly large resources to be solved, even on instances
+of moderate size. It is very hard to show that a particular
+problem is infeasible, and in fact for a lot 
+of interesting problems the question of their feasibility
+is still open. Another major line of work in complexity
+is in understanding the relations between different computational problems
+and between different ``modes'' of computation. For
+example what is the relative power of algorithms using
+randomness and deterministic algorithms, what is the
+relation between worst-case and average-case complexity,
+how easier can we make an optimization problem if we only
+look for approximate solutions, and so on. It is in this
+direction that we find the most beautiful, and often
+surprising, known results in complexity theory.
+
+Before going any further, let us be more precise in
+saying what a computational problem is, and let us
+define some important classes of computational problems.
+Then we will see a particular incarnation of the notion
+of ``reduction,'' the main tool in complexity theory,
+and we will introduce \np-completeness, one of the great
+success stories of complexity theory.
+
+\section*{Computational Problems}
+
+In a {\em computational problem}, we are given an {\em input}
+that, without loss of generality, we assume to be encoded
+over the alphabet $\B$, and we want to return in {\em output}
+a solution satisfying some property: a computational problem
+is then described by the property that the output has to satisfy
+given the input.
+
+In this course we will deal with four types of computational
+problems: {\em decision} problems, {\em search} problems,
+{\em optimization} problems, and {\em counting} problems.\footnote{%
+This distinction is useful and natural, but it is also
+arbitrary: in fact every problem can be seen as a search problem}
+For the moment, we will discuss decision and search problem.
+
+In a {\em decision} problem, given an input $x \in \Bs$, we
+are required to give a YES/NO answer. That is, in a decision
+problem we are only asked to verify whether the input
+satisfies a certain property. An example of decision 
+problem is the 3-coloring problem: given an undirected
+graph, determine whether there is a way to assign a ``color''
+chosen from $\{1,2,3\}$ to each vertex in such a way
+that no two adjacent vertices have the same color.
+
+A convenient way to {\em specify} a decision problem
+is to give the set $L \subseteq \Bs$ of inputs for which
+the answer is YES. A subset of $\Bs$ is also called
+a {\em language}, so, with the previous convention,
+every decision problem can be specified
+using a language (and every language specifies a decision
+problem). For example, if we call 3COL the subset of
+$\Bs$ containing (descriptions of) 3-colorable graphs,
+then 3COL is the language that specifies the 3-coloring
+problem. From now on, we will talk about decision problems
+and languages interchangeably.
+
+In a {\em search} problem, given an input $x\in \Bs$ we
+want to compute some answer $y\in \Bs$ that is in some
+relation to $x$, if such a $y$ exists. Thus, a search
+problem is specified by a relation $R \subseteq \Bs \times \Bs$,
+where $(x,y) \in R$ if and only if $y$ is an admissible
+answer given $x$.
+
+Consider for example the search version of the 3-coloring
+problem: here given an undirected graph $G= (V,E)$ we
+want to find, if it exists, a coloring $c : V \to \{1,2,3\}$
+of the vertices, such that for every $(u,v)\in V$ we
+have $c(u) \neq c(v)$. This is different (and more demanding)
+than the decision version, because beyond being asked
+to determine whether such a $c$ exists, we are also asked
+to construct it, if it exists. Formally, the 3-coloring
+problem is specified by the relation $R_{\rm 3COL}$ that
+contains all the pairs $(G,c)$ where $G$ is a 3-colorable
+graph and $c$ is a valid 3-coloring of $G$.
+
+\section*{P and NP}
+
+In most of this course, we will study the {\em asymptotic} complexity
+of problems. Instead of considering, say, the time required to
+solve 3-coloring on graphs with $10,000$ nodes on some particular
+model of computation, we will ask what is the best asymptotic
+running time of an algorithm that solves 3-coloring on all
+instances. In fact, we will be much less ambitious, and we will
+just ask whether there is a ``feasible'' asymptotic algorithm
+for 3-coloring. Here feasible refers more to the rate of growth
+than to the running time of specific instances of reasonable size.
+
+A standard convention is to call an algorithm ``feasible'' if
+it runs in polynomial time, i.e. if there is some polynomial $p$
+such that the algorithm runs in time at most $p(n)$ on inputs of
+length $n$. 
+
+We denote by $\p$ the class of decision problems that are
+solvable in polynomial time.
+
+We say that a search problem defined by a relation $R$ is a
+NP search problem if the relation is efficiently computable
+and such that solutions, if they exist, are short. Formally,
+$R$ is an $\np$ search problem if there is a polynomial time
+algorithm that, given $x$ and $y$, decides whether $(x,y)\in R$,
+and if there is a polynomial $p$ such that if $(x,y)\in R$ then
+$|y| \leq p(|x|)$.
+
+We say that a decision problem $L$ is an NP decision problem
+if there is some NP relation $R$ such that $x\in L$ if and
+only if there is a $y$ such that $(x,y) \in R$. Equivalently,
+a decision problem $L$ is an NP decision problem if
+there is a polynomial time algorithm $V(\cdot,\cdot)$
+and a polynomial $p$ such that $x\in L$ if and only if
+there is a $y$, $|y| \leq p(|x|)$ such that $V(x,y)$ accepts.
+
+We denote by $\np$ the class of NP decision problems.
+
+\section*{Reductions}
+
+Let $A$ and $B$ be two decision problems. We say that $A$ reduces
+to $B$, denoted $A \leq B$, if there is a polynomial time computable
+function $f$ such that $x\in A$ if and only if $f(x) in B$.
+
+Two immediate observations: if $A\leq B$ and $B$ is in $\p$, 
+then also $A\in \p$ (conversely, if $A\leq B$, and $A\not\in \p$
+then also $B\not\in \p$); if $A\leq B$ and $B\leq C$, then
+also $A\leq C$.
+
+\section*{NP-completeness}
+
+A decision problem $A$ is $\np$-hard if for every 
+problem $L \in \np$ we have $L \leq A$. A decision
+problem $A$ is $\np$-complete if it is $\np$-complete
+and it belongs to \np.
+
+It is a simple observation that if $A$ is \np-complete,
+then $A$ is solvable in polynomial time if and only if
+$\p = \np$.
+
+\section*{An NP-complete problem}
+
+Consider the following decision problem, that we call $U$: we are given
+in input $(M,x,t,l)$ where $M$ is a Turing machine,
+$x\in \Bs$ is a possible input, and $t$ and $l$ are integers
+encoded in unary\footnote{The ``unary'' encoding of an integer
+$n$ is a sequence of $n$ ones.}, and the problem is
+to determine whether there is a $y \in \B^*$, $|y| \leq l$,  such that
+$M(x,y)$ accepts in $\leq t$ steps.
+
+It is immediate to see that $U$ is in \np. One can define
+a procedure $V_U$ that on input $(M,x,t,l)$ and $y$ accepts
+if and only if $|y| \leq l$, and $M(x,y)$ accepts in at most $t$
+steps.
+
+Let $L$ be an NP decision problem. Then there are algorithm $V_L$,
+and polynomials $T_L$ and $p_L$, such that $x\in L$ if and only
+if there is $y$, $|y| \leq p_L(|x|)$ such that $V_L(x,y)$ accepts;
+furthermore $V_L$ runs in time at most $T_L(|x| + |y|)$. We give
+a reduction from $L$ to $U$. The reduction maps $x$
+into the instance $f(x) = (V_L,x,T_L(|x|+p_L(|x|)),p_L(|x))$. Just by
+applying the definitions, we can see that $x\in L$ if and
+only $f(x) \in U$.
+
+\end {document}

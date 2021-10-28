@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+      <title>CS294: Graph Partitioning, Expanders, and Spectral Methods</title>
+  <style>
+
+
+
+body{margin:10px 10px 10px 10px;width: 1000px; font-family:sans-serif;background-color:#FFFFFF;}
+
+
+
+a{text-decoration:none}
+
+
+
+a:link{color:#4444aa;}
+
+
+
+a:visited{color:#4444aa;}
+
+
+
+a:hover{background-color:#aaaaFF;}
+
+
+
+li{line-height : 130%;}
+
+
+
+  </style>
+</head>
+<body>
+<h1>
+CS294: Graph Partitioning, Expanders and Spectral Methods</h1>
+
+<p><b><a href="#info">[general info]</a>&nbsp;</b>
+<b><a href="#notes">[lecture notes]</a> <a href="#ex">[exams and projects]</a></b>
+<br>
+</p>
+<hr width="100%">
+
+<H2>What's new</h2>
+
+<ul>
+    <li>Because of the faculty retreat, the office hours of April 21 are moved to April 20, 4-5pm, 625 Soda Hall</li>
+    <li>04/19, <a href=lecture20.pdf>Handout 20</a>: Properties of expanders
+    <li>04/19, <a href=lecture19.pdf>Handout 19</a>: Expansion of random graphs
+    <li>04/02, <a href=lecture18.pdf>Handout 18</a>: Margulis-Gabor-Galil expanders
+    <li>04/02, <a href=lecture17.pdf>Handout 17</a>: Analysis of the Zig-zag graph product
+    <li>03/16, <a href=lecture16.pdf>Handout 16</a>: Expanders from the Zig-zag graph product
+    <li>03/16, <a href=lecture15.pdf>Handout 15</a>: Eigenvalues and eigenvectors of Cayley graphs
+    <li>03/10, Some corrections to <a href=lecture14.pf>Handout 14</a>
+    <li>03/08, <a href=lecture14.pdf>Handout 14</a>: ARV Analysis, part 3
+    <li>03/08, <a href=lecture13.pdf>Handout 13</a>: ARV Analysis, cont'd
+    <li>03/01, <a href=lecture12.pdf>Handout 12</a>: ARV Analysis
+        <li>03/01, <a href=lecture11.pdf>Handout 11</a>: ARV
+    <li>02/24, <a href=lecture10.pdf>Handout 10</a>: Proof of Bourgain's Theorem
+    <li>02/24, <a href=lecture09.pdf>Handout 9</a>: The sparsest cut problem
+    <li>02/21, <a href=https://piazza.com/berkeley/spring2016/cs294109/resources>Midterm 1</a> (available only to enrolled students)
+    <li>02/17, <a href=lecture08.pdf>Handout 8</a>: Spectral algorithms wrap-up
+    <li>02/10. <a href=lecture07.pdf>Handout 7</a>: Higher order Cheeger inequalities, cont'd
+        <li>02/09. <a href=lecture06.pdf>Handout 6</a>: Higher order Cheeger inequalities
+    <li>02/08. <a href=lecture05.pdf>Handout 5</a>: Cheeger-type inequality for 	&lambda;<sub>n</sub>
+    <li>02/07. <a href=lecture04.pdf>Handout 4</a>: Cheeger inequalities cont'd
+    <li>01/31. <a href=lecture03.pdf>Handout 3</a>: Cheeger inequalities
+        <li>01/31. <a href=lecture01.pdf>Handout 1</a>: introduction
+    <li>01/25. <a href=lecture02.pdf>Handout 2</a>: the basics of spectral graph theory
+    
+    <li>01/21. <a href=lecture00.pdf>Handout 0</a>: linear algebra background
+</ul>
+
+
+
+<hr width="100%">
+
+
+<h2><a name="info"></a>general information</h2>
+<p><br>
+<b>Instructor</b>: <a href="http://www.eecs.berkeley.edu/~luca/">Luca
+Trevisan</a>,  625 Soda Hall, email <i>luca at berkeley dot edu</i>
+<p>
+<p><b>Classes</b> are MW, 1-2:30pm, in 310 Soda
+</p>
+<p><b>Office hours</b>: Thursdays, 2-3pm, in 625 Soda
+
+
+<p>
+
+<h3>About the course</h3>
+
+
+This course is about applications of linear algebra to graph theory and to graph algorithms. We will be interested in spectral algorithms for finding graph cuts and clusters, in the construction of expanders, in the analysis of Markov-Chain Monte-Carlo algorithms, in constructing graph sparsifiers, in solving diagonally-dominated systems of linear equations, in using such solutions to compute electrical flows, and in using electrical flows to approximate the max flow problem.
+
+
+<p>
+
+<b>Prerequisites:</b> a basic course in linear algebra and a course on
+algorithms; preferably, also a basic understanding of linear programming
+and of duality.
+
+<p>
+
+<b>Assignments:</b> two midterm take-home exams and a take-home final exam.
+Working on a  research project related to the topics of the class can
+substitute for the final exam. 
+
+<hr>
+
+<h3>References</h3>
+
+The main reference will be a set of lecture notes. Notes will be
+posted after each lecture. (<a href=http://www.eecs.berkeley.edu/~luca/books/expanders.pdf>Here are some older notes</a>.) In addition, the following texts
+will be helpful references.
+
+<p>
+
+On sparsest cut approximation algorithms:
+
+<ul><li>Sanjeev Arora, Satish Rao, and Umesh Vazirani<br>
+<a href=http://www.cs.princeton.edu/~arora/pubs/arvcacm.pdf>Geometry, Flows, and  
+Graph-Partitioning Algorithms</a><br>
+CACM <b>51</b>(10):96-105, 2008.
+</ul>
+
+On spectral graph theory and on explicit constructions
+of expander graphs:
+
+<ul><li>Shlomo Hoory, Nathan Linial, and Avi Wigderson<br>
+<a href=http://www.ams.org/journals/bull/2006-43-04/S0273-0979-06-01126-8/home.html>Expander graphs and their applications</a><br>
+Bull. Amer. Math. Soc. <b>43</b>:439-561,  2006.
+</ul>
+
+On Markov-Chain Monte-Carlo algorithms for uniform generation
+and approximate counting:
+
+<ul><li>
+Mark Jerrum<br>
+Counting, sampling and integrating: algorithms and complexity<br>
+Drafts of <a href=http://www.dcs.ed.ac.uk/home/mrj/ETHbook/>Chapter 3, Chapter 4, and Chapter 5</a>.
+</ul>
+
+<p>
+
+On solving systems of Laplacian equations, and on the theory of electrical networks and of electrical flows, and the applications to max flow:
+
+<ul><li>
+    Nisheet Vishnoi<br>
+    <a href=http://research.microsoft.com/en-us/um/people/nvishno/site/Lxb-Web.pdf>Lx=b</a><br>
+    <i>Foundations and Trends in Theoretical Computer Science</i>,
+    Vol. 8, Nos. 1-2 (2012), pp 1-141
+</ul>
+
+
+<hr>
+
+<h3>Lectures</h3>
+
+So far:
+
+<ol>
+    <li>01/20 Overview of the course. Readings: <a href=lecture00.pdf>Handout 0</a>, <a href=lecture01.pdf>Handout 1</a></li>
+    <li>01/25 Laplacian of a graphs and basics of spectral graph theory. Readings: <a href=lecture02.pdf>Handout 2</a></li>
+    <li>01/27 Normalized Laplacian of an irregular graph. Cheeger inequalities. Readings: <a href=lecture03.pdf>Handout 3</a></li>
+    <li>02/01 Cheeger inequalities ctd. Readings: <a href=lecture04.pdf>Handout 4</a></li>
+    <li>02/03 Cheeger-type inequalities for 	&lambda;<sub>n</sub>. Readings: <a href=lecture05.pdf>Handout 5</a></li>
+    <li>02/08 Higher-order Cheeger inequalities. Readings: <a href=lecture06.pdf>Handout 6</a> and <a href=http://tcsmath.org/2013/02/20/no-frills-proof-of-higher-order-cheeger-inequality/>these notes</a></li>
+    
+    <li>02/10 Higher-order Cheeger inequalities, cont'd. Readings: <a href=lecture07.pdf>Handout 7</a> and <a href=http://tcsmath.org/2013/02/20/no-frills-proof-of-higher-order-cheeger-inequality/>these notes</a></li>
+    
+    <li>02/17 Other variants of Cheeger's inequality and the power methods. Readings: <a href=lecture08.pdf>Handout 8</a> </li>
+    <li>02/22 The sparsest cut problem and the Leighton-Rao relaxation. Readings: <a href=lecture09.pdf>Handout 9</a></li>
+    <li>02/24 Proof of Bourgain's Theorem. Readings: <a href=lecture10.pdf>Handout 10</a></li>
+    <li>02/29 ARV. Readings: <a href=lecture11.pdf>Handout 11</a></li>
+    <li>03/02 ARV Analysis. Readings:<a href=lecture12.pdf>Handout 12</a></li>
+    <li>03/07 ARV Analysis, continued. Readings:<a href=lecture13.pdf>Handout 13</a></li>
+    <li>03/09 ARV Analysis, part 3. Readings:<a href=lecture14.pdf>Handout 14</a></li>
+    <li>03/14 Cayley graphs of Abelian groups: Readings: <a href=lecture15.pdf>Handout 15</a></li>
+    <li>03/16 Expander constructions using the Zig-Zag graph product: Readings: <a href=lecture16.pdf>Handout 16</a></li>
+    <li>03/28 Analysis of the Zig-Zag graph product: Readings: <a href=lecture17.pdf>Handout 17</a></li>
+    <li>03/30 Margulis-Gabor-Galil Expanders: Readings: <a href=lecture18.pdf>Handout 18</a></li>
+    <li>04/04 Probabilistic constructions of expanders. Readings: <a href=lecture19.pdf>Handout 19</a></li>
+    <li>04/06 Properties of expanders. Readings: <a href=lecture20.pdf>Handout 20</a></li>
+    <li>04/13 Approximating counting and sampling. Readings: notes in preparation, meanwhile see <a href=http://www.dcs.ed.ac.uk/home/mrj/ETHbook/>Chapter 5 of Mark Jerrum's book</a>'</li>
+    <li>04/18 A nearly linear time algorithm for Laplacian linear equations. Readings: notes in preparation</li>
+    <li>04/20 Solving Laplacian systems, continued. Readings: notes in preparation</li>
+    <li>04/25 Sparsifiers. Readings: notes in preparation</li>
+    <li>04/27 Computing effective resistances, and a sketch of max flow algorithms. Readings: notes in preparation</li>
+    
+        
+            
+
+    
+</ol>
+
+
+The following is a tentative syllabus (some topics will span multiple lectures):
+
+<ul>
+
+<li> Definitions: edge and vertex expansion, uniform and general sparsest
+cut problems, review of linear algebra
+
+<li> Eigenvalues and expansion, Cheeger's inequality and  Fiedler's spectral
+partitioning algorithm
+
+<li> Cheeger-type inequality for Max Cut
+
+
+<li> Higher-order Cheeger inequalities
+    
+    <li> The power method
+    
+
+<li> Algorithms for finding sparse cuts: Leighton-Rao, and metric embeddings
+
+<li> Bourgain's theorem (embedding of general metrics in L1)
+
+<li> Algorithms for finding sparse cuts: Arora-Rao-Vazirani
+    
+    
+<li> Eigenvalues and Eigenvectors of Cayley graphs
+
+
+<li> The Zig-Zag graph product construction
+
+
+<li> The Margulis-Gabor-Galil construction of expanders
+
+
+<li> The expansion of random graphs
+
+<li> Eigenvalues, expansion, conductance, and random walks
+
+<li> Approximate counting, approximate sampling, and the MCMC method
+
+<li>  Counting  matchings
+
+<li> Electrical networks, electrical flows, and Laplacian solvers
+    
+<li> Graph sparsifiers
+    
+
+<li> Using electrical flows to find approximate max flows
+
+
+
+</ul>
+
+<hr>
+
+<a name="ex"></a><h3>Exams and Projects</h3>
+
+
+
+</body>
+</html>

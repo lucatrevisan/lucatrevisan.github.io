@@ -1,0 +1,71 @@
+\documentclass[11pt]{article}
+
+\usepackage{amssymb,amsmath}
+
+\input{macros}
+
+\begin{document}
+
+\handout{0}{August 0, 2005}{Scribe: Name of the Scribe}
+
+Some examples of macros
+
+\begin{theorem}[Joe's Theorem] Statement of Joe's Theorem.
+\end{theorem}
+
+
+\begin{proof}
+Proof of Joe's theorem.
+\end{proof}
+
+
+\begin{lemma}[Joe's Lemma] Statement of Joe's Lemma.
+\end{lemma}
+
+\begin{corollary}[Joe's Corollary] Statement of Joe's Corollary.
+\end{corollary}
+
+\begin{definition} [Pseudorandomness]
+Let $\cal F$ be a set of functions $f: \B^n \to \B$. We say that
+a random variable $X= (X_1,\ldots,X_n)$ distributed over $\B^n$
+is $\epsilon$-{\em pseudorandom} for $\cal F$ if 
+
+\begin{equation} 
+\forall f \in \F. \hspace{50pt}  \left| \pr_{r\sim \B^n} [f(r)=1] - \pr [ f(X_1,\ldots,X_n) = 1] \right| \leq \epsilon
+\end{equation}
+\end{definition}
+
+There are also macros for {\em fact}, {\em proposition}, {\em example}, {\em remark}, etc.
+
+To write expectations: $\E_{x \sim \B^n} [ f(x)]$. Note how it looks in equations:
+
+\begin{equation}
+\E_{x \sim \B^n} [ f(x)]
+\end{equation}
+
+Similarly to write probability: $\pr_{x\sim \B^n} [ f(x) = g(x) ]$.
+
+There are macros for \N, \Z, \R, \B, \H, \F.
+
+If we ever need to write an algorithm, there are some available macros. For example:
+
+\noindent\fbox{\begin{minipage}{2in}
+\begin{program}
+Graph-Test $(G,f)$\+\\
+ Choose uniformly at random $x_1,\ldots,x_{k} \in \H^n$\\
+ \IF $f(x_i)f(x_j)f(x_ix_j)=1$ for all $(i,j) \in E$\+\\
+ \THEN \ACCEPT\\
+ \ELSE \REJECT\-\-
+\end{program}\end{minipage}}
+
+% The command \+ increase indentation in the following lines, while \- decreases it.
+% Macros for several typical keywords are available, see the code of macros.tex
+
+\bigskip
+
+See also comments in the latex code.
+
+But a nested sequence of {\em itemize} and {\em enumerate}, as appropriate, will also be fine.
+
+
+\end{document}

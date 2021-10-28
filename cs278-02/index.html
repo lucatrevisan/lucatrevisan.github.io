@@ -1,0 +1,179 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+</head>
+<body>
+
+<h1>
+CS 278 -- Computational Complexity</h1>
+<p><b>Course given in Fall 2002</b></p>
+<p><b>All <a href="http://www.cs.berkeley.edu/~luca/notes/complexitynotes02.pdf">lecture
+notes</a> in a single pdf file</b>
+<br></p>
+<p><b> <a href="#links">[links]</a> <a href="#notes">[notes]</a></b></p>
+<hr WIDTH="100%">
+<a NAME="links"></a>Links, Interesting Papers, Quotes
+
+<p><br><b>People</b>
+<ul>
+<li>
+<a href="http://www-history.mcs.st-andrews.ac.uk/history/Mathematicians/Godel.html">Kurt
+Godel</a></li>
+
+<li>
+<a href="http://www.turing.org.uk/turing">Alan Turing</a></li>
+</ul>
+
+<p><br><b>P, NP, and all that stuff</b>
+<ul>
+<li>
+M. Sipser. <a href="http://www.cs.berkeley.edu/~luca/cs278/papers/sipser.ps">The
+History and Status of the P versus NP question</a></li>
+
+<br>Contains the now-famous letter of Godel to von Neumann
+<li>
+C.H. Papadimitriou. <a href="http://www.cs.berkeley.edu/~luca/cs278/papers/retro.ps">NP-completeness:
+a retrospective</a>.</li>
+
+<li>
+O. Goldreich. <a href="http://www.cs.berkeley.edu/~luca/cs278/papers/cc.ps">Computational
+Complexity</a></li>
+</ul>
+<b>Quotes</b>
+<ul>
+<li>
+<i>Once more, we have decreased the number of open questions in the field
+- without, alas, increasing much the number of answers!</i></li>
+
+<br>(C.H. Papadimitriou and M. Yannakakis, "Optimization, Approximation,
+and Complexity Classes." JCSS 43:425-440, 1991.)</ul>
+
+<p><br>
+<hr WIDTH="100%">
+<h2>
+<a NAME="notes"></a>Lecture Notes</h2>
+All notes from last year in a <a href="notes/cs278.ps">single ps file</a>
+(not completely revised, use at your own risk)
+<br>&nbsp;
+<p>&nbsp;Tentative schedule:
+<br>&nbsp;
+<ul>
+<li>
+<a href="notes/lecture01.ps">[Lecture 1]</a> 8/27 (revised 9/4) Diagonalization,
+decision versus search problems, P, NP, reductions, NP-completeness.</li>
+
+<li>
+<a href="notes/lecture02.ps">[Lecture 2]</a> 8/29 Space-bounded computations,
+NL-completeness, Savitch's theorem.</li>
+
+<li>
+<a href="notes/lecture03.ps">[Lecture 3]</a> 9/3&nbsp; NL=coNL, introduction
+to the polynomial hierarchy</li>
+
+<li>
+<a href="notes/lecture04.ps">[Lecture 4]</a> 9/5 Non-uniform computations,
+Karp-Lipton</li>
+
+<li>
+<a href="notes/lecture05.ps">[Lecture 5]</a> 9/10 Probabilistic complexity
+classes</li>
+
+<li>
+<a href="notes/lecture06d.ps">[Lecture 6]</a> 9/12 (revised 9/12)&nbsp;
+Cheking polynomial identity</li>
+
+<li>
+<a href="notes/lecture07b.ps">[Lecture 7]</a> 9/17 (revised 9/18) Valiant-Vazirani</li>
+
+<li>
+<a href="notes/lecture08.ps">[Lecture 8]</a> 9/19 (posted 9/18) #P and
+Approximate counting</li>
+
+<li>
+<a href="notes/lecture09.ps">[Lecture 9]</a> 9/24 (posted 9/25) Average-case
+complexity (random self-reduction for the Permanent via polynomial reconstruction)</li>
+
+<li>
+<a href="notes/lecture10.ps">[Lecture 10]</a> 9/26 (revised 9/26) Average-case
+complexity (more polynomial reconstruction)</li>
+
+<li>
+<a href="notes/lecture11.ps">[Lecture 11]</a> 10/1 (posted 10/1) Average-case
+complexity (hardness of problems in EXP and PSPACE, List-decoding)</li>
+
+<li>
+<a href="notes/lecture12.ps">[Lecture 12]</a> 10/3 (posted 10/3) Average-case
+complexity (XOR Lemma)</li>
+
+<li>
+<a href="notes/lecture13.ps">[Lecture 13]</a> 10/8 (posted 10/3) Average-case
+complexity (Levin's theory)</li>
+
+<li>
+<a href="notes/lecture14b.ps">[Lecture 14]</a> 10/10 (revised 10/10) Introduction
+to interactive proofs</li>
+
+<li>
+<a href="notes/lecture15.ps">[Lecture 15]</a> 10/15 (posted 10/9) IP=PSPACE</li>
+
+<li>
+<a href="notes/lecture16.ps">[Lecture 16] </a>10/17 PCP and hardness of
+approximation</li>
+
+<li>
+<a href="notes/lecture17.ps">[Lecture 17]</a> 10/22 (posted 11/4) More
+hardness of approximation, parallel repetition, efficient composition</li>
+
+<li>
+[Lecture 18] 10/24 Discussion of the midterm, more on parallel repetition
+and composition</li>
+
+<li>
+<a href="notes/lecture19.ps">[Lecture 19] </a>10/29 (posted 11/12) Fourier
+analysis, linearity testing</li>
+
+<li>
+<a href="notes/lecture20.ps">[Lecture 20]</a> 10/31 (posted 11/4) Hastad's
+verifier</li>
+
+<li>
+<a href="notes/lecture21.ps">[Lecture 21]</a> 11/5 (posted 12/3) Parity
+is not in AC0: proof with polynomials</li>
+
+<li>
+<a href="notes/lecture22.ps">[Lecture 22]</a>&nbsp; 11/7 (posted 12/3)
+Parity is not in AC0: proof with random restrictions</li>
+
+<li>
+<a href="notes/lecture23.ps">[Lecture 23]</a> 11/12 (posted 11/25) Proof
+complexity, resolution, width</li>
+
+<li>
+<a href="notes/lecture24.ps">[Lecture 24]</a> 11/14 (posted 11/25) Width
+lower bounds</li>
+
+<li>
+<font color="#FF0000">11/19 FOCS, no lecture</font></li>
+
+<li>
+<a href="notes/lecture25.ps">[Lecture 25]</a> 11/21 (posted 11/20) Pseudorandomness
+and derandomization</li>
+
+<li>
+<a href="notes/lecture26.ps">[Lecture 26]</a> 11/26 (posted 11/25) Nisan-Wigderson</li>
+
+<li>
+<font color="#FF0000">11/28 no lecture</font></li>
+
+<li>
+<a href="notes/lecture27.ps">[Lecture 27]</a> 12/3 (posted 11/25) Extractors,
+error-correcting codes</li>
+
+<li>
+[Lecture 28] 12/5 Extractors and pseudorandom generators from polynomials</li>
+</ul>
+
+</body>
+</html>

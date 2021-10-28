@@ -1,0 +1,197 @@
+\input{template}
+\input{macros}
+
+\begin{document}
+
+\handout{Lecture 6}{February 7, 2001}{February 11, 2001}{Scribe: Fran\c cois Labelle}
+
+
+
+
+
+This lecture is on boolean circuit complexity. We first define circuits and the function they compute. Then we consider families of circuits and the language they define. In Section~\ref{section:relation}, we see how circuits relate to other complexity classes by a series of results, culminating with the Karp-Lipton theorem which states that if $\np$ problems can be decided with polynomial-size circuits, then $\ph~=~\sigmatwo$.
+
+\section{Circuits}
+
+A circuit $C$ has $n$ inputs, $m$ outputs, and is constructed with \scand{} gates, \scor{} gates and \scnot{} gates. Each gate has in-degree 2 except the \scnot{} gate which has in-degree 1. The out-degree can be any number. A circuit must have no cycle. See Figure~\ref{figure:circuit}.
+
+\ffigureh{lecture6fig1}{3in}{A Boolean circuit.}{figure:circuit}
+
+A circuit $C$ with $n$ inputs and $m$ outputs computes a function $f_C:\B^n \to \B^m$. See Figure~\ref{figure:xor} for an example.
+
+\ffigure{lecture6fig2}{3in}%
+{A circuit computing the boolean 
+function $f_C(x_1 x_2 x_3 x_4) = x_1 \xor x_2 \xor x_3 \xor x_4$.}
+{figure:xor}
+
+
+Define $\size(C)$ = \# of \scand{} and \scor{} gates of $C$. By convention, we do \emph{not} count the \scnot{} gates.
+
+To be compatible with other complexity classes, we need to extend the model to arbitrary input sizes:
+
+\begin{Def}
+A language $L$ is solved by a family of circuits $\{C_1, C_2, \ldots, C_n, \ldots\}$ if for every $n \geq 1$ and for every $x$ s.t. $|x| = n$,
+
+\begin{displaymath}
+x \in L \,\, \iff \,\, f_{C_n}(x)=1.
+\end{displaymath}
+\end{Def}
+
+\begin{Def}
+Say $L \in \size(s(n))$ if $L$ is solved by a family $\{C_1, C_2, \ldots, C_n, \ldots\}$ of circuits, where $C_i$ has at most $s(i)$ gates.
+\end{Def}
+
+\section{Relation to other complexity classes} \label{section:relation}
+
+\begin{Prop} \label{exp_size_construction}
+For every language $L$, $L \in \size(O(2^n))$. In other words, exponential size circuits contain all languages.
+\end{Prop}
+
+\begin{proof}
+We need to show that for every 1-output function $f:\B^n \to \B$, $f$ has circuit size $O(2^n)$.
+
+Use the identity $f(x_1 x_2 \ldots x_n) = (x_1 \land f(1 x_2 \ldots x_n)) \lor (\overline{x}_1 \land f(0 x_2 \ldots x_n))$ to recursively construct a circuit for $f$, as shown in Figure~\ref{figure:function}.
+
+\ffigure{lecture6fig3}{3in}
+{A circuit computing any function $f(x_1 x_2 \ldots x_n)$ of $n$ 
+variables assuming circuits for two functions of $n-1$ variables.}
+{figure:function}
+
+
+The recurrence relation for the size of the circuit is: $s(n) = 3 + 2s(n-1)$ with base case $s(1) = 1$, which solves to $s(n) = 2 \cdot 2^n - 3 = O(2^n)$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Prop}
+\begin{tabular}{l}
+If $L \in \dtime(t(n))$, then $L \in \size(O(t^2(n)))$.
+\end{tabular}
+\end{Prop}
+
+\begin{proof}
+Let $L$ be a decision problem solved by a machine $M$ in time $t(n)$. Fix $n$ and $x$ s.t. $|x| = n$, and consider the $t(n) \times t(n)$ tableau of the computation of $M(x)$. See Figure~\ref{figure:tableau}.
+
+\ffigure{lecture6fig4}{3in}
+{$t(n) \times t(n)$ tableau of computation. The left entry of each cell is the tape symbol at that position and time. The right entry is the machine state or a blank symbol, depending on the position of the machine head.}
+{figure:tableau}
+
+
+Assume that each entry $(a,q)$ of the tableau is encoded using $k$ bits. By Proposition \ref{exp_size_construction}, the transition function $\B^{3k} \to \B^k$ used by the machine can be implemented by a ``next state circuit'' of size $k \cdot O(2^k)$, which is exponential in $k$ but constant in $n$. This building block can be used to create a circuit of size $O(t^2(n))$ that computes the complete tableau, thus also computes the answer to the decision problem. This is shown in Figure~\ref{figure:tableau_circuit}.
+\end{proof}
+
+\ffigure{lecture6fig5}{3in}
+{Circuit to simulate a Turing machine computation by constructing the tableau.}
+{figure:tableau_circuit}
+
+
+\begin{Cor}
+$\p \subseteq \size(n^{O(1)})$.
+\end{Cor}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ex}
+$\p \neq \size(n^{O(1)})$.
+\end{Ex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Prop}
+There are languages $L$ such that $L \in \size(2^{o(n)})$. In other words, for every $n$, there exists $f:\B^n \to \B$ that cannot be computed by a circuit of size $2^{o(n)}$.
+\end{Prop}
+
+\begin{proof}
+This is a counting argument. There are $2^{2^n}$ functions $f:\B^n \to \B$, and we claim that the number of circuits of size $s$ is at most $2^{O(s \log s)}$, assuming $s \geq n$. To bound the number of circuits of size $s$ we create a compact binary encoding of such circuits. Identify gates with numbers $1,\ldots,s$. For each gate, specify where the two inputs are coming from, whether they are complemented, and the type of gate. The total number of bits required to represent the circuit is
+
+\begin{displaymath}
+s(2 \log (n+s) + 3) \leq s(2 \log 2s + 3) = s(2 \log 2s + 5).
+\end{displaymath}
+
+So the number of circuits of size $s$ is at most $2^{2s \log s + 5s}$, and this is not sufficient to compute all possible functions if
+
+\begin{displaymath}
+2^{2s \log s + 5s} < 2^{2^n}.
+\end{displaymath}
+
+This is satisfied if $s = 2^{o(n)}$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ex}
+Show that there is a language in $\dspace(2^{n^{O(1)}})$ that does not belong to $\size(2^{o(n)})$.
+\end{Ex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Thm} [Karp-Lipton] If $\np \subseteq \size(n^{O(1)})$ then $\ph = \sigmatwo$. In other words, the polynomial hierarchy would collapse to its second level.
+\end{Thm}
+
+\begin{proof}
+We will show that if $\np \subseteq \size(n^{O(1)})$ then $\pitwo \subseteq \sigmatwo$. By a result in a previous lecture, this implies that $\ph = \Sigma_2$. Recall the definitions:
+
+$L$ is in $\sigmatwo$ if there is a polynomial time verifier $V$ and polynomials $p_1, p_2$ s.t.
+
+\begin{displaymath}
+x \in L \,\, \iff \,\, \exists y_1 \, |y_1| \leq p_1(|x|) \cdot \forall y_2 \, |y_2| \leq p_2(|x|) \cdot V(x,y_1,y_2) = 1.
+\end{displaymath}
+
+Similarly, $L$ is in $\pitwo$ [\ldots]
+
+\begin{displaymath}
+x \in L \,\, \iff \,\, \forall y_1 \, |y_1| \leq p_1(|x|) \cdot \exists y_2 \, |y_2| \leq p_2(|x|) \cdot V(x,y_1,y_2) = 1.
+\end{displaymath}
+
+Assume $\np \subseteq \size(n^{O(1)})$ and let $L$ be in $\pitwo$. For every $n$, there is a circuit $C_n$ such that $C_n(x,y_1) = 1$ iff $\exists y_2$ such that $V(x,y_1,y_2) = 1$, where $|x| = n,\, |y_1| = p_1(n),\, |y_2| = p_2(n)$. So,
+
+\begin{displaymath}
+\begin{array}{rcl}
+x \in L & \iff & \exists C_n \cdot (\forall y_1 \cdot C_n(x,y_1) = 1) \\
+& & \textrm{and}\,\, C_n \,\,\textrm{is the circuit that decides whether}\,\, \exists y_2 \cdot V(x,y_1,y_2) = 1 \\
+& \iff & \exists C_n \cdot (\forall y_1 \cdot C_n(x,y_1) = 1) \\
+& & \land \,\, \forall y_1 \{(\exists y_2 \cdot V(x,y_1,y_2) = 1) \iff C_n(x,y_1) = 1\} \quad \textrm{(checking specifications)}
+\end{array}
+\end{displaymath}
+
+\ldots which is a $\sigmathree$ formula, we are not in good shape. We need the circuit for the $\np$ problem to not only answer the decision problem, but also to report a witness if the answer is $\scyes$.
+
+(Second try.) There is a circuit $C_n$ such that
+
+\begin{displaymath}
+C_n(x,y_1) = \left\{
+\begin{array}{ll}
+0 & \textrm{if there is no}\,\, y_2 \,\,\textrm{such that}\,\, V(x,y_1,y_2) = 1 \\
+1y_2 & \textrm{otherwise, where}\,\, y_2 \,\,\textrm{is such that}\,\, V(x,y_1,y_2) = 1.
+\end{array} \right.
+\end{displaymath}
+
+See Figure~\ref{figure:decision_witness} if you can't immediately see how a decision problem solver can always be converted into a witness finder.
+
+\ffigure{lecture6fig6}{2in}
+{How to use decision problem solvers to find a witness to a search problem.}
+{figure:decision_witness}
+
+
+Let $C$ be a circuit. The formula for checking specifications is
+
+\begin{displaymath}
+\begin{array}{rl}
+\forall x \forall y_1 \forall y_2 \, \cdot & (V(x,y_1,y_2) = 1) \implies (C(x,y_1) \neq 0) \\
+& \land \,\, (C(x,y_1) \neq 0) \implies (V(x,y_1,C(x,y_1)) = 1)
+\end{array}
+\end{displaymath}
+
+which can be used to build a $\sigmatwo$ formula for $L$ as follows:
+
+\begin{displaymath}
+\begin{array}{rl}
+x \in L \,\, \iff \,\, \exists C_n \cdot \forall z \forall y_1 \forall y_2 \, \cdot
+& (C_n(x,y_1) \neq 0) \\
+& \land \,\, (V(z,y_1,y_2)=1) \implies (C_n(z,y_1) \neq 0) \\
+& \land \,\, (C_n(z,y_1) \neq 0) \implies (V(z, y_1, C_n(z,y_1))=1).
+\end{array}
+\end{displaymath}
+\end{proof}
+
+\end{document}

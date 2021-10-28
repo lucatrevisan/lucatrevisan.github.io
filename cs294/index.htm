@@ -1,0 +1,218 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>C294 Coding Theory and Complexity Theory</title>
+</head>
+
+<body>
+
+<h1>CS294 - Coding Theory and Complexity</h1>
+<h2>&nbsp;</h2>
+<p><br>
+<b>Instructor</b>: <a href="http://www.cs.berkeley.edu/~luca">Luca Trevisan</a>,
+<font face="Courier New,Courier"><a href="mailto:luca@eecs">luca@cs</a></font>,
+615 Soda Hall, Tel. 642 8006
+<p><b>Classes</b> are Mondays-Wednesdays, 2:30-4:00pm, 405 SODA
+<p><b>Office hours</b>: Tuesdays, 2-3pm or by appointment.
+<p><b>Requirements:</b>
+<ul>
+  <li>attendance</li>
+  <li>scribing notes for two or more&nbsp; lectures</li>
+  <li>final project</li>
+</ul>
+<hr>
+<h3><b>course description</b></h3>
+<p>Error-correcting codes and related
+combinatorial constructs play an important role is several recent (and old)
+results in complexity theory. In most cases, such as in the Goldreich-Levin
+hard-core predicate construction, the coding theory interpretation became clear
+only in retrospect, but then it was essential for further improvements. This
+course will be about the theory, constructions,&nbsp; and algorithms for error
+correcting codes, about applications in complexity theory and in cryptography,
+and about relations to other combinatorial constructions.<br>
+<br>
+In the first part of the course we will see constructions of Reed-Solomon codes,
+Reed-Muller codes and Low-weight Parity Check Codes, along with their
+unique-decoding and list-decoding algorithms. Then we will see &quot;local
+decoding&quot; and &quot;local checking&quot; algorithms, and their applications
+to average-case complexity, cryptography, program testing, and probabilistically
+checkable proofs. In the third part of the course we will explore connections
+between error-correcting codes and the other three combinatorial&nbsp; objects
+that are&nbsp; ubiquitous in complexity theory: hash functions, randomness
+extractors and expander graphs.</p>
+<hr>
+<h3>classes and notes</h3>
+<ol>
+  <li>8/25 Introduction to error-correcting codes, linear codes, Singleton
+    bound,&nbsp; Gilbert-Varshamov boud, Reed-Solomon codes, Berlekamp-Welch
+    algorithm.<a href="note1.ps">
+    [notes]</a></li>
+  <li>8/27 Alternative view of Reed-Solomon codes, Concatenation, Justenssen
+    codes. <a href="note2.ps"> [notes]</a></li>
+  <li>9/3 Efficient polynomial multiplication, more on Justenssen codes,
+    Reed-Muller codes, &quot;Hadamard&quot; code. <a href="note3.ps">[notes]</a></li>
+  <li>9/8 The Plotkin bound; Decoding concatenated codes.&nbsp; <a href="note4.ps">[notes]</a></li>
+  <li>9/10 More on decoding concatenated codes; List decoding; Johnson
+    bound&nbsp;[notes (kamalika)]</li>
+  <li>9/15 List-decoding of Reed-Solomon codes and concatenated codes <a href="note6.ps"> [notes]</a></li>
+  <li>9/17 Unique-decoding of low-weight parity-check codes <a href="note7.ps"> [notes]</a></li>
+  <li>9/22 More expander-based constructions and their unique decoding
+    algorithms [<a href="note8.ps">notes</a>]</li>
+  <li>9/24 Unique decoding from errors and erasures, and list-decoding of expander-based codes
+    [notes (boriska)]</li>
+  <li>9/29 List-decoding of expander-based codes&nbsp; (construction with rate
+    epsilon<sup>2</sup>) [notes (james)]</li>
+  <li>10/1 List-decoding of expander-based codes (construction with rate
+    epsilon) [<a href="note11.ps">notes</a>]</li>
+  <li>10/6 List-decoding of expander-based codes (linear time decoding) [notes (david)]</li>
+  <li>10/8 Locally decodable codes (constructions with unique decoding, large
+    query complexity) [notes
+    ?]<br>
+    <font color="#FF0000">10/13 FOCS, no class</font></li>
+  <li>10/15 Locally decodable codes (constructions with unique decoding, small
+    query complexity) [<a href="note14.ps">notes</a>]</li>
+  <li>10/20 Locally decodable codes (lower bounds for q queries) [<a href="note15.ps">notes</a>]<br>
+    <font color="#FF0000">10/22 canceled</font></li>
+  <li>10/27 Locally decodable codes (lower bound for 2 queries, linear codes)&nbsp; [notes
+    (boriska)]</li>
+  <li>10/29 Locally decodable codes (lower bound for 2 queries, general codes) [<a href="note17.ps">notes</a>]</li>
+  <li>11/3&nbsp; Locally decodable codes (Goldreich-Levin: list-decoding of
+    Hadamard codes) [notes (Luca)]</li>
+  <li>11/5 Locally decodable codes (Use of Goldreich-Levin for hard-core
+    predicates and learning) [<a href="note19.ps">notes</a>]</li>
+  <li>11/10 Locally decodable codes (Other hard-core predicates using
+    list-decoding) [<a href="note20.ps">notes</a>]</li>
+  <li>11/12 Locally decodable codes (List-decoding of Reed-Muller codes and
+    average-case complexity) [notes (Luca)]</li>
+  <li>11/17 Locally testable codes and PCP (definition of PCP, LTC, assignment
+    tester) [notes (Luca)]</li>
+  <li>&nbsp;11/19&nbsp; Locally testable codes and PCP (linearity testing and
+    exponential-length PCP) [notes (Daniel)]</li>
+  <li>11/24 Locally testable codes and PCP (Low-degree tests, PCP/AT with
+    polylog query complexity and large alphabet, part 1) [notes]<br>
+    </li>
+  <li>11/26 Locally testable codes and PCP (PCP/AT with polylog query
+    complexity and large&nbsp; alphabet, part 2)</li>
+  <li>12/1 Locally testable codes and PCP (aggregation) [<a href="note26.ps">notes</a>]</li>
+  <li>12/3 Locally testable codes and PCP (composition and PCP theorem) [notes (Hoeteck)]</li>
+</ol>
+<hr>
+<h3>tentative syllabus</h3>
+<p>We will probably only cover a subset of the following topics</p>
+<p><b>codes</b></p>
+<ul>
+  <li>Introduction, models for errors, discrete memoryless channel, erasure
+    channel</li>
+  <li>Non-constructive results: random codes are good</li>
+  <li>Linear codes, Reed-Solomon codes, Reed-Muller codes</li>
+  <li>Unique decoding of Reed-Solomon codes</li>
+  <li>List-decoding of Reed-Solomon codes</li>
+  <li>Concatenation. Unique decoding and list-decoding of concatenated codes</li>
+  <li>Expander codes and unique decoding of expander codes
+    <p>&nbsp;</li>
+</ul>
+<p><b>complexity</b></p>
+<ul>
+  <li>Hard-core predicates.
+    <ul>
+      <li>Goldreich-Levin: sublinear-time list-decoding of the Hadamard code</li>
+      <li>Hard-core predicates for RSA and Discrete Log: the list-decoding
+        perspective</li>
+      <li>Randomness-efficient hard-core predicates</li>
+    </ul>
+  </li>
+  <li>Sub-linear error-correction
+    <ul>
+      <li>Sub-linear time unique-decoding and Private Information Retrieval</li>
+      <li>Sub-linear time list-decoding and average-case complexity</li>
+    </ul>
+  </li>
+  <li>Sublinear-time error-detection
+    <ul>
+      <li>Linearity testing</li>
+      <li>Low-degree test</li>
+      <li>Application to PCP</li>
+    </ul>
+  </li>
+</ul>
+<p><b>combinatorial constructions</b></p>
+<ul>
+  <li>Randomness extractors from hash functions</li>
+  <li>Randomness extractors from Reed-Muller codes</li>
+  <li>Extreme list-decoding from randomness extractors</li>
+  <li>Expander graphs from randomness extractors</li>
+  <li>More expander-based error-correcting codes</li>
+  <li>Tiny families of hash functions</li>
+  <li>Randomness condensers from error-correcting codes</li>
+  <li>Randomness mergers from locally decodable error-correcting codes</li>
+  <li>&quot;Optimal&quot; extractors</li>
+  <li>Applications of extractors to de-randomizing space-bounded computations</li>
+</ul>
+
+<hr>
+
+
+<p><b>references</b></p>
+
+
+
+<ul>
+  <li><a href="http://theory.lcs.mit.edu/~madhu/">Madhu Sudan's</a>
+    <ul>
+      <li>
+    <a href="http://theory.lcs.mit.edu/~madhu/coding/ibm/">Slides</a> from a
+    short course on coding theory</li>
+      <li>
+    <a href="http://theory.lcs.mit.edu/~madhu/FT01/">Notes</a> from a
+    semester-long course on coding theory</li>
+    </ul>
+  </li>
+  <li><a href="http://www.cs.washington.edu/homes/venkat/">Venkatesan Guruswami</a>'s
+    <a href="http://www.cs.berkeley.edu/~luca/cs294/venkat-thesis.ps">PhD Thesis</a></li>
+</ul>
+<p><b>related courses</b></p>
+<ul>
+  <li><a href="http://www.cs.washington.edu/education/courses/590vg/03wi/">Codes
+    and pseudorandom objects</a>, by <a href="http://www.cs.washington.edu/homes/venkat/">Venkat
+    Guruswami</a>, at U. of Washington</li>
+  <li><a href="http://theory.lcs.mit.edu/~madhu/FT01/">Algorithmic introduction
+    to coding theory</a>, by <a href="http://theory.lcs.mit.edu/~madhu/">Madhu
+    Sudan</a>, at MIT</li>
+  <li><a href="http://www.wisdom.weizmann.ac.il/~boaz/ExpanderCourse/">Expander
+    graphs and their applications</a>, by <a href="http://www.cs.huji.ac.il/~nati/">Nati
+    Linial</a> and <a href="http://www.math.ias.edu/~avi/">Avi Wigderson</a>, at
+    Weizmann</li>
+  <li><a href="http://www.cs.caltech.edu/~umans/522/default.htm">Coding Theory</a>,
+    by <a href="http://www.cs.berkeley.edu/~mossel/">Elchanan Mossel</a> and <a href="http://www.cs.caltech.edu/~umans/">Chris
+    Umans</a>, at U. of Washington (Elchanan is now at Berkeley, Chris at
+    Caltech)</li>
+  <li><a href="http://www.courses.fas.harvard.edu/~cs225/">Pseudorandomness</a>,
+    by <a href="http://www.eecs.harvard.edu/~salil/">Salil Vadhan</a>, at
+    Harvard</li>
+  <li><a href="http://www.cs.utexas.edu/users/diz/395T/">Pseudorandomness</a>,
+    by <a href="http://www.cs.utexas.edu/users/diz/">David Zuckerman</a>, at U.T.
+    Austin</li>
+</ul>
+<hr>
+<p><!--webbot bot="HTMLMarkup" startspan --><!--webbot bot="Script" startspan PREVIEW="Site Meter" -->
+<script type="text/javascript" language="JavaScript">var site="sm7complexity"</script>
+<script type="text/javascript" language="JavaScript1.2" src="http://sm7.sitemeter.com/js/counter.js?site=sm7complexity">
+</script>
+<noscript>
+<a href="http://sm7.sitemeter.com/stats.asp?site=sm7complexity" target="_top">
+<img src="http://sm7.sitemeter.com/meter.asp?site=sm7complexity" alt="Site Meter" border=0></a>
+</noscript>
+<!-- Copyright (c)2002 Site Meter -->
+<!--webbot bot="Script" Endspan -->
+
+
+<!--webbot bot="HTMLMarkup" endspan -->
+</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

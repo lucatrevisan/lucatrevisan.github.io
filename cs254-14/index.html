@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+  <title>Luca Trevisan | Computational Complexity</title>
+  <style>
+
+body{margin:10px 10px 10px 10px;width: 1000px; font-family:sans-serif;background-color:#FFFFFb;}
+
+
+
+a{text-decoration:none}
+a:link{color:#4444aa;}
+a:visited{color:#4444aa;}
+a:hover{background-color:#aaaaFF;}
+li{line-height : 130%;}
+
+
+
+  </style>
+</head>
+<body>
+<h1>
+CS 254 &mdash; Computational Complexity &mdash; Winter 2014</h1>
+<p><b><a href="#info">[general info]</a>&nbsp;</b>
+<b><a href="#notes">[lecture notes]</a> <a href="#hw">[homeworks]</a> <a href="#exam">[midterm and
+project]</a></b>
+<br>
+</p>
+<hr width="100%">
+
+<b><i>what's new</i></b>
+
+<ul> 
+
+<li> 03/04 <a href=final.pdf>final</a>
+<li> 02/20 <a href=hw5.pdf>homework 5</a>
+<li> 02/11 Notes on <a href=lecture12.pdf>lecture 12</a>
+<li> 02/10 Notes on <a href=lecture04.pdf>lecture 4</a>
+<li> 02/09 Notes on <a href=lecture10.pdf>lecture 10</a> and <a href=lecture11.pdf>lecture 11</a>
+<li> 02/06 <a href=midterm.pdf>midterm</a>
+<li> 02/04 Notes on <a href=lecture08.pdf>lectures 8 and 9</a>
+<li> 01/30 <a href=hw4.pdf>Homework 4</a>
+<li> 01/29 Notes on  <a href=lecture07.pdf>lecture 7</a>
+<li> 01/23 <a href=hw3.pdf>homework 3</a>, Notes on <a href=lecture06.pdf>lecture 6</a>
+<li> 01/21 Notes on <a href=lecture05.pdf>lecture 5</a>
+<li> 01/16 <a href=hw2.pdf>homework 2</a>
+<li> 01/15 Notes on <a href=lecture03.pdf>lecture 3</a>
+<li> 01/09 Notes on <a href=lecture01.pdf>lecture 1</a> and <a href=lecture02.pdf>lecture 2</a>, <a href=hw1.pdf>homework 1</a>
+<li> 01/06 page created
+</ul>
+
+<hr>
+
+<h2><a name="info"></a>general information</h2>
+<p><br>
+<b>Instructor</b>: <a href="http://www.cs.stanford.edu/~trevisan">Luca
+Trevisan</a>,  Gates 474, Tel. 650 723-8879, email <i>trevisan at stanford dot edu</i>
+<p>
+<b>TA</b>: TongKe Xue email <I>tkxue at stanford dot edu</I>
+</p>
+<p><b>Classes</b> are Tuesdays and Thursdays, 2:15-3:30, Gates B12
+</p>
+<p><b>Office hours</b>: 
+<ul>
+<li> <i>Luca</i>: Tuesdays, 4-5:30pm, or by appointment, Gates  474 
+<li> <i>TongKe</i>: Wednesdays, 3-5pm, Gates 5th floor lounge
+</ul>
+</p>
+<p><b>References: </b>the main reference for the course will be
+lecture notes. New
+lecture notes will be distributed after each lecture. A recommended
+textbook is
+
+<ul>
+  <li>Sanjeev Arora and Boaz Barak. <i><a href="http://www.cs.princeton.edu/theory/complexity/">Complexity
+    Theory: A Modern Approach</a></i></li>
+</ul>
+
+Another very good book, which covers only part of the topics of the
+course is
+
+<ul>
+  <li>Oded Goldreich. <i><a href="http://www.wisdom.weizmann.ac.il/~oded/cc-book.html">Computational
+    Complexity: A Conceptual Perspective</a></i></li>
+</ul>
+
+<b>About this course</b>: Computational Complexity theory looks
+at the computational resources (time, memory, communication, ...)
+needed
+to solve computational problems that we care about, and it is
+especially
+concerned with the distinction between "tractable" problems, that we
+can
+solve with reasonable amount of resources, and "intractable" problems,
+that are beyond the power of existing, or conceivable, computers. It
+also
+looks at the trade-offs and relationships between different "modes" of
+computation (what if we use randomness, what if we are happy with
+approximate,
+rather than exact, solutions, what if we are happy with a program that
+works only for most possible inputs, rather than being universally
+correct,
+and so on).&nbsp;
+</p>
+<p> This course will roughly be divided into two parts: we will
+start with "basic" and "classical" material about time, space, P versus
+NP, polynomial hierarchy and so on, including&nbsp; moderately modern
+and
+advanced material, such as the power
+of randomized algorithm, the complexity of counting problems, and the
+average-case
+complexity of problems. In the second part,
+we will focus on more research oriented material, to be chosen among: (i)&nbsp; PCP and
+hardness of approximation; (ii) lower bounds for proofs and circuits; and (iii)
+derandomization and average-case complexity; (iv) quantum complexity theory.
+</p>
+<p>There are at least two goals to this course. One is to demonstrate the
+surprising connections between computational problems that can be discovered by
+thinking abstractly about computations: this includes relations between learning
+theory and average-case complexity, the Nisan-Wigderson approach to turn
+intractability results into algorithms, the connection, exploited in PCP theory,
+between efficiency of proof-checking and complexity of approximation, and so on.
+The other goal is to use complexity theory as an &quot;excuse&quot; to learn
+about several tools of broad applicability in computer science such
+as expander graphs, discrete Fourier analysis, learning, and so on.
+</p>
+<hr>
+
+<h2><a name="notes">classes and lecture notes</a></h2>
+
+<ol> 
+
+<i>past classes</i>
+
+<p>
+
+<ol>
+<li> Introduction. <a href=lecture01.pdf>[pdf notes]</a>
+<li> Search and decision problems, hierarchy theorems. <a href=lecture02.pdf>[pdf notes]</a>
+<li> Boolean circuits and NP-completeness, relativization. <a href=lecture03.pdf>[pdf notes]</a> (notes on relativizations will appear in the notes of Lecture 4)
+<li> P versus NP relative to a random oracle, BPP, Adleman's theorem <a href=lecture04.pdf>[pdf notes]</a>
+<li> Polynomial hierarchy, BPP in Sigma-2, Karp-Lipton. <a href=lecture05.pdf>[pdf notes]</a>
+<li> Kannan's theorem, counting problems <a href=lecture06.pdf>[pdf notes]</a>
+<li> Approximate counting, Valiant-Vazirani <a href=lecture07.pdf>[pdf notes]</a>
+<li> Average-case complexity: definitions <a href=lecture08.pdf>[pdf notes]</a>
+<li> Average-case complexity: NP-completeness <a href=lecture08.pdf>[pdf notes]</a>
+<li> Pseudorandomness and derandomization <a href=lecture10.pdf>[pdf notes]</a>
+<li> Parity is not in AC0: proof with polynomials <a href=lecture11.pdf>[pdf notes]</a>
+<li> Parity is not in AC0: proof with the switching lemma <a href=lecture12.pdf>[pdf notes]</a>
+<li> Natureal proofs. Notes in preparation, meanwhile you can check out these references:
+ <a href=http://gowers.wordpress.com/2013/10/07/razborov-and-rudichs-natural-proofs-argument/>[Tim Gowers on Natural Proofs]</a>, 
+ <a href=https://lucatrevisan.wordpress.com/2006/08/04/natural-proofs/>[Luca on Natural Proofs]</a>, 
+ <a href=https://lucatrevisan.wordpress.com/2010/12/02/circuit-lower-bounds-by-properties-and-by-brute-force/>[Luca on Ryan's lower bound]</a>
+
+
+<li> Quantum computing: the model. Notes in preparation. Meanwhile you can read Section 1 (skipping 1.4) of <a href=http://cs.stanford.edu/people/trevisan/quantum/lecture02.pdf>[these notes]</a>
+
+<li> The PCP model. Notes in preparation, meanwhile (and for the next three lecture) a good reference is <a href=http://people.csail.mit.edu/madhu/papers/2006/jaikumar.pdf>this paper of Radhakrishnan and Sudan</a>
+
+<li> Dinur's proof: amplification
+
+</ol>
+
+
+<p>
+
+
+<i>the tentative plan</i>
+
+<p>
+
+<ul>
+<li> Lecture 1: Introduction, P vs NP problem, deterministic
+hierarchy theorem
+<li> Lecture 2: Relativization, boolean circuits
+<li> Lecture 3: BPP, Adleman's theorem
+<li> Lecture 4: Polynomial hierarchy, BPP in Sigma2
+<li> Lecture 5: Karp-Lipton and Valiant-Vazirani
+<li> Lecture 6: Approximate counting
+<li> Lecture 7: Average-case complexity
+<li> Lecture 8: Pseudorandomness
+<li> Lecture 9: Natural Proofs
+<li> Lecture 10: Parity not in AC0 (Razborov-Smolensky)
+<li> Lecture 11: Parity no in AC0 (Switching lemma)
+<li> Lecture 12: Quantum complexity theory: the model and Grover search
+<li> Lecture 13: Quantum complexity theory: search lower bounds
+<li> Lecture 14: PCP theorem: statement and applications
+<li> Lecture 15: Dinur's proof: amplification
+<li> Lecture 16: Dinur's proof: range reduction
+<li> Lecture 17: Applications to inapproximability
+<li> Lecture 18: Unique games
+
+</ul>
+</ol>
+<p>
+<hr>
+
+<a name="hw"><h2>homeworks</h2>
+
+<ol>
+
+<li> <a href=hw1.pdf>homework 1</a>
+<li> <a href=hw2.pdf>homework 2</a>
+<li> <a href=hw3.pdf>homework 3</a>
+<li> <a href=hw4.pdf>homework 4</a>
+<li> <a href=hw5.pdf>homework 5</a>
+
+</ol>
+
+<hr>
+
+<a name="exam"><h2>exams</h2></a>
+
+<ul>
+<li> midterm
+<li> final
+</ul>
+
+<hr>
+&nbsp;
+</body>
+</html>

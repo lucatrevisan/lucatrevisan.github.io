@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+
+
+ <link rel="stylesheet" href="../luca.css" type="text/css">
+
+  <title>Luca Trevisan | Cryptography</title>
+
+ <style>
+body{margin:20px 20px 20px 20px;font-family:sans-serif;background-color:#FFFFFb; max-width: 55em; } 
+
+
+
+li{line-height : 130%;}
+</style>
+
+</head>
+
+<body>
+
+<h1>CS 276 &mdash Cryptography &mdash Spring 2009</h1>
+
+<p>
+<b><a href="#info">[general info]</a>&nbsp;</b>
+<b><a href="#notes">[lecture notes]</a> 
+<a href="#exam">[midterm and project]</a></b>
+</p>
+
+<hr width="100%">
+<h2><a name="info"></a>General Information</h2>
+<p><br>
+<b>Instructor</b>: <a href="http://www.cs.berkeley.edu/%7Eluca">Luca
+Trevisan</a>, <font face="Courier New,Courier"><a
+ href="mailto:luca@eecs">luca@eecs</a></font>, 679 Soda Hall, Tel. 642 8006
+</p>
+<p><b>Classes</b> are Tuesday-Thursday, 4-5:30pm, 310 Soda
+</p>
+<p><b>Office hours</b>: Wednesdays, 2-3pm, or by appointment <br>
+</p>
+<p><b>About the course</b>: an introduction to modern cryptography. We will talk
+about how to rigorously formalize the notion of security in various models, and
+how to use primitives having weak and plausible security properties (one-way
+permutations, trapdoor permutations) to build systems satisfying very strong,
+and sometimes seemingly outlandish, notions of security. The emphasis of the
+course will be on general principles, but, for concreteness, we shall also look
+at a number of examples and applications. Topics will include one-way functions,
+pseudorandomness, block ciphers, symmetric-key encryption, authentication,
+public-key cryptosystems, signatures, commitment schemes,&nbsp; zero-knowledge
+proofs, advanced notions of security, and multi-party cryptographic protocols.</p>
+
+<p><b>Coursework and grading</b>: a homework will be posted every week or two.
+Homework problems will not be graded, but solving them will be very useful
+practice for the take-home midterm. Each student is required to scribe one
+lecture; the scribed notes will count for 20% of the grade. There will be a
+take-home midterm after spring break, which will count for 35% of the grade. A
+final project will count for 45% of the grade. The project will involve studying
+a paper or series of papers on an advanced subject not covered in class, writing
+a short report, and giving a 25-minute presentation in class. Two-people
+collaborations are possible, in which case the presentation will be 40 minutes.
+A project may be planned with a research problem in mind. Several
+such projects could become <a href="http://www.wisdom.weizmann.ac.il/~tcc/">TCC
+2010</a> papers.&nbsp;</p>
+
+<p><b>References: </b></p>
+
+<ul>
+<li>The main references are lecture notes. A short draft will be posted before each class, and scribed notes will be posted when completed.
+<p>
+<li>At long last, there is a very good introductory textbook on the foundations of cryptography:
+<ul>
+<li>Jonathan Katz and Yehuda Lindell<br>
+<i><a href=http://www.cs.umd.edu/~jkatz/imc.html>Introduction to Modern Cryptography</a></i><br>
+Chapman &amp Hall/CRC Press, 2007
+</ul>
+<p>
+<li>The ultimate reference is the two-volume treatise by Oded Goldreich:
+<ul>
+<li>Oded Goldreich<br>
+<i><a href=http://www.wisdom.weizmann.ac.il/~oded/foc-vol1.html>The Foundations of Cryptography - Volume I, Basic Techniques</a></i><br>
+Cambridge University Press, 2001
+<li>Oded Goldreich<br>
+<i><a href=http://www.wisdom.weizmann.ac.il/~oded/foc-vol2.html>The Foundations of Cryptography - Volume II, Basic Applications</a></i><br>
+Cambridge University Press, 2004
+</ul>
+</ul>
+
+<b>Other cryptography courses</b> at <a href="http://www.cs.cornell.edu/courses/cs687/2008sp/">Cornell</a>,
+  <a href="http://www.eecs.harvard.edu/~salil/cs120/">Harvard</a>, <a href="http://www.cs.umd.edu/~jkatz/gradcrypto/">Maryland</a>,
+  <a href="http://www.cs.princeton.edu/courses/archive/fall07/cos433/">Princeton</a>,&nbsp;
+  <a href="http://www-cse.ucsd.edu/users/mihir/cse207/index.html">UC San Diego</a>,
+  <a href="http://www.wisdom.weizmann.ac.il/~oded/foc-teaching.html">Weizmann
+  (Goldreich)</a>, and <a href="http://www.wisdom.weizmann.ac.il/~naor/COURSE/foundations_of_crypto.html">Weizmann
+  (Naor)</a>.
+
+<hr width=100%>
+
+<h2><a name="notes">Classes and Lecture Notes</a></h2>
+
+<p>A basic knowledge of algebra and probability is a prerequisite for this
+class. As a refresher, here are some <b><a href="notesalgebra.pdf">notes on
+algebra</a></b>, and <b><a href="notesprob.pdf">notes on probability</a></b>.</p>
+
+<p><b>For scribes</b>: go <b><a href="scribes">here</a></b> to find the
+template.tex and macros.tex files which are required to compile lecture notes.
+The file lecture00.tex gives some information on how to typeset the notes.</p>
+
+<p><i>Past</i></p>
+
+<ol>
+  <li>01/20 Introduction and overview. Some ancient history. One-time pad. Notes: <b>[<a href="lecture01.pdf">PDF</a>]
+    [<a href="http://lucatrevisan.wordpress.com/2009/01/20/cs276-lecture-1-introduction/">HTML</a>]</b></li>
+  <li>01/22 Message indistinguishability and semantic security. Notes: <b>[<a href="lecture02.pdf">PDF</a>]
+    [<a href="http://lucatrevisan.wordpress.com/2009/01/22/cs276-lecture-2-semantic-security/">HTML</a>]</b></li>
+
+<li>01/27 Pseudorandom generators and one-time encryption. 
+Notes: <b>[<a href="lecture03.pdf">PDF</a>] [<a href=http://lucatrevisan.wordpress.com/2009/01/30/cs276-lecture-3-pseudorandom-generators>HTML</a>]</b>
+
+<li>01/29 RC4. Security for multiple encryptions. 
+Stream ciphers. Notes: <b>[<a href="lecture04.pdf">PDF</a>]
+    [<a href="http://lucatrevisan.wordpress.com/2009/02/04/cs-276-lecture-4-security-for-multiple-encryptions/">HTML</a>]</b></li>
+	
+<li>02/03 Pseudorandom functions. CPA-secure encrpytion from 
+pseudorandom fuctions. Notes: 
+<b>[<a href="lecture05.pdf">PDF</a>]
+    [<a href="http://lucatrevisan.wordpress.com/2009/02/13/cs276-lecture-5-encryption-using-pseudorandom-functions/">HTML</a>]</b></li>
+
+<li>02/05 Pseudorandom permutations, modes of encryption.
+Notes:
+<b>[<a href="lecture06.pdf">PDF</a>]
+[<a href=http://lucatrevisan.wordpress.com/2009/02/08/cs-276-lecture-6-pseudorandom-functions-and-permutations/>HTML</a>]</b>
+
+<li>02/10 Message authentication. Notes:
+<b>[<a href="lecture07.pdf">PDF</a>]</b>
+<b>[<a 
+href=http://lucatrevisan.wordpress.com/2009/02/15/cs276-lecture-7-message-authentication/>HTML</a>]</b>
+
+<li>02/12 CBC-MAC. CCA-secure encryption using MAC. Notes:
+<b>[<a href="lecture08.pdf">PDF</a>]</b>
+<b>[<a 
+href=http://lucatrevisan.wordpress.com/2009/02/18/cs276-lecture-8-cca-secure-encryption/>HTML</a>]</b>
+
+<li>02/17 Cryptographic hash functions. Notes:
+<b>[<a href="lecture09.pdf">PDF</a>]</b>
+<b>[<a 
+href=http://lucatrevisan.wordpress.com/2009/03/01/lecture-9-hash-functions/>HTML</a>]</b>
+
+<li>02/19 Practical constructions of block ciphers. Draft notes:
+<b>[<a href="lecture10draft.pdf">PDF</a>]</b>
+<b>[<a href=http://lucatrevisan.wordpress.com/2009/02/19/cs276-lecture-10-draft/>HTML</a>]</b>
+
+<li>02/24 One-way functions, one-way permutations, and hard-core predicates.
+Notes:
+<b>[<a href="lecture11.pdf">PDF</a>]</b>
+<b>[<a href=http://lucatrevisan.wordpress.com/2009/03/09/cs-276-lecture-11-one-way-functions/>HTML</a>]</b>
+
+<li>02/26 The Goldreich-Levin Theorem. Notes:
+<b>[<a href="lecture12.pdf">PDF</a>]</b>
+<b>[<a href=http://lucatrevisan.wordpress.com/2009/03/09/cs276-lecture-12-goldreich-levin/>HTML</a>]</b>
+
+<li>03/03 Pseudorandom Generators. Notes:
+<b>[<a href="lecture13.pdf">PDF</a>]</b>
+<b>[<a href="http://lucatrevisan.wordpress.com/2009/03/16/cs276-lecture-13-pseudorandom-generators/">HTML</a>]</b>
+
+<li>03/05 Pseudorandom Functions from Pseudorandom Generators.
+Notes: <b>[<a href="lecture14.pdf">PDF</a>]</b>
+<b>[<a href="http://lucatrevisan.wordpress.com/2009/04/08/cs276-lecture-14-pseudorandom-functions-from-pseudorandom-generators/">HTML</a>]</b>
+
+<li>03/10 Pseudorandom Permutations from Pseudorandom Functions.
+Notes:  <b>[<a href="lecture15.pdf">PDF</a>]</b>
+<b>[<a href="http://lucatrevisan.wordpress.com/2009/03/16/cs276-lecture-15-pseudorandom-permutations/">HTML</a>]</b>
+
+<li>03/12 Pseudorandom Permutations from Pseudorandom Functions.
+ Notes: <b>[<a href="lecture16.pdf">PDF</a>]</b>
+<b>[<a href="http://lucatrevisan.wordpress.com/2009/03/16/cs276-lecture-16-pseudorandom-permutations/">HTML</a>]</b>
+
+<li> 03/17 Public-Key Encryption. Notes:
+<b>[<a href="lecture17.pdf">PDF</a>]</b>
+<b>[<a href="http://lucatrevisan.wordpress.com/2009/04/08/cs276-lecture-17-el-gamal/">HTML</a>]</b>
+
+<li> 03/19 Public-Key Encryption. Notes:
+<b>[<a href="lecture18.pdf">PDF</a>]</b>
+<b>[<a href="http://lucatrevisan.wordpress.com/2009/04/30/cs276-lecture-18-public-key-encryption/">HTML</a>]</b>
+
+<li> 03/31 Public-Key Encryption.  Notes:
+<b>[<a href="lecture19.pdf">PDF</a>]</b>
+<b>[<a href="http://lucatrevisan.wordpress.com/2009/05/01/cs276-lecture-19-trapdoor-permutations/">HTML</a>]</b>
+
+<li> 04/02 Signature Schemes.  Notes:
+<b>[<a href="lecture20.pdf">PDF</a>]</b>
+<b>[<a href="http://lucatrevisan.wordpress.com/2009/05/01/cs276-lecture-20-signatures/">HTML</a>]</b>
+
+<li> 04/07 Signature Schemes.  Notes:
+<b>[<a href="lecture21.pdf">PDF</a>]</b>
+<b>[<a href="http://lucatrevisan.wordpress.com/2009/05/01/cs276-lecture-21-signatures/">HTML</a>]</b>
+
+<li> 04/09 Signature Schemes in the Random Oracle Model. Notes:
+<b>[<a href="lecture22.pdf">PDF</a>]</b>
+<b>[<a href="http://lucatrevisan.wordpress.com/2009/05/06/cs276-lecture-22/">HTML</a>]</b>
+<br>
+04/14 <b>No Class</b>
+
+<li> 04/16 Encryption in the random oracle model. Notes:
+<b>[<a href="lecture23.pdf">PDF</a>]</b>
+<b>[<a href="http://lucatrevisan.wordpress.com/2009/05/04/cs276-lecture-23/">HTML</a>]</b>
+
+
+<li> 04/21 Zero Knowledge: definitions and graph isomorphism.  Notes:
+<b>[<a href="lecture24.pdf">PDF</a>]</b>
+<b>[<a href="http://lucatrevisan.wordpress.com/2009/05/11/cs276-lecture-24/">HTML</a>]</b>
+
+<li> 04/23 Zero Knowledge: quadratic residuosity. Notes:
+<b>[<a href="lecture25.pdf">PDF</a>]</b>
+<b>[<a href="http://lucatrevisan.wordpress.com/2009/05/04/cs276-lecture-25/">HTML</a>]</b>
+
+<li>04/28 Proofs of knowledge.  Notes:
+<b>[<a href="lecture26.pdf">PDF</a>]</b>
+<b>[<a href="http://lucatrevisan.wordpress.com/2009/05/04/cs276-lecture-26/">HTML</a>]</b>
+
+<li>04/30 Commitment schemes and Zero Knowledge for NP.
+ Notes: <b>[<a href="lecture27.pdf">PDF</a>]</b>
+<b>[<a href="http://lucatrevisan.wordpress.com/2009/05/16/cs276-lecture-27/">HTML</a>]</b>
+
+
+<li>05/05 Zero Knowledge for NP. Notes: <b>[<a href="lecture28.pdf">PDF</a>]</b>
+<b>[<a href="http://lucatrevisan.wordpress.com/2009/05/06/cs276-lecture-28/">HTML</a>]</b>
+
+
+</ol>
+<p>
+
+<i>Planned</i>
+
+</p>
+
+<ul>
+
+<li>05/07 Zero Knowledge for NP, conclusion<br>
+
+4:30-4:55 Joel Weinberger &mdash; project presentation <br>
+5:00-5:25 Bharath Ramsundar &mdash; project presentation
+
+<p>
+
+<li> 05/12 Project Presentations in <b>320 Soda</b><br>
+2:10 - 2:35 Guoming Wang &mdash; on hard-core predicates via list decoding<br>
+2:35 - 3:00 Matthew Finifter  &mdash; on timestamping schemes<br>
+3:00 - 3:25 Nick Jalbert  &mdash; on program obfuscation<br>
+3:35 - 4:00 Pongphat Taptagaporn  &mdash; on pseudorandom generators from one-way functions<br>
+4:00 - 4:25 Manohar Jonnalagedda  &mdash; on attacks against MD5<br>
+4:25 - 4:50 Ian Haken  &mdash; on program obfuscation
+
+<p>
+
+<li> 05/14 Project Presentations in <b>320 Soda</b><br>
+2:10 - 2:35  Mark Landry  &mdash; on limitations of the Random Oracle Models<br>
+2:35 - 3:00  Anand Bhaskar  &mdash; on lattice-based cryptography<br>
+3:00 - 3:25 Cynthya Sturton  &mdash; on private information retrieval<br>
+3:35 - 4:00 Siu Man Chan  &mdash; on key agreement from weak but agreement<br>
+4:00 - 4:25 Alexandra Constantin  &mdash; on elliptic curve cryptography<br>
+4:25-4:50 Milosh Drezgich  &mdash; on quantum one-way functions<br>
+
+<p>
+
+
+<li> 05/15 Project Presentations in <b>320 Soda</b><br>
+2:10 - 2:35  Jonah Sherman  &mdash; on  pseudorandom generators from one-way functions<br>
+2:35 - 3:00  Himanshu Sharma  &mdash; on program obfuscation<br>
+3:00 - 3:25 Anupam Prakash  &mdash; on program obfuscation<br> 
+3:30 - 3:55 Siu On Chan  &mdash; on one-way function hardness amplification<br>
+3:55 - 4:20 James Cook <br>
+4:20 - 5:00 Anindya De and Madhur Tulsiani
+
+
+</ul>
+
+
+
+<hr width=100%>
+
+<h2><a name="exam">Problem Sets, Midterm and Project</a></h2>
+
+The following problem sets will not be graded, and are not
+to be turned in. It is recommended that you try to solve them,
+to test what you learnt in class and to prepare for the
+midterm.
+
+<ol>
+<li> <a href=pset01.pdf>Problem Set 1</a> refers to lectures 2-5
+<ul> <li> <a href=pset01sol.pdf>Solutions to Problem Set 1</a> </ul> 
+<li> <a href=pset02.pdf>Problem Set 2</a> refers to lectures 6-9
+<ul> <li> <a href=pset02sol.pdf>Solutions to Problem Set 2</a> </ul> 
+<li> <a href=pset03.pdf>Problem Set 3</a> refers to lectures 11-16
+<ul> <li> <a href=pset03sol.pdf>Solutions to Problem Set 3</a> </ul> 
+
+</ol>
+
+<h2>Midterm</h2>
+
+The <a href=private/midterm.pdf><b>MIDTERM</b></a> is due by email before noon on Thursday, April 9. If possible,
+write your solution in LaTeX. Here is the <a href=private/midterm.tex>LaTeX source</a> of the midterm, which you may find helpful. <a href=private/errata.html>Here</a> is a running list of corrections from the originally posted version.
+The files are accessible only from within
+the berkeley.edu domain. I can send you a copy by email if you
+are having trouble.
+
+<h2>Project</h2>
+
+The project will be due by Tuesday, May 5, at noon.
+
+The <a href=projects.html><b>PROJECTS PAGE</b></a> is under construction.
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-440905-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+
+</html>

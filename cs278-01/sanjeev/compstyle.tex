@@ -1,0 +1,56 @@
+
+\parindent0pt
+\parskip\medskipamount
+
+\makeatother
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%    SPRING'01
+\newcommand{\coursenumber}{CS278}
+\newcommand{\coursetitle}{Computational Complexity}
+\newcommand{\courseprofessors}{Professor Luca Trevisan}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\newlength{\toppush}
+\setlength{\toppush}{2\headheight}
+\addtolength{\toppush}{\headsep}
+
+%       Usage: \htitle{title}{datelec}{dateout}
+\newcommand{\htitle}[4]{\noindent\vspace*{-\toppush}\newline\parbox{6.5in}
+{U.C. Berkeley --- \coursenumber : \coursetitle \hfill #1 \newline
+\courseprofessors \hfill #2 \newline
+\mbox{#4}\hfill Last revised #3 \newline
+\mbox{}\hrulefill\mbox{}}\vspace*{1ex}\mbox{}\newline
+\bigskip
+\begin{center}{\Large\bf #1}\end{center}
+\bigskip}
+
+%       Usage: \handout{title}{datelec}{dateout}{scribe}
+\newcommand{\handout}[4]{\thispagestyle{empty}
+ \markboth{Notes for #1: #2}{Notes for #1: #2}
+ \pagestyle{myheadings}\htitle{#1}{#2}{#3}{#4}}
+
+\newcommand{\htitlewithouttitle}[2]{\noindent\vspace*{-\toppush}\newline\parbox{6.5in}{\coursenumber : \coursetitle
+\hfill Columbia University\newline
+Handout #1\hfill#2\vspace*{-.5ex}\newline
+\mbox{}\hrulefill\mbox{}}\vspace*{1ex}\mbox{}\newline}
+
+\newcommand{\handoutwithouttitle}[2]{\thispagestyle{empty}
+ \markboth{Handout #1}{Handout #1}
+ \pagestyle{myheadings}\htitlewithouttitle{#1}{#2}}
+
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+%\setlength{\textwidth}{6.5in}
+\setlength{\textwidth}{6.0in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}

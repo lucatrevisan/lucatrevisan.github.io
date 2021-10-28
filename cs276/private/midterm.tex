@@ -1,0 +1,312 @@
+\documentclass[12pt]{article}
+\usepackage
+[pdftex,pagebackref,letterpaper=true,colorlinks=true,pdfpagemode=none,urlcolor=blue,linkcolor=blue,citecolor=blue,pdfstartview=FitH]{hyperref}
+
+\usepackage{amsmath,amsfonts}
+\usepackage{graphicx}
+
+\bibliographystyle{alpha}
+
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textwidth}{6.0in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{5pt}
+
+
+%%%%%%%%% For wordpress conversion
+
+\def\more{}
+
+\usepackage{ulem}
+\def\em{\it}
+\let\emph=\it
+
+%%%%%%%%% For WordPress conversion
+
+\newif\ifblog
+\newif\iftex
+\blogfalse
+\textrue
+
+\def\more{}
+
+
+\usepackage{ulem}
+\def\em{\it}
+\def\emph#1{\textit{#1}}
+
+\def\image#1#2#3{\begin{center}\includegraphics[#1pt]{#3}\end{center}}
+
+\let\hrefnosnap=\href
+
+\newenvironment{btabular}[1]{\begin{tabular} {#1}}{\end{tabular}}
+
+\newenvironment{red}{\color{red}}{}
+\newenvironment{green}{\color{green}}{}
+\newenvironment{blue}{\color{blue}}{}
+
+
+
+%%%%%%%%% Complexity classes
+
+\def\np{{\rm NP}}
+\def\p{{\rm P}}
+\def\dtime{{\rm DTIME}}
+\def\ntime{{\rm NTIME}}
+
+
+%%%%%%%%% Typesetting shortcuts
+
+\def\B{\{0,1\}}
+\def\xor{\oplus}
+
+\def\P{\mathop{\mathbb P}}
+\def\E{\mathop{\mathbb E}}
+\def\var{{\bf Var}}
+
+\def\N{{\mathbb N}}
+\def\Z{{\mathbb Z}}
+\def\R{{\mathbb R}}
+\def\G{{\mathbb G}}
+
+
+\def\bz{{\bf z}}
+
+\def\true{{\tt true}}
+\def\false{{\tt false}}
+
+%%%%%%%%% Theorems and proofs
+
+\newtheorem{exercise}{Exercise}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newenvironment{proof}{\noindent {\sc Proof:}}{$\Box$ \medskip} 
+
+
+%%%%%%%%% To typeset the header
+
+\def\courseprof{Luca Trevisan}
+\def\coursenum{CS276}
+\def\coursename{Cryptography}
+
+\newlength{\tpush}
+\setlength{\tpush}{2\headheight}
+\addtolength{\tpush}{\headsep}
+
+
+\newcommand{\handout}[3]{\noindent\vspace*{-\tpush}\newline\parbox{\textwidth}
+{U.C. Berkeley --- \coursenum : \coursename \hfill Handout #1 \newline
+\courseprof \hfill #2 \newline
+\mbox{}\hrulefill\mbox{}}\vspace*{1ex}\mbox{}\newline
+\bigskip
+\begin{center}{\Large\bf  #3}\end{center}
+\bigskip}
+
+\newcommand{\classnotes}[2]{\handout{N#1}{#2}{Notes for Lecture #1}}
+
+\newcommand{\problemset}[2]{\noindent\vspace*{-\tpush}\newline\parbox{\textwidth}
+{U.C. Berkeley --- \coursenum : \coursename \hfill Handout #1 \newline
+\courseprof \hfill #2 \newline
+\mbox{}\hrulefill\mbox{}}\vspace*{1ex}\mbox{}\newline
+\bigskip
+\bigskip}
+
+
+
+
+\begin{document}
+
+
+\problemset{MT}{March 31, 2009}
+
+{\em Last updated April 1, 2009}
+
+\section*{Midterm}
+
+\bigskip
+
+This midterm exam is due by email to {\sf luca@cs.berkeley.edu}
+at noon, on Thursday, April 9, 2009. Put the word ``midterm'' in
+the subject line.
+
+Some notes that apply to various problems:
+\begin{itemize}
+\item We use $||$ to denote string concatenation. For
+example if $a= 011$ and $b= 101$, then $a||b = 011101$.
+\item If $a$ and $b$ are bit strings, then $a+b$ is the bitwise xor
+of $a$ and $b$. For example if $a=011$ and $b=101$, then
+$a+b = 110$.
+\item About the use of $O()$ notation:
+When we ask to prove that ``If $X$ is $(t,\epsilon)$-secure
+then $Y$ is $(t-O(r),\epsilon)$-secure,'' we mean ``Prove that
+there is a $c$ such that, for all $t\geq 2$, $r\geq 2$ and $0<\epsilon \leq 1$,
+it holds that if $X$ is $(t,\epsilon)$-secure then $Y$ is $(t-c\cdot r,\epsilon)$-secure.''
+That is, the constant in the $O()$ notation must be independent of all
+other parameters $t,r,\epsilon$, and be entirely determined by the
+details of your reduction and the specific definition of the model of
+computation. (That is, what precisely can be computed in one step of computation.)
+
+\item Solve the problems individually, do not collaborate with your
+classmates or others.
+
+\item If in doubt, do not hesitate to ask for clarifications.
+Maybe  that there is a typo that make a problem
+unsolvable as stated.
+
+\end{itemize}
+
+Solve the following problems:
+
+\begin{enumerate}
+
+\item {\bf Using a pseudorandom generator to reduce key length [20 points]}
+
+Let $G : \B^{256} \to \B^{1024}$ be a $(2^{90},2^{-40})$-secure
+pseudorandom generator, and $F: \B^{1024} \times \B^{128} \to \B^{128}$
+be a $(2^{80},2^{-40})$-secure pseudorandom function which
+is computable with complexity $\leq 1,000,000$. (That is,
+$F$ has a $1024$-bit key, a $128$-bit input and a $128$-bit output.)
+
+Consider the function $F' : \B^{256} \times \B^{128} \to \B^{128}$
+defined as
+
+\[ F'_K(x) := F_{G(K)} (x) \]
+
+Prove that $F'$ is a $(2^{70},2^{-39})$-secure pseudorandom function.
+
+\item {\bf Encryption using a Pseudorandom Permutation [30 points].}
+
+Suppose $F: \B^k \times \B^m \to \B^m$ is a 
+$(t,\epsilon)$-secure pseudorandom permutation computable in time $\leq r$
+and $I: \B^k \times \B^m \to \B^m$ is its inverse, also computable
+in time $\leq r$.
+
+Consider the following scheme encryption scheme
+$(E,D)$ to encrypt blocks of $m/2$ bits.
+
+\begin{itemize}
+
+\item $E(K,M)$: pick a random $R\in \B^{m/2}$, output $F(K,(M||R))$.
+
+\item $D(K,C)$: compute $M' := I(K,C)$, output the first $m/2$ bits of $M'$
+
+\end{itemize}
+
+Show that $(E,D)$ is $(t/O(r), 2\epsilon + 2\cdot t \cdot 2^{-m/2})$ CCA-secure.
+
+
+\item {\bf MACs from cryptographic hash functions. [15 points]}
+
+Suppose that $H: \B^k \times \B^{2m} \to \B^m$ is a family
+of $(t,\epsilon)$-secure collision-resistant hash functions.
+Consider the following candidate MAC scheme for
+signing $m$-bit messages:
+
+\begin{itemize}
+\item Secret key: a random $m$-bit string $K$;
+\item $Tag(K,M):$ pick a random $s\in \B^k$, and output
+the tag $s || H_s (K||M)$
+
+\item $Verify(K,M,(s||h))$ check that $h=H_s(K||M)$
+\end{itemize}
+
+Show that, just from the assumption that $H$ is $(t,\epsilon)$-secure,
+it is not possible to deduce the security of the above scheme.
+
+In more detail: show that if a family of $(t,\epsilon)$-secure collision-resistant
+hash functions $H: \B^k \times \B^{2m} \to \B^{m-1}$ exists, then
+there is a family $H': \B^k \times \B^{2m} \to \B^{m}$ that is 
+still $(t,\epsilon)$-secure  but is such that if $H'$ is used in the above
+construction, then there is an attack that runs in linear time $O(k+m)$
+and produces a forged tag with probability 1 after seeing only
+one message-tag pair.
+
+\iffalse
+
+\item {\bf How not to construct a block cipher. [14 points]}
+
+Consider the following simplified version of one round of AES.
+
+The construction has a parameter $k$ (for example $k=128$) and,
+for every fixed $k$ we define a function $AES1^{(k)} : \B^{2k + \log_2 k}
+\times \B^k \to \B^k$. 
+
+(For example, if $k=128$, $AES1^{(128)}$ has
+a key of length $263$, and for every fixed key $K\in \B^{263}$,
+$AES1^{(128)}_K(\cdot)$ is a bijection mapping 128 bits into 128 bits.)
+
+We think of the key as being of the form
+$(r_1,r_2,i)$, where $r_1,r_2$ are $k$-bit strings, and $i$
+is an integer in the range $\{ 0,\ldots, k-1\}$. 
+
+The following specification refers to a fixed bijective function $f: \B^{k/8} \to \B^{k/8}$ (for
+example, inverse in $GF(2^{k/8})$). The choice of $f$ does not
+affect the solution of this problem.
+
+We define $AES1^{(k)}$ as follows.
+
+
+$AES1^{(k)}_{(r_1,r_2,i)}  (x)$:
+\begin{itemize}
+
+\item $y_1 := x + r_1$
+\item $y_2 := $cyclic$\_$shift$(y_1,i)$
+
+// That is, set $y_2[j] := y_1[j-i \bmod k]$ for all $j\in \{0,\ldots,k-1\}$
+\item divide $y_2$ into $8$ blocks each of $k/8$ bits; Let $y_3$ be the 
+string obtained by applying $f()$ to each block and then concatenating
+the outputs
+\item $y_4 := y_3 + r_2$
+\item output $y_4$
+
+\end{itemize}
+
+Prove that, regardless of the choice of $f()$, this construction
+is not a good pseudorandom permutation; specifically, show that
+there is an attack that runs in time $O(k)$ and, for large enough $k$,
+has distinguishing probability $\geq 1/2$. (In fact, you should be
+able to get distinguishing probability larger than $.999999$
+for $k=128$, and $\geq 1-exp(-\Omega(k))$ asymptotically.)
+
+[Hint: what happens when you evaluate $AES1^{(k)}_{(r_1,r_2,i)}(\cdot)$
+on two inputs that don't differ much?]
+\fi
+
+\item {\bf One-way functions and function composition. [20 points]} 
+
+Let $f: \B^n \to \B^n$ a $(t,\epsilon)$ one-way function
+and $g:\B^n \to \B^n$ be a bijection computable in time $\leq r$.
+
+\begin{enumerate}
+
+\item
+Show that $h_1 (x) := g(f(x))$ is $(t-r,\epsilon)$-one way.
+
+\item Show that $h_2 (x) := f(g(x))$ is $(t-r,\epsilon)$-one way.
+
+
+\end{enumerate}
+
+
+\item {\bf Composition of Pseudorandom Generators. [15 points]}
+
+Suppose that $H,G : \B^n \to \B^{2n}$ are $(t,\epsilon)$-secure
+pseudorandom generators computable in time $\leq r$.
+
+Prove that the mapping $B: \B^{2n} \to \B^{4n}$ defined as
+
+\[ B(x,y) := G(x) || H(y) \]
+
+is a $(t- O(r+n), 2\epsilon)$-secure pseudorandom generator.
+
+
+
+\end{enumerate}
+\end{document}

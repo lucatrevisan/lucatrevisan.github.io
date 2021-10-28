@@ -1,0 +1,259 @@
+\input{template}
+\input{macros}
+
+\newenvironment{proofidea}{\noindent {\sc Proof Idea:}}{\medskip} 
+\begin{document}
+
+\handout{Lecture 4}{January 29, 2001%date of lecture
+}{\today 
+%date of last revision
+}
+{Allison Coates 
+%name of scribe
+}
+
+\bibliographystyle{alpha}
+
+
+Today's lecture continues the discussion of space complexity. We
+examine $\nl$, the set of languages decidable in $O(\log {n})$ space on a
+nondeterministic Turing machine, introduce log-space reducibility and
+define nl-completeness. Finally, we discuss Savitch's theorem, and
+state the main result to be proved next time: $\nl = \conl$.
+
+\section{Reductions in \nl}
+
+Last time, we introduced \nl, the class of languages decidable in
+logarithmic space on a nondeterministic Turing Machine: \nl =
+\nspace{$(\log{n})$}. Now we would like to introduce a notion
+of completeness in \nl analogous to the notion of completeness
+that we have introduced and studied for the class \np. A first
+observation is that, in order to have a meaningful notion of
+completeness in \nl, we cannot use polynomial-time reductions,
+otherwise any \nl problem having at least a YES instance
+and at least a NO instance would be trivially \nl-complete.
+To get a more interesting notion of \nl completeness we need
+to turn to weaker reductions.
+In particular, we define {\em log space} reductions as follows:
+\begin{Def}
+    Let $A$ and $B$ be decision problems. We say $A$ is log space
+    reducible to $B$, $A \logred B$, if $\exists$ a function $f$
+    computable in log space such that $x \in A$ iff $f(x) \in B$, and $B
+    \in L$.
+\end{Def}
+
+\begin{Thm} If $B \in \dl$, and $A \logred B$, then $A \in \dl$. 
+\end{Thm}
+\begin{proof} 
+    We consider the concatenation of two machines: $M_f$ to compute $f$,
+    and $M_B$ to solve $B$. If our resource bound was polynomial time, 
+    then we would use $M_f(x)$ to compute
+    $f(x)$, and then run $M_B$ on $f(x)$. The composition of the
+    two procedures would given an algorithm for $A$, and if both
+    procedures run in polynomial time then their composition is
+    also polynomial time. To prove the theorem, however, we have
+    to show that if $M_f$ and $M_B$ are log space machines, then
+    their composition can also be computed in log space.
+    
+    Recall the definition of a Turing machine $M$ that has a log space
+    complexity bound: $M$ has one read-only input tape, one write-only
+    output tape, and uses a log space work tape.  A
+    naive implementation of the composition of $M_f$ and $M_B$
+    would be to compute $f(x)$, and then run $M_B$ on input $f(x)$;
+    however $f(x)$ needs to be stored on the work tape, and this
+    implementation does not produce a log space machine.
+    Instead we modify $M_f$ so that on input $x$ and $i$ it
+    returns the $i$-th bit of $f(x)$ (this computation can still
+    be carried out in logarithmic space). Then we run a 
+    simulation of the computation of $M_B(f(x))$ by using
+    the modified $M_f$ as an ``oracle'' to tell us the value
+    of specified positions of $f(x)$. In order to simulate $M_B(f(x))$
+    we only need to know the content of one position of $f(x)$ at a
+    time, so the simulation can be carried with a total of
+    $O(\log |x|)$ bits of work space.
+\end{proof}
+
+Using the same proof technique, we can show the following:
+\begin{Thm}
+    if $A \logred B, B \logred C$, then $ A \logred C$.
+\end{Thm}
+\section{$\nl$ Completeness}
+Armed with a definition of log space reducible, we can define
+\nl-completeness.
+\begin{Def}
+$A$ is $\nl$-hard if $\forall\, B  \in \nl, B \logred A$. 
+$A$ is $\nl$-complete if 
+$A \in \nl$  and $A$ is $\nl$-hard.
+\end{Def}
+We now introduce a problem STCONN (s,t-connectivity) that we will show
+is $\nl$-complete. In  STCONN, given in input  a directed graph
+$G(V,E)$ and two vertices $s, t \in V$, we want to determine if 
+there is  a
+directed path from $s $ to $t$.
+
+\begin{Thm} STCONN is $\nl$-complete.
+\end{Thm}
+
+\begin{proof}
+\begin{enumerate}
+\item STCONN $\in \nl$.
+
+    On input {\it G(V,E), s,t}, set $p$ to $s$.
+    For $i = 1$ to $|V|$, nondeterminsitically, choose a neighboring
+    vertex $v$ of $p$.  Set $p = v$. If $p = t$, accept and halt.
+    Reject and halt if the end of the {\em for} loop is reached. 
+    The algorithm only requires
+    $O(\log{n})$ space.
+
+\item STCONN is $\nl$-hard.
+    
+    Let $A \in \nl, and let M_A$ be a non-deterministic logarithmic
+    space Turing Machine for $A$.  On input $x$,
+    construct a directed graph $G$ with one vertex for each
+    configuration of $M(x)$, and an additional vertex $t$.  Add edges
+    $(c_i, c_j)$ if $M(x)$ can move in one step from $c_i$ to $c_j$.
+    Add edges $(c ,t)$ from every configuration that is accepting, and
+    let $s$ be the start configuration.  $M$ accepts $x$ iff some path
+    from $s$ to $t$ exists in $G$.  The above graph can be
+    constructed from $x$ in log space, because listing all nodes
+    requires $O(\log{n})$ space, and testing valid edges is also easy.
+\end{enumerate}
+\end{proof}
+
+
+
+\section{Savitch's Theorem}
+What kinds of tradeoffs are there between memory and time?  STCONN can
+be solved deterministically in linear time and linear space, using
+depth-first-search.  Is there some sense in which this is optimal?
+Nondeterministically, we can search using less than linear space.  Can
+searching be done deterministically in less than linear space?
+
+We will use Savitch's Theorem to show that STCONN can be solved
+deterministically in $O(\log^{2}{n})$, and that every $\nl$ problem
+can be solved deterministically in $O(\log^{2}{n})$ space.  In
+general, if $A$ is a problem that can be solved nondeterministically
+with space $s(n) \geq \log{n}$, then it can be solved
+deterministically with $O(s^2(n))$space.
+
+\begin{Thm}
+Every problem in $\nl$ can be solved deterministically in $O(\log^{2}{n})$ space.
+\end{Thm}
+\begin{proof}
+    Consider a graph $G(V,E)$, and vertices $s, t$. We define a
+    recursive function REACH$(u,v,k)$ that accepts and halts iff $v$
+    can be reached from $u$ in $\leq k$ steps. If $k = 1$, then REACH
+    accepts iff $(u,v)$ is an edge. If $k \geq 2 , \forall w \in V-
+    \{u, v\}$, compute REACH$(u,w, \floor{k/2}$) and REACH$(w,v,
+    \ceil{k/2}$). If both accept and halt, accept.  Else, reject.
+    
+    Let $S(k)$ be the worst-case space use of REACH$(\cdot,\cdot,k)$.
+    The space required for the base case $S(1)$ is a counter for
+    tracking the edge, so $S(1) = O(\log n)$. 
+    In general, $S(k) = O(\log n ) + S(k/2)$ for
+    calls to REACH and for tracking $w$.  So, $S(k) = O(\log{k}
+    *\log{n})$. Since $ k \leq n$, the worst-case space use
+    of REACH is $O(\log^2{n})$.
+\end{proof}
+
+Comparing to depth-first-search, we find that we are exponentially
+better in space requirements, but we are no longer polynomial in time.
+
+Examining the time required, if we let $t(k)$ be
+the worst-case time used by REACH$(\cdot,\cdot,k)$,
+we see $t(1) = O(n +m)$, and $t(k) =
+n(2*T(k/2))$, which solves to $t(k) = n^{O(\log{k})} = O(n^{O(\log{n})})$, 
+which is
+super-polynomial.  Savitch's algorithm is still the one with the
+ best known space
+bound. No known algorithm achieves polynomial log space and polynomial
+time simultaneously. However, there are interesting results for STCONN
+in undirected graphs. There exists an algorithm running in polynomial
+time and $O(\log^{2}{n})$ space (but the polynomial has very high
+degree), due to Nisan \cite{N94}. 
+There is also an algorithm that has  $O(\log^{4/3}{n})$ space
+complexity and superpolynomial time complexity, due to
+Armoni, Ta-Shma, Nisan and Wigderson \cite{ATWZ97}, improving
+on a previous algorithm by Nisan, Szemeredy and Wigderson \cite{NSW92}.
+
+ 
+\begin{Thm}[Savitch's Theorem] For every function $s(n)$ computable
+in space $O(s(n))$,
+$\nspace(s) = \dspace(O(s^2))$
+\end{Thm}
+
+\begin{proof}
+We begin with a nondeterministic machine $M$, which on input $x$ uses
+$s(|x|)$ space. We define $REACH (c_i, c_j, k)$, as above, which accepts
+and halts iff $M(x)$ can go from $c_i$ to $c_j$ in $\leq k$ steps.  We
+compute $REACH(c_0, c_{\hbox{acc}}, 2^O(s|x|))$ for all accepting
+configurations $c_{\hbox{acc}}$.  
+If there is a call of REACH which accepts and halts,
+then $M$ accepts. Else, $M$ rejects.  If REACH accepts and halts,
+it will do so in $\leq 2^{O(|x|)}$ steps.
+
+Let $S_R(k)$ be the worst-case space used by  REACH$(\cdot,\cdot,k)$:
+$S_R(1) = O(s(n)), S_R(k) = O(s(n) ) + S_R(k/2)$. This solves
+$S_R =s(n)* \log{k }$, and, since $k = 2^O(s(n))$,
+we have $S_R = O(s^2(n))$.
+\end {proof}
+
+\section{\conl}
+
+We now show interesting results for $\nl$ and $\conl$.  Let
+$\comp{A}$ denote the complement of $A$ --- that is, if $A$ is a set of
+strings for which $M_A$ accepted, then $\comp{A}$ consists of exactly
+those strings for which $M_A$ did not accept. For
+a complexity class \genclass, we define the {\em complement class}
+\cogenclass as follows:  a decision problem $A
+\in \cogenclass$  iff $\comp{A} \in \genclass$.
+
+Observe that, for deterministic classes, the complement of
+a class is the class itself. However, for nondeterministic
+classes, complementarity involves an exchange of the
+quantification: one goes from $\exists$ something satisfying such a
+condition to $\forall$ cases, there is nothing satisfying that
+condition.  If $A\in \np$, $X \in A \Leftrightarrow y, |y| \leq p(x).
+V(x,y)$ accepts. If $A \in \cnp$, $ x \in A
+\Leftrightarrow \forall\, y, |y| \leq p(x) . V(x,y)$ rejects.
+It considered very unlikely that $\np = \cnp$, however
+the situation is different for space-bounded nondeterministic
+classes. The following theorem is due to Immerman \cite{I88}
+and Sezelepscenyi \cite{S88:nl}, and we will prove it next time.
+
+\begin{Thm}
+$\nl= \conl$
+\end{Thm}
+
+For the time being, let us see how the theorem reduces
+to finding a nondeterminisitc log space procedure for
+the complement of the STCONN problem.
+
+\begin{Lem}
+Suppose $\comp{STCONN} \in \nl$, then $\nl = \conl$.
+\end{Lem}
+
+\begin{proof}
+Consider
+a generic problem $A$ in $\conl$.
+$\comp{A} \in \nl$, so $\comp{A} \logred STCONN$.
+This means that there is a function $f$ computable
+in logarithmic space such that $x \in \comp A
+ \Leftrightarrow f( x) \in STCONN$. But then we also have
+$x \in  A \Leftrightarrow  f(x) \in \comp{STCONN}$,
+and so $A \logred \comp {STCONN}$. Since, by assumption,
+we have $\comp {STCONN} \in \nl$, and $\nl$ is closed under
+logarithmic space reductions, we conclude $A\in \nl$,
+and since $A$ was arbitrary, we have $\conl \subseteq \nl$.
+
+Take now any problem in $\nl$:
+$A \in \nl$, hence $\comp{A} \in \conl$
+but by above, $\comp{A} \in \nl$, $A \in \conl$, 
+so $\nl \subseteq \conl$.
+\end{proof}
+
+\bibliography{macros,complexity,random}
+
+
+\end{document}
+

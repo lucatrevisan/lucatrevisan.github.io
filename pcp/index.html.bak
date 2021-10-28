@@ -1,0 +1,839 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+
+
+
+
+
+
+
+<html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<head>   
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="http://www.cs.berkeley.edu/~luca/luca.css" type="text/css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>PCP and Hardness of Approximation</title>      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body text="#400000">
+
+
+
+
+
+
+
+
+
+
+
+<h1>
+
+
+
+CS 294 | PCP and Hardness of Approximation | Spring 06</h1>
+
+
+
+<p><b><a href="#info">[general info]</a>&nbsp;</b>
+
+
+
+<b><a href="#notes">[lecture notes]</a>  <a href="#references">[References]</a></b>
+<b><a href="#proj">[projects]</a> </b>
+
+
+<br>
+
+
+
+</p>
+
+
+
+
+
+
+
+<hr>
+
+
+
+<h2><a name="info"></a>General Information</h2>
+
+
+
+<p><br>
+
+
+
+<b>Lecturer</b>: <a href="http://www.cs.berkeley.edu/%7Eluca">Luca
+
+
+
+Trevisan</a>, <font face="Courier New,Courier"><a
+
+
+
+ href="mailto:luca@eecs">luca@eecs</a></font>,
+
+
+
+679 Soda Hall, Tel. 642 8006
+
+
+
+</p>
+
+
+
+<p><b>Classes:</b>   Mondays and Wednesdays, 1-2:30pm, 310 Soda.
+
+
+
+</p>
+
+
+
+<p><b>Office hours</b>: Mondays 3-4pm
+
+
+
+</p>
+
+
+
+<p><b>Course Requirements: </b>scribing one or two lectures&nbsp; (depending on
+
+
+
+attendance); final project.
+
+
+
+</p>
+
+
+
+<p><b>References: </b>the main reference for the course will be
+
+
+
+scribed lecture notes. In addition, for each lecture I will give
+
+
+
+a link to the original papers were the results appeared and/or 
+
+
+
+survey papers discussing the results.
+
+
+
+
+
+
+
+</p>
+
+
+
+
+
+
+
+<p>
+
+
+
+ 
+
+
+
+<b>About this course</b>: a typical way to &quot;cope&quot; with the
+
+intractability of NP-hard optimization problems is to design algorithms that
+
+find solutions whose cost or value close to the optimum. In several interesting
+
+cases, it is possible to prove that even finding good approximate solutions is
+
+as hard as finding optimal solutions. Such &quot;inapproximability&quot; results
+
+are the topic of this course. Almost all such results are proved using the PCP
+
+Theorem (and its several variants), one of the deepest theorems in computational
+
+complexity. We will see Irit Dinur's new proof of the PCP Theorem, how to derive
+
+stronger variants of the PCP Theorem, and how to design reductions from PCP
+
+Theorems to optimization problems. Typically, inapproximability results are
+
+conditional on P!=NP, a necessary assumption since &quot;all&quot; combinatorial
+
+optimization problems are tractable if P=NP. The theory described in this
+
+course, however, also leads to unconditional results showing that certain
+
+algorithms, or classes of algorithms, cannot achieve good approximations. Time
+
+permitting, we will also see results that are conditional on the intractability
+
+of &quot;unique games,&quot; an assumption that is conjectured to be equivalent
+
+to P!=NP. This &quot;unique games conjecture&quot; is now the central open
+
+question in the area.
+
+
+
+
+
+
+
+
+
+
+
+<p>Tentative outline:</p>
+
+
+
+<ul>
+
+  <li>Statements and simple consequences of the PCP Theorem
+
+    <ul>
+
+      <li>Expander graphs</li>
+
+      <li>Hardness of 3SAT, Vertex Cover, Steiner Tree, TSP</li>
+
+    </ul>
+
+  </li>
+
+  <li>Dinur's proof of the PCP Theorem Part I: error-reduction</li>
+
+  <li>Dinur's proof of the PCP Theorem Part II: alphabet-reduction
+
+    <ul>
+
+      <li>Fourier Analysis</li>
+
+      <li>Long code test</li>
+
+    </ul>
+
+  </li>
+
+  <li>Error-reduction via parallel repetition
+
+    <ul>
+
+      <li>(Sketch of) Proof of Raz's theorem? Feige-Kilian protocol?</li>
+
+    </ul>
+
+  </li>
+
+  <li>Hastad's 3-query protocol
+
+    <ul>
+
+      <li>Tighter hardness for 3SAT, Vertex Cover, Max Cut</li>
+
+    </ul>
+
+  </li>
+
+  <li>Graph-test Protocol
+
+    <ul>
+
+      <li>Tight hardness for Max Clique</li>
+
+      <li>Hard instances for the Lovasz Theta function</li>
+
+    </ul>
+
+  </li>
+
+  <li>Hardness of Set Cover</li>
+
+  <li>Unique Games Conjecture
+
+    <ul>
+
+      <li>Statement of the &quot;majority is stablest&quot; theorem</li>
+
+      <li>Conditional hardness of Min Uncut</li>
+
+      <li>Conditional tight hardness of Max Cut</li>
+
+      <li>Hard instances for semidefinite programs</li>
+
+    </ul>
+
+  </li>
+
+</ul>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+
+<h2><a name="notes"></a>classes and lecture notes</h2>
+
+
+
+
+
+
+
+
+
+
+
+<p>Macros for lecture notes: <a href="macros.tex">macros.tex</a> contains the
+
+
+
+
+
+
+
+macros and <a href="lecture0.tex">lecture0.tex </a>shows how to use some
+
+
+
+
+
+
+
+features.</p>
+
+
+
+
+
+
+
+
+
+
+
+<ol>
+
+  <li><b>January 18</b> Introduction.<br>
+
+
+
+
+
+
+
+    [<a href="lecture01.pdf">Notes</a>] See also <a href="http://www.cs.washington.edu/education/courses/533/05au/pcp-history.pdf">these
+
+    notes by Ryan O'Donnell</a>
+
+
+
+
+
+
+
+  </li>
+
+  <li><b>January 23</b> Statement of the PCP Theorem, relation with constraint
+
+    satisfaction<br>
+
+    [<a href="lecture02">Notes</a>] See also my <a href="http://arxiv.org/abs/cs.CC/0409043">survey
+
+    paper</a>
+
+
+
+
+
+
+
+  </li>
+
+  <li><b>January 25</b> Consequences of the PCP Theorem: edge-expanders and
+
+    hardness of Vertex Cover in bounded-degree graphs<br>
+
+    [<a href="lecture03.pdf">Notes</a>] See also my <a href="http://arxiv.org/abs/cs.CC/0409043">survey
+
+    paper</a>
+
+
+
+
+
+
+
+  </li>
+
+  <li><b>January 30 </b>Hardness of Metric Steiner tree, hardness of Independent
+
+    Set<br>
+
+    [<a href="lecture04.pdf">Notes</a>] See also my <a href="http://arxiv.org/abs/cs.CC/0409043">survey
+
+    paper</a>
+
+
+
+
+
+
+
+  </li>
+
+  <li><b>February 1 </b>Random walks, and more on the hardness of Independent
+
+    Set<br>
+
+    [<a href="lecture05.pdf">Notes</a>] See also my <a href="http://arxiv.org/abs/cs.CC/0409043">survey
+
+    paper<br>
+
+    </a><b>February 6 no class</b>
+
+    <br>
+
+   </li>
+
+ <li><b>February 8 </b>
+
+  Guest Lecture on approximation algorithms via linear programming<br>
+
+  [<a href="lecture06.pdf">Notes scribed by Robi</a>]
+
+  <li><b>February 13 </b>Guest Lecture on approximation algorithms via
+
+    semidefinite programming<br>
+
+    [<a href = "lecture07.pdf">Notes scribed by Robi</a>]
+
+
+
+
+
+
+
+  </li>
+
+  <li><b>February 15 </b>Expander graphs: edge expansion, eigenvalue gap<br>
+
+    [<a href="lecture08.pdf">Notes scribed by Alexandra</a>]<br>
+
+    <b>February 20 </b>President's day, no class
+
+
+
+
+
+
+
+  </li>
+
+  <li><b>February 22 </b>Expander graphs: relation between eigenvalue gap and
+
+    edge expansion<br>
+
+    [<a href="lecture09.pdf">Notes scribed by Olga</a>]
+
+
+
+
+
+
+
+  </li>
+
+  <li><b>February 27 </b>Expander graphs: an explicit construction using
+
+    polynomials<br>
+
+    [<a href="lecture10.pdf">Notes scribed by Varsha</a>]
+
+
+
+
+
+
+
+  </li>
+
+  <li><b>March 1 </b>Expander graphs: the zig-zag graph product<br>
+
+    [<a href="lecture11.pdf">Notes scribed by Madhur</a>]
+
+
+
+
+
+
+
+  </li>
+
+  <li><b>March 6 </b>Expander graphs: random walks<br>
+
+    [<a href="lecture12.pdf">Notes scribed&nbsp; by Lorenzo</a>]
+
+
+
+
+
+
+
+  </li>
+
+  <li><b>March 8 </b>Proof of the PCP Theorem: overview and beginning of
+
+    &quot;amplification phase&quot;<br>
+
+    [<a href="lecture13.pdf">Notes scribed&nbsp; by Grant<a>]
+
+
+
+
+
+
+
+  </li>
+
+  <li><b>March 13 </b>Proof of the PCP Theorem: amplification phase<br>
+  
+  [Notes co-scribed by Madhur, Lorenzo and Grant]
+
+
+
+
+
+
+
+  </li>
+
+  <li><b>March 15 </b>Proof of the PCP Theorem: amplification phase
+
+
+
+
+
+
+
+  </li>
+
+  <li><b>March 20 </b>Proof of the PCP Theorem: amplification phase
+
+
+
+
+
+
+
+  </li>
+
+  <li><b>March 22 </b>Proof of the PCP Theorem: amplification phase<br>
+
+    <b>March 27-31 </b>Spring break<b>&nbsp; </b><br>
+
+
+
+  </li>
+
+ <li><b>April 3</b> Overview of the alphabet reduction phase
+ </li>
+ 
+ 
+ <li><b>April 5</b> Long code, folding, long code test</li>
+ 
+ <li><b>April 10</b> Fourier analysis and first part of the long code test<br>
+[<a href="lecture20.pdf">Notes scribed by Cameron</a>]</li>
+ 
+ <li><b>April 12 </b> Second part of the long code test</li>
+
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+<p>Rest of April: efficient PCP constructions. May: project presentations<br>
+
+
+
+
+
+
+
+</p>
+
+
+
+
+
+<hr>
+
+<h2><a name="proj"></a>projects</h2>
+
+If you are taking the course for credit, choose a project and prepare
+a 35 minutes oral presentation. Presentations will be on Friday May 5
+(place and time to be announced) and on Monday May 8.
+
+<p>
+
+You should time your presentation for 25 minutes, in order to leave
+ample time for questions.
+
+<p>
+
+The topic for the project should be a major result on PCP or hardness
+of approximation that we will not cover in the course. Some examples
+are:
+
+<ul>
+
+<li> <b>Parallel repetition</b>. This could be a year-long project.
+I recommend it only to a student interested in continuing to study
+it over the summer. Here a long-term goal would be to really understand
+the parallel repetition theorem and recast the proof in a different
+language (possibly, coding-theoretic). For the project, the goal would
+be to give an overview of the structure of the proof.<br>
+Reference: Ran Raz, A Parallel Repetition Theorem.
+</li>
+
+<li><b>PCPs with short proofs</b>. This is a topic that we have
+not considered at all. It would be enough to only study the
+Goldreich-Sudan result, the first of the new generation of
+nearly-linear length PCPs. Alternatively, the Ben Sasson-Sudan
+tester for Reed-Solomon codes and its applications.<br>
+References:
+<ol>
+<li>Oded Goldreich, Madhu Sudan: Locally Testable Codes and PCPs of Almost-Linear Length</li>
+<li>Eli Ben-Sasson, Madhu Sudan: Simple PCPs with Poly-log Rate and Query Complexity</li>
+</ol>
+</li>
+
+<li><b>Layered PCPs</b>. This is a way of constructing good "outer verifiers"
+for covering and coloring problems. The most outstanding result proved with
+this technique is a k-1 hardness result for the hitting set problem with sets
+of size k.<br>
+Reference: Irit Dinur, Venkatesan Guruswami, Subhash Khot, Oded Regev: A New Multilayered PCP and the Hardness of Hypergraph Vertex Cover.
+</li>
+
+<li><b>Results based on unique games</b>. Unique games give an extremely
+convenient outer verfied from which to start PCP constructions. It remains
+an open question whether unique games capture NP-complete problems or other
+problems whose intractability is a standard conjecture. Assuming the existence
+of unique games for intractable problems, the construction of inner verifiers
+is greatly simplified, but optimized constructions come with new, and difficult,
+analytical problems to solve. The notion of <i>influence</i> of variables has
+played an important role in most cases, and the KKL paper is very useful background.
+The paper of Chawla et al. is an example of an important result proved using
+relatively simple arguments (the proof by Khot and Vishnoi is quantitatively
+preferable; the paper by Khot and Vishnoi contains as a main result an unconditional
+construction. You don't need to understand the unconditional construction if you
+choose that paper for the project.) The Khot-Regev paper is a bit harder to read,
+but it presents another outstanding result. 
+
+References:
+<ol>
+<li>Jeff Kahn, Gil Kalai, Nathan Linial: The Influence of Variables on Boolean Functions 
+<li>Shuchi Chawla, Robert Krauthgamer, Ravi Kumar, Yuval Rabani, D. Sivakumar: On the Hardness of Approximating Multicut and Sparsest-Cut.
+<li>Subhash Khot, Nisheeth K. Vishnoi: The Unique Games Conjecture, Integrality Gap for Cut Problems and Embeddability of Negative Type Metrics into l1
+</ol>
+</li>
+
+<li><b>Hardness results for specific problems</b>. In the course, we focused on PCP results,
+deriving hardness of approximation results only when relatively simple reductions would suffice.
+Many fundamental results, however, require sophisticated reductions. Feige's tight
+hardness result for Set Cover is an example of refined elegance. There are many other
+possible results to look at. The result of Chuzhoy et al., for example, is just unbelievable.<br>
+<ol>
+<li>Uriel Feige: A Threshold of ln n for Approximating Set Cover
+<li>Julia Chuzhoy, Sudipto Guha, Eran Halperin, Sanjeev Khanna, Guy Kortsarz, Joseph Naor: Asymmetric k-center is log* n-hard to approximate
+</ol></li>
+</ul>
+
+<hr>
+
+<h2><a name="references"></a>references</h2>
+
+<p>Some survey papers:</p>
+
+<ul>
+
+  <li>Sanjeev Arora and Carsten Lund&nbsp; <a href="http://www.cs.princeton.edu/~arora/pubs/chapter.ps">Hardness
+
+    of Approximations</a>, 1996</li>
+
+  <li>Mario Szegedy <a href="http://www.cs.rutgers.edu/~szegedy/D/D.ps">Probabilistic
+
+    Verification and Non-Approximability</a>, 1998</li>
+
+  <li>Uri Feige <a href="http://arxiv.org/abs/cs.CC/0304039">Approximation
+
+    Thresholds for Combinatorial Optimization Problems</a>, 2002</li>
+
+  <li>Sanjeev Arora <a href="http://arxiv.org/abs/cs.CC/0304038">How NP Got a
+
+    New Definition: A Survey of Probabilistically Checkable Proofs</a>, 2002</li>
+
+  <li>Luca Trevisan <a href="http://arxiv.org/abs/cs.CC/0409043">Inapproximability
+
+    of Combinatorial Optimization Problems</a>, 2004</li>
+
+</ul>
+
+<h2>related courses</h2>
+
+<ul>
+
+  <li><a href="http://www.cs.washington.edu/education/courses/533/05au/">PCPs and Inapproximability</a>
+
+    by Venkat Guruswami and Ryan O'Donnell (U. of Washington)</li>
+
+  <li><a href="http://www.cc.gatech.edu/~khot/pcp-course.html">PCP and Hardness
+
+    of Approximation</a> by Subhash Khot (Georgia Tech)</li>
+
+  <li><a href="http://www.cs.huji.ac.il/~inapprox/">Inapproximability Seminar</a>
+
+    by Irit Dinur (Hebrew U.)</li>
+
+  <li><a href="http://www.stat.berkeley.edu/~mossel/206af05/">Polynomials of
+
+    Random Variables</a> by Elchanan Mossel (UC Berkeley)</li>
+
+</ul>
+
+
+
+
+
+<hr>
+
+
+
+<!--WEBBOT bot="HTMLMarkup" startspan ALT="Site Meter" -->
+
+<script type="text/javascript" language="JavaScript">var site='s22inapprox'</script>
+
+<script type="text/javascript" language="JavaScript1.2" src="http://s22.sitemeter.com/js/counter.js?site=s22inapprox">
+
+</script>
+
+<noscript>
+
+<a href="http://s22.sitemeter.com/stats.asp?site=s22inapprox" target="_top">
+
+<img src="http://s22.sitemeter.com/meter.asp?site=s22inapprox" alt="Site Meter" border="0"/></a>
+
+</noscript>
+
+<!-- Copyright (c)2005 Site Meter -->
+
+<!--WEBBOT bot="HTMLMarkup" endspan -->
+
+
+
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          

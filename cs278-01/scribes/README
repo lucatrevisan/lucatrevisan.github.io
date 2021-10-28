@@ -1,0 +1,9 @@
+Download all the files in the same directory.
+Compile and view howto.tex, this will give
+some indications on how to use the macros.
+Refer to lecture3.tex as an example of the
+use of the macros. Do not add new macros
+definitions in your source code. If you
+absolutely need to add a new macro,
+contact luca@eecs by email first.
+

@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+
+
+ <link rel="stylesheet" href="../luca.css" type="text/css">
+
+  <title>CS276 | Projects</title>
+
+ <style>
+body{margin:20px 20px 20px 20px;font-family:sans-serif;background-color:#FFFFFb; max-width: 55em; } 
+
+
+
+li{line-height : 130%;}
+</style>
+
+</head>
+
+<body>
+
+<h1>CS 276 &mdash Projects</h1>
+
+A final project involves the study of a paper or series of papers on 
+an advanced subject not covered in class. You will write
+a short report (5-10 pages), and give a 25-minute presentation 
+in class. Two-people collaborations are possible, in which case the subject/papers should be more ambitious, and the presentation will be 40 minutes.
+A project may be planned with a research problem in mind.
+
+<p>
+
+Here are some suggested topics.
+
+
+<h3>Hard-core predicates</h3>
+
+<ul>
+
+<li>Every bit of RSA and exponentiation is hard-core<br>
+<ul><li>Johan Hastad, Mats Naslund: The security of all RSA and discrete log bits. J. ACM 51(2): 187-230 (2004)</li></ul>
+
+<li>The unified framework of Akavia, Goldwasser and Safra
+<ul><li>Adi Akavia, Shafi Goldwasser, Shmuel Safra: Proving Hard-Core Predicates Using List Decoding. FOCS 2003</li></ul>
+
+</ul>
+
+<h3>One-way Functions and Pseudorandom Generators</h3>
+
+<ul>
+
+<li>Efficient "hardness amplification" for one-way permutations
+<ul>
+<li>Oded Goldreich, Russell Impagliazzo, Leonid A. Levin, Ramarathnam Venkatesan, David Zuckerman: Security Preserving Amplification of Hardness FOCS 1990: 318-326
+<li>See also Goldreich's book
+<li>A long-standing research question is whether one can do the
+same for general one-way functions. It's possible that the answer
+is negative for "black-box reductions."
+</ul>
+
+<li>
+Pseudorandom generators from "regular" one-way functions. ("Regular
+is a technical term, it means all elements of the range have the
+same number of preimages.)
+<ul><li>Oded Goldreich, Hugo Krawczyk, Michael Luby: On the Existence of Pseudorandom Generators. SIAM J. Comput. 22(6): 1163-1175 (1993)
+<li>See also Oded Goldreich's textbook</ul>
+
+<li>
+The full HILL construction (with Holenstein's simplification). Note
+that this might be too much to tackle in one month.
+
+<ul><li>Johan Hastad, Russell Impagliazzo, Leonid A. Levin, Michael Luby: A Pseudorandom Generator from any One-way Function. SIAM J. Comput. 28(4): 1364-1396 (1999)
+<li>Thomas Holenstein: Pseudorandom Generators from One-Way Functions: A Simple Construction for Any Hardness. TCC 2006: 443-461
+<li>Again, it's a long-standing open question whether
+a more efficient construction (one in which the seed is nearly linear
+in the input length of the original one-way function) is possible. 
+Maybe no such "black-box" construction is possible. Although, if you are
+still reading, there is a sort of "doble-negative" result showing
+that a certain style of "blak-box impossibility" argument will not work
+here
+<ul>
+<li>Omer Reingold, Luca Trevisan, Salil P. Vadhan: Notions of Reducibility between Cryptographic Primitives. TCC 2004: 1-20
+</ul>
+</ul>
+</ul>
+
+<h3>Impossibility Results</h3>
+
+<ul>
+
+<li> Key agreement from one-way functions. The work that
+started it all
+<ul><li>Russell Impagliazzo, Steven Rudich: Limits on the Provable Consequences of One-Way Permutations STOC 1989: 44-61
+<li>It might be helpful to read about uniform generation with
+an NP oracle, for example from
+<ul><li> Mihir Bellare, Oded Goldreich, Erez Petrank:
+<a href=http://eccc.hpi-web.de/eccc-reports/1998/TR98-032/index.html>Uniform Generation of NP-witnesses using an NP-oracle</a>. </ul>
+The nature of the impossibility result is clarified in
+<ul><li>Omer Reingold, Luca Trevisan, Salil P. Vadhan: Notions of Reducibility between Cryptographic Primitives. TCC 2004: 1-20</ul></ul>
+
+
+<li> One-way permutations from one-way functions
+<ul>
+<li>Steven Rudich's <a href=http://www.cs.cmu.edu/~rudich/papers/index.htm>PhD Thesis</a>
+<li>Jeff Kahn, Michael E. Saks, Clifford D. Smyth: A Dual Version of Reimer's Inequality and a Proof of Rudich's Conjecture. IEEE Conference on Computational Complexity 2000: 98-103</ul>
+
+<li>Oblivious transfer versus public-key encryption
+<ul><li>Yael Gertner, Sampath Kannan, Tal Malkin, Omer Reingold, Mahesh Viswanathan: The Relationship between Public Key Encryption and Oblivious Transfer. FOCS 2000: 325-335</ul>
+
+<li> Trapdoor functions from public key encryption
+<ul><li>Yael Gertner, Tal Malkin, Omer Reingold: On the Impossibility of Basing Trapdoor Functions on Trapdoor Predicates. FOCS 2001: 126-135</ul>
+
+<li>A major open question is whether CCA-secure public-key encryption
+can be derived in a black-box way (or in any way) from CPA-secure
+public-key encryption. Currently, the partial evidence is unclear
+<ul>
+<li>Yael Gertner, Tal Malkin, Steven Myers: Towards a Separation of Semantic and CCA Security for Public Key Encryption. TCC 2007: 434-455
+<li>Seung Geol Choi, Dana Dachman-Soled, Tal Malkin, Hoeteck Wee: Black-Box Construction of a Non-malleable Encryption Scheme from Any Semantically Secure One. TCC 2008: 427-444
+</ul>
+
+<li> Collision-resistant hash functions from one-way functions
+<ul><li>Daniel R. Simon: Finding Collisions on a One-Way Street: Can Secure Hash Functions Be Based on General Assumptions? EUROCRYPT 1998: 334-345</ul>
+
+
+</ul>
+
+<h3>Candidate One-Way Functions and Trapdoor Functions</h3>
+
+
+<ul>
+
+<li>Algorithms for Discrete Logarithm
+
+<li>Discrete Logarithm on Elliptic Curves
+
+<li>Lattice Problems
+
+</ul>
+
+<h3>Public Key Encryption</h3>
+
+<ul>
+
+<li> Non-malleable encryption
+
+<li> The full DNS construction
+
+<li> Cramer-Shoup
+
+<li> The unifying framework of Sahai
+
+
+</ul>
+
+<h3>Obfuscation</h3>
+
+<ul>
+
+<li> The Barak et al. paper
+
+<li> Point functions
+
+</ul>
+
+<h3>The Random Oracle Model</h3>
+
+<ul>
+
+<li> Unimplementable protocols
+
+<li> Extractable functions
+
+</ul>
+
+<h3>Commitment Schemes</h3>
+
+<ul>
+
+<li>Stat binding, comp hiding, round lower bound
+
+<li>Stat binding, comp hiding, construction
+
+</ul>
+
+<h3>Zero Knowledge</h3>
+
+<ul>
+
+<li> Black-box impossibility results
+
+<li> Barak's protocols
+
+<li> Magic functions
+
+<li> Notions of resettable and concurrent zero knowledge
+
+<li> Non-interactive zero knowledge
+
+</ul>
+
+</body>
+
+</html>

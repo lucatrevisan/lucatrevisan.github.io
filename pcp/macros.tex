@@ -1,0 +1,204 @@
+
+%Formatting
+
+
+\setlength{\topmargin}{0in}
+\setlength{\oddsidemargin}{0 in}
+\setlength{\evensidemargin}{0 in}
+\setlength{\textwidth}{6.5 in}
+\setlength{\textheight}{8 in}
+\setlength{\headsep}{0.75 in}
+\setlength{\parindent}{0 in}
+\setlength{\parskip}{0.05 in}
+
+%Theorems, proofs, etc.
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{exercise}{Exercise}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}[theorem]{Definition}
+\newenvironment{proof}{\noindent {\sc Proof:}}{$\Box$\medskip} 
+\newtheorem{question}{Open Question}
+\newtheorem{problem}{Problem}
+
+
+
+%% Macros for complexity theory notation
+%% Complexity classes
+\newcommand\p{\mbox{\bf P}}
+\newcommand\np{\mbox{\bf NP}}
+\newcommand\am{\mbox{\bf AM}}
+\newcommand\ma{\mbox{\bf MA}}
+\newcommand\distnp{\mbox{\bf DistNP}}
+\newcommand\conp{\mbox{\bf coNP}}
+\newcommand\corp{\mbox{\bf coRP}}
+\newcommand\sigmatwo{\mbox{\bf $\Sigma_2$}}
+\newcommand\sigmathree{\mbox{\bf $\Sigma_3$}}
+\newcommand\pitwo{\mbox{\bf $\Pi_2$}}
+\newcommand\rp{\mbox{\bf RP}}
+\newcommand\zpp{\mbox{\bf ZPP}}
+\newcommand\bpp{\mbox{\bf BPP}}
+\newcommand\ph{\mbox{\bf PH}}
+\newcommand\pspace{\mbox{\bf PSPACE}}
+\newcommand\npspace{\mbox{\bf NPSPACE}}
+\newcommand\aczero{\mbox{\bf AC$^0$}}
+\newcommand\dl{\mbox{\bf L}}
+\newcommand\nl{\mbox{\bf NL}}
+\newcommand\rl{\mbox{\bf RL}}
+\newcommand\sll{\mbox{\bf SL}}
+\newcommand\bpl{\mbox{\bf BPL}}
+\newcommand\conl{\mbox{\bf coNL}}
+\newcommand\sharpp{\mbox{\#{\bf P}}}
+\newcommand\parityp{\mbox{$\oplus$ {\bf P}}}
+\newcommand\ip{\mbox{\bf IP}}
+\newcommand\pcp{\mbox{\bf PCP}}
+\newcommand\mip{\mbox{\bf MIP}}
+\newcommand\dtime{\mbox{\bf DTIME}}
+\newcommand\ntime{\mbox{\bf NTIME}}
+\newcommand\bptime{\mbox{\bf BPTIME}}
+\newcommand\dspace{\mbox{\bf SPACE}}
+\newcommand\nspace{\mbox{\bf NSPACE}}
+\newcommand\conspace{\mbox{\bf coNSPACE}}
+\def\exp{\mbox{\bf EXP}}
+\def\ep{\mbox{\bf E}}
+\newcommand\nexp{\mbox{\bf NEXP}}
+\newcommand\genclass{\mbox{$\cal C$}}
+\newcommand\cogenclass{\mbox{\bf co$\cal C$}}
+\newcommand\size{\mbox{\bf SIZE}}
+
+\def\phi{\varphi}
+
+%%Computational problems
+
+\newcommand\sat{\mbox{SAT}}
+\newcommand\tsat{\mbox{3SAT}}
+\newcommand\tqbf{\mbox{TQBF}}
+\newcommand\permp{\mbox{\sc Permanent}}
+\def\perm{\operatorname{perm}}
+
+%% Notation for integers, natural numbers, reals, fractions, sets, cardinalities
+%%and so on
+
+\newcommand\Z{\mbox{$\mathbb Z$}}
+\newcommand\N{\mbox{$\mathbb N$}}
+\newcommand\R{\mbox{$\mathbb R$}}
+\newcommand\F{\mbox{$\mathcal{F}$}}
+\newcommand\B{\{0,1\}}      % boolean alphabet  use in math mode
+\newcommand\Bs{\{0,1\}^*}   % B star            use in math mode
+\def\H{\{-1,1\}}      
+\def\S{{\cal S}}
+
+\newcommand{\bzero}{{\bf 0}}
+
+
+\newcommand\true{\mbox{\sc True}}
+\newcommand\false{\mbox{\sc False}}
+
+\newcommand{\marginlabel}[1]%
+{\mbox{}\marginpar{\it{\raggedleft\hspace{0pt}#1}}}
+\newcommand\poly{\mbox{poly}}  %usage \poly(n)
+\newcommand{\floor}[1]{\lfloor\, $#1$\,\rfloor}
+\newcommand{\ceil}[1]{\lceil\, $#1$\,\rceil}
+\newcommand{\comp}[1]{\overline{#1}}
+
+
+%\newcommand\to{\rightarrow} 
+\newcommand\xor{\oplus}
+\newcommand\bigxor{\bigoplus}
+\newcommand{\logred}{\leq_{\log}}
+\def\implies{\Rightarrow}
+
+
+%% probability stuff
+
+\newcommand\E{\mathop\mathbb{E}}
+\newcommand\pr{\mathop{\bf {Pr}}}
+\newcommand\var{\mathop{\bf Var}}
+
+
+%% macros to write pseudo-code
+
+\newlength{\pgmtab}  %  \pgmtab is the width of each tab in the
+\setlength{\pgmtab}{1em}  %  program environment
+ \newenvironment{program}{\renewcommand{\baselinestretch}{1}%
+\begin{tabbing}\hspace{0em}\=\hspace{0em}\=%
+\hspace{\pgmtab}\=\hspace{\pgmtab}\=\hspace{\pgmtab}\=\hspace{\pgmtab}\=%
+\hspace{\pgmtab}\=\hspace{\pgmtab}\=\hspace{\pgmtab}\=\hspace{\pgmtab}\=%
+\+\+\kill}{\end{tabbing}\renewcommand{\baselinestretch}{\intl}}
+\newcommand {\BEGIN}{{\bf begin\ }}
+\newcommand {\ELSE}{{\bf else\ }}
+\newcommand {\IF}{{\bf if\ }}
+\newcommand {\FOR}{{\bf for\ }}
+\newcommand {\TO}{{\bf to\ }}
+\newcommand {\DO}{{\bf do\ }}
+\newcommand {\WHILE}{{\bf while\ }}
+\newcommand {\ACCEPT}{{\bf accept}}
+\newcommand {\REJECT}{\mbox{\bf reject}}
+\newcommand {\THEN}{\mbox{\bf then\ }}
+\newcommand {\END}{{\bf end}}
+\newcommand {\RETURN}{\mbox{\bf return\ }}
+\newcommand {\HALT}{\mbox{\bf halt}}
+\newcommand {\REPEAT}{\mbox{\bf repeat\ }}
+\newcommand {\UNTIL}{\mbox{\bf until\ }}
+\newcommand {\TRUE}{\mbox{\bf true\ }}
+\newcommand {\FALSE}{\mbox{\bf false\ }}
+\newcommand {\FORALL}{\mbox{\bf for all\ }}
+\newcommand {\DOWNTO}{\mbox{\bf down to\ }}
+
+
+%%%%%%%%    FALL'05
+\newcommand{\coursenum}{CS294}
+\newcommand{\coursename}{PCP and Hardness of Approximation}
+\newcommand{\courseprof}{Professor Luca Trevisan}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\newlength{\tpush}
+\setlength{\tpush}{2\headheight}
+\addtolength{\tpush}{\headsep}
+
+
+\newcommand{\handout}[3]{\noindent\vspace*{-\tpush}\newline\parbox{\textwidth}
+{U.C. Berkeley  \hfill Handout N#1 \newline
+\coursenum : \coursename \hfill #2 \newline
+\courseprof \hfill #3 \newline
+\mbox{}\hrulefill\mbox{}}\vspace*{1ex}\mbox{}\newline
+\bigskip
+\begin{center}{\Large\bf Notes for Lecture #1}\end{center}
+\bigskip}
+
+
+\newcommand{\problemset}[2]{\noindent\vspace*{-\tpush}\newline\parbox{\textwidth}
+{U.C. Berkeley --- \coursenum : \coursename \hfill Handout #1 \newline
+\courseprof \hfill #2 \newline
+\mbox{}\hrulefill\mbox{}}\vspace*{1ex}\mbox{}\newline
+\bigskip
+\bigskip}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

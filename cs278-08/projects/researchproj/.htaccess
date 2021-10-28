@@ -1,0 +1,3 @@
+order deny,allow
+deny from all
+allow from berkeley.edu eecs.berkeley.edu cs.berkeley.edu

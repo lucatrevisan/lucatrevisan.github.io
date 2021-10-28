@@ -1,0 +1,263 @@
+%%Version Feb 3 2001; last edited by SA
+% Feb 13, 2001: LT adds following macros:
+%  \logred, \conl, \genclass, \cogenclass, \size,
+%  \floor, \ceil, \comp, \ffigure, \ffigureh
+%  \iff, \implies, \sigmatwo, \sigmathree, \pitwo,
+%  \scand, \scor, \scnot, \scyes
+% Apr 5, 2001: LT adds perm, permp, \F
+
+%% Macros for complexity theory notation
+%% Complexity classes
+\newcommand\p{\mbox{\bf P}\xspace}
+\newcommand\np{\mbox{\bf NP}\xspace}
+\newcommand\cnp{\mbox{\bf coNP}\xspace}
+\newcommand\corp{\mbox{\bf coRP}\xspace}
+\newcommand\sigmatwo{\mbox{\bf $\Sigma_2$}\xspace}
+\newcommand\sigmathree{\mbox{\bf $\Sigma_3$}\xspace}
+\newcommand\pitwo{\mbox{\bf $\Pi_2$}\xspace}
+\newcommand\rp{\mbox{\bf RP}\xspace}
+\newcommand\zpp{\mbox{\bf ZPP}\xspace}
+\newcommand\bpp{\mbox{\bf BPP}\xspace}
+\newcommand\ph{\mbox{\bf PH}\xspace}
+\newcommand\pspace{\mbox{\bf PSPACE}\xspace}
+\newcommand\npspace{\mbox{\bf NPSPACE}\xspace}
+\newcommand\dl{\mbox{\bf L}\xspace}
+\newcommand\nl{\mbox{\bf NL}\xspace}
+\newcommand\conl{\mbox{\bf coNL}\xspace}
+\newcommand\sharpp{\mbox{\#{\bf P}}\xspace}
+\newcommand\parityp{\mbox{$\oplus$ {\bf P}}\xspace}
+\newcommand\ip{\mbox{\bf IP}\xspace}
+\newcommand\pcp{\mbox{\bf PCP}}
+\newcommand\dtime{\mbox{\bf DTIME}}
+\newcommand\ntime{\mbox{\bf NTIME}}
+\newcommand\dspace{\mbox{\bf SPACE}\xspace}
+\newcommand\nspace{\mbox{\bf NSPACE}\xspace}
+\newcommand\cnspace{\mbox{\bf coNSPACE}\xspace}
+\newcommand\exptime{\mbox{\bf EXPTIME}\xspace}
+\newcommand\nexptime{\mbox{\bf NEXPTIME}\xspace}
+\newcommand\genclass{\mbox{$\cal C$}\xspace}
+\newcommand\cogenclass{\mbox{\bf co$\cal C$}\xspace}
+\newcommand\size{\mbox{\bf SIZE}\xspace}
+
+%%Computational problems
+
+\newcommand\sat{\mbox{SAT}\xspace}
+\newcommand\tsat{\mbox{3SAT}\xspace}
+\newcommand\tqbf{\mbox{TQBF}\xspace}
+\newcommand\permp{\mbox{\sc Permanent}\xspace}
+\def\perm{\operatorname{perm}}
+
+%% Notation for integers, natural numbers, reals, fractions, sets, cardinalities
+%%and so on
+
+\newcommand\bz{\mbox{$\mathbb Z$}}
+\newcommand\nat{\mbox{$\mathbb N$}}
+\newcommand\rea{\mbox{$\mathbb R$}}
+\newcommand\F{\mbox{$\mathbb F$}}
+\newcommand\B{\{0,1\}}      % boolean alphabet  use in math mode
+\newcommand\Bs{\{0,1\}^*}   % B star            use in math mode
+\newcommand\true{\mbox{\sc True}}
+\newcommand\false{\mbox{\sc False}}
+\DeclareRobustCommand{\fracp}[2]{{#1 \overwithdelims()#2}}
+\DeclareRobustCommand{\fracb}[2]{{#1 \overwithdelims[]#2}}
+\newcommand{\marginlabel}[1]%
+{\mbox{}\marginpar{\it{\raggedleft\hspace{0pt}#1}}}
+\newcommand\card[1]{\left| #1 \right|} %cardinality of set S; usage \card{S}
+\newcommand\set[1]{\left\{#1\right\}} %usage \set{1,2,3,,}
+\newcommand\poly{\mbox{poly}}  %usage \poly(n)
+\newcommand{\floor}[1]{\lfloor\, $#1$\,\rfloor}
+\newcommand{\ceil}[1]{\lceil\, $#1$\,\rceil}
+\newcommand{\comp}[1]{\overline{#1}}
+
+
+%% Various things to write in small caps
+
+\def\scand{\mbox{\sc and}}
+\def\scor{\mbox{\sc or}}
+\def\scnot{\mbox{\sc not}}
+\def\scyes{\mbox{\sc yes}}
+
+
+%% short-hands for relational simbols
+
+%\newcommand\to{\rightarrow} 
+\newcommand{\from}{:}
+\newcommand\xor{\oplus}
+\newcommand\bigxor{\bigoplus}
+\newcommand{\logred}{\leq_{\log}}
+\def\iff{\Leftrightarrow}
+\def\implies{\Rightarrow}
+
+
+%% probability stuff
+
+\newcommand\pr{\mbox{\bf Pr}}
+\newcommand\av{\mbox{\bf E}}
+\newcommand\var{\mbox{\bf Var}}
+
+
+%% macros to write pseudo-code
+
+\newlength{\pgmtab}  %  \pgmtab is the width of each tab in the
+\setlength{\pgmtab}{1em}  %  program environment
+ \newenvironment{program}{\renewcommand{\baselinestretch}{1}%
+\begin{tabbing}\hspace{0em}\=\hspace{0em}\=%
+\hspace{\pgmtab}\=\hspace{\pgmtab}\=\hspace{\pgmtab}\=\hspace{\pgmtab}\=%
+\hspace{\pgmtab}\=\hspace{\pgmtab}\=\hspace{\pgmtab}\=\hspace{\pgmtab}\=%
+\+\+\kill}{\end{tabbing}\renewcommand{\baselinestretch}{\intl}}
+\newcommand {\BEGIN}{{\bf begin\ }}
+\newcommand {\ELSE}{{\bf else\ }}
+\newcommand {\IF}{{\bf if\ }}
+\newcommand {\FOR}{{\bf for\ }}
+\newcommand {\TO}{{\bf to\ }}
+\newcommand {\DO}{{\bf do\ }}
+\newcommand {\WHILE}{{\bf while\ }}
+\newcommand {\ACCEPT}{{\bf accept}}
+\newcommand {\REJECT}{\mbox{\bf reject}}
+\newcommand {\THEN}{\mbox{\bf then\ }}
+\newcommand {\END}{{\bf end}}
+\newcommand {\RETURN}{\mbox{\bf return\ }}
+\newcommand {\HALT}{\mbox{\bf halt}}
+\newcommand {\REPEAT}{\mbox{\bf repeat\ }}
+\newcommand {\UNTIL}{\mbox{\bf until\ }}
+\newcommand {\TRUE}{\mbox{\bf true\ }}
+\newcommand {\FALSE}{\mbox{\bf false\ }}
+\newcommand {\FORALL}{\mbox{\bf for all\ }}
+\newcommand {\DOWNTO}{\mbox{\bf down to\ }}
+
+%formatting commands
+\newcounter{lecnum}
+\newcommand{\lecture}[3]{%
+\pagestyle{myheadings}%
+\thispagestyle{plain}%
+\newpage %
+\setcounter{lecnum}{#1}%
+\setcounter{page}{1}%
+%\rule{\linewidth}{1mm} 
+\shadowbox{\parbox{4.3in}{{\small {\bf {\sc princeton university
+\hfill cos 522: computational complexity}}}
+
+\begin{center}
+{\large Lecture #1: #2}
+\end{center}
+
+Lecturer: {\em Sanjeev Arora} \hfill Scribe:{\em #3}
+\vspace{2pt}}}
+\vspace{6pt}}
+
+%%%%%%%%    SPRING'01
+\newcommand{\coursenum}{CS278}
+\newcommand{\coursename}{Computational Complexity}
+\newcommand{\courseprof}{Professor Luca Trevisan}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\newlength{\tpush}
+\setlength{\tpush}{2\headheight}
+\addtolength{\tpush}{\headsep}
+
+%       Usage: \htitle{title}{datelec}{dateout}
+\newcommand{\htitle}[4]{\noindent\vspace*{-\tpush}\newline\parbox{\textwidth}
+{U.C. Berkeley --- \coursenum : \coursename \hfill #1 \newline
+\courseprof \hfill #2 \newline
+\mbox{#4}\hfill Last revised #3 \newline
+\mbox{}\hrulefill\mbox{}}\vspace*{1ex}\mbox{}\newline
+\bigskip
+\begin{center}{\Large\bf #1}\end{center}
+\bigskip}
+
+%       Usage: \ptitle{title}{dateout}
+\newcommand{\ptitle}[2]{\noindent\vspace*{-\tpush}\newline\parbox{\textwidth}
+{U.C. Berkeley --- \coursenum : \coursename \hfill #1 \newline
+\courseprof \hfill #2 \newline
+\mbox{}\hrulefill\mbox{}}\vspace*{1ex}\mbox{}\newline
+\bigskip
+\begin{center}{\Large\bf #1}\end{center}
+\bigskip}
+
+
+%       Usage: \handout{title}{datelec}{dateout}{scribe}
+\newcommand{\handout}[4]{\thispagestyle{empty}
+ \markboth{Notes for #1: #2}{Notes for #1: #2}
+ \pagestyle{myheadings}\htitle{#1}{#2}{#3}{#4}}
+
+%       Usage: \pset{title}{dateout}
+\newcommand{\pset}[2]{\thispagestyle{empty}
+ \markboth{#1 --- #2}{#1 --- #2}
+ \pagestyle{myheadings}\ptitle{#1}{#2}}
+
+
+\newcommand{\htitlewithouttitle}[2]{\noindent\vspace*{-\tpush}\newline\parbox{6.5in}{\coursenumber : \coursetitle
+\hfill Columbia University\newline
+Handout #1\hfill#2\vspace*{-.5ex}\newline
+\mbox{}\hrulefill\mbox{}}\vspace*{1ex}\mbox{}\newline}
+
+\newcommand{\handoutwithouttitle}[2]{\thispagestyle{empty}
+ \markboth{Handout #1}{Handout #1}
+ \pagestyle{myheadings}\htitlewithouttitle{#1}{#2}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Commands to include figures
+
+
+%% PSfigure
+
+\newcommand{\PSfigure}[3]{\begin{figure}[t] 
+  \centerline{\vbox to #2 {\vfil \psfig{figure=#1.eps,height=#2} }} 
+  \caption{#3}\label{#1} 
+  \end{figure}} 
+\newcommand{\twoPSfigures}[5]{\begin{figure*}[t]
+  \centerline{%
+    \hfil
+    \begin{tabular}{c}
+        \vbox to #3 {\vfil\psfig{figure=#1.eps,height=#3}} \\ (a)
+    \end{tabular}
+    \hfil\hfil\hfil
+    \begin{tabular}{c}
+        \vbox to #3 {\vfil\psfig{figure=#2.eps,height=#3}} \\ (b)
+    \end{tabular}
+    \hfil}
+  \caption{#4}
+  \label{#5}
+%  \sublabel{#1}{(a)}
+%  \sublabel{#2}{(b)}
+  \end{figure*}}
+
+
+\newcounter{fignum}
+
+% fig
+%command to insert figure. usage \fig{name}{h}{caption}
+%where name.eps is the postscript file and h is the height in inches
+%The figure is can be referred to using \ref{name}
+\newcommand{\fig}[3]{%
+\begin{minipage}{\textwidth}
+\centering\epsfig{file=#1.eps,height=#2}
+\caption{#3} \label{#1}
+\end{minipage}
+}%
+
+
+% ffigure
+% Usage: \ffigure{name of file}{height}{caption}{label}
+\newcommand{\ffigure}[4]{\begin{figure} 
+  \centerline{\vbox to #2 {\vfil \psfig{figure=#1.eps,height=#2} }} 
+  \caption{#3}\label{#4} 
+  \end{figure}} 
+
+% ffigureh
+% Usage: \ffigureh{name of file}{height}{caption}{label}
+\newcommand{\ffigureh}[4]{\begin{figure}[!h] 
+  \centerline{\vbox to #2 {\vfil \psfig{figure=#1.eps,height=#2} }} 
+  \caption{#3}\label{#4} 
+  \end{figure}} 
+
+
+

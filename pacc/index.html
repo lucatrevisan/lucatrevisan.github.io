@@ -1,0 +1,1541 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+
+
+
+
+
+
+
+<html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<head>   
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="http://www.cs.berkeley.edu/~luca/luca.css" type="text/css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>Pseudorandomness and Combinatorial Constructions</title>      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body text="#400000">
+
+
+
+
+
+
+
+
+
+
+
+<h1>
+
+
+
+CS 294 | Pseudorandomness and Combinatorial Constructions | Fall '05</h1>
+
+
+
+<p><b><a href="#info">[general info]</a>&nbsp;</b>
+
+
+
+<b><a href="#notes">[lecture notes]</a> <a href="#exam">[Final
+
+
+
+Project]</a></b>
+
+
+
+<br>
+
+
+
+</p>
+
+
+
+
+
+
+
+<hr>
+
+
+
+<h2><a name="info"></a>General Information</h2>
+
+
+
+<p><br>
+
+
+
+<b>Lecturer</b>: <a href="http://www.cs.berkeley.edu/%7Eluca">Luca
+
+
+
+Trevisan</a>, <font face="Courier New,Courier"><a
+
+
+
+ href="mailto:luca@eecs">luca@eecs</a></font>,
+
+
+
+679 Soda Hall, Tel. 642 8006
+
+
+
+</p>
+
+
+
+<p><b>Classes</b> are Tuesdays and Thursdays, 2:30-4:00pm, 310 Soda
+
+
+
+</p>
+
+
+
+<p><b>Office hours</b>: Mondays, 2-3pm, or by appointment
+
+
+
+</p>
+
+
+
+<p><b>Course Requirements: </b>scribing one or two lectures&nbsp; (depending on
+
+
+
+attendance); final project.
+
+
+
+</p>
+
+
+
+<p><b>References: </b>the main reference for the course will be
+
+
+
+scribed lecture notes. In addition, for each lecture I will give
+
+
+
+a link to the original papers were the results appeared and/or 
+
+
+
+survey papers discussing the results.
+
+
+
+
+
+
+
+</p>
+
+
+
+
+
+
+
+<p>
+
+
+
+
+
+
+
+<b>About this course</b>:
+
+
+
+
+
+
+
+In computer science, there are some important problems for which
+
+
+
+
+
+
+
+randomized algorithms are simpler and faster than the best known
+
+
+
+
+
+
+
+deterministic ones. Similarly, in combinatorics, there are some
+
+
+
+
+
+
+
+objects (e.g., expander graphs, Ramsey graphs, error-correcting
+
+
+
+
+
+
+
+codes, and many others) whose existence is easy to prove using
+
+
+
+
+
+
+
+the probabilistic method but for which we only have difficult
+
+
+
+
+
+
+
+and sub-optimal explicit constructions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Perhaps surprisingly, work in the past 20+ years on "hardness
+
+
+
+
+
+
+
+versus randomness" suggests that every probabilistic algorithm
+
+
+
+
+
+
+
+may be simulated deterministically with comparable efficiency.
+
+
+
+
+
+
+
+In particular, this is true under certain plausible
+
+
+
+
+
+
+
+complexity-theoretic assumptions, such as that random integers
+
+
+
+
+
+
+
+are hard to factor (but much weaker assumptions suffice). Under
+
+
+
+
+
+
+
+the same assumptions, every object whose existence can be
+
+
+
+
+
+
+
+proved with the probabilistic method has an efficient
+
+
+
+
+
+
+
+construction (provided that one can efficiently recognize
+
+
+
+
+
+
+
+such an object given one).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+These predictions have been recently confirmed by  the Agrawal-Kayal-Saxena deterministic
+
+
+
+
+
+
+
+algorithm for testing primality in polynomial time, Reingold's deterministic
+
+
+
+algorithm to solve connectivity problems in undirected graphs using
+
+
+
+logarithmic memory, and 
+
+
+
+
+
+
+
+progress on combinatorial constructions. While the primality
+
+
+
+
+
+
+
+testing algorithm is somewhat independent of the work on
+
+
+
+
+
+
+
+"hardness versus randomness," there is a deep connection
+
+
+
+
+
+
+
+between such work and some  recent combinatorial constructions
+
+
+
+as well as Reingold's algorithm.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+
+
+
+
+
+
+
+This course will have two main, tightly woven, threads: 
+
+
+
+the study of <i>conditional</i> results about pseudorandomness
+
+
+
+and derandomization, showing that if certain complexity-theoretic conjectures
+
+
+
+are true then every probabilistic algorithm has an efficient 
+
+
+
+deterministic simulations; and the study of (unconditional) <i>explicit construction</i>
+
+
+
+of pseudorandom objects, such as randomness extractors and expander graphs.
+
+
+
+Several results in each thread are inspired and motivated by results in the other.
+
+
+
+The happy ending of the course will be Reingold's theorem: a use of ideas
+
+
+
+from expander graphs constructions to provide an <i>unconditional</i> memory-efficient
+
+
+
+derandomization of the random walk algorithm for undirected graph connectivity.
+
+
+
+
+
+
+
+<p>
+
+
+
+
+
+
+
+Highlights of the course:
+
+
+
+
+
+
+
+<ul>
+
+
+
+<li> Computational definition of pseudorandomness</li>
+
+
+
+<li> Achieving pseudorandomness against simple adversaries: pairwise indepent
+
+
+
+generators; epsilon-biased generators; almost k-wise independent generators. 
+
+
+
+Connection with error-correcting codes.
+
+
+
+
+
+
+
+<li> Cryptographically strong pseudorandom generators: the Blum-Micali-Yao
+
+
+
+construction, the Goldreich-Levin theorem, the coding-theoretic and Fourier-analytic
+
+
+
+interpretations of the Goldreich-Levin theorem.</li>
+
+
+
+
+
+
+
+<li> Pseudorandom generators for derandomization: the Nisan-Wigderson generator
+
+
+
+and the Impagliazzo-Wigderson worst-case to average case reduction. Another 
+
+
+
+coding-theoretic connection,</li>
+
+
+
+
+
+
+
+<li> Other conditional derandomization results: uniform setting, non-deterministic adversaries, . . .</li>
+
+
+
+
+
+
+
+<li> Randomness extractors from the Nisan-Wigderson generator and from other
+
+
+
+coding-theoretic constructions.</li>
+
+
+
+
+
+
+
+<li> Extractors, hash functions, Nisan's pseudorandom generator and Nisan-Zuckerman pseudorandom generator
+
+
+
+for space-bounded computation.</li>
+
+
+
+
+
+
+
+<li> Seedless extractors and applications of additive number theory</li>
+
+
+
+
+
+
+
+<li> Composition of extractors, extractors for high min-entropy</li>
+
+
+
+
+
+
+
+<li> Expander graphs, random walks, eigenvalues</li>
+
+
+
+
+
+
+
+<li> Simple constructions of expander with super-constant degree </li>
+
+
+
+
+
+
+
+<li> Construction of expanders using the Zig-Zag graph product</li>
+
+
+
+
+
+
+
+<li> Reingold's theorem </li>
+
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+
+<h2><a name="notes"></a>schedule of classes</h2>
+
+
+
+
+
+
+
+
+
+
+
+<p>Macros for lecture notes: <a href="macros.tex">macros.tex</a> contains the
+
+
+
+macros and <a href="lecture0.tex">lecture0.tex </a>shows how to use some
+
+
+
+features.</p>
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;</p>
+
+
+
+
+
+
+
+
+
+
+
+<ol>
+
+
+
+
+
+
+
+<li><b>August 30</b> Introduction. Pairwise independent generator<br>
+
+
+
+  [Notes not available]<br>
+
+
+
+  see: [<a href="http://www.wisdom.weizmann.ac.il/~oded/">Oded Goldreich</a>. <a href="http://www.wisdom.weizmann.ac.il/~oded/PS/prg00.ps"><i>Pseudorandomness</i></a><i>.
+
+
+
+  </i>Survey paper, 2000] for definitions and examples<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>September 1</b> epsilon-biased generators and error-correcting codes<br>
+
+
+
+  [Notes not available]<br>
+
+
+
+  see [Joseph Naor and Moni Naor. <a href="http://www.wisdom.weizmann.ac.il/~naor/PAPERS/bias_abs.html"><i>Small-bias Probability Spaces: efficient constructions and Applications</i></a>,
+
+
+
+  1990] and [Noga Alon, Oded Goldreich Johan Hastad and Rene Peralta, <i><a href="http://www.wisdom.weizmann.ac.il/~oded/PS/aghp.ps">  Simple Constructions of Almost
+
+
+
+  k-wise Independent Random Variables</a></i>, 1992]<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>September 6</b> Fourier analysis and epsilon-biased generators<br>
+
+
+
+  [Notes not available]<br>
+
+
+
+  see previous references, and also sections 2 and 3 of&nbsp; [Eyal Kushilevitz, Yishay Mansour.
+
+
+
+  <a href="KM.ps"><i>Learning Decision Trees using the Fourier Spectrum</i></a><i>,</i>
+
+
+
+  1991]&nbsp;<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>September 8</b> Examples of functions that are ``fooled'' by
+
+
+
+  epsilon-biased generator<br>
+
+
+
+  [<a href="lecture04.pdf">Notes scribed by Varsha</a>]<br>
+
+
+
+  see section 5 of Kushilevitz-Mansour and [Luca Trevisan. <i><a href="http://www.cs.berkeley.edu/~luca/pubs/kcnfcount.ps">A Note on Deterministic Approximate Counting for
+
+
+
+  k-DNF</a></i>, 2004]<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>September 13</b> Formal definitions of computational
+
+
+
+  indistinguishability, pseudorandom generators, one-way permutation and
+
+
+
+  hard-core predicates<br>
+
+
+
+  [<a href="lecture05.pdf">Notes scribed by Gatis</a>]<br>
+
+
+
+  see [Andrew Yao, <i> Theory and applications of trapdoor functions</i>, FOCS 1982]. I
+
+
+
+  don't have an electronic version.<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li>&nbsp;<b>September 15</b> Construction of a pseudorandom generator using a
+
+
+
+  hard-core predicate<br>
+
+
+
+  [<a href="lecture06.pdf">Notes scribed by Ben</a>]<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>September 20</b>  Extending the stretch of a pseudorandom generator<br>
+
+  [<a href="lecture07.pdf">Notes scribed by Costas</a>]<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>September 22</b> The Goldreich-Levin theorem<br>
+
+  [<a href="lecture08.pdf">Notes scribed by Madhur</a>]<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>September 27</b> Applications of the Goldreich-Levin theorem to learning<br>
+
+  [<a href="lecture9.pdf">Notes scribed by Omid</a>]<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>September 29</b> Applications of very strong pseudorandom generators<br>
+
+  [<a href="lecture10.pdf">Notes scribed by Varsha</a>]<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>October 4</b> The Nisan-Wigderson generator<br>
+
+  see the original paper [N. Nisan and A. Wigderson, <a href="http://www.math.ias.edu/~avi/PUBLICATIONS/MYPAPERS/NOAM/HARDNESS/final.pdf"><i>Hardness
+
+  versus Randomness</i></a>]<br>
+
+  [<a href="lecture11.pdf">Notes scribed by Alexandra</a>] (temporarily without
+
+  pictures)<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>October 6</b> Constructing set systems for the Nisan-Wigderson generator.
+
+  Statement of the Impagliazzo-Wigderson Theorem. Decoding the Reed-Solomon code<br>
+
+  [<a href="lecture12.pdf">Notes scribed by Madhur</a>]<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>October 11</b> List-decoding of the Reed-Solomon code<br>
+
+  see the original paper [M. Sudan, <a href="http://theory.lcs.mit.edu/~madhu/papers/reeds-journ.ps"><i>Decoding of Reed-Solomon codes beyond the 
+
+  error-correction bound</i></a>, 1996]<br>
+
+  [<a href="lecture13.pdf">Notes from Luca's coding theory course</a>]<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>October 13</b> Concatenation of Reed-Solomon code and Hadamard code.
+
+  Reed-Muller codes. Sublinear time unique decoding of Reed-Muller code.<br>
+
+  [<a href="lecture14.pdf">Notes scribed by Radu</a>]<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>October 18</b> Sublinear time list-decoding of the Reed-Muller code.&nbsp;<br>
+
+  see [M. Sudan L. Trevisan S. Vadhan, <a href="http://www.cs.berkeley.edu/~luca/pubs/stv-full.ps"><i>Pseudorandom
+
+  generators without the XOR Lemma</i></a>, 1997]<br>
+
+  [<a href="lecture15.pdf">Notes scribed by Sebastien</a>]<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>October 20</b>
+
+  Concatenation with of Reed-Muller code and Hadamard codes. Proof of the Impagliazzo-Wigderson theorem.
+
+  Introduction to randomness extractors<br>
+
+  [<a href="lecture16.pdf">Notes scribed by Anand</a>]<br>
+
+  <br>
+
+  <b><font color="#FF0000">No class on October 25</font>
+
+  <font color="#FF0000" size="5"><br>
+
+  </font>
+
+
+
+  </b>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>October 27</b>  More on extractors, negative results for extractors.<br>
+
+  see [N. Nisan and D. Zuckerman, <i><a href="http://www.cs.utexas.edu/users/diz/pubs/space.ps">Randomness is Linear in Space</a></i>]
+
+  and [Jaikumar Radhakrishnan and Amnon Ta-Shma. <i><a href="http://www.cs.tau.ac.il/~amnon/Papers/RT.siam00.pdf">Tight bounds for depth-two
+
+  superconcentrators</a></i>]<br>
+
+  <a href="lecture17.pdf">[Notes&nbsp; scribed by Sebastien]</a><br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>November 1</b> Extractors from the Nisan-Wigderson generator.<br>
+
+  see [L. Trevisan. <i><a href="http://www.cs.berkeley.edu/~luca/pubs/extractor-full.pdf">Extractors
+
+  and Pseudorandom Generators</a></i>]<br>
+
+  [<a href="lecture18.pdf">Notes scribed by Costas</a>]<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>November 3</b>&nbsp; Randomness
+
+  condensers. Condensers from Nisan-Wigderson<br>
+
+ [A. Ta-Shma, C. Umans, and D. Zuckerman, <i><a href="http://www.cs.utexas.edu/users/diz/pubs/condenser.ps">Loss-less Condensers, Unbalanced Expanders, and Extractors</a></i>]<br>
+
+  <a href="lecture19.pdf">[Notes scribed by Anand]</a><br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>November 8</b>&nbsp;More on randomness condensers<br>
+
+  see the Ta-Shma-Umans-Zuckerman paper<br>
+
+  <a href="lecture20.pdf">[Notes scribed by Alexandra]</a><br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>November 10</b>&nbsp;Even more on randomness condensers and on extractors from
+
+  the Nisan-Wigderson generator.<br>
+
+  see&nbsp; [R. Raz, O. Reingold, S. Vadhan. <a href="http://www.eecs.harvard.edu/~salil/papers/trev-abs.html"><i>Extracting all the Randomness and Reducing the Error in Trevisan's
+
+  Extractors</i></a>]<br>
+
+  <a href="lecture21.pdf">[Notes scribed by Gatis]</a><br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>November 15</b>&nbsp; Expanders,&nbsp; random walks<br>
+
+  [Notes not available]<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>November 17</b>&nbsp; Eigenvalues and expansion<br>
+[Notes not available]
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>November 22</b>&nbsp;The zig-zag graph product and construction of
+
+  expanders&nbsp;<br>
+[Notes not available]
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>November 29</b>Project presentation: Varsha<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>December 1</b>&nbsp;Project presentations: Sebastien and Gatis<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>December 6</b>&nbsp;Project presentations Madhur and Anand<br>
+
+
+
+</li>
+
+
+
+
+
+
+
+<li><b>December 8</b>&nbsp;Project presentations Costis and Alexandra
+
+
+
+</li>
+
+
+
+
+
+
+
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+<p>&nbsp;</p>
+
+
+
+<p>&nbsp;</p>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+
+Extra notes: old <a href="http://www.cs.berkeley.edu/~luca/notes/notesprob.pdf">notes
+
+on probability</a>
+
+<p>Some excellent survey papers:
+
+<ul>
+
+  <li>Peter Bro Miltersen <a href="http://www.daimi.au.dk/~bromille/Papers/dccJun9.ps"><b>Derandomizing
+
+    complexity classes</b></a>, 2001</li>
+
+  <li>Valentine Kabanets <a href="http://www.cs.sfu.ca/~kabanets/Research/beatcs.html"><b>Derandomization:
+
+    a brief overview</b></a>, 2002 (updated 2003)</li>
+
+  <li>Ronen Shaltiel <a href="http://www.cs.haifa.ac.il/~ronen/online_papers/survey.ps"><b>Recent
+
+    developments in explicit constructions of extractors</b></a>, 2002</li>
+
+</ul>
+
+<hr>
+
+<h2><a name="exam"></a>final projects</h2>
+
+<p>Choose one or two related papers. Write a report and give a
+
+40 minutes presentation at the end of the semester. Choose your paper(s) by
+
+November 3.</p>
+
+<h3>Pseudorandomness against low-degree polynomials</h3>
+
+<ul>
+
+  <li>M. Luby, B. Velickovic , A. Wigderson. <a href="http://www.math.ias.edu/~avi/PUBLICATIONS/MYPAPERS/LVW93/paper.pdf">Deterministic Approximate Counting of Depth-2 Circuits</a></li>
+
+  <li>Andrej Bogdanov: <a href="http://www.cs.berkeley.edu/~adib/pubs/polys.pdf"> Pseudorandom generators for low degree
+
+    polynomials</a>.</li>
+
+</ul>
+
+<h3>Pseudorandomness against nondeterministic adversaries</h3>
+
+<ul>
+
+  <li> A. Klivans and D. van Melkebeek. <a href="http://www.cs.wisc.edu/~dieter/Research/r-gni.html">Graph Nonisomorphism Has Subexponential Size Proofs Unless The Polynomial-Time Hierarchy Collapses</a></li>
+
+  <li> Chi-Jen Lu. <a href="http://www.iis.sinica.edu.tw/~cjlu/pub/am.ps"> Derandomizing Arthur-Merlin games under uniform assumptions.</a></li>
+
+  <li> R. Shaltiel and C. Umans. <a href="http://www.cs.caltech.edu/~umans/papers/SU01-final.pdf"> Simple Extractors for All Min-Entropies and a New Pseudo-Random
+
+    Generator</a></li>
+
+</ul>
+
+<h3>Derandomization versus lower bounds</h3>
+
+<ul>
+
+  <li><b>[Assigned to Anand] </b>R. Impagliazzo, V. Kabanets, A. Wigderson. <a href="http://www.math.ias.edu/~avi/PUBLICATIONS/MYPAPERS/IKW02/IKW02.pdf">In Search of an Easy Witness: Exponential Time vs. Probabilistic Polynomial Time</a></li>
+
+  <li><b>[Assigned to Anand] </b>V. Kabanets and R. Impagliazzo, <a href="http://www.cs.sfu.ca/~kabanets/Research/poly.html">Derandomizing Polynomial Identity Tests Means Proving Circuit Lower Bounds
+
+    </a> .</li>
+
+</ul>
+
+<h3>Pseudorandomness and average-case complexity in the uniform setting</h3>
+
+<ul>
+
+  <li>R. Impagliazzo and&nbsp; A. Wigderson. <a href="http://www.math.ias.edu/~avi/PUBLICATIONS/MYPAPERS/IW98/proc.pdf">Randomness vs. Time: De-randomization under a uniform assumption</a></li>
+
+  <li> Chi-Jen Lu. <a href="http://www.iis.sinica.edu.tw/~cjlu/pub/am.ps"> Derandomizing Arthur-Merlin games under uniform assumptions.</a></li>
+
+  <li>Luca Trevisan and Salil Vadhan. <a href="http://www.cs.berkeley.edu/~luca/pubs/tv02.ps">Pseudorandomness and Average-case Complexity via Uniform Reductions</a></li>
+
+</ul>
+
+<h3>Error-correcting codes from extractors</h3>
+
+<ul>
+
+  <li><b>[Assigned to Madhur] </b>A. Ta-Shma and D. Zuckerman, <a href="http://www.cs.utexas.edu/users/diz/pubs/extractor-codes.ps">Extractor Codes</a></li>
+
+  <li><b>[Assigned to Madhur] </b>V. Guruswami. <a href="http://www.cs.washington.edu/homes/venkat/pubs/papers/ext.pdf">Better
+
+    extractors for better codes?</a></li>
+
+</ul>
+
+<h3>Extractors&nbsp;</h3>
+
+<ul>
+
+  <li>O. Reingold, R. Shaltiel, A. Wigderson. <a href="http://www.math.ias.edu/~avi/PUBLICATIONS/MYPAPERS/RSW04/rsw04final.pdf">Extracting Randomness via Repeated Condensing</a></li>
+
+  <li>C-J Lu, O. Reingold, S. Vadhan, A. Wigderson. <a href="http://www.math.ias.edu/~avi/PUBLICATIONS/MYPAPERS/LRVW03/LRVW03.pdf">Extractors: Optimal up to Constant Factors</a></li>
+
+  <li><b>[Assigned to Alexandra]</b> D. Zuckerman. <a href="http://www.eccc.uni-trier.de/eccc-reports/2005/TR05-100/index.html">Linear Degree Extractors and the Inapproximability of Max Clique and Chromatic Number</a></li>
+
+</ul>
+
+<h3>Extractors for bit-fixing sources</h3>
+
+<ul>
+
+  <li> <b>[Assigned to Costis] </b>J. Kamp and D. Zuckerman, <a href="http://www.cs.utexas.edu/users/diz/pubs/erf.ps">Deterministic Extractors for Bit-Fixing Sources and Exposure-Resilient Cryptography</a></li>
+
+  <li> <b>[Assigned to Varsha] </b>Ariel Gabizon, Ran Raz, Ronen Shaltiel <a href="http://eccc.uni-trier.de/eccc-reports/2005/TR05-109/index.html">Deterministic Extractors for Bit-fixing Sources by Obtaining an Independent Seed</a></li>
+
+</ul>
+
+<h3>Extractors for a constant number of independent sources</h3>
+
+<ul>
+
+  <li><b>[Assigned to Sebastien] </b>B. Barak, R. Impagliazzo, A. Wigderson. <a href="http://www.math.ias.edu/~avi/PUBLICATIONS/MYPAPERS/BIW04/biw04.ps">Extracting
+
+    randomness using few independent sources</a></li>
+
+  <li><b>[Assigned to Sebastien]</b> B. Barak, Kindler, R. Shaltiel, B. Sudakov, A. Wigderson. <a href="http://www.math.ias.edu/~avi/PUBLICATIONS/MYPAPERS/bkssw04/bkssw04.pdf">Simulating Independence: New Constructions of Condensers, Ramsey Graphs, Dispersers, and Extractors</a></li>
+
+  <li>    <b>[Assigned to Sebastien] </b>Ran Raz: <a href="http://eccc.uni-trier.de/eccc-reports/2004/TR04-099/index.html">    Extractors with Weak Random Seeds&nbsp;</a></li>
+
+  <li>    Anup Rao. <a href="http://eccc.uni-trier.de/eccc-reports/2005/TR05-106/index.html">Extractors for a Constant Number of Polynomial Min-Entropy Independent Sources</a>&nbsp;</li>
+
+</ul>
+
+<h3>Expanders</h3>
+
+<ul>
+
+  <li>M. Capalbo, O. Reingold, S. Vadhan, A. Wigderson. <a href="http://www.math.ias.edu/~avi/PUBLICATIONS/MYPAPERS/CRVW01/crvw01.pdf">Randomness Conductors and Constant-Degree Expansion Beyond the Degree /2 Barrier</a></li>
+
+  <li>M. Kassabov. <a href="http://arxiv.org/abs/math.GR/0505624">Symmetric
+
+    groups and expander graphs</a></li>
+
+  <li>Rozenman, Shalev, A. Wigderson. <a href="http://www.math.ias.edu/~avi/PUBLICATIONS/MYPAPERS/RSW05/rsw05.pdf">Iterative construction of Cayley Expander graphs</a></li>
+
+</ul>
+
+<h3>More on Reingold's algorithm</h3>
+
+<ul>
+
+  <li>    Omer Reingold, Luca Trevisan, Salil Vadhan: <a href="http://eccc.uni-trier.de/eccc-reports/2005/TR05-022/index.html">    Pseudorandom Walks in Biregular Graphs and the RL vs. L Problem&nbsp;</a></li>
+
+</ul>
+
+<hr>
+
+<h2>related courses</h2>
+
+<ul>
+
+  <li><a href="http://www.math.ias.edu/~boaz/ExpanderCourse/">Expander graphs
+
+    and their applications</a> Avi Wigderson and Nati Linial, Hebrew University</li>
+
+  <li><a href="http://www.cs.tau.ac.il/~amnon/Classes/2003/Expanders/default.htm">Expanding
+
+    Graphs</a> Amnon Ta-Shma, Tel-Aviv University<br>
+
+  </li>
+
+  <li><a href="http://www.courses.fas.harvard.edu/~cs225/">Pseudorandomness</a>
+
+    Salil Vadhan, Harvard</li>
+
+  <li><a href="http://www.wisdom.weizmann.ac.il/~arielg/prand/">Topics in
+
+    pseudorandomness</a> Omer Reingold and Ronen Shaltiel, Weizmann</li>
+
+  <li><a href="http://www.cs.utexas.edu/users/diz/395T/01/">Pseudorandomness and
+
+    combinatorial constructions</a> David Zuckerman, UT Austin<br>
+
+  </li>
+
+  <li><a href="http://www.wisdom.weizmann.ac.il/~oded/rnd.html">Randomized
+
+    methods in computation</a> Oded Goldreich, Weizmann</li>
+
+</ul>
+
+
+
+
+
+<hr>
+
+<!--WEBBOT bot="HTMLMarkup" startspan ALT="Site Meter" -->
+
+<script type="text/javascript" language="JavaScript">var site="sm6pracc"</script>
+
+<script type="text/javascript" language="JavaScript1.2" src="http://sm6.sitemeter.com/js/counter.js?site=sm6pracc">
+
+</script>
+
+<noscript>
+
+<a href="http://sm6.sitemeter.com/stats.asp?site=sm6pracc" target="_top">
+
+<img src="http://sm6.sitemeter.com/meter.asp?site=sm6pracc" alt="Site Meter" border="0"/></a>
+
+</noscript>
+
+<!-- Copyright (c)2005 Site Meter -->
+
+<!--WEBBOT bot="HTMLMarkup" endspan -->
+
+Since Oct 27, 2005
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>

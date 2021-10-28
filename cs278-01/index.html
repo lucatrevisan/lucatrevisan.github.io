@@ -1,0 +1,213 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+</head>
+<body>
+
+<h1>
+CS 278 -- Computational Complexity</h1>
+<b>Course given in Spring 2001</b><b></b>
+<p><b>All <a href="notes/cs278.ps">lecture notes</a> in a single ps file</b>
+<p><b>&nbsp; <a href="#links">[links]</a> <a href="#notes">[notes]</a></b>
+<br>
+
+<hr WIDTH="100%"><a NAME="links"></a>Links, Interesting Papers, Quotes
+our <b><a href="http://www.cs.princeton.edu/courses/archive/spring01/cs522">twin
+course</a> </b>at Princeton
+<p><b>People</b>
+<ul>
+<li>
+<a href="http://www-history.mcs.st-andrews.ac.uk/history/Mathematicians/Godel.html">Kurt
+Godel</a></li>
+
+<li>
+<a href="http://www.turing.org.uk/turing">Alan Turing</a></li>
+</ul>
+
+<p><br><b>P, NP, and all that stuff</b>
+<ul>
+<li>
+M. Sipser. <a href="http://www.cs.berkeley.edu/~luca/cs278/papers/sipser.ps">The
+History and Status of the P versus NP question</a></li>
+
+<br>Contains the now-famous letter of Godel to von Neumann
+<li>
+C.H. Papadimitriou. <a href="http://www.cs.berkeley.edu/~luca/cs278/papers/retro.ps">NP-completeness:
+a retrospective</a>.</li>
+
+<li>
+O. Goldreich. <a href="http://www.cs.berkeley.edu/~luca/cs278/papers/cc.ps">Computational
+Complexity</a></li>
+</ul>
+<b>Quotes</b>
+<p>On the nature of complexity-theoretic results
+<br>&nbsp;
+<ul>
+<li>
+<i>Once more, we have decreased the number of open questions in the field
+- without, alas, increasing much the number of answers!</i></li>
+
+<br>(C.H. Papadimitriou and M. Yannakakis, "Optimization, Approximation,
+and Complexity Classes." JCSS 43:425-440, 1991.)</ul>
+On oracles
+<ul>
+<li>
+<i>I do believe it</i></li>
+
+<br><i>Against an oracle</i>
+<br>(Line spoken by Fernando in "<a href="http://tech-two.mit.edu/Shakespeare/tempest/full.html">The
+Tempest,</a>" by William Shakespeare)
+<li>
+<i>This is as strange a maze as e'er men trod</i></li>
+
+<br><i>And there is in this business more than nature</i>
+<br><i>Was ever conduct of: some oracle</i>
+<br><i>Must rectify our knowledge</i>
+<br>(Line spoken by Alonso in "<a href="http://tech-two.mit.edu/Shakespeare/tempest/full.html">The
+Tempest,</a>" by William Shakespeare)</ul>
+On efficiency
+<ul>
+<li>
+<i>This administration is doing everything we can to end the stalemate
+in an efficient way. We're making the right decisions to bring the solution
+to an end.</i></li>
+
+<br>(President <a href="http://slate.msn.com/Features/bushisms/bushisms.asp">G.W.
+Bush</a>, April 10, 2001)</ul>
+<a href="http://www.cs.berkeley.edu/~luca/quotes.html">More quotes</a>
+<br>
+<hr WIDTH="100%">
+<h2>
+<a NAME="notes"></a>Lecture Notes</h2>
+All notes in a <a href="notes/cs278.ps">single ps file</a>
+<ul>
+<li>
+<a href="notes/lecture1.ps">[Lecture
+1]</a> (preliminary version posted 1/21) decision problems, search problems,
+P, NP, reductions, NP-completeness</li>
+
+<li>
+<a href="notes/lecture2.ps">[Lecture
+2]</a> (preliminary version posted 1/23) NP-completeness of SAT and 3SAT</li>
+
+<li>
+<a href="notes/lecture3.ps">[Lecture
+3]</a> (posted 1/28) NP-completeness of Independent Set, introduction to
+space-bounded classes.</li>
+
+<li>
+<a href="notes/lecture4.ps">[Lecture
+4]</a> (posted 2/12) NL-completeness, Savitch</li>
+
+<li>
+<a href="notes/lecture5.ps">[Lecture
+5]</a> (posted 2/12) NL=coNL, polynomial hierarchy</li>
+
+<li>
+<a href="notes/lecture6.ps">[Lecture
+6] </a>(posted 2/12) Circuits</li>
+
+<li>
+<a href="notes/lecture7.ps">[Lecture
+7]</a> (posted 3/18) Probabilistic complexity classes</li>
+
+<li>
+<a href="notes/lecture8.ps">[Lecture
+8]</a> (posted 3/18) Probabilistic algorithms</li>
+
+<li>
+<a href="notes/lecture9.ps">[Lecture
+9]</a> (posted 3/18) BPP versus PH, and counting problems</li>
+
+<li>
+<a href="notes/lecture10.ps">[Lecture
+10]</a> (posted 3/18) Approximate counting</li>
+
+<li>
+<a href="notes/lecture11.ps">[Lecture
+11]</a> (posted 3/18) Valiant-Vazirani, introduction to cryptography</li>
+
+<li>
+<a href="notes/lecture12.ps">[Lecture
+12]</a> (posted 3/18) One-way function, hard-core predicates, pseudorandom
+generators</li>
+
+<li>
+<a href="notes/lecture13.ps">[Lecture
+13]</a> (posted 4/5) Pseudorandom generators, pseudorandom functions</li>
+
+<li>
+<a href="notes/lecture14.ps">[Lecture
+14]</a> (posted 4/5)Error-correcting codes and Goldreich-Levin</li>
+
+<li>
+<a href="notes/lecture15.ps">[Lecture 15]</a> (posted 5/2) Levin's average-case
+complexity theory</li>
+
+<li>
+<a href="notes/lecture16.ps">[Lecture
+16]</a> (posted 4/5) Average-case complexity of the permanent</li>
+
+<li>
+<a href="notes/lecture17.ps">[Lecture 17]</a> (posted 5/2) Introduction
+to interactive proofs</li>
+
+<li>
+<a href="notes/lecture18.ps">[Lecture 18]</a> (posted 5/2) IP=PSPACE</li>
+
+<li>
+<a href="notes/lecture19.ps">[Lecture 19]</a> (posted 5/2) IP=PSPACE</li>
+
+<li>
+<a href="notes/lecture20.ps">[Lecture 20]</a> (posted 5/2) PCP and hardness
+of approximation</li>
+
+<li>
+<a href="notes/lecture21-22.ps">[Lecture 21]</a> (posted 6/12) NP=PCP[log
+n, polylog n]</li>
+
+<li>
+<a href="notes/lecture21-22.ps">[Lecture 22]</a> (posted 6/12) NP=PCP[log
+n, polylog n]</li>
+
+<li>
+<a href="notes/lecture23.ps">[Lecture 23]</a> (posted 5/2) parallelization</li>
+
+<li>
+<a href="notes/lecture24.ps">[Lecture 24]</a> (posted 6/12) parallelization</li>
+
+<li>
+<a href="notes/lecture25.ps">[Lecture 25]</a> (posted 6/12) NP in PCP[poly(n),O(1)]
+(april 20)</li>
+
+<li>
+<a href="notes/lecture26.ps">[Lecture 26]</a> (posted 6/12) Pseudorandomness
+and derandomization (april 23)</li>
+
+<li>
+<a href="notes/lecture27.ps">[Lecture 27]</a> (posted 6/12) Nisan-Wigderson
+(april 25)</li>
+
+<li>
+<a href="notes/lecture28.ps">[Lecture 28]</a> (posted 6/12) Extractors
+(april 30)</li>
+
+<li>
+<a href="notes/lecture29.ps">[Lecture 29]</a> (posted 6/12) Extractors,
+error-correcting codes, and worst-case to average-case reductions (May
+2)</li>
+
+<li>
+<a href="notes/lecture30.ps">[Lecture 30]</a> (posted 6/12) Miltersen-Vinodchandran
+(may 7)</li>
+</ul>
+
+<h2>
+
+</h2>
+
+<hr WIDTH="100%">
+</body>
+</html>

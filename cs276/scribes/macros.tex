@@ -1,0 +1,107 @@
+%%%%%%%%% For WordPress conversion
+
+\newif\ifblog
+\newif\iftex
+\blogfalse
+\textrue
+
+\def\more{}
+
+
+\usepackage{ulem}
+\def\em{\it}
+\def\emph#1{\textit{#1}}
+
+\def\image#1#2#3{\begin{center}\includegraphics[#1pt]{#3}\end{center}}
+
+\let\hrefnosnap=\href
+
+\newenvironment{btabular}[1]{\begin{tabular} {#1}}{\end{tabular}}
+
+\newenvironment{red}{\color{red}}{}
+\newenvironment{green}{\color{green}}{}
+\newenvironment{blue}{\color{blue}}{}
+
+
+
+%%%%%%%%% Complexity classes
+
+\def\np{{\rm NP}}
+\def\p{{\rm P}}
+\def\dtime{{\rm DTIME}}
+\def\ntime{{\rm NTIME}}
+
+
+%%%%%%%%% Typesetting shortcuts
+
+\def\B{\{0,1\}}
+\def\xor{\oplus}
+
+\def\P{\mathop{\mathbb P}}
+\def\E{\mathop{\mathbb E}}
+\def\var{{\bf Var}}
+
+\def\N{{\mathbb N}}
+\def\Z{{\mathbb Z}}
+\def\R{{\mathbb R}}
+
+
+\def\bz{{\bf z}}
+
+\def\true{{\tt true}}
+\def\false{{\tt false}}
+
+%%%%%%%%% Theorems and proofs
+
+\newtheorem{exercise}{Exercise}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newenvironment{proof}{\noindent {\sc Proof:}}{$\Box$ \medskip} 
+
+
+%%%%%%%%% To typeset the header
+
+\def\courseprof{Luca Trevisan}
+\def\coursenum{CS276}
+\def\coursename{Cryptography}
+
+\newlength{\tpush}
+\setlength{\tpush}{2\headheight}
+\addtolength{\tpush}{\headsep}
+
+
+\newcommand{\handout}[3]{\noindent\vspace*{-\tpush}\newline\parbox{\textwidth}
+{U.C. Berkeley --- \coursenum : \coursename \hfill Handout #1 \newline
+\courseprof \hfill #2 \newline
+\mbox{}\hrulefill\mbox{}}\vspace*{1ex}\mbox{}\newline
+\bigskip
+\begin{center}{\Large\bf  #3}\end{center}
+\bigskip}
+
+\newcommand{\classnotes}[2]{\handout{N#1}{#2}{Notes for Lecture #1}}
+
+\newcommand{\problemset}[2]{\noindent\vspace*{-\tpush}\newline\parbox{\textwidth}
+{U.C. Berkeley --- \coursenum : \coursename \hfill Handout #1 \newline
+\courseprof \hfill #2 \newline
+\mbox{}\hrulefill\mbox{}}\vspace*{1ex}\mbox{}\newline
+\bigskip
+\bigskip}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

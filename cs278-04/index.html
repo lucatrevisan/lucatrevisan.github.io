@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+  <title>Luca Trevisan | Computational Complexity</title>
+  <style>
+
+
+
+body{margin:10px 10px 10px 10px;font-family:sans-serif;background-color:#FFFFFb;}
+
+
+
+a{text-decoration:none}
+
+
+
+a:link{color:#4444aa;}
+
+
+
+a:visited{color:#4444aa;}
+
+
+
+a:hover{background-color:#aaaaFF;}
+
+
+
+li{line-height : 130%;}
+
+
+
+  </style>
+</head>
+<body>
+<h1>
+CS 278 -- Computational Complexity -- Fall 2004</h1>
+<p><b><a href="#info">[general info]</a>&nbsp;</b>
+<b><a href="#notes">[lecture notes]</a> <a href="#exam">[Midterm and
+Project]</a></b>
+<br>
+</p>
+<hr width="100%">
+<h3>The <b><a href="midterm-sol.pdf">[midterm solutions]</a> <br>
+</b></h3>
+<hr>
+<h2><a name="info"></a>General Information</h2>
+<p><br>
+<b>Lecturer</b>: <a href="http://www.cs.berkeley.edu/%7Eluca">Luca
+Trevisan</a>, <font face="Courier New,Courier"><a
+ href="mailto:luca@eecs">luca@eecs</a></font>,
+615 Soda Hall, Tel. 642 8006
+</p>
+<p><b>Classes</b> are Monday-Wednesday, 10:30-12noon, 320 Soda
+</p>
+<p><b>Office hours</b>: Mondays, 2-3pm, or by appointment
+</p>
+<p><b>References: </b>the main reference for the course will be
+lecture notes. New
+lecture notes will be distributed after each lecture. Meanwhile, you
+can also
+refer to older notes
+</p>
+<ul>
+  <li><a href="http://www.cs.berkeley.edu/%7Eluca/cs278-02">Fall 2002</a>
+notes (171 pages)&nbsp; <a href="../notes/complexitynotes02.ps">[ps]</a>&nbsp;
+    <a href="../notes/complexitynotes02.pdf">[pdf]</a></li>
+  <li><a href="http://www.cs.berkeley.edu/%7Eluca/cs278-01">Spring 2001</a>
+notes (148 pages) <a href="../notes/complexitynotes01.ps">[ps]</a>&nbsp;
+    <a href="../notes/complexitynotes01.pdf">[pdf]</a></li>
+</ul>
+<p>
+It is also good to have a copy of</p>
+<ul>
+  <li>C.H. Papadimitriou. Computational Complexity. Addison-Wesledy,
+1994.</li>
+</ul>
+<p><br>
+<b>About this course</b>: Computational Complexity theory looks
+at the computational resources (time, memory, communication, ...)
+needed
+to solve computational problems that we care about, and it is
+especially
+concerned with the distinction between "tractable" problems, that we
+can
+solve with reasonable amount of resources, and "intractable" problems,
+that are beyond the power of existing, or conceivable, computers. It
+also
+looks at the trade-offs and relationships between different "modes" of
+computation (what if we use randomness, what if we are happy with
+approximate,
+rather than exact, solutions, what if we are happy with a program that
+works only for most possible inputs, rather than being universally
+correct,
+and so on).&nbsp;
+</p>
+<p> This course will roughly be divided into two parts: we will
+start with "basic" and "classical" material about time, space, P versus
+NP, polynomial hierarchy and so on, including&nbsp; moderately modern
+and
+advanced material, such as the power
+of randomized algorithm, the complexity of counting problems, the
+average-case
+complexity of problems, and interactive protocols. In the second part,
+we will focus on more research oriented material, to be chosen among
+PCP and
+hardness of approximation; circuit, proof complexity, and communication
+lower
+bounds; and derandomization, average-case complexity and
+extractors.&nbsp;
+</p>
+<p> For reasons that are
+only partially understood, a disproportionate number of the most
+beautiful
+results in Complexity theory in the 80s and 90s have been found by
+Berkeley
+graduate students. After taking this course, you will hopefully feel
+upon
+you the mission of continuing this tradition into the new decade.
+</p>
+<hr>
+<h2><a name="notes">Classes and Lecture Notes</a></h2>
+<ol>
+  <li> <b>Lecture 1</b> (8/30) Introduction&nbsp; <a
+ href="notes/lecture01.pdf">[notes]</a> </li>
+  <li> <b>Lecture 2</b> (9/1) P and NP, hierarchy theorems. (same
+notes as lecture 1)<br>
+    <br>
+    <font color="#ff0000">9/6 No class</font> (Labor day)<br>
+  </li>
+  <li> <b>Lecture 3</b> (9/8) More on P, NP and hierarchy theorems
+(same notes as lecture 1) </li>
+  <li> <b> Lecture 4</b> (9/13) Space bounded computations&nbsp; <a
+ href="notes/lecture02.pdf">[notes - revised 10/6]</a>&nbsp; </li>
+  <li> <b> Lecture 5</b> (9/15) NL-completeness, Savitch's theorem,
+NL=coNL (same notes as last lecture) </li>
+  <li> <b> Lecture 6</b> (9/20) Non-uniform computations <a
+ href="notes/lecture06.pdf">[notes]</a> </li>
+  <li> <b> Lecture 7</b> (9/22) Polynomial hierarchy, Karp-Lipton
+theorem <a href="notes/lecture07.pdf">[notes]</a> </li>
+  <li> <b> Lecture 8</b> (9/27) Probabilistic algorithms <a
+ href="notes/lecture08.pdf">[notes]</a></li>
+  <li> <b> Lecture 9</b> (9/29)&nbsp; Valiant-Vazirani (same notes as
+last lecture) </li>
+  <li> <b> Lecture 10</b> (10/4) #P and approximate counting <a
+ href="notes/lecture09.pdf">[notes]</a> </li>
+  <li> <b> Lecture 11</b> (10/6) #P and approximate counting (same
+notes as last lecture)<br>
+(see these <a
+ href="http://www.cs.berkeley.edu/%7Eluca/notes/notesprob.pdf">notes on
+probability</a> if you had difficulty following today's proofs)&nbsp; </li>
+  <li> <b> Lecture 12</b> (10/11) One-way permutations and
+pseudorandom generators <a href="notes/lecture12.pdf">[notes - revised
+11/30]</a> </li>
+  <li><span style="font-weight: bold;"> Lecture 13</span> (10/13) more
+on one-way permutations and pseudorandom
+generators (same notes as last lecture)&nbsp;</li>
+  <br>
+  <font color="#ff0000">10/18 and 10/20 No class</font> (FOCS)<br>
+this is a good time to start thinking about the final project<br>
+  <br>
+  <li><span style="font-weight: bold;"> Lecture 14 </span>(10/25)
+Goldreich-Levin <a href="notes/lecture14.pdf">[notes]</a> </li>
+  <li><span style="font-weight: bold;"> Lecture 15</span> (10/27)
+Learning decision trees (see this <a href="km91.pdf">very well written
+paper</a>)&nbsp; <a href="notes/lecture15.pdf">[notes]</a><br>
+&nbsp; midterm to be posted on 10/31, due 11/8 </li>
+  <li><span style="font-weight: bold;"> Lecture 16</span>
+(11/1)&nbsp;&nbsp; More on learning decision trees (same notes as last
+lecture) </li>
+  <li><span style="font-weight: bold;"> Lecture 17</span>
+(11/3)&nbsp;&nbsp; Pseudorandom functions and Razborov
+Rudich (notes in preparation) </li>
+  <li><span style="font-weight: bold;"> Lecture 18</span>
+(11/8)&nbsp;&nbsp; More on pseudorandom functions and Razborov
+Rudich (notes in preparation) </li>
+  <li><span style="font-weight: bold;"> Lecture 19</span> (11/10)
+Levin's theory of average-case
+complexity&nbsp; <a href="notes/lecture19.pdf">[notes]</a> </li>
+  <li><span style="font-weight: bold;"> Lecture 20 </span>(11/15) More
+on Levin's theory of
+average-case complexity </li>
+  <li><span style="font-weight: bold;"> Lecture 21</span> (11/17)&nbsp;
+Even more on Levin's theory of average-case complexity </li>
+  <li><span style="font-weight: bold;"> Lecture 22</span> (11/22)&nbsp;
+Reingold's theorem&nbsp; <a href="notes/lecture22.pdf">[notes]</a> </li>
+  <li><span style="font-weight: bold;"> Lecture 23</span> (11/24)&nbsp;
+Reingold's theorem, continued&nbsp; <a href="notes/lecture23.pdf">[notes]</a>
+  </li>
+  <li> <b>Lecture 24</b> (11/29) Reingold's theorem, end </li>
+  <li> <b>Lecture 25</b> (12/1)&nbsp; Parity is not in AC0: proof with
+polynomials&nbsp; <a href="notes/lecture25.pdf">[notes]</a> </li>
+  <li> <b>Lecture 26</b> (12/6) Parity is not in AC0: proof with the
+switching
+lemma <a href="notes/lecture26.pdf">[notes]</a> </li>
+  <li> <b>Lecture 27</b> (12/8) Applications of parity lower bounds to
+learning <a href="notes/lecture27.pdf">[notes]</a><br>
+  </li>
+</ol>
+<hr>
+<h2><a name="exam"></a>Midterm and Project</h2>
+<p><a href="notes/sol.pdf">Solutions </a>to homeworks for the first 14
+lectures<br>
+</p>
+<p><a href="midterm.pdf">Midterm </a>and <a href="midterm-sol.pdf">Midterm
+Solutions</a><br>
+</p>
+<p>Information about the <a href="projects/"> final project</a>
+(accessible only
+from within the berkeley.edu domain)</p>
+<hr>
+<img src="http://s13.sitemeter.com/meter.asp?site=s13complexity"
+ alt="Site Meter" border="0">since 8/30/04
+</body>
+</html>

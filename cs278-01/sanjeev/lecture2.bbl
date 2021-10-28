@@ -1,0 +1,20 @@
+\begin{thebibliography}{Coo71}
+
+\bibitem[Coo71]{C71}
+S.A. Cook.
+\newblock The complexity of theorem proving procedures.
+\newblock In {\em Proceedings of the 3rd ACM Symposium on Theory of Computing},
+  pages 151--158, 1971.
+
+\bibitem[Kar72]{K72}
+R.M. Karp.
+\newblock Reducibility among combinatorial problems.
+\newblock In R.E. Miller and J.W. Thatcher, editors, {\em Complexity of
+  Computer Computations}, pages 85--103. Plenum Press, 1972.
+
+\bibitem[Lev73]{L73}
+L.~A. Levin.
+\newblock Universal search problems.
+\newblock {\em Problemi Peredachi Informatsii}, 9:265--266, 1973.
+
+\end{thebibliography}

@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+  <title>Luca Trevisan | Computational Complexity</title>
+  <style>
+
+
+
+body{margin:10px 10px 10px 10px;font-family:sans-serif;background-color:#FFFFFb;}
+
+
+
+a{text-decoration:none}
+
+
+
+a:link{color:#4444aa;}
+
+
+
+a:visited{color:#4444aa;}
+
+
+
+a:hover{background-color:#aaaaFF;}
+
+
+
+li{line-height : 130%;}
+
+
+
+  </style>
+</head>
+<body>
+<h1>
+CS 278 -- Computational Complexity -- Spring 2008</h1>
+<p><b><a href="#info">[general info]</a>&nbsp;</b>
+<b><a href="#notes">[lecture notes]</a> <a href="#exam">[Midterm and
+Project]</a></b>
+<br>
+</p>
+<hr width="100%">
+<h2><a name="info"></a>General Information</h2>
+<p><br>
+<b>Lecturer</b>: <a href="http://www.cs.berkeley.edu/%7Eluca">Luca
+Trevisan</a>, <font face="Courier New,Courier"><a
+ href="mailto:luca@eecs">luca@eecs</a></font>, 679 Soda Hall, Tel. 642 8006
+</p>
+<p><b>Classes</b> are Tuesday-Thursday, 2-3:30pm, 405 Soda
+</p>
+<p><b>Office hours</b>: Wednesdays, 2-3pm, or by appointment
+</p>
+<p><b>References: </b>the main reference for the course will be
+lecture notes. New
+lecture notes will be distributed after each lecture. Meanwhile, you
+can also
+refer to older notes
+</p>
+<ul>
+  <li><a href="http://www.cs.berkeley.edu/~luca/cs278-04">Fall 2004</a> notes (coming soon)</li>
+  <li><a href="http://www.cs.berkeley.edu/%7Eluca/cs278-02">Fall 2002</a>
+notes (171 pages)&nbsp; <a href="../notes/complexitynotes02.ps">[ps]</a>&nbsp;
+    <a href="../notes/complexitynotes02.pdf">[pdf]</a></li>
+  <li><a href="http://www.cs.berkeley.edu/%7Eluca/cs278-01">Spring 2001</a>
+notes (148 pages) <a href="../notes/complexitynotes01.ps">[ps]</a>&nbsp;
+    <a href="../notes/complexitynotes01.pdf">[pdf]</a></li>
+</ul>
+<p>
+Two very good new textbooks are coming out soon, and preliminary versions are
+freely available on the web</p>
+<ul>
+  <li>Sanjeev Arora and Boaz Barak. <i><a href="http://www.cs.princeton.edu/theory/complexity/">Complexity
+    Theory: A Modern Approach</a></i></li>
+  <li>Oded Goldreich. <i><a href="http://www.wisdom.weizmann.ac.il/~oded/cc-book.html">Computational
+    Complexity: A Conceptual Perspective</a></i></li>
+</ul>
+<p>
+It is also good to have a copy of</p>
+<ul>
+  <li>C.H. Papadimitriou. <i> Computational Complexity</i>. Addison-Wesley,
+1994.</li>
+</ul>
+<p><br>
+<b>About this course</b>: Computational Complexity theory looks
+at the computational resources (time, memory, communication, ...)
+needed
+to solve computational problems that we care about, and it is
+especially
+concerned with the distinction between "tractable" problems, that we
+can
+solve with reasonable amount of resources, and "intractable" problems,
+that are beyond the power of existing, or conceivable, computers. It
+also
+looks at the trade-offs and relationships between different "modes" of
+computation (what if we use randomness, what if we are happy with
+approximate,
+rather than exact, solutions, what if we are happy with a program that
+works only for most possible inputs, rather than being universally
+correct,
+and so on).&nbsp;
+</p>
+<p> This course will roughly be divided into two parts: we will
+start with "basic" and "classical" material about time, space, P versus
+NP, polynomial hierarchy and so on, including&nbsp; moderately modern
+and
+advanced material, such as the power
+of randomized algorithm, the complexity of counting problems, and the
+average-case
+complexity of problems. In the second part,
+we will focus on more research oriented material, to be chosen among: (i)&nbsp; PCP and
+hardness of approximation; (ii) lower bounds for proofs and circuits; and (iii)
+derandomization and average-case complexity.
+</p>
+<p>There are at least two goals to this course. One is to demonstrate the
+surprising connections between computational problems that can be discovered by
+thinking abstractly about computations: this includes relations between learning
+theory and average-case complexity, the Nisan-Wigderson approach to turn
+intractability results into algorithms, the connection, exploited in PCP theory,
+between efficiency of proof-checking and complexity of approximation, and so on.
+The other goal is to use complexity theory as an &quot;excuse&quot; to learn
+about several tools of broad applicability in computer science. Depending on how
+far we will go, we will see enough Fourier analysis and learning to know how to
+learn decision trees with membership queries, enough graph theory to build
+constant-degree expander graphs from scratch and to have an understanding of why
+spectral partitioning algorithms work, and enough algorithmic coding theory to
+know how to decode Reed-Solomon codes.&nbsp;&nbsp;
+</p>
+<p> For reasons that are
+only partially understood, a disproportionate number of the most
+beautiful
+results in Complexity theory in the 80s and 90s have been found by
+Berkeley
+graduate students. Hopefully you will feel
+upon
+yourselves the mission of continuing this tradition before the current decade
+ends.
+</p>
+<hr>
+<h2><a name="notes">Classes and Lecture Notes</a></h2>
+<p>Note: the homeworks are for your enjoyment only. You don't have to solve them
+and they are not meant to be turned in.</p>
+<ol>
+  <li> <b>Lecture 1</b>  (1/22) Introduction, deterministic hierarchy theorem. [<a href="lecture01.pdf">notes</a>] </li>
+  <li> <b>Lecture 2</b>  (1/24) Nondeterministic hierarchy theorem. Boolean
+    circuits. [<a href="lecture02.pdf">notes</a>] </li>
+  <li> <b>Lecture 3</b> (1/29) Randomized algorithms, Adleman's theorem. [<a href="lecture03.pdf">notes</a>]&nbsp; </li>
+  <li> <b>Lecture 4</b>  (1/31) Polynomial hierarchy, BPP
+    in Sigma2.&nbsp;[<a href="lecture04.pdf">notes</a>]&nbsp; </li>
+  <li> <b>Lecture 5</b>  (2/&nbsp; 5) Karp-Lipton theorem, Valiant-Vazirani [<a href="lecture05.pdf">notes</a>]&nbsp; </li>
+  <li> <b>Lecture 6</b>  (2/&nbsp; 7) Approximate counting [<a href="lecture06.pdf">notes</a>]&nbsp;<br>
+<p><b><a href="http://www.ipam.ucla.edu/schedule.aspx?pc=eg2008">NO CLASS February 12 and February 14</a></b></p>
+ </li>
+  <li> <b>Lecture&nbsp;&nbsp; 7</b> (2/19) Space complexity, L, NL, NL-completeness,
+    Savitch's theorem [<a href="lecture07.pdf">notes</a>]&nbsp; </li>
+  <li> <b>Lecture&nbsp;&nbsp; 8</b> (2/21) Undirected connectivity, Randomized
+    Log-space, introduction to eigenvalues and expanders [<a href="lecture08.pdf">notes</a>] </li>
+  <li> <b>Lecture&nbsp;&nbsp; 9</b> (2/26) Eigenvalues and expanders, continued [<a href="lecture09.pdf">notes</a>]</li>
+  <li><b>Lecture 10</b> (2/28) Tight examples for Cheeger's inequality [<a href="lecture10.pdf">notes</a>
+    (updated 3/19)]</li>
+ <li><b>Lecture 11</b>  (3/&nbsp; 4) Eigenvalues and random walks; the expander mixing lemma [<a href="lecture11.pdf">notes</a>]</li>
+ <li><b>Lecture 12</b>  (3/&nbsp; 6) The zig-zag graph product and explicit constructions of expanders [<a href="lecture12.pdf">notes</a>]
+ <li><b>Lecture 13</b> (3/11) Another analysis of the zig-zag product, and turning any graph into an expander&nbsp;
+  [<a href="lecture13.pdf">notes</a>]
+ <li><b>Lecture 14</b> (3/13) Reingold's connectivity algorithm [<a href="lecture14.pdf">notes</a>]
+
+<P>
+<b>NO CLASS March 18<br>
+</b>
+
+<li><b>Lecture 15</b> (3/20) Statement of the PCP theorem and hardness of approximation [<a href="lecture15.pdf">notes</a>]<br>
+  [<a href=pmidterm.pdf>Practice Midterm</a>]<br>
+  <br>
+  <b>SPRING BREAK March 24-28<br>
+  </b>
+
+<li><b>Lecture 16</b> (4/&nbsp;&nbsp; 1) Overview of the proof [<a href="lecture16.pdf">notes</a>]<br>
+  [<a href="midterm.pdf">Midterm</a> out: covers up to Lecture 14]
+
+<li><b>Lecture 17</b> (4/&nbsp;&nbsp; 3) Amplification phase [<a href="lecture17-18.pdf">notes</a>]
+
+<li><b>Lecture 18</b> (4/&nbsp;&nbsp; 8) Amplification phase, continued&nbsp; [<a href="lecture17-18.pdf">notes</a>]
+
+<li><b>Lecture 19</b> (4/ 10) Amplification phase, conclusion&nbsp; [<a href="lecture19.pdf">notes</a>]<br>
+
+<li><b>Lecture 20</b> (4/ 15) Range reduction
+
+<li><b>Lecture 21</b> (4/ 17) Range reduction, continued
+
+<li><b>Lecture 22</b> (4/ 22) Applications to hardness of approximation
+
+<li><b>Lecture 23</b> (4/ 24) Average-case complexity [<a href=lecture23.pdf>notes</a>]
+
+<li><b>Lecture 24</b> (4/ 29) Average-case complexity<br>
+  <font color="#FF0000"><b>No class May 1</b></font> (Department retreat)
+
+<li><b>Lecture 25</b>  (5/ 6) Natural Proofs
+
+<li><b>Lecture 26</b>  (5/ 8) Natural Proofs
+</ol>
+<p>&nbsp;</p>
+
+<p>Tentative plan: <i>(updated <s>3/11</s> 4/14)</i></p>
+<p>Lectures 1-6: <b>time complexity<br>
+</b>P, NP, randomized algorithms, circuits, polynomial hierarchy, approximate
+counting</p>
+<p>Lectures 7-14: <b>space complexity<br>
+</b>expanders, Reingold's algorithm</p>
+<p>Lectures 15-22: <b>PCP<br>
+</b>Dinur's proof of the PCP theorem and applications to approximability</p>
+<p>Lectures 23-24: <b>Hardness of random 3SAT<br>
+</b>Levin's theory of average-case complexity; proof complexity&nbsp; lower
+bounds</p>
+<p>Lectures 25-: <b>Pseudorandomness, Natural Proofs, and Learning<br>
+</b>Parity lower bounds, one-way permutations, Goldreich-Levin, PRGs, PRFs,
+applications to encryption and authentication, Natural Proofs, Goldreich-Levin
+as a learning algorithm, learning decision trees and AC0 circuits with queries</p>
+<hr>
+<h2><a name="exam"></a> Midterm and Project</h2>
+<b><a href=pmidterm.pdf>Practice Midterm</a></b>
+
+
+<p><b><a href="midterm.pdf">Midterm</a> </b>due April 15</p>
+
+
+<p>Information about <a href="projects">projects</a></p>
+
+
+<hr>
+&nbsp;
+</body>
+</html>

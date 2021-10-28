@@ -1,0 +1,235 @@
+\input{template}
+\input{macros}
+\begin{document}
+\handout{Manual for scribes}{}{}{}
+
+You will need to use the latex document processing system.
+This document is not a latex manual, but it does show you some basic tricks.
+
+A file called {\tt template.tex}
+ already exists in this directory that wil take care
+of formatting. A file called {\tt macros.tex} contains shorthands for 
+complexity classes, frequently used mathematical formatting tricks and the like.
+Double-check with me before editing either of these. Also, send me email if you
+have latex questions. 
+
+We are using the {\tt amsmath} package for typesetting, which does a few
+things differently from standard latex.
+
+Some tricks and tips appear below.
+Look in the source file {\tt howto.tex} to understand how
+to do these tricks.
+
+\section{General Formatting Tips}
+
+\begin{enumerate}
+
+\item Theorems, lemmas, corollaries, proofs, definitions, examples, exercises,
+remarks, etc. are typeset
+inside special environments. (The environment names are 
+{\tt Thm, Lem, Cor, proof, Def, Exa, Ex, Rem} respectively.) 
+Here is how you write a theorem.
+
+\begin{Thm} \label{einsteinthm}
+If $E$ denote energy, $m$ denotes mass, and $c$ denotes the speed of light,
+then
+\begin{equation}
+E = mc^2
+\end{equation}
+\end{Thm}
+
+\item The file {\tt macros.tex} contains macros for names of 
+most complexity classes such as $\p, \np, \sharpp, \pspace$. 
+If you don't see a macro for some complexity class that
+was covered in the lecture, {\em please send me email}. Do not edit 
+{\tt macros.tex} or add a macro of your own.
+
+\item File {\tt macros.tex} also contains macros to typeset the following
+(not an exhaustive list): set notation (e.g. $\set{1, 2, 3, 4}$),
+cardinality of a set (e.g. $\card{\set{1,2,3}}$), Real and natural numbers
+($\rea, \nat$ respectively), probabilities (e.g. $\pr[\text{coin comes up head}] =1/2$), $\var[X] = \av[X^2] - \av[X]^2$). 
+
+\item There are macros for writing pseudocode. Look in the
+source file to see how to generate the following pice of
+pseudocode.
+
+\begin{program}
+input: $G = (V,E)$, $s$, $t$ \\
+output: \textsc{yes} if it discovers that $t$ is  reachable from $s$, 
+and \textsc{no} otherwise \\
+\\
+        \>     guess the distance $k$ between $s$ and $t$\\
+        \>     $p$ := $s$\\
+    	\>     \FOR \= $i$ := 1 to $k$ \DO \\
+        \>     \> non-deterministically pick a neighbor $q$ of $p$ \\
+        \>     \> $p$ := $q$ \\
+        \>     \IF\ $p=t$ \THEN\ \ACCEPT\\ 
+        \>     \> \ELSE \REJECT 
+\\
+\end{program}
+
+
+\item You can include figures by using the {\tt ffigure} command.
+You first create a figure using {\tt xfig} (on Unix)
+or {\tt Adobe Illustrator},
+save it as a postscript file (the subscript should be {\tt .eps} in the same
+directory as the latex files. Lets say this figure is {\tt lecture6fig3.eps}. 
+Look
+in the source file to see how we can include this file and generate
+Figure \ref{figure:function}.
+
+\ffigure{lecture6fig3}{3in}
+{A circuit computing any function $f(x_1 x_2 \ldots x_n)$ of $n$ variables assuming circuits for two functions of $n-1$ variables.}
+{figure:function}
+
+
+
+
+If you get any error messages while including figures, check that the .eps file
+begins with \%! and if not, edit out the first line or two of junk.
+
+You will probably get better results if you draw the figures (in {\tt xfig} or
+another program) in landscape orientation. Make it fill the entire page,
+since you can resize it when using the {\tt ffigure} command.
+
+\end{enumerate}
+
+\section{General Math Formatting Tips}
+
+\begin{enumerate}
+\item Use {\tt align} to typeset a series of contiguous equations.
+(Do not use the old {\tt eqnarray} command; it uses nonstandard 
+typographical conventions.) In the source file you will see that 
+an \& tells the program which symbol to align on.
+\begin{align}
+E & =  mc^2\\
+E+ H + G & = t 
+\end{align}
+
+
+Use the  {\tt equation} command for single equations.
+\begin{equation}
+E  =  mc^2
+\end{equation}
+
+To mix text into math formulae, use the {\tt text} command.
+\begin{equation}
+E  =  mc^2 \qquad \text{(Einstein)}
+\end{equation}
+
+While  presenting a sequence of calculations 
+(using the {\tt align} command) we sometimes
+need to say something briefly in the middle, say to explain a step.
+We can do this with
+the {\tt intertext} command.
+\begin{align}
+A+ B+ C + D + E & =  R+ S \\
+\intertext{{\em intertext:} which can be upperbounded using the inductive hypothesis by}
+& \leq Q + N
+\end{align}
+
+\item If no alignment is needed, we use {\tt gather} to make the group of equations look
+neat.
+
+\begin{gather}
+a+b = b+a \\
+(a+b)\cdot (a-b) = a^2 -b^2
+\end{gather}
+
+\item There is also {\tt alignat} for {\tt align} type structures side by side.
+
+\begin{alignat}{2}
+L_1 & = R_1 & \qquad L_2 & = R_2 \\
+L_3 & =  R_3 & \qquad L_4 &= R_4
+\end{alignat}
+
+\item Equations that do not fit into a line are typeset using the {\tt split} environment,
+which allows alignment between lines using \& as usual.
+\begin{equation}
+\begin{split}
+(a+ b)^3 - (c+d)^3 - (a+ d)^3  & = a^3 + b^3 +3ab(a+b) + c^3 +d^3 +3cd(c+d) \\
+& \quad - (a^3 + d^3 +3ad(a+d))
+\end{split}
+\end{equation}
+\item To refer later to an equation, you need to label it with a {\tt label} command.
+The command {\tt notag} will make the equation unnumbered. The command {\tt tag} will
+replace the equation number with some other designated symbol.
+
+\begin{align}
+x^2 -y^2 &= (x-y)\cdot(x+y) \label{eq:r1} \\
+x^3 -y^3 & = (x-y)(x^2 +xy + y^2). \tag{$*$} \label{mystar}\\
+\intertext{Using \eqref{eq:r1} and \eqref{mystar} we obtain}
+a + b &= d  \\
+\intertext{Now we give an unnumbered equation; note that the numbering resumes below}
+d+ e & = f \notag
+\end{align}
+\item You can typeset equations involving ``case'' situations with the {\tt cases}
+environment.
+\begin{equation}
+\delta_{i,j} = \begin{cases}
+	1 & \text{if $i =j$} \\
+	-1 & \text{if $i<j$} \\
+	0 & \text{otherwise}
+	\end{cases}
+\end{equation}
+\item The {\tt matrix} environment produces matrices. Below, we show the 
+matrices produced using {\tt matrix, pmatrix, bmatrix, vmatrix, Vmatrix} respectively.
+\begin{gather*}
+\begin{matrix} a & b \\ c & d \end{matrix} \quad
+\begin{pmatrix} a & b \\ c & d \end{pmatrix} \quad 
+\begin{bmatrix} a & b \\ c & d \end{bmatrix} \quad
+\begin{vmatrix} a & b \\ c & d \end{vmatrix} \quad
+\begin{Vmatrix} a & b \\ c & d \end{Vmatrix}
+\end{gather*}
+This environment can handle matrices with up to $10$ columns.
+To produce a matrix like 
+$\left( \begin{smallmatrix} a & b \\ c& d \end{smallmatrix} \right)$ 
+inside a text
+paragraph, use the {\tt smallmatrix} environment and enclose with the appropriate
+parentheses. Try not to do this in the last line of the paragraph since that looks
+untidy, as here $\left( \begin{smallmatrix} a & b \\ c& d \end{smallmatrix} \right)$.
+
+\item To use bold-faced letters inside math equations, use {\tt mathbf} command.
+To get bold numbers, greek symbols etc., use the {\tt boldsymbol}
+command.
+\begin{equation}
+\mathbf{A}_{\boldsymbol{\infty}} = \boldsymbol{\alpha}+ d
+\end{equation}
+
+\item Function and operator symbols (in addition to standard ones like {\tt sin, cos, log})
+can be defined using the {\tt operatorname} command. 
+
+\item Typeset modular arithmetic using the {\tt pmod} command.
+\begin{equation}
+x \equiv y + z \pmod{n}.
+\end{equation}
+\item You may be familiar with the {\tt frac} command in latex. In practice one needs
+to distinguish typographically between fractions inside paragraph (such as
+$\tfrac{x+y}{z^2 +5}$) and  ones that occur in displayed equations, such as
+\begin{equation}
+\dfrac{x+ y}{z^2 + 5} = 8
+\end{equation}
+The former use the {\tt tfrac} command and the latter the {\tt dfrac} command.
+One can also specify the parentheses around displayed fractions with 
+{\tt fracp} and {\tt fracb} commands. The advantage of
+these is that the size of the parentheses
+will change automatically with the size of the display; compare $\fracp{x+y}{z^2 +5}$with 
+$$
+\fracp{\fracp{x}{u}+y}{z^2 +5} = 5 = \fracb{x/u+y}{z^2 + 5}
+$$
+%({\em This is my hack, but apparently there used to be  standard commands like this.})
+
+\item Random examples of how to format some math expressions: $\binom{n}{k}$,
+$\exp(-x^2)$, $x \wedge y \vee \overline{z}$, $f \from \nat \to \rea$.
+
+\end{enumerate}
+\end{document}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+  <title>Luca Trevisan | Computational Complexity</title>
+  <style>
+
+
+
+body{margin:10px 10px 10px 10px;width: 1000px; font-family:sans-serif;background-color:#FFFFFb;}
+
+
+
+a{text-decoration:none}
+
+
+
+a:link{color:#4444aa;}
+
+
+
+a:visited{color:#4444aa;}
+
+
+
+a:hover{background-color:#aaaaFF;}
+
+
+
+li{line-height : 130%;}
+
+
+
+  </style>
+</head>
+<body>
+<h1>
+CS 254 -- Computational Complexity -- Spring 2010</h1>
+<p><b><a href="#info">[general info]</a>&nbsp;</b>
+<b><a href="#notes">[lecture notes]</a> <a href="#hw">[homeworks]</a> <a href="#exam">[midterm and
+project]</a></b>
+<br>
+</p>
+<hr width="100%">
+
+<b><i>what's new</i></b>
+
+<ul>
+<li> 05/17 <a href=project.html>project page</a> (more project suggestions to be added)
+<li> 05/12 <a href=pset2.pdf>Problem Set 2</a>
+<li> 05/06 <a href=lecture08.pdf>Notes for lecture 8</a>
+<li> 04/29 <a href=lecture07.pdf>Notes for lecture 7</a>
+<li> 04/29 Small corrections to notes for <a href=lecture01.pdf>lecture 1</a>, <a href=lecture02.pdf>lecture 2</a>, <a href=lecture04.pdf>lecture 4</a>, <a href=lecture05.pdf>lecture 5</a>, and <a href=lecture06.pdf>lecture 6</a>
+<li> 04/28 <a href=midterm.pdf>midterm</a>
+<li> 04/27 Notes for <a href=lecture05.pdf>lecture 5</a>
+and <a href=lecture06.pdf>lecture 6</a>
+<li> 04/22 <a href=lecture01.pdf>Notes for lecture 1</a>
+<li> 04/20 <a href=lecture04.pdf>Notes for lecture 4</a>
+<li> 04/14 <a href=pset1.pdf>homework 1</a>
+</ul>
+
+<hr>
+
+<h2><a name="info"></a>general information</h2>
+<p><br>
+<b>Instructor</b>: <a href="http://www.cs.stanford.edu/~trevisan">Luca
+Trevisan</a>,  Gates 474, Tel. 650 723-8879, email <i>trevisan at stanford dot edu</i>
+<p>
+<b>TA</b>: Rita Ren, email <I>rren at stanford dot edu</I>
+</p>
+<p><b>Classes</b> are Mondays-Wednesdays, 12:50-2:05, In Building 380, room 380F
+</p>
+<p><b>Office hours</b>: 
+<ul>
+<li> <i>Luca</i>: Thursdays, 11am-noon, or by appointment, Gates  474 
+<li> <i>Rita</i>: Thursdays, 4-6pm, Gates B26A
+</ul>
+</p>
+<p><b>References: </b>the main reference for the course will be
+lecture notes. New
+lecture notes will be distributed after each lecture. A recommended
+textbook is
+
+<ul>
+  <li>Sanjeev Arora and Boaz Barak. <i><a href="http://www.cs.princeton.edu/theory/complexity/">Complexity
+    Theory: A Modern Approach</a></i></li>
+</ul>
+
+Another very good book, which covers only part of the topics of the
+course is
+
+<ul>
+  <li>Oded Goldreich. <i><a href="http://www.wisdom.weizmann.ac.il/~oded/cc-book.html">Computational
+    Complexity: A Conceptual Perspective</a></i></li>
+</ul>
+
+<b>About this course</b>: Computational Complexity theory looks
+at the computational resources (time, memory, communication, ...)
+needed
+to solve computational problems that we care about, and it is
+especially
+concerned with the distinction between "tractable" problems, that we
+can
+solve with reasonable amount of resources, and "intractable" problems,
+that are beyond the power of existing, or conceivable, computers. It
+also
+looks at the trade-offs and relationships between different "modes" of
+computation (what if we use randomness, what if we are happy with
+approximate,
+rather than exact, solutions, what if we are happy with a program that
+works only for most possible inputs, rather than being universally
+correct,
+and so on).&nbsp;
+</p>
+<p> This course will roughly be divided into two parts: we will
+start with "basic" and "classical" material about time, space, P versus
+NP, polynomial hierarchy and so on, including&nbsp; moderately modern
+and
+advanced material, such as the power
+of randomized algorithm, the complexity of counting problems, and the
+average-case
+complexity of problems. In the second part,
+we will focus on more research oriented material, to be chosen among: (i)&nbsp; PCP and
+hardness of approximation; (ii) lower bounds for proofs and circuits; and (iii)
+derandomization and average-case complexity; (iv) quantum complexity theory.
+</p>
+<p>There are at least two goals to this course. One is to demonstrate the
+surprising connections between computational problems that can be discovered by
+thinking abstractly about computations: this includes relations between learning
+theory and average-case complexity, the Nisan-Wigderson approach to turn
+intractability results into algorithms, the connection, exploited in PCP theory,
+between efficiency of proof-checking and complexity of approximation, and so on.
+The other goal is to use complexity theory as an &quot;excuse&quot; to learn
+about several tools of broad applicability in computer science such
+as expander graphs, discrete Fourier analysis, learning, and so on.
+</p>
+<hr>
+
+<h2><a name="notes">classes and lecture notes</a></h2>
+
+<ol> 
+<li> 03/29. Introduction. 
+<ul> <li>Notes [<a href=lecture01.pdf>pdf</a>] 
+[<a href=http://lucatrevisan.wordpress.com/2010/04/22/cs254-lecture-1-introduction/>html</a>]. </ul>
+<p>
+
+<li> 03/31. P vs NP, deterministic hierarchy theorem. 
+<ul>
+ <li> Notes [<a href=lecture02.pdf>pdf</a>] [<a href=http://lucatrevisan.wordpress.com/2010/04/24/cs254-lecture-2-p-and-np/>html</a>]
+ <li> Arora-Barak 2.1, 2.5, 3.1
+</ul>
+<p>
+
+<li> 04/05. Boolean circuits, BPP. 
+<ul>
+ <li>Notes [<a href=lecture03.pdf>pdf</a>] [<a href=http://lucatrevisan.wordpress.com/2010/04/25/cs254-lecture-3-boolean-circuits/>html</a>]
+  <li>Arora-Barak 6.1, 6.5, 7.1, 7.2, 7.3, 7.4
+</ul>
+<p>
+
+<li> 04/07. Error-reduction for randomized algorithms, Adleman's theorem, definition of polynomial hierarchy. 
+<ul>
+ <li> Notes [<a href=lecture04.pdf>pdf</a>] [<a href=http://lucatrevisan.wordpress.com/2010/04/25/cs254-lecture-4-the-polynomial-hierarchy/>html</a>]
+ <li>Arora-Barak 7.4, 7.5, 5.1, 5.2
+</ul>
+<p>
+
+<li> 04/12. More on the polynomial hiearchy, BPP in Sigma2. 
+<ul>
+ <li> Notes [<a href=lecture05.pdf>pdf</a>] [<a href=http://lucatrevisan.wordpress.com/2010/04/27/cs254-lecture-5-the-polynomial-hierarchy/>html</a>]
+ <li>Arora-Barak 7.5
+</ul>
+<p>
+
+
+<li> 04/14. Karp-Lipton theorem, sketch of Kannan's theorem,
+definition of #P, Valiant-Vazirani (statement). 
+<ul>
+  <li>Notes [<a href=lecture06.pdf>pdf</a>] [<a href=http://lucatrevisan.wordpress.com/2010/04/28/cs245-lecture-6-karp-lipton/>html</a>]
+ <li>Arora-Barak 6.4, 17.1, 17.2, 17.4.1
+</ul>
+
+<p>
+
+<li> 04/19. Valiant-Vazirani (proof).
+<ul>
+ <li>Notes [<a href=lecture07.pdf>pdf</a>] [<a href=http://lucatrevisan.wordpress.com/2010/04/29/cs254-lecture-7-valiant-vazirani/>html</a>] 
+ <li>Arora-Barak 17.4.1
+</ul>
+<p>
+
+<li> 04/21. Approximate counting with an NP oracle.
+<ul>
+ <li>Notes [<a href=lecture08.pdf>pdf</a>]
+ <li>this result is not covered in Arora-Barak
+</ul>
+<p>
+
+<li> 04/26. PCP Theorem (introduction and definitions)
+<ul>
+ <li>Notes [in preparation]
+ <li>Arora-Barak 11.1, 11.2
+</ul>
+<p>
+
+<li> 04/28. PCP Theorem (equivalence of two formulations and some applications)
+<ul>
+ <li>Notes [in preparation]
+ <li>Arora-Barak 11.3, 11.4
+</ul>
+<p>
+
+<li> 05/03. PCP Theorem (2CSP and overview of the proof)
+<ul>
+ <li>Notes [in preparation]
+ <li>Arora-Barak 22.1, 22.2.1
+</ul>
+<p>
+
+<li> 05/05. PCP Theorem (reduction to bounded-degree case)
+<ul>
+ <li> Notes [in preparation]
+ <li>Arora-Barak 22.A (page 491)
+</ul>
+<p>
+
+
+<li> 05/10. PCP Theorem (amplification)
+<ul>
+ <li> Notes [in preparation]
+</ul>
+<p>
+
+<li> 05/12. Inapproximability of Metric Steiner Tree
+<ul>
+ <li> Notes [in preparation]
+</ul>
+<p>
+
+<li> 05/17. Parity not in AC0: approximating circuits by polynomials
+<ul>
+ <li> Notes [in preparation]
+</ul>
+<p>
+
+<li> 05/19. Parity not in AC0: parity is not approximable by polynomials
+<ul>
+ <li> Notes [in preparation]
+</ul>
+<p>
+
+<li> 05/24. Natural Proofs and pseudorandomness
+<ul>
+ <li> Notes [in preparation]
+</ul>
+<p>
+
+<li> 05/26. One-way functions and pseudorandom generators.
+<ul>
+ <li> Notes [in preparation]
+</ul>
+
+
+<p>
+
+</ol>
+
+<p></p>
+
+<p>Tentative plan:
+
+<ul>
+<li> Lecture 1: Introduction, P vs NP problem, deterministic
+hierarchy theorem
+<li> Lecture 2: Relativization, boolean circuits
+<li> Lecture 3: BPP, Adleman's theorem
+<li> Lecture 4: Polynomial hierarchy, BPP in Sigma2
+<li> Lecture 5: Karp-Lipton and Valiant-Vazirani
+<li> Lecture 6: Approximate counting
+<li> Lecture 7: Space complexity: L, NL, NL-completeness, Savitch
+<li> Lecture 8: Random walks, undirected connectivity in RL
+<li> Lecture 9: Expanders, zig-zag product, and Reingold's algorithm
+<li> Lecture 10: PCP theorem: statement and applications
+<li> Lecture 11: Dinur's proof: amplification
+<li> Lecture 12: Dinur's proof: range reduction
+<li> Lecture 13: More applications to inapproximability
+<li> Lecture 14: Parity not in AC0 (Razborov-Smolensky)
+<li> Lecture 15: Pseudorandom generators and derandomization
+<li> Lecture 16: Goldreich-Goldwasser-Micali construction of pseudorandom functions
+<li> Lecture 17: Natural proofs
+<li> Lecture 18: Quantum complexity theory: the model and Grover search
+<li> Lecture 19: Quantum complexity theory: search lower bounds
+
+</ul>
+
+<hr>
+
+<a name="hw"><h2>homeworks</h2>
+
+<ol>
+
+<li> <a href=pset1.pdf>Problem set 1</a> out Apr 14, due Apr 22
+<li> <a href=pset2.pdf>Problem set 2</a> out May 12, due May 21
+
+</ol>
+
+<hr>
+
+<a name="exam"><h2>exams</h2></a>
+
+<p>The <a href=midterm.pdf><b>midterm</b></a> is due May 6
+
+
+<p>See the <a href=project.html>project page</a> for information
+on the final project.
+
+<hr>
+&nbsp;
+</body>
+</html>
