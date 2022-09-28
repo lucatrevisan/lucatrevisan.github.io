@@ -1,0 +1,251 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="../luca.css" type="text/css">
+
+<title>Spring 2023 | 30540 Computer Science 2</title>
+
+
+</head>
+
+<body><center>
+    <h1>Spring 2023  &mdash; 30540 Computer Science 2</h1>
+</center>
+
+    This course introduces the beautiful 
+and powerful techniques of theoretical 
+computer science for the design of algorithms, 
+the analysis of algorithms, 
+and the study of the computational complexity of problems.
+    
+    <hr>
+    
+    <h3>General information</h3>
+    
+    Instructors: <a href="../index.html">Luca Trevisan</a>, Fabrizio Iozzi<br>
+    Teaching assistants: Caicai Chen, Lucas Pesenti
+    
+    <p>
+    
+    Lectures:
+    <ul>
+        <li>Tuesdays 14:00-16:30</li>
+        <li>Thursdays 8:30-10:00 </li>
+        <li>Fridays 14:00-16:30</li>
+        </ul>
+    
+    
+    <p>
+    
+    Office hours:
+    <ul>
+    	<li>Fabrizio Iozzi: TBA
+        <li>Luca Trevisan: TBA
+         <li>Caicai Chen: TBA
+             <li>Lucas Pesenti: TBA
+
+</ul>    
+
+<p>
+    
+    <hr>
+    
+    <h3>Textbooks and other readings</h3>
+    
+    <ul><li>S. Dasgupta, C.H. Papadimitriou, and U.V. Vazirani. Algorithms</li></ul>
+    
+    It is easy to find online a pdf of the Dasgupta et al. book. As far as we know, these pdf copies are circulating with the blessing of the authors.
+    
+    <p>
+    
+    Additional lecture notes will be distributed when the content of the lectures deviates from the book.
+    
+   
+
+    
+    <h3>Lecture plan</h3>
+    
+<<<<<<< HEAD
+TBA (will be similar to <a href="../30540-22/index.html">last year's offering</a>)
+=======
+<ul>
+
+<li>No class on 2022-02-03
+
+<p>
+
+<li>
+2022-02-04: <b>Introduction</b><br>
+<i>Contents:</i> What this course is about. Review of the topics and goals of the course. Preview of some highlights. Mathematical preliminaries: proving things by induction, bounding summations, big-Oh and little-oh notations, basics of probability<br>
+<i>Readings:</i> Chapter 0<br>
+<i>Instructor:</i> Iozzi<br>
+<i>Suggested Exercises:</i> <br>
+</li>
+<p>
+
+
+
+<li>
+2022-02-08: <b>Divide-and-conquer I</b><br>
+<i>Contents:</i> Integer multiplication in O(n^{log_2 3}) time, analysis of mergesort<br>
+<i>Readings:</i> Sections 2.1 and 2.3<br>
+<i>Instructor:</i> Iozzi<br>
+<i>Suggested Exercises:</i> <br>
+</li>
+<p>
+<li>
+2022-02-10: <b>Divide-and-conquer II</b><br>
+<i>Contents:</i> Median in linear time, Master Theorem<br>
+<i>Readings:</i> Sections 2.2 and 2.4<br>
+<i>Instructor:</i> Iozzi<br>
+<i>Suggested Exercises:</i> <br>
+</li>
+<p>
+<li>
+2022-02-11: <b>Graph Decomposition I</b><br>
+<i>Contents:</i> Graphs, representations of graphs, directed and undirected graphs, paths, connected components, DFS for connected components in undirected graphs <br>
+<i>Readings:</i> Sections 3.1 and 3.2<br>
+<i>Instructor:</i> Iozzi<br>
+<i>Suggested Exercises:</i> <br>
+</li>
+<p>
+<li>
+2022-02-15: <b>Graph Decomposition II</b><br>
+<i>Contents:</i> Directed acyclic graphs, linearization, DFS finds linearization<br>
+<i>Readings:</i> Section 3.3<br>
+<i>Instructor:</i> Iozzi<br>
+<i>Suggested Exercises:</i> <br>
+</li>
+<p>
+
+<li>
+2022-02-17: <b>LAB 1</b><br>
+<i>Contents:</i> Covers all material up to DFS<br>
+<i>Readings:</i> Notes</a><br>
+<i>Instructor:</i> Iozzi<br>
+<i>Suggested Exercises:</i> <br>
+</li>
+<p>
+
+
+
+<li>
+2022-02-18: <b>Shortest Paths I</b><br>
+<i>Contents:</i> BFS and shortest paths in unweighted graphs<br>
+<i>Readings:</i> Sections 4.1 and 4.2<br>
+<i>Instructor:</i> Trevisan<br>
+<i>Suggested Exercises:</i> <br>
+</li>
+<p>
+<li>
+2022-02-22: <b>Shortest Paths II</b><br>
+<i>Contents:</i> Dijkstra's algorithm<br>
+<i>Readings:</i> Sections 4.3 and 4.4, <a href="notes-dijkstra.pdf">notes</a><br>
+<i>Instructor:</i> Trevisan<br>
+<i>Suggested Exercises:</i> <br>
+</li>
+<p>
+<li>
+2022-02-24: <b>Shortest Paths III</b><br>
+<i>Contents:</i> Continuation of Dijkstra's algorithm, priority queue implementation as sorted lists and as heaps<br>
+<i>Readings:</i> Section 4.5<br>
+<i>Instructor:</i> Trevisan<br>
+<i>Suggested Exercises:</i> <br>
+</li>
+
+<p>
+<li>
+2022-02-25: <b>Greedy Algorithms I</b><br>
+<i>Contents:</i> Minimum spanning tree problem, Kruskal and Prim's algorithm, proofs of correctness<br>
+<i>Readings:</i> Section 5.1<br>
+<i>Instructor:</i> Trevisan<br>
+<i>Suggested Exercises:</i> <br>
+</li>
+<p>
+<li>
+2022-03-01: <b>Greedy Algorithms II</b><br>
+<i>Contents:</i> Correctness of Kruskal and Prim's algorithm, continued. Union-find data structure<br>
+<i>Readings:</i> Section 5.1<br>
+<i>Instructor:</i> Trevisan<br>
+<i>Suggested Exercises:</i> <br>
+</li>
+<p>
+
+
+<li>
+2022-03-03: <b>LAB 2</b><br>
+<i>Contents:</i> Covers all material up to MST<br>
+<i>Readings:</i> Notes</a><br>
+<i>Instructor:</i> Anceschi<br>
+<i>Suggested Exercises:</i> <br>
+</li>
+<p>
+
+
+
+
+<li>
+2022-03-04: <b>Greedy Algorithms III</b><br>
+<i>Contents:</i> Prefix codes, Huffman coding<br>
+<i>Readings:</i> Section 5.2, <a href=notes-compression.pdf>notes</a><br>
+<i>Instructor:</i> Trevisan<br>
+<i>Suggested Exercises:</i> <br>
+</li>
+
+<p>
+<li>
+2022-03-08: <b>Greedy Algorithms IV</b><br>
+<i>Contents:</i> More on data compression, entropy; set cover<br>
+<i>Readings:</i> Section 5.2, 5.4<a href=notes-compression.pdf>notes</a><br>
+<i>Instructor:</i> Trevisan<br>
+<i>Suggested Exercises:</i> <br>
+</li>
+<p>
+
+<li>
+2022-03-10: <b>Dynamic Programming I</b><br>
+<i>Contents:</i> Shortest paths in DAGs, shortest paths with negative weights<br>
+<i>Readings:</i> Section 6.1<br>
+<i>Instructor:</i> Trevisan<br>
+<i>Suggested Exercises:</i> <br>
+</li>
+<p>
+
+<li>
+2022-03-11: <b>Lab 3</b><br>
+<i>Contents:</i> Final review before Midterm<br>
+<i>Readings:</i> Notes<br>
+<i>Instructor:</i> Anceschi<br>
+<i>Suggested Exercises:</i> <br>
+</li>
+<p>
+
+<li>No class on 2022-03-24
+<p>
+
+<li>
+2022-03-25: <b>Dynamic Programming II</b> <br>
+<i>Contents:</i> Shortest paths with negative weights. All-pairs shortest paths. Rethinking Dijkstra's algorithm<br>
+<i>Readings:</i> Sections 6.1, 6.6<br>
+<i>Instructor:</i> Trevisan<br>
+<i>Suggested Exercises:</i> <br>
+</li>
+<p>
+<li>
+2022-03-29: <b>Dynamic Programming III</b><br>
+<i>Contents:</i> Edit distance, knapsack<br>
+<i>Readings:</i> Section 6.3, 6.4<br>
+<i>Instructor:</i> Trevisan<br>
+<i>Suggested Exercises:</i> <br>
+</li>
+<p>
+
+<li>No class on 2022-03-31
+<p>
+
+>>>>>>> 39a26a554870362753448fecf6be200fe2ab08d8
+
+</body>
+
+</html>
+
